@@ -22,12 +22,12 @@ const LearningCard = ({
 }: Props) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center sm:flex-row py-4
+      className={`flex flex-col items-center justify-center sm:flex-row py-4 
        ${bg ? "bg-[#FDF9F4]" : null}`}
     >
-      {swap && <Image src={image} alt={alt} height={400} />}
+      {swap && <Image className="" src={image} alt={alt} height={400} />}
       {swap && <div className="w-44" />}
-      <div className={`${large ? "w-[350px]" : "w-[235px]"}`}>
+      <div className={`${large ? "w-[350px]" : "w-[235px] "}`}>
         <p className="font-bold text-2xl pb-2">{title}</p>
         <p className="">{description}</p>
       </div>

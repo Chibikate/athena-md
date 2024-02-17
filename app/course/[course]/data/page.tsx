@@ -1,15 +1,24 @@
 "use client";
 import IntroductionPage from "@/components/3dslicer_page/introduction_card";
-import { slicerIntroduction, slicerTutorial } from "@/data/3dslicer_data";
-import React, { use, useState } from "react";
+import {
+  slicerIntroduction,
+  slicerObjetive,
+  slicerTutorial,
+} from "@/data/3dslicer_data";
+import React, { use, useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
-import Navigator from "@/components/3dslicer_page/navigator";
 import TutorialCard from "@/components/3dslicer_page/tutorial_card";
+import { useSearchParams } from "next/navigation";
+import Navigator from "@/components/3dslicer_page/navigator";
+import { title } from "process";
+import SlicerObjective from "@/components/3dslicer_page/slicer_objective";
 
 const Home = () => {
   const [index, setIndex] = useState(0);
+  const searchParams = useSearchParams();
+  const queryPage = searchParams.get("page");
 
   const length = slicerIntroduction.length + slicerTutorial.length;
 
@@ -25,8 +34,14 @@ const Home = () => {
     }
   };
 
+  useEffect(() => {
+    if (queryPage) {
+      setIndex(parseInt(queryPage));
+    }
+  }, [queryPage]);
+
   return (
-    <section className="min-h-screen bg-[#FDF9F4] flex flex-col justify-between pt-2">
+    <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between">
       <Navigator />
 
       <div className="flex flex-row items-center justify-center">
@@ -49,14 +64,22 @@ const Home = () => {
             <ChevronLeftIcon className="w-8 h-8" />
           </Link>
         )}
-        {index < slicerIntroduction.length && (
+        {index < slicerObjetive.length && (
+          <SlicerObjective
+            title={slicerObjetive[index].title}
+            description={slicerObjetive[index].description}
+          />
+        )}
+        {index >= slicerObjetive.length && index < 4 && (
           <IntroductionPage
-            title={slicerIntroduction[index].title}
-            description={slicerIntroduction[index].description}
+            title={slicerIntroduction[index - slicerObjetive.length].title}
+            description={
+              slicerIntroduction[index - slicerObjetive.length].description
+            }
           />
         )}
 
-        {index >= slicerIntroduction.length && (
+        {index >= slicerIntroduction.length + slicerObjetive.length && (
           <TutorialCard
             title={slicerTutorial[index - slicerIntroduction.length].title}
             description={
@@ -78,8 +101,10 @@ const Home = () => {
         )}
       </div>
 
-      <div className="h-[1px] w-full bg-[#FDCC6D] " />
-      <Footer />
+      <div>
+        <div className="h-[1px] w-full bg-[#FDCC6D] " />
+        <Footer />
+      </div>
     </section>
   );
 };

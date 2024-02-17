@@ -19,33 +19,6 @@ const LearningSection = () => {
             virtual environment.
           </span>
         </p>
-        <p className="ml-10 pt-6">
-          <span className="text-2xl font-bold text-[#A46C00]  mr-4">2</span>{" "}
-          <span className="text-xl font-bold text-black">
-            Computed Tomography (CT)
-          </span>
-            <br />
-          <span className="ml-9">
-            is considered the gold standard for evaluating bone pathologies,
-            lesions, defects, and other skeletal{" "}
-            <span className="ml-9">
-              abnormalities due to its ability to produce detailed images of the
-              inside of the body.
-            </span>{" "}
-          </span>
-        </p>
-        <p className="ml-10 pt-6 pb-6">
-          <span className="text-2xl font-bold text-[#A46C00]  mr-4">3</span>{" "}
-          <span className="text-xl font-bold text-black">
-            Digital Imaging and Communications in Medicine (DICOM){" "}
-          </span>
-          <br />{" "}
-          <span className="ml-9">
-            is the international standard for storing, transmitting, and
-            managing medical imaging information and{" "}
-            <span className="ml-9">data.</span>
-          </span>
-        </p>
       </div>
       <div className="flex flex-col items-center mr-44 p-5 pb-11">
         <div className="flex flex-row">

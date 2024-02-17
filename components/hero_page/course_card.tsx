@@ -7,19 +7,29 @@ interface Props {
   image: StaticImageData;
   title: string;
   description: string;
+  level: string;
   time: string;
   to: string;
   alt: string;
 }
 
-const CourseCard = ({ image, title, description, time, to, alt }: Props) => {
+const CourseCard = ({
+  image,
+  title,
+  description,
+  level,
+  time,
+  to,
+  alt,
+}: Props) => {
   return (
     <div className="w-96 border-2 rounded-lg shadow-3xl  text-black space-y-2 text-sm border-black p-4">
       <div className={`py-2 rounded-t-lg`}>
         <Image alt={alt} src={image.src} width={500} height={500} />
       </div>
-      <p className="font-bold text-xl">{title}</p>
+      <p className="font-bold text-xl ">{title}</p>
       <p>{description}</p>
+      <p className="font-bold">Level: {level}</p>
 
       <div className="flex items-center">
         <Image src={TimeLogo} alt="" width={24} height={24} />
@@ -28,10 +38,10 @@ const CourseCard = ({ image, title, description, time, to, alt }: Props) => {
 
       <div className="flex justify-end">
         <div
-          className={`cursor-pointer  hover:border-white-400 hover:border-2 text-black hover-border rounded-md p-2 bg-[#FDCC6D]`}
+          className={`cursor-pointer hover:border-white-400 hover:border-2 text-black hover-border rounded-md p-2 bg-[#FDCC6D]`}
         >
           <Link href={to}>
-            <p>Start now</p>
+            <p className="font-semibold">Start now</p>
           </Link>
         </div>
       </div>
