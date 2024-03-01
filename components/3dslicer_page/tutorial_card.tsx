@@ -16,7 +16,7 @@ const TutorialCard = ({ title, description, image, alt }: Props) => {
         <p className="p-4 text-center font-bold text-md md:text-4xl rounded-lg ">
           {title}
         </p>
-        <p className="text-center flex-col sm:pt-14 p-7 sm:text-md text-black">
+        <p className="text-center flex-col sm:pt-14 p-7 sm:text-lg text-black">
           {description}
         </p>
         {image !== null && image !== undefined && (

@@ -4,7 +4,6 @@ import { slicerTutorial3 } from "./3dNavigating_data";
 import { slicerTutorial4 } from "./3dBasic_data";
 import { slicerTutorial5 } from "./3dAdvanced_data";
 import { MeshTutorial } from "./mesh_data";
-import { slicerObjetive, slicerIntroduction } from "./3dslicer_data";
 
 export {
   slicerTutorial1,
@@ -12,7 +11,5 @@ export {
   slicerTutorial3,
   slicerTutorial4,
   slicerTutorial5,
-  slicerObjetive,
-  slicerIntroduction,
   MeshTutorial,
 };

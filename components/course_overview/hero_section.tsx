@@ -21,7 +21,7 @@ const HeroSection = ({ hero }: HeroProps) => {
           Level: {difficulty}
         </p>
         <p className="border-2 border-black bg-white p-1 m-2  hidden md:block ">
-          Duration: {duration} mins
+          Duration: {duration}
         </p>
         <p className="border-2 border-black bg-white p-1 m-2  hidden md:block">
           Language: {language}

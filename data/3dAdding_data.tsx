@@ -8,7 +8,8 @@ export const slicerTutorial2 = [
       <div>
         Make sure to <span className="font-bold">install</span> your downloaded{" "}
         <span className="font-bold">3D slicer software</span> before you start
-        the lesson. If you haven't downloaded the software yet, click <Link href="http://localhost:3000/course/3D%20slicer%20interface/data?content=3D%20slicer%20Part%201" className="font-bold underline">here</Link>.
+        the lesson. 
+        <p>You can find it in the 3D interface (Part 1).</p>
       </div>
     ),
     image: Module2.Slicer10,
@@ -86,18 +87,11 @@ export const slicerTutorial2 = [
   },
   {
     title: "",
-    description:
-      "Congratulations! You have successfully added a DICOM dataset into 3D slicer. For you to get the certificate, take the quiz first by clicking the next button.",
-    image: Module2.Slicer21,
-    alt: "illustration",
-  },
-  {
-    title: "",
     description: (
       <div>
         <p>
-          Congratulation, you've to finish the lesson. For you to get the
-          certificate, take the{" "}
+          Congratulations! You have successfully added a DICOM dataset into 3D
+          slicer. For you to get the certificate, take the{" "}
           <Link
             href="http://localhost:3000/quiz/adddicom"
             className="font-bold underline"
