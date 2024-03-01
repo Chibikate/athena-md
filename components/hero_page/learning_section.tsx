@@ -7,7 +7,7 @@ import Realistic from "@/public/Realistic.svg";
 
 const LearningSection = () => {
   return (
-    <div>
+    <div >
       <LearningCard
         title="Interactive"
         bg={true}

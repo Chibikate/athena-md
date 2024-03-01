@@ -1,26 +1,19 @@
-import * as Module1 from "@/public/module1";
-import * as Module2 from "@/public/module2";
-import * as Module3 from "@/public/module3";
-import * as Module5 from "@/public/module5";
-import * as Module4 from "@/public/module4";
-
 import Link from "next/link";
 
 export const slicerObjetive = [
   {
-    index: 0,
     title: "Creating a 3D file from DICOM images",
     description: (
       <div>
-        <div className="w-full h-2 mt-4 bg-gray-400">
+        <div  className="flex flex-col items-center justify-center">
           <ul className="list-disc list-inside space-y-2">
             <li>
-              <span className="font-semibold">
+              <span className="font-semibold pb-4">
                 Download 3D slicer (Stable version 5.6.1):{" "}
               </span>
               <Link
                 href=" https://download.slicer.org/"
-                className="text-gray-400 text-underline"
+                className="underline"
                 target="_blank"
               >
                 https://download.slicer.org/
@@ -31,21 +24,14 @@ export const slicerObjetive = [
               <span className="font-semibold">Download files: </span>
               <Link
                 href="https://drive.google.com/drive/folders/1742qADzEkJDJ-FBMINb89dR9A7L0fbc6"
-                className="text-gray-400 text-underline"
+                className="underline"
                 target="_blank"
               >
-                https://drive.google.com/drive/folders/1742qADzEkJDJ-FBMINb89dR9A7L0fbc6
+                <span className="underline">https://drive.google.com/drive/folders/1742qADzEkJDJ-FBMINb89dR9A7L0fbc6</span>
               </Link>
               <p className="ml-6">(in zipped folder contains dicom files)</p>
             </li>
           </ul>
-          <p className="text-xl dark:text-white font-semibold text-primary">
-            After you have downloaded the following software and files.{" "}
-            <span className="font-bold text-[#A46C00]">
-              Open the downloaded 3D slicer{" "}
-            </span>{" "}
-            to proceed.
-          </p>
         </div>
       </div>
     ),
@@ -53,8 +39,7 @@ export const slicerObjetive = [
 ];
 export const slicerIntroduction = [
   {
-    index: 0,
-    title: "Introduction",
+    title: "",
     description: (
       <div>
         {" "}
@@ -80,8 +65,7 @@ export const slicerIntroduction = [
     ),
   },
   {
-    index: 1,
-    title: "Introduction",
+    title: "",
     description: (
       <div>
         <p>
@@ -102,8 +86,7 @@ export const slicerIntroduction = [
     ),
   },
   {
-    index: 2,
-    title: "Introduction",
+    title: "",
     description: (
       <div>
         <p>

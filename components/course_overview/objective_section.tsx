@@ -7,7 +7,7 @@ import { ObjectiveProps } from "@/data/course_data";
 const ObjectiveSection = ({ objective }: ObjectiveProps) => {
   const { objectives } = objective;
   return (
-    <div className="flex flex-col p-10 pl-60  ">
+    <div className="flex flex-col p-10 sm:pl-60   ">
       <p className="p-5 font-bold ">With this course, you will:</p>
       {objectives.map((data, index) => (
         <div className="flex flex-row items-center p-4 " key={index}>

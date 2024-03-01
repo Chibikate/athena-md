@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="bg-[#FDF9F4] text-center text-black p-6">
+    <div className=" text-center text-white p-6 bg-[#1c1648]">
         <div className="container mx-auto">
         <p className="text-xs lg:text-sm">
           © {new Date().getFullYear()} Athena Wisdom for doctors

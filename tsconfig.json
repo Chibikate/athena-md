@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/hero_page", "app/quiz/interfacequiz/page.js", "app/certificate/interface/Certificate/component.jsx"],
   "exclude": ["node_modules"]
 }

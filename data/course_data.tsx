@@ -1,5 +1,4 @@
 import * as course from "@/public/course";
-import { StaticImageData } from "next/image";
 // * If magdungag kag another course, dani lang pag input//
 
 {
@@ -18,7 +17,7 @@ export const courses = [
   {
     image: course.Module1,
     title: "3D slicer interface (Part 1)",
-    description: "Learn how to use VSP software - 3D slicer and MeshMixer",
+    description: "Learn about the 3D slicer interface",
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
@@ -27,7 +26,7 @@ export const courses = [
   {
     image: course.Module2,
     title: "3D slicer - Adding DICOM datasets (Part 2)",
-    description: "Learn how to use VSP software - 3D slicer and MeshMixer",
+    description: "Learn how to add dicom datasets in 3D slcier",
     level: "Beginner",
     time: "15 mins",
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
@@ -36,7 +35,7 @@ export const courses = [
   {
     image: course.Module3,
     title: "3D slicer - Navigating DICOM display (Part 3)",
-    description: "Learn how to use VSP software - 3D slicer and MeshMixer",
+    description: "Learn how navigate dicom display in 3D slicer",
     level: "Beginner",
     time: "20mins",
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
@@ -44,22 +43,31 @@ export const courses = [
   },
 
   {
-    image: course.Module4,
+    image: course.Module5,
     title: "3D slicer - Basic-Segmentation (Part 4)",
-    description: "Learn how to use VSP software - 3D slicer and MeshMixer",
+    description: "Learn the Basic Segmenation in 3D slicer",
     level: "Hard",
-    time: "1hr",
+    time: "40 mins",
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
     to: "/course/3D slicer - Basic-Segmentation",
   },
   {
-    image: course.Module5,
+    image: course.Module4,
     title: "3D slicer - Advanced Segmentation-1 (Part 5)",
-    description: "Learn how to use VSP software - 3D slicer and MeshMixer",
+    description: "Learn the Advanced Segmentation in 3D slicer",
     level: "Hard",
-    time: "1hr and 40 mins",
+    time: "1hr",
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
     to: "/course/3D slicer - Advanced Segmentation-1",
+  },
+  {
+    image: course.Module6,
+    title: "MeshMixer - Virtual-Surgery",
+    description: "Learn how to use MeshMixer for Virtual Surgery",
+    level: "Difficult",
+    time: "1hr",
+    alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
+    to: "/course/MeshMixer - Virtual-Surgery",
   },
 ];
 
@@ -146,30 +154,7 @@ const basicSegmentation: CourseDataProps = {
   hero: {
     hero: {
       title: "3D slicer -  Basic-Segmentation (Part 4)",
-      difficulty: "Beginner",
-      duration: "1hr and 40 mins",
-      language: "English",
-    },
-  },
-
-  objectives: {
-    objective: {
-      objectives: [
-        "Load a DICOM dataset into 3D slicer",
-        "Familiarize oneself with the “grow from seeds” function",
-        "Separate the mandible from the maxilla using the “grow from seeds” function",
-        "Remove unwanted artifacts using “Islands” function",
-        "Save both maxilla and mandible in one file.",
-      ],
-    },
-  },
-  to: "data",
-};
-const advancedSegmentation1: CourseDataProps = {
-  hero: {
-    hero: {
-      title: "3D slicer - Adding DICOM datasets",
-      difficulty: "Beginner",
+      difficulty: "Difficult",
       duration: "1hr and 40 mins",
       language: "English",
     },
@@ -188,6 +173,51 @@ const advancedSegmentation1: CourseDataProps = {
   },
   to: "data",
 };
+const advancedSegmentation1: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D slicer - Advanced Segmentation-1  (Part 5)",
+      difficulty: "Difficult",
+      duration: "1hr and 40 mins",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Load a DICOM dataset into 3D slicer",
+        "Familiarize oneself with the “grow from seeds” function",
+        "Separate the mandible from the maxilla using the “grow from seeds” function",
+        "Remove unwanted artifacts using “Islands” function",
+        "Save both maxilla and mandible in one file.",
+      ],
+    },
+  },
+  to: "data",
+};
+const MeshMixer: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "MeshMixer - Virtual-Surgery",
+      difficulty: "Difficult",
+      duration: "1hr",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Import the .stl file from the exercise into Meshmixer",
+        "Separate the mandible from the rest of the skull",
+        "Remove the tumor side of the mandible using plane cut function",
+        "Reconstruct the tumor side using mirror function",
+      ],
+    },
+  },
+  to: "data",
+};
 
 export {
   slicerInterface,
@@ -195,4 +225,5 @@ export {
   dicomDisplay,
   basicSegmentation,
   advancedSegmentation1,
+  MeshMixer,
 };

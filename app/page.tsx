@@ -4,7 +4,7 @@ import Footer from "@/components/hero_page/footer";
 import React from "react";
 import { Noto_Sans_Javanese, Abhaya_Libre } from "next/font/google";
 import LearningSection from "@/components/hero_page/learning_section";
-import CourseSection from "@/components/hero_page/course_section";
+
 
 const javanese = Noto_Sans_Javanese({ subsets: ["javanese"], weight: "400" });
 const abhaya = Abhaya_Libre({ subsets: ["latin"], weight: "400" });
@@ -12,13 +12,30 @@ const abhaya = Abhaya_Libre({ subsets: ["latin"], weight: "400" });
 const Home = () => {
   return (
     // * * ang rafce (react arrow function component export) para dli naka need mag mano2 og type //
-    <section className={` ${javanese.className}`}>
-      <Navigator />
-      <div className="h-[1px] w-full bg-[#FDCC6D] my-1" />
+    <section
+      className={` rounded-lg bg-[#1c1648] ${javanese.className } text-sm sm:text-xl `}
+    >
+      <Navigator isCourse={true} />
       <HeroSection />
-      <LearningSection/>
-      <CourseSection/>
-      <Footer/>
+      <LearningSection />
+      <div className="area">
+        <div className="area ">
+          <ul className="circles ">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div className="py-5"/>
+      <Footer />
     </section>
   );
 };

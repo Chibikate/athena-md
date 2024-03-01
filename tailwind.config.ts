@@ -16,6 +16,7 @@ const config: Config = {
       },
     },
   },
+  
   plugins: [
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(

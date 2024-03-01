@@ -7,9 +7,9 @@ interface Props {
 
 const SlicerObjective = ({ title, description }: Props) => {
   return (
-    <div>
-      <p className="font-bold text-3xl text-[#A46C00]">{title}</p>
-      <p className="pt-8 text-xl">{description}</p>
+    <div className="flex flex-col items-center justify-center">
+      <p className="font-bold text-3xl text-[#1c1648] pb-2">{title}</p>
+      <p className="pt-4 text-xl">{description}</p>
     </div>
   );
 };
