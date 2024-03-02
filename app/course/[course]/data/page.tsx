@@ -15,6 +15,7 @@ import {
 } from "@/data";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
+import { Suspense } from "react";
 
 interface Params {
   params: {
@@ -85,45 +86,16 @@ const Home = ({ params }: Params) => {
   };
 
   return (
-    <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
-      <Navigator />
+    <Suspense>
+      <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
+        <Navigator />
 
-      <div className="flex flex-col md:flex-row items-center justify-center ">
-        {index > 0 && (
-          <button
-            onClick={goToPreviousQuestion}
-            className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-          hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35] "
-          >
-            <ChevronLeftIcon className="w-8 h-8" />
-          </button>
-        )}
-
-        {index == 0 && (
-          <Link
-            href={`/course/${course}`}
-            onClick={goToPreviousQuestion}
-            className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-            bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
-          >
-            <ChevronLeftIcon className="w-8 h-8" />
-          </Link>
-        )}
-
-        {index < content.length && (
-          <TutorialCard
-            title={content[index].title}
-            description={content[index].description}
-            image={content[index].image}
-            alt={content[index].alt}
-          />
-        )}
-        <div className="flex flex-row md:flex-col">
+        <div className="flex flex-col md:flex-row items-center justify-center ">
           {index > 0 && (
             <button
               onClick={goToPreviousQuestion}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-           md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+          hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35] "
             >
               <ChevronLeftIcon className="w-8 h-8" />
             </button>
@@ -134,29 +106,60 @@ const Home = ({ params }: Params) => {
               href={`/course/${course}`}
               onClick={goToPreviousQuestion}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-            bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+            bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
             >
-              <ChevronLeftIcon className="w-8 h-8 " />
+              <ChevronLeftIcon className="w-8 h-8" />
             </Link>
           )}
 
-          {index < content.length - 1 && (
-            <button
-              onClick={goToNextQuestion}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2
-          bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
-            >
-              <ChevronRightIcon className="w-8 h-8" />
-            </button>
+          {index < content.length && (
+            <TutorialCard
+              title={content[index].title}
+              description={content[index].description}
+              image={content[index].image}
+              alt={content[index].alt}
+            />
           )}
-        </div>
-      </div>
+          <div className="flex flex-row md:flex-col">
+            {index > 0 && (
+              <button
+                onClick={goToPreviousQuestion}
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
+           md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+              >
+                <ChevronLeftIcon className="w-8 h-8" />
+              </button>
+            )}
 
-      <div>
-        <div className="h-[1px] w-full bg-[#FDCC6D] " />
-        <Footer />
-      </div>
-    </section>
+            {index == 0 && (
+              <Link
+                href={`/course/${course}`}
+                onClick={goToPreviousQuestion}
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
+            bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+              >
+                <ChevronLeftIcon className="w-8 h-8 " />
+              </Link>
+            )}
+
+            {index < content.length - 1 && (
+              <button
+                onClick={goToNextQuestion}
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2
+          bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
+              >
+                <ChevronRightIcon className="w-8 h-8" />
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <div className="h-[1px] w-full bg-[#FDCC6D] " />
+          <Footer />
+        </div>
+      </section>
+    </Suspense>
   );
 };
 
