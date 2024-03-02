@@ -34,6 +34,7 @@ function CertificatePage() {
   const certRef = useRef();
 
   return (
+    <suspense> 
     <div className="container mx-auto mt-10 text-center min-h-screen">
       <div className="p-4">
         <CertificateComponent fullName={name} date={date} ref={certRef} />
@@ -60,6 +61,7 @@ function CertificatePage() {
         </div>
       </Link>
     </div>
+    </suspense>
   );
 }
 

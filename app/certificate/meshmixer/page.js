@@ -16,10 +16,10 @@ function CertificatePage() {
     const certificateElement = certRef.current;
 
     html2canvas(certificateElement, {
-      x: 0, 
+      x: 0,
       y: 0,
-      width: certificateElement.offsetWidth, 
-      height: certificateElement.offsetHeight, 
+      width: certificateElement.offsetWidth,
+      height: certificateElement.offsetHeight,
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("l", "mm", "a4"); // set PDF to A4 size in landscape orientation
@@ -28,31 +28,33 @@ function CertificatePage() {
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save("certificate.pdf");
-    });    
-      
-    
+    });
   };
 
   const certRef = useRef();
 
   return (
-    <div className="container mx-auto mt-10 text-center min-h-screen">
-      <div className="p-4">
-        <CertificateComponent fullName={name} date={date} ref={certRef} />
+    <suspense>
+      <div className="container mx-auto mt-10 text-center min-h-screen">
+        <div className="p-4">
+          <CertificateComponent fullName={name} date={date} ref={certRef} />
 
-        <button
-          onClick={downloadCertificate}
-          className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
-        >
-          Download Certificate
-        </button>
+          <button
+            onClick={downloadCertificate}
+            className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
+          >
+            Download Certificate
+          </button>
+        </div>
+        <Link href="/">
+          <div className="pt-4 ">
+            <p className="underline p-2 cursor-pointer text-primary">
+              Click here to go back in the home page
+            </p>
+          </div>
+        </Link>
       </div>
-      <Link href="/">
-      <div className="pt-4 ">
-        <p className="underline p-2 cursor-pointer text-primary">Click here to go back in the home page</p>
-      </div>
-      </Link>
-    </div>
+    </suspense>
   );
 }
 
