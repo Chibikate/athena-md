@@ -6,7 +6,6 @@ import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import { Suspense } from 'react'
 
 function CertificatePage() {
   const searchParams = useSearchParams();
