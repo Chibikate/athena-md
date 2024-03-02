@@ -15,7 +15,7 @@ const Navigator = ({ isCourse }: Props) => {
       <div className="flex flex-row items-center text-black bg-primary justify-end mt-2 mr-4 space-x-5 pb-2">
         <Link
           className={`hover:bg-white ${!isCourse ? "py-1" : "pt-[8px] pb-2"} text-white hover:text-black hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 text-xl px-5 rounded-lg  text-md font-bold`}
-          href="/contactus"
+          href="http://localhost:3000/aboutus"
         >
           About Us
         </Link>

@@ -16,10 +16,10 @@ function CertificatePage() {
     const certificateElement = certRef.current;
 
     html2canvas(certificateElement, {
-      x: 0, 
+      x: 0,
       y: 0,
-      width: certificateElement.offsetWidth, 
-      height: certificateElement.offsetHeight, 
+      width: certificateElement.offsetWidth,
+      height: certificateElement.offsetHeight,
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("l", "mm", "a4"); // set PDF to A4 size in landscape orientation
@@ -28,9 +28,7 @@ function CertificatePage() {
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save("certificate.pdf");
-    });    
-      
-    
+    });
   };
 
   const certRef = useRef();
@@ -48,18 +46,18 @@ function CertificatePage() {
         </button>
       </div>
       <div>
-      <Link href="http://localhost:3000/course/3D%20slicer%20-%20Advanced%20Segmentation-1">
-      <button
-          className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
-        >
-          Click here to proceed to the next Lesson
-        </button>
+        <Link href="http://localhost:3000/course/3D%20slicer%20-%20Advanced%20Segmentation-1">
+          <button className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
+            Click here to proceed to the next Lesson
+          </button>
         </Link>
       </div>
       <Link href="http://localhost:3000/">
-      <div className="pt-4 ">
-        <p className="underline p-2 cursor-pointer text-primary">Click here to go back in the home page</p>
-      </div>
+        <div className="pt-4 ">
+          <p className="underline p-2 cursor-pointer text-primary">
+            Click here to go back in the home page
+          </p>
+        </div>
       </Link>
     </div>
   );

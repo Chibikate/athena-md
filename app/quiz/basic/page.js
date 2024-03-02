@@ -20,20 +20,7 @@ const quizQuestions = [
   },
   {
     question:
-    "2. In the segment editor module, the segment color that represents the segmented area cannot be changed.", 
-  
-    options: [
-      "A. Quick access toolbar",
-      "B. Navigation panel",
-      "C. Search bar",
-      "D. Filter panel",
-    ],
-    image: Image2,
-    correctAnswer: "C. Search bar"
-  },
-  {
-    question:
-    "3. What function enables the user to isolate structures based on the threshold intensity range?", 
+    "2. What function enables the user to isolate structures based on the threshold intensity range?", 
   
     options: [
       "A. Intensity function",
@@ -41,8 +28,21 @@ const quizQuestions = [
       "C. Threshold function",
       "D. Filter function",
     ],
-    image: Image3,
+    image: Image2,
     correctAnswer: "C. Threshold function"
+  },
+  {
+    question:
+    "3.What function allows users to remove unwanted artifacts from the 3D image?", 
+  
+    options: [
+      "A. Islands function",
+      "B. Edge detection function",
+      "C. Blur function",
+      "D. Noise reduction function",
+    ],
+    image: Image3,
+    correctAnswer: "A. Islands function"
   },
 ];
 
