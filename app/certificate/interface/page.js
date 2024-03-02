@@ -48,7 +48,7 @@ function CertificatePage() {
         </button>
       </div>
       <div>
-      <Link href="http://localhost:3000/course/3D%20slicer%20-%20Adding%20DICOM%20datasets">
+      <Link href="/course/3D%20slicer%20-%20Adding%20DICOM%20datasets">
       <button
           className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
         >
@@ -56,7 +56,7 @@ function CertificatePage() {
         </button>
         </Link>
       </div>
-      <Link href="http://localhost:3000/">
+      <Link href="/">
       <div className="pt-4 ">
         <p className="underline p-2 cursor-pointer text-primary">Click here to go back in the home page</p>
       </div>

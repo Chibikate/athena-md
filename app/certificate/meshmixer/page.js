@@ -47,7 +47,7 @@ function CertificatePage() {
           Download Certificate
         </button>
       </div>
-      <Link href="./trophy">
+      <Link href="/">
       <div className="pt-4 ">
         <p className="underline p-2 cursor-pointer text-primary">Click here to go back in the home page</p>
       </div>
