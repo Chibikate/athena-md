@@ -7,6 +7,7 @@ import ObjectiveSection from "@/components/course_overview/objective_section";
 import { useEffect, useState } from "react";
 import * as datas from "@/data/course_data";
 import Link from "next/link";
+import { Suspense } from "react";
 
 interface Params {
   params: {
@@ -59,22 +60,24 @@ const Home = ({ params }: Params) => {
   }, [course]);
 
   return (
-    <section>
-      <Navigator />
+    <Suspense>
+      <section>
+        <Navigator />
 
-      <HeroSection hero={data.hero.hero} />
-      <ObjectiveSection objective={data.objectives.objective} />
-      <div className="flex flex-col items-center p-10 ">
-        <div className="flex flex-row">
-          <Link href={`${params["course"]}/${data.to}?content=${content}`}>
-            <p className="p-2 rounded-md  text-white hover:font-bold font-bold cursor bg-[#160c35] hover-border hover:ring-offset-[#b7d5eb]   hover:ring-2 hover:ring-offset-2">
-              Start Learning
-            </p>
-          </Link>
+        <HeroSection hero={data.hero.hero} />
+        <ObjectiveSection objective={data.objectives.objective} />
+        <div className="flex flex-col items-center p-10 ">
+          <div className="flex flex-row">
+            <Link href={`${params["course"]}/${data.to}?content=${content}`}>
+              <p className="p-2 rounded-md  text-white hover:font-bold font-bold cursor bg-[#160c35] hover-border hover:ring-offset-[#b7d5eb]   hover:ring-2 hover:ring-offset-2">
+                Start Learning
+              </p>
+            </Link>
+          </div>
         </div>
-      </div>
-      <Footer />
-    </section>
+        <Footer />
+      </section>
+    </Suspense>
   );
 };
 
