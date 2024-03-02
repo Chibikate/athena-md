@@ -9,6 +9,7 @@ const interMonteCarlo = MonteCarlo({ subsets: ["latin"], weight: "400" });
 
 const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
   return (
+    <suspense>
     <div className="container mx-auto flex flex-row items-center justify-center" ref={ref}>
       <div className={`w-[845px] mx-auto  bg-[#ffffff] p-5 border-x-2 m-8 border-y-2 rounded-md shadow-md ${interGaramond.className} border-[#10172c] flex flex-col`}>
         <div className="rounded-full">
@@ -35,7 +36,7 @@ const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
         </p>
       </div>
     </div>
-
+    </suspense>
   );
 });
 
