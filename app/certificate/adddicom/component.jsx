@@ -3,14 +3,12 @@ import React from "react";
 import Image from "next/image";
 import Image1 from "@/public/Image1.svg";
 import { EB_Garamond, MonteCarlo } from "next/font/google";
-import { Suspense } from 'react'
 
 const interGaramond = EB_Garamond({ subsets: ["latin"] });
 const interMonteCarlo = MonteCarlo({ subsets: ["latin"], weight: "400" });
 
 const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
   return (
-    <Suspense>
     <div className="container mx-auto flex flex-row items-center justify-center" ref={ref}>
       <div className={`w-[845px] mx-auto  bg-[#ffffff] p-5 border-x-2 m-8 border-y-2 rounded-md shadow-md ${interGaramond.className} border-[#10172c] flex flex-col`}>
         <div className="rounded-full">
@@ -37,7 +35,6 @@ const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
         </p>
       </div>
     </div>
-    </Suspense>
   );
 });
 

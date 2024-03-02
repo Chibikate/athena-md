@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Image3 from "@/public/Image3.svg";
-import mandible from "@/public/mandible.png";
 import { HeroProps } from "@/data/course_data";
 
 const HeroSection = ({ hero }: HeroProps) => {
