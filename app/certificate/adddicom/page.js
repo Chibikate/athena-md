@@ -1,12 +1,12 @@
 "use client";
 // CertificatePage.js
-import React, { useRef, forwardRef } from "react";
+import React, { useRef, forwardRef, Suspense } from "react";
 import CertificateComponent from "./component";
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import { Suspense } from 'react'
+
 
 function CertificatePage() {
   const searchParams = useSearchParams();
