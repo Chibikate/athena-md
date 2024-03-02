@@ -28,12 +28,12 @@ const Aboutus = () => {
       </div>
       <div className="flex flex-col sm:flex-row p-10 items-center justify-center text-center text-sm sm:text-lg ">
         <p>
-          At Web-based Tutorial System, we're on a mission to make learning
+          At Web-based Tutorial System, we&apos;re on a mission to make learning
           accessible and enjoyable for everyone. Our team is dedicated to
           creating a user-friendly platform where learning is interactive and
           engaging. We believe that education should be fun and inspiring, and
-          that's why we're committed to providing a diverse range of courses and
-          resources. Whether you're a student looking to expand your knowledge,
+          that&apos;s why we&apos;re committed to providing a diverse range of courses and
+          resources. Whether you&apos;re a student looking to expand your knowledge,
           a teacher seeking innovative teaching tools, or simply curious about
           new topics, Web-based Tutoiral system, is here to empower you on your
           learning journey. Join us and explore the exciting world of learning
