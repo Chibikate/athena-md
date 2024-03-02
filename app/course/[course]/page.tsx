@@ -60,7 +60,7 @@ const Home = ({ params }: Params) => {
   }, [course]);
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <section>
         <Navigator />
 

@@ -86,7 +86,7 @@ const Home = ({ params }: Params) => {
   };
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
         <Navigator />
 
