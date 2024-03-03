@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-
+import { Suspense } from "react";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -37,7 +37,7 @@ function CertificatePage() {
   const certRef = useRef();
 
   return (
-  
+  <Suspense fallback={<div>Loading...</div>}>
     <div className="container mx-auto mt-10 text-center min-h-screen">
       <div className="p-4">
         <CertificateComponent fullName={name} date={date} ref={certRef} />
@@ -64,7 +64,7 @@ function CertificatePage() {
       </div>
       </Link>
     </div>
-
+</Suspense>
   );
 }
 
