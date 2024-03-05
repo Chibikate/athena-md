@@ -48,7 +48,7 @@ function CertificatePage() {
       <div>
         <Link href="/course/3D%20slicer%20-%20Adding%20DICOM%20datasets">
           <button className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
-            Click here to proceed to the next Lesson
+          Proceed to the Next Lesson
           </button>
         </Link>
       </div>
