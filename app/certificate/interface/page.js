@@ -6,7 +6,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
 import { Suspense } from "react";
-import InterfaceCertificate from "../../../components/certificate/interface/component";
+import InterfaceCertificate from "../../../components/certificate/interface/interface_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
