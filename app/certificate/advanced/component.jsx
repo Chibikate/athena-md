@@ -25,7 +25,7 @@ const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
         <h2 className="absolute text-3xl font-semibold mb-4 pt-14 font-3xl ml-40 text-primary text-left">
           CERTIFICATE <span className={`text-rose-600 italic ${interMonteCarlo.className}`}>Of</span> <br /> COMPLETION
         </h2>
-        <p className="absolute pt-36 ml-44">This certificate is presented to</p>
+        <p className="absolute pt-40 ml-44">This certificate is presented to</p>
         <p className={`absolute ml-36 pt-48 text-3xl italic text-red-600 ${interMonteCarlo.className}`}>{fullName}</p>
 
         <p className="absolute pt-64 ml-44">for successful completion of</p>

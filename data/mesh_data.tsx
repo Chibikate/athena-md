@@ -41,222 +41,303 @@ export const MeshTutorial = [
   },
   {
     title: "MeshMixer - Virtual-Surgery",
-    description:
-      "Left click on the import icon on the homescreen or the toolbar.",
+    description: (
+      <div>
+        Left click on the <span className="font-bold">import</span> icon on the
+        homescreen or the toolbar.
+      </div>
+    ),
     image: Module6.Mesh1,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "Access the folder you saved your file in, left click on the file and left click on open. ",
+    description: (
+      <div>
+        Access the folder you saved your file in, left click on the file and
+        left click on <span className="font-bold">open.</span>
+      </div>
+    ),
     image: Module6.Mesh2,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "After successfully loading the file, you should have the 3D object in your screen.",
+    description: (
+      <div>
+        After successfully loading the file, you should have the{" "}
+        <span className="font-bold">3D object</span> in your screen.
+      </div>
+    ),
     image: Module6.Mesh3,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "To see the currently loaded objects, access the objects browser through the drop down menu under view.",
+    description: (
+      <div>
+        To see the currently loaded objects, access the{" "}
+        <span className="font-bold">Objects Browse</span>r through the drop down
+        menu under view.
+      </div>
+    ),
     image: Module6.Mesh4,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "The object browser will show the available 3D object currently open in the program. Currently, only 1 object is available.",
+    description: (
+      <div>
+        The object browser will show the available{" "}
+        <span className="font-bold">3D object</span> currently open in the
+        program. Currently, only 1 object is available.
+      </div>
+    ),
     image: Module6.Mesh5,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "To separate the mandible, left click on the select icon which will activate the brush tool and allow the user to “paint” or select any area of the 3D object. The brush size can be increased or decreased by holding down the left mouse button and dragging the slider.",
+    description: (
+      <div>
+        To separate the mandible, left click on the{" "}
+        <span className="font-bold">Select</span> icon which will activate the
+        brush tool and allow the user to{" "}
+        <span className="font-bold">“paint”</span> or select any area of the 3D
+        object. The <span className="font-bold">brush size</span> can be
+        increased or decreased by holding down the left mouse button and
+        dragging the slider.
+      </div>
+    ),
     image: Module6.Mesh6,
     alt: "illustration",
   },
   {
     title: "",
-    description: "The area highlighted in dark grey is the area of the brush. ",
+    description: <div>The area highlighted in <span className="font-bold">dark grey</span> is the area of the brush.</div>,
     image: Module6.Mesh7,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To select or “paint” the area, press the left mouse button once. To continuously paint, hold the left mouse button and drag the brush over the desired area.",
+      (
+        <div>To <span className="font-bold">select or “paint”</span> the area, press the <span className="font-bold">left mouse button</span> once. To continuously paint, <span className="font-bold">hold the left mouse button and drag the brush</span> over the desired area.</div>
+      ),
     image: Module6.Mesh8,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To select the entire mandible, paint any area of the mandible using the brush tool and through the modify menu, select “expand to connected”. Alternatively, this can be done by pressing the hotkey “E” or simply double clicking on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the mandible has already been separated in 3D slicer, it is not “connected” to the rest of the skull.",
+      (
+        <div>To select the entire mandible, paint any area of the mandible using the brush tool and through the modify menu, select <span className="font-bold">“expand to connected”</span>. Alternatively, this can be done by pressing the hotkey <span className="font-bold">“E”</span> or simply <span className="font-bold">double clicking</span> on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the mandible has already been separated in 3D slicer, it is not <span className="font-bold">“connected”</span> to the rest of the skull.</div>
+      ),
     image: Module6.Mesh9,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To make the mandible as a separate object, access the separate option through the edit menu. This can also be done by typing the hotkey “Y”",
+      (
+        <div>To make the mandible as a separate object, access the separate option through the <span className="font-bold">edit menu</span>. This can also be done by typing the hotkey <span className="font-bold">“Y”</span></div>
+      ),
     image: Module6.Mesh10,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once the mandible has been separated, it will appear as a separate object in the object browser. The highlighted object in the object browser is the object that is currently “active”. It will show up as the white object in the screen and all changes will be made on that object. The Objects can be renamed by double clicking on the object name.",
+      (
+        <div>Once the mandible has been separated, it will appear as a separate object in the <span className="font-bold">object browser</span>. The <span className="font-bold">highlighted object</span> in the object browser is the object that is currently <span className="font-bold">“active”</span>. It will show up as the white object in the screen and all changes will be made on that object. The <span className="font-bold">Objects can be renamed</span> by <span className="font-bold">double clicking</span> on the object name.</div>
+      ),
     image: Module6.Mesh11,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once the mandible has been separated, it will appear as a separate object in the object browser. The Objects can be renamed by double clicking on the object name for this tutorial rename the object to “skull”. The objects can be hidden by left clicking on the “visibility” icon on the right.",
+      (
+        <div>Once the mandible has been separated, it will appear as a separate object in the object browser. The Objects can be <span className="font-bold">renamed</span> by <span className="font-bold">double clicking</span> on the object name for this tutorial rename the object to <span className="font-bold">“skull”</span>. The objects can be <span className="font-bold">hidden</span> by <span className="font-bold">left clicking on the “visibility”</span> icon on the right.</div>
+      ),
     image: Module6.Mesh12,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Hide the rest of the skull and leave only the mandible. We can see that there is a tumor on the right side of the mandible. We can remove this tumor using the plane cut function. Position the mandible by clicking on the “top” area of the view cube.",
+      (
+        <div>Hide the rest of the skull and <span className="font-bold">leave only the mandible</span>. We can see that there is a tumor on the right side of the mandible. We can remove this tumor using the plane cut function. Position the mandible by clicking on the <span className="font-bold">“top”</span> area of the view cube.</div>
+      ),
     image: Module6.Mesh13,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "We can remove the tumor side of the mandible using the “plane cut” function. ",
+      (
+        <div>We can remove the tumor side of the mandible using the <span className="font-bold">“plane cut”</span> function.</div>
+      ),
     image: Module6.Mesh14,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "The “plane cut” function is active when a grid is visible over the screen.",
+      (
+        <div>The <span className="font-bold">“plane cut”</span> function is active when a grid is visible over the screen.</div>
+      ),
     image: Module6.Mesh15,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To position the plane in the desired area, hold down the left mouse button and drag downwards through the middle of the mandible. The red line will show the area where the plane will be placed.",
+      (
+        <div>To position the plane in the desired area, <span className="font-bold">hold down the left mouse</span> button and <span className="font-bold">drag downwards</span> through the middle of the mandible. The <span className="font-bold">red line</span> will show the area where the plane will be placed.</div>
+      ),
     image: Module6.Mesh16,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "After dragging the red line through the middle, release the left mouse button and the plane will by placed. Note the transparent area is the area that will be cut. To switch this to the other side, left click on the blue arrow.",
+      (
+        <div>After dragging the red line through the middle, release the left mouse button and the plane will by placed. Note the transparent area is the area that will be cut. To <span className="font-bold">switch</span> this to the other side, <span className="font-bold">left click on the blue arrow.</span></div>
+      ),
     image: Module6.Mesh17,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "You can choose to remove one half or keep both halves through the dropdown menu. For this tutorial, select keep both.",
+      (
+        <div>You can choose to <span className="font-bold">remove one half or keep both halves</span> through the dropdown menu. For this tutorial, select <span className="font-bold">keep both.</span></div>
+      ),
     image: Module6.Mesh18,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "You can choose to move the plane by clicking on the directional buttons and dragging towards the desired area. Rotating the plane can also be done by clicking and dragging on the curved lines.",
+      (
+        <div>You can choose to move the plane by clicking on the <span className="font-bold">directional buttons and dragging</span> towards the desired area. Rotating the plane can also be done by clicking and dragging on the curved lines.</div>
+      ),
     image: Module6.Mesh19,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "For defects/tumors on one side of the mandible, position the plane slightly away from the middle towards the tumor side to allow for sufficient overlapping of the model during the next few steps. Once the position is sufficient, click on accept.",
+      (
+        <div>For defects/tumors on one side of the mandible, position the plane slightly away from the middle towards the tumor side to allow for sufficient overlapping of the model during the next few steps. Once the position is sufficient, click on <span className="font-bold">accept.</span></div>
+      ),
     image: Module6.Mesh20,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Select the normal half of the mandible by double clicking using the select tool and separating using the separate function in the edit drop down menu, or simply use the hotkey “Y”.",
+      (
+        <div>Select the normal half of the mandible by double clicking using the select tool and separating using the separate function in the edit drop down menu, or simply use the hotkey <span className="font-bold">“Y”</span>.</div>
+      ),
     image: Module6.Mesh21,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once Successfully separated, a third object will be available in the object browser. Rename the part to mandiblenormal. Rename the other part to mandibletumor.",
+      (
+        <div>Once Successfully separated, a third object will be available in the object browser. <span className="font-bold">Rename</span> the part to <span className="font-bold">mandiblenormal</span>. Rename the other part to <span className="font-bold">mandibletumor.</span></div>
+      ),
     image: Module6.Mesh22,
     alt: "illustration",
   },
   {
     title: "",
-    description: "Hide the mandibletumor object by clicking on the “eye” icon.",
+    description: (
+      <div>Hide the mandibletumor object by clicking on the <span className="font-bold">“eye”</span> icon.</div>
+    ),
     image: Module6.Mesh23,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To “reconstruct” the missing half, select the mirror function under the “edit” icon.",
+      (
+        <div>To <span className="font-bold">“reconstruct”</span> the missing half, select the mirror function under the <span className="font-bold">“edit”</span> icon.</div>
+      ),
     image: Module6.Mesh24,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "You can mirror the normal side of the mandible. It is important to not just reconstruct the missing side but also to make sure that it is in its proper position.",
+      (
+        <div>You can <span className="font-bold">mirror</span> the normal side of the mandible. It is important to not just reconstruct the missing side but also to make sure that it is in its <span className="font-bold">proper position.</span></div>
+      ),
     image: Module6.Mesh25,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To do this, “show” the “skull” object by clicking on the “eye” icon. Position the view to bottom via the view cube. ",
+      (
+        <div>To do this, <span className="font-bold">“show” the “skull”</span> object by clicking on the <span className="font-bold">“eye”</span> icon. Position the view to bottom via the view cube.</div>
+      ),
     image: Module6.Mesh26,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Take note of the position of the condyles. Drag the blue directional arrow until the left condyle is sitting in a similar position as the normal mandible.",
+      (
+        <div>Take note of the position of the <span className="font-bold">condyles</span>. <span className="font-bold">Drag the blue</span> directional arrow until the left condyle is sitting in a similar position as the normal mandible.</div>
+      ),
     image: Module6.Mesh27,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "You can further manipulate the objects to fine-tune your reconstruction. Once satisfied with the position of the mirrored mandible, click “accept”.",
+      (
+        <div>You can further <span className="font-bold">manipulate</span> the objects to fine-tune your reconstruction. <span className="font-bold">Once satisfied</span> with the position of the mirrored mandible, click <span className="font-bold">“accept”</span>.</div>
+      ),
     image: Module6.Mesh28,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "The position can be further confirmed by making the tumor side of the mandible visible and comparing the position of the condyle. This can only be done if the condyle in the tumor side is in its normal position. Very large tumors may displace the condyle away from its regular position and may serve as a good reference.",
+      (
+        <div>The position can be further confirmed by making the tumor side of the mandible visible and comparing the position of the condyle. This can only be done if the condyle in the tumor side is in its normal position. Very large tumors may displace the condyle away from its regular position and may serve as a good reference.</div>
+      ),
     image: Module6.Mesh29,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once satisfied, make the object into a solid by clicking on the “edit” icon and clicking on “make solid”. This will “fill” the object and remove any internal geometry making it ready for 3D printing.",
+      (
+        <div>Once satisfied, make the object into a solid by clicking on the <span className="font-bold">“edit”</span> icon and clicking on <span className="font-bold">“make solid”</span>. This will <span className="font-bold">“fill” the object and remove any internal geometry</span> making it ready for 3D printing.</div>
+      ),
     image: Module6.Mesh30,
     alt: "illustration",
   },
   {
     title: "",
-    description: "Use the default settings and click on “accept”.",
+    description: (
+      <div>Use the default settings and click on  <span className="font-bold">“accept”.</span></div>
+    ),
     image: Module6.Mesh31,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To save the object, click on “file” then “export” and save the mandible into your desired folder. Congratulations! You have successfully removed the tumor side as well as reconstructed the mandible. This object can be used as a guide for pre-bending titanium implants. Although not a standalone process in mandibular reconstruction, this process shows the basics in extraction and manipulation of the mandible in a 3D environment.",
+      (
+        <div>To save the object, click on <span className="font-bold">“file”</span> then <span className="font-bold">“export”</span> and save the mandible into your desired folder. Congratulations! You have successfully removed the tumor side as well as reconstructed the mandible. This object can be used as a guide for pre-bending titanium implants. Although not a standalone process in mandibular reconstruction, this process shows the basics in extraction and manipulation of the mandible in a 3D environment.</div>
+      ),
     image: Module6.Mesh32,
     alt: "illustration",
   },

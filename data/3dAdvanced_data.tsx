@@ -19,186 +19,240 @@ export const slicerTutorial5 = [
   {
     title: "",
     description:
-      "Open 3D Slicer and add DICOM data through the add DICOM data button.",
+      (
+        <div><span className="font-bold">Open 3D Slicer</span> and <span className="font-bold">Add DICOM data</span> through the add DICOM data button.</div>
+      ),
     image: Module5.Slicer31,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Select the preferred dataset and left click on the import button.",
+      (
+        <div>Select the preferred dataset and left click on the <span className="font-bold">import button.</span></div>
+      ),
     image: Module5.Slicer32,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "After successfully loading the file, you should have the 3D object in your screen.",
+      (
+        <div><span className="font-bold">Left click</span> on the imported dataset and left click on the <span className="font-bold">load button.</span></div>
+      ),
     image: Module5.Slicer33,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To see the currently loaded objects, access the objects browser through the drop down menu under view.",
+      (
+        <div><span className="font-bold">Left click</span> on the module dropdown box to access the different modules.</div>
+      ),
     image: Module5.Slicer34,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "The object browser will show the available 3D object currently open in the program. Currently, only 1 object is available.",
+      (
+        <div>Left click on <span className="font-bold">Segment Editor.</span></div>
+      ),
     image: Module5.Slicer35,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To separate the mandible, left click on the select icon which will activate the brush tool and allow the user to “paint” or select any area of the 3D object. The brush size can be increased or decreased by holding down the left mouse button and dragging the slider.",
+      (
+        <div>Add a <span className="font-bold">“segment”</span> by left clicking on the <span className="font-bold">“add”</span> button. <span className="font-bold">Do this twice.</span></div>
+      ),
     image: Module5.Slicer36,
     alt: "illustration",
   },
   {
     title: "",
-    description: "The area highlighted in dark grey is the area of the brush. ",
+    description: (
+      <div><span className="font-bold">Rename</span> the upper segment to <span className="font-bold">“Skull”</span> and the lower segment to <span className="font-bold">“Mandible”</span>. These segments will represent the structures we will isolate. Changing the colors of each segment into contrasting colors will help improve visualization of the different areas of segmentation.</div>
+    ),
     image: Module5.Slicer37,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To select or “paint” the area, press the left mouse button once. To continuously paint, hold the left mouse button and drag the brush over the desired area.",
+      (
+        <div>Access the <span className="font-bold">“threshold”</span> function by <span className="font-bold">left clicking</span> on the <span className="font-bold">“threshold”</span> button.</div>
+      ),
     image: Module5.Slicer38,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To select the entire mandible, paint any area of the mandible using the brush tool and through the modify menu, select “expand to connected”. Alternatively, this can be done by pressing the hotkey “E” or simply double clicking on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the mandible has already been separated in 3D slicer, it is not “connected” to the rest of the skull.",
+      (
+        <div><span className="font-bold">Left click and drag</span> the slider button until the desired threshold intensity is achieved. Click on <span className="font-bold">“use for masking”.</span></div>
+      ),
     image: Module5.Slicer39,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To make the mandible as a separate object, access the separate option through the edit menu. This can also be done by typing the hotkey “Y”",
+      (
+        <div>Clicking on <span className="font-bold">“use for  masking”</span> will automatically activate the <span className="font-bold">“paint”</span> function. This will allow the user to “paint” any area using the previously selected threshold intensity.</div>
+      ),
     image: Module5.Slicer40,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once the mandible has been separated, it will appear as a separate object in the object browser. The highlighted object in the object browser is the object that is currently “active”. It will show up as the white object in the screen and all changes will be made on that object. The Objects can be renamed by double clicking on the object name.",
+      (
+        <div>The diameter of the brush can be changed by <span className="font-bold">holding down the left mouse button</span> and <span className="font-bold">dragging the slider</span> until the desired diameter is reached. Alternatively, the user can select any preset brush diameter available.</div>
+      ),
     image: Module5.Slicer41,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once the mandible has been separated, it will appear as a separate object in the object browser. The Objects can be renamed by double clicking on the object name for this tutorial rename the object to “skull”. The objects can be hidden by left clicking on the “visibility” icon on the right.",
+      (
+        <div>Using the <span className="font-bold">middle mouse scroll wheel</span>, adjust the image views so that the mandible and the rest of the skull are together in one image. Perform this action for all windows.</div>
+      ),
     image: Module5.Slicer42,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Hide the rest of the skull and leave only the mandible. We can see that there is a tumor on the right side of the mandible. We can remove this tumor using the plane cut function. Position the mandible by clicking on the “top” area of the view cube.",
+      (
+        <div>Make sure the <span className="font-bold">“skull”</span> segment is selected by <span className="font-bold">left clicking on it</span>. Using the paint function, <span className="font-bold">“paint”</span> areas of the skull that are near the mandible.</div>
+      ),
     image: Module5.Slicer43,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "We can remove the tumor side of the mandible using the “plane cut” function. ",
+      (
+        <div><span className="font-bold">Left click</span> on the <span className="font-bold">“mandible”</span> segment to activate it, then <span className="font-bold">“paint”</span> the mandible using the <span className="font-bold">paint function</span>. Make sure that the highlighted areas do not overlap. This can be done in different slices to ensure higher accuracy. Attention should be placed where both structures <span className="font-bold">(mandible & the rest of the skull)</span> overlap such as the teeth.</div>
+      ),
     image: Module5.Slicer44,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "The “plane cut” function is active when a grid is visible over the screen.",
+      (
+        <div>If satisfied with the highlighted areas, <span className="font-bold">Left click on the “grow from seeds” function.</span></div>
+      ),
     image: Module5.Slicer45,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To position the plane in the desired area, hold down the left mouse button and drag downwards through the middle of the mandible. The red line will show the area where the plane will be placed.",
+      (
+        <div>To start the grow from seeds function, <span className="font-bold">left click on “initialize”</span>.</div>
+      ),
     image: Module5.Slicer46,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "After dragging the red line through the middle, release the left mouse button and the plane will by placed. Note the transparent area is the area that will be cut. To switch this to the other side, left click on the blue arrow.",
+      (
+        <div>Once the initialization process is complete, <span className="font-bold">left click on the “show 3D” button</span> to preview the 3D model.</div>
+      ),
     image: Module5.Slicer47,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "You can choose to remove one half or keep both halves through the dropdown menu. For this tutorial, select keep both.",
+      (
+        <div>To increase the opacity of the 3D model preview.</div>
+      ),
     image: Module5.Slicer48,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "You can choose to move the plane by clicking on the directional buttons and dragging towards the desired area. Rotating the plane can also be done by clicking and dragging on the curved lines.",
+      (
+        <div>With structures that have overlapping areas, segmentation tends to be less precise. This can be refined further by further <span className="font-bold">painting the overlapping areas.</span></div>
+      ),
     image: Module5.Slicer49,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "For defects/tumors on one side of the mandible, position the plane slightly away from the middle towards the tumor side to allow for sufficient overlapping of the model during the next few steps. Once the position is sufficient, click on accept.",
+      (
+        <div><span className="font-bold">"Selecting the “skull”</span> or <span className="font-bold">“mandible”</span> segments and painting the overlapping areas respectively will automatically update the preview.</div>
+      ),
     image: Module5.Slicer50,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Select the normal half of the mandible by double clicking using the select tool and separating using the separate function in the edit drop down menu, or simply use the hotkey “Y”.",
+      (
+        <div>When satisfied with the result, <span className="font-bold">left click</span> on the <span className="font-bold">“apply”</span> button. </div>
+      ),
     image: Module5.Slicer51,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once Successfully separated, a third object will be available in the object browser. Rename the part to mandiblenormal. Rename the other part to mandibletumor.",
+      (
+        <div>Click on <span className="font-bold">“show 3D”</span> to show the final 3D image.</div>
+      ),
     image: Module5.Slicer52,
     alt: "illustration",
   },
   {
     title: "",
-    description: "Hide the mandibletumor object by clicking on the “eye” icon.",
+    description: (
+      <div>Clicking on the small <span className="font-bold">“eye”</span> icon will show or hide the segment.</div>
+    ),
     image: Module5.Slicer53,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To “reconstruct” the missing half, select the mirror function under the “edit” icon.",
+      (
+        <div><span className="font-bold">Left click</span> on the  small arrow and left click on <span className="font-bold">“export to files”</span></div>
+      ),
     image: Module5.Slicer54,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "You can mirror the normal side of the mandible. It is important to not just reconstruct the missing side but also to make sure that it is in its proper position.",
+      (
+        <div>Each segment can be saved separately. If the <span className="font-bold">“Visible segments”</span> box is checked, hidden segments will not be saved.</div>
+      ),
     image: Module5.Slicer55,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To do this, “show” the “skull” object by clicking on the “eye” icon. Position the view to bottom via the view cube. ",
+      (
+        <div>Checking the <span className="font-bold">“merge into a single file”</span> box will save the file one. Meaning the file will have two separate components but will be saved in relation to each other. This is advantageous when importing the file into another 3D software. If the box is <span className="font-bold">unchecked</span>, the components will be <span className="font-bold">saved as two separate files.</span></div>
+      ),
     image: Module5.Slicer56,
     alt: "illustration",
   },
   {
     title: "",
-    description: "Objective",
+    description: (
+      <div>Left click on the <span className="font-bold">“export” button</span> to export the file into the destination folder.</div>
+    ),
     image: Module5.Slicer57,
     alt: "illustration",
   },

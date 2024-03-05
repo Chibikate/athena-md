@@ -28,7 +28,7 @@ const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
         <p className="absolute pt-36 ml-44">This certificate is presented to</p>
         <p className={`absolute ml-36 pt-48 text-3xl italic text-red-600 ${interMonteCarlo.className}`}>{fullName}</p>
 
-        <p className="absolute pt-64 ml-44">for successful completion of</p>
+        <p className="absolute pt-64 ml-40">for successful completion of</p>
         <p className="absolute pt-80 mb-24 ml-28 items-center"><span className="font-bold text-xl"J>3D Interface</span><br/> in Web-based Tutorial System on the Standardized <br />
           Process of Virtual Surgical Planning <br />
           for Mandibular Reconstruction</p>

@@ -19,157 +19,205 @@ export const slicerTutorial4 = [
   {
     title: "",
     description:
-      "Open 3D Slicer and add DICOM data through the add DICOM data button.",
+      (
+      <div><span className="font-bold">Open 3D Slicer</span> and <span className="font-bold">Add DICOM data</span> through the add DICOM data button.</div>
+      ),
     image: Module4.Slicer58,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Select the preferred dataset and left click on the import button.",
+      (
+        <div>Select the preferred dataset and left click on the <span className="font-bold">import button</span>.</div>
+      ),
     image: Module4.Slicer59,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Left click on the imported dataset and left click on the load button.",
+      (
+        <div><span className="font-bold">Left click</span> on the imported dataset and left click on the <span className="font-bold">load button</span>.</div>
+      ),
     image: Module4.Slicer60,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Left click on the module dropdown box to access the different modules.",
+      (
+        <div><span className="font-bold">Left click</span> on the module dropdown box to access the different modules.</div>
+      ),
     image: Module4.Slicer61,
     alt: "illustration",
   },
   {
     title: "",
-    description: "Left click on segment Editor.",
+    description: (
+      <div>Left click on <span className="font-bold">Segment Editor</span>.</div>
+    ),
     image: Module4.Slicer62,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To start the segmentation process, left click on the add button. This will add a “segment”.",
+      (
+        <div>To start the segmentation process, left click on the <span className="font-bold">add button</span>. This will add a <span className="font-bold">“segment”.</span></div>
+      ),
     image: Module4.Slicer63,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Double clicking with the left mouse button on the segment name will allow the user to rename the segment. For now, rename the segment to “Skull”.",
+      (
+        <div><span className="font-bold">Double clicking</span> with the left mouse button on the segment name will allow the user to <span className="font-bold">rename the segment</span>. For now, rename the segment to <span className="font-bold">“Skull”</span>.</div>
+      ),
     image: Module4.Slicer64,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Double clicking with the left mouse button on the segment color box will allow the user to select different colors to represent the segmented area. Each structure has a color by default.",
+      (
+        <div><span className="font-bold">Double clicking</span> with the left mouse button on the <span className="font-bold">segment color box</span> will allow the user to select different colors to represent the segmented area. Each structure has a <span className="font-bold">color by default</span>.</div>
+      ),
     image: Module4.Slicer65,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "However, the user can choose any color by left clicking on the color selection button. Once the preferred color has been chosen, confirm the choice by left clicking on the “OK” button. For now, retain the default color (green).",
+      (
+        <div>However, the user can choose any color by <span className="font-bold">left clicking</span> on the <span className="font-bold">color selection button</span>. Once the preferred color has been chosen, confirm the choice by <span className="font-bold">left clicking on the “OK” button</span>. For now, retain the <span className="font-bold">default color (green).</span></div>
+      ),
     image: Module4.Slicer66,
     alt: "illustration",
   },
   {
     title: "",
-    description: "Left click on the “threshold” function button.",
+    description: (
+      <div>Left click on the <span className="font-bold">“threshold”</span> function button.</div>
+    ),
     image: Module4.Slicer67,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "The threshold function will allow the user to isolate structures based on the threshold intensity range. ",
+      (
+        <div>The threshold function will allow the user to isolate structures based on the threshold <span className="font-bold">intensity range.</span> </div>
+      ),
     image: Module4.Slicer68,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To change the threshold intensity, click on the slider and hold down left button. Drag the slider until the desired threshold intensity is reached. This can be determined if the highlighted areas in the DICOM window are to the users preference (in this case the skull).",
+      (
+        <div>To change the threshold intensity, <span className="font-bold">click on the slider and hold down left button.</span> <span className="font-bold">Drag the slider</span> until the desired threshold intensity is reached. This can be determined if the highlighted areas in the DICOM window are to the users preference <span className="font-bold">(in this case the skull).</span></div>
+      ),
     image: Module4.Slicer69,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once satisfied with the threshold intensity, left click on the “apply” button to apply the changes.",
+      (
+        <div>Once satisfied with the threshold intensity, left click on the  <span className="font-bold">“apply”</span> button to apply the changes.</div>
+      ),
     image: Module4.Slicer70,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once the threshold intensity is confirmed, a 3D image is now available to the user. To access this, left click on the show 3D button.",
+      (
+        <div>Once the threshold intensity is confirmed, a 3D image is now available to the user. To access this, left click on the show <span className="font-bold">3D button.</span></div>
+      ),
     image: Module4.Slicer71,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "After clicking on the show 3D button, the 3D image will appear on the blue window.",
+      (
+        <div>After clicking on the show 3D button, the 3D image will appear on the <span className="font-bold">blue window.</span></div>
+      ),
     image: Module4.Slicer72,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Sometimes, the 3D image will not immediately show in the blue window due to the positioning of the image. To bring the 3D image into the window, click on the center view button.",
+      (
+        <div>Sometimes, the <span className="font-bold">3D image will not immediately show in the blue window</span> due to the positioning of the image. To bring the 3D image into the window, click on the <span className="font-bold">center view button</span>.</div>
+      ),
     image: Module4.Slicer73,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Once the 3D image of the skull is centered in the blue window, maximize the blue window by double clicking with the left mouse button. Often times, the 3D image has artifacts. ",
+      (
+        <div>Once the 3D image of the skull is centered in the blue window, maximize the blue window by <span className="font-bold">double clicking with the left mouse button.</span> Often times, the 3D image has artifacts.</div>
+      ),
     image: Module4.Slicer74,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Minimize the blue window by double clicking with the left mouse button. The user can remove the unwanted artifacts using the “island” function.",
+      (
+        <div>Minimize the blue window by double clicking with the left mouse button. The user can <span className="font-bold">remove</span> the unwanted artifacts using the <span className="font-bold">“island”</span> function.</div>
+      ),
     image: Module4.Slicer75,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Left click on the “islands” function button to access the islands function.",
+      (
+        <div><span className="font-bold">Left click</span> on the <span className="font-bold">“islands”</span> function button to access the islands function.</div>
+      ),
     image: Module4.Slicer76,
     alt: "illustration",
   },
   {
     title: "",
-    description: "Left click on the “keep selected island” option to select.",
+    description: (
+      <div>Left click on the <span className="font-bold">“keep selected island”</span> option to select.</div>
+    ),
     image: Module4.Slicer77,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Left click on any part of the skull. This will remove the components not connected to the selected area hence removing the artifacts.",
+      (
+        <div>
+        <span className="font-bold">Left click</span> on any part of the skull. This will <span className="font-bold">remove</span> the components not connected to the selected area hence removing the artifacts.
+        </div>
+      ),
     image: Module4.Slicer78,
     alt: "illustration",
   },
   {
     title: "",
-    description: "This image shows the skull with the artifacts removed.",
+    description: (
+      <div>This image shows the skull with the <span className="font-bold">artifacts removed.</span></div>
+    ),
     image: Module4.Slicer80,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "To save the 3D file, left click on the drop-down button and left click on “export to files”.",
+      (
+        <div>To <span className="font-bold">save</span> the 3D file, left click on the drop-down button and left click on <span className="font-bold">“export to files”.</span></div>
+      ),
     image: Module4.Slicer81,
     alt: "illustration",
   },

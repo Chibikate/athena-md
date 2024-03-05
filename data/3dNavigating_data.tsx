@@ -18,63 +18,83 @@ export const slicerTutorial3 = [
   {
     title: "",
     description:
-      "The middle mouse button can be used to scroll through the DICOM files. Hovering the mouse pointer over a window will “select” the window and activate the function.",
+      (
+        <div>The <span className="font-bold">middle mouse button</span> can be used to scroll through the DICOM files. <span className="font-bold">Hovering the mouse pointer</span> over a window will <span className="font-bold">“select”</span> the window and activate the function.</div>
+      ),
     image: Module3.Slicer22,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Alternatively, holding down the left mouse button with the cursor on the slider button and dragging will also allow the user to scroll through the DICOM files. ",
+      (
+        <div>
+          Alternatively, <span className="font-bold">holding down the left mouse button </span>with the cursor on the slider button and <span className="font-bold">dragging</span> will also allow the user to scroll through the DICOM files. 
+        </div>
+      ),
     image: Module3.Slicer23,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Quickly tapping the left mouse button twice (double click) will maximize the selected window.",
+      (
+        <div>Quickly tapping the left mouse button twice <span className="font-bold">(double click) </span>will maximize the selected window.</div>
+      ),
     image: Module3.Slicer24,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Double clicking again will return the window to its original size. This function can be utilized for all the windows in the DICOM display.",
+      (
+        <div><span className="font-bold">Double clicking again</span> will return the window to its original size. This function can be utilized for all the windows in the DICOM display.</div>
+      ),
     image: Module3.Slicer25,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Holding down the right mouse button while dragging downwards will zoom in the image. Dragging upwards will zoom out.",
+      (
+        <div><span className="font-bold">Holding down the right mouse</span> button while dragging downwards will zoom in the image. <span className="font-bold">Dragging upwards</span> will zoom out.</div>
+      ),
     image: Module3.Slicer26,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "On the 3D panel (blue) holding the left mouse button while dragging will allow the user to move the 3D object around.",
+      (
+        <div>On the <span className="font-bold">3D panel (blue) holding the left mouse button while dragging</span> will allow the user to move the 3D object around.</div>
+      ),
     image: Module3.Slicer27,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Scrolling upwards using the middle mouse button will zoom in on the 3D model. Scrolling downwards willl zoom out.",
+      (
+        <div><span className="font-bold">Scrolling upwards</span> using the middle mouse button will zoom in on the 3D model. <span className="font-bold">Scrolling downwards</span> will zoom out.</div>
+      ),
     image: Module3.Slicer28,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Holding down the middle mouse button and dragging will pan the 3D image.",
+      (
+        <div><span className="font-bold">Holding down</span> the middle mouse button and <span className="font-bold">dragging</span> will pan the 3D image.</div>
+      ),
     image: Module3.Slicer29,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Alternatively, holding down the right mouse button while dragging upwards will zoom in on the 3D model. Dragging downwards will zoom out.",
+      (
+        <div>Alternatively, <span className="font-bold">holding down the right mouse button while dragging upwards</span> will zoom in on the 3D model. Dragging downwards will zoom out.</div>
+      ),
     image: Module3.Slicer30,
     alt: "illustration",
   },

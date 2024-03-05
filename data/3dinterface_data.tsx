@@ -6,7 +6,7 @@ export const slicerTutorial1 = [
     title: "Creating a 3D file from DICOM images",
     description: (
       <div>
-        <div  className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <ul className="list-disc list-inside space-y-2">
             <li>
               <span className="font-semibold pb-4">
@@ -28,7 +28,9 @@ export const slicerTutorial1 = [
                 className="underline"
                 target="_blank"
               >
-                <span className="underline">https://drive.google.com/drive/folders/1742qADzEkJDJ-FBMINb89dR9A7L0fbc6</span>
+                <span className="underline">
+                  https://drive.google.com/drive/folders/1742qADzEkJDJ-FBMINb89dR9A7L0fbc6
+                </span>
               </Link>
               <p className="ml-6">(in zipped folder contains dicom files)</p>
             </li>
@@ -109,71 +111,111 @@ export const slicerTutorial1 = [
     alt: "",
   },
   {
-    title: "Welcome to 3D Slicer Interface", 
+    title: "Welcome to 3D Slicer Interface",
     description: (
-      <div>Make sure to <span className="font-bold">install</span> your downloaded <span className="font-bold">3D slicer software</span> before you start the lesson.</div>),
+      <div>
+        Make sure to <span className="font-bold">install</span> your downloaded{" "}
+        <span className="font-bold">3D slicer software</span> before you start
+        the lesson.
+      </div>
+    ),
     image: Module1.Slicer1,
     alt: "illustration",
   },
   {
     title: "",
-    description: "The menu bar provides access to drop down menu boxes.",
+    description: (
+      <div>
+        The <span className="font-bold">menu bar </span> provides access to drop
+        down menu boxes.
+      </div>
+    ),
     image: Module1.Slicer1,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "The toolbar has quick access buttons for commonly used functions.",
+    description: (
+      <div>
+        The <span className="font-bold">toolbar</span> has quick access buttons
+        for commonly used functions.
+      </div>
+    ),
     image: Module1.Slicer2,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "This can be further customized by right clicking on the toolbar and checking/unchecking the preferred choices. ",
+    description: (
+      <div>
+        This can be further customized by{" "}
+        <span className="font-bold">right clicking</span> on the toolbar and
+        <span className="font-bold"> checking/unchecking</span> the preferred
+        choices.
+      </div>
+    ),
     image: Module1.Slicer3,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "The module interface provides access to multiple options depending on the module loaded. ",
+    description: (
+      <div>
+        The <span className="font-bold">module interface</span> provides access to multiple options depending on
+        the module loaded. 
+      </div>
+    ),
     image: Module1.Slicer4,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      "Clicking on the module drop down menu will provide access to different modules available in the program.",
+    description: (
+      <div>
+        Clicking on the <span className="font-bold">module drop down menu</span> will provide access to different
+        modules available in the program.
+      </div>
+    ),
     image: Module1.Slicer5,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Alternatively, the user can search for a module by clicking on the module finder icon.",
+      (
+        <div>
+          Alternatively, the user can search for a <span className="font-bold">module</span> by clicking on the <span className="font-bold">module finder icon.</span>
+        </div>
+      ),
     image: Module1.Slicer6,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "The DICOM display window displays the different views of the imaging of choice (CT scan, MRI, etc.)",
+      (
+        <div>The <span className="font-bold">DICOM display window</span> displays the different views of the imaging of choice <span className="font-bold">(CT scan, MRI, etc.)</span></div>
+      ),
     image: Module1.Slicer7,
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Different layouts for the DICOM display windows can be accessed by clicking on the drop down menu in the menu bar.",
-    image: Module1.Slicer8,
+      (
+        <div>Different layouts for the DICOM display windows can be accessed by <span className="font-bold">clicking on the drop down menu</span> in the menu bar.</div>
+      ),
+    image: Module1.Slicer8, 
     alt: "illustration",
   },
   {
     title: "",
     description:
-      "Alternatively, different layouts can be accessed through the toolbar.",
+      (
+        <div>
+          Alternatively, different layouts can be accessed through the <span className="font-bold">toolbar.</span>
+        </div>
+      ),
     image: Module1.Slicer9,
     alt: "illustration",
   },
@@ -182,15 +224,15 @@ export const slicerTutorial1 = [
     description: (
       <div>
         <p>
-        Congratulation, you've to finish the lesson. For you to get the
-        certificate, take the{" "}
-        <Link
-          href="http://localhost:3000/quiz/interface"
-          className="font-bold underline"
-        >
-          Quiz
-        </Link>{" "}
-        first.
+          Congratulation, you've to finish the lesson. For you to get the
+          certificate, take the{" "}
+          <Link
+            href="http://localhost:3000/quiz/interface"
+            className="font-bold underline"
+          >
+            Quiz
+          </Link>{" "}
+          first.
         </p>
       </div>
     ),
