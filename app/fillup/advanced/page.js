@@ -44,7 +44,7 @@ function FillUpPage() {
         <Link
           className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600"
           href={{
-            pathname: "http://localhost:3000/certificate/advanced",
+            pathname: "/certificate/advanced",
             query: { name: fullName, date: date },
           }}
         >
