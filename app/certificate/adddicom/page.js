@@ -1,14 +1,12 @@
 "use client";
 // CertificatePage.js
-import React, { useRef,} from "react";
-import CertificateComponent from "./component";
+import { useRef } from "react";
+
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import { Suspense } from "react";
-
-
+import AddDicommCertificate from "../../../components/certificate/adddicom/add_dicomm_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -37,38 +35,33 @@ function CertificatePage() {
   const certRef = useRef();
 
   return (
- 
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="container mx-auto mt-10 text-center min-h-screen">
-        <div className="p-4 ">
-          <CertificateComponent fullName={name} date={date} ref={certRef} />
+    <div className="container mx-auto mt-10 text-center min-h-screen">
+      <div className="p-4 ">
+        <AddDicommCertificate fullName={name} date={date} ref={certRef} />
 
-          <button
-            onClick={downloadCertificate}
-            className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
-          >
-            Download Certificate
+        <button
+          onClick={downloadCertificate}
+          className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
+        >
+          Download Certificate
+        </button>
+      </div>
+      <div>
+        <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
+          <button className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
+            Click here to proceed to the next Lesson
           </button>
-          
-        </div>
-        <div>
-          <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
-            <button className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
-              Click here to proceed to the next Lesson
-            </button>
-          </Link>
-        </div>
-
-        <Link href="/">
-          <div className="pt-4 ">
-            <p className="underline p-2 cursor-pointer text-primary">
-              Click here to go back in the home page
-            </p>
-          </div>
         </Link>
       </div>
-      </Suspense>
 
+      <Link href="/">
+        <div className="pt-4 ">
+          <p className="underline p-2 cursor-pointer text-primary">
+            Click here to go back in the home page
+          </p>
+        </div>
+      </Link>
+    </div>
   );
 }
 
