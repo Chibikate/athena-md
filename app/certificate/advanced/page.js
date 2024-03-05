@@ -1,12 +1,12 @@
 "use client";
 // CertificatePage.js
 import React, { useRef } from "react";
-import CertificateComponent from "./component";
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
 import { Suspense } from "react";
+import AdvanceCertificate from "../../../components/certificate/advanced/advanced_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -38,7 +38,7 @@ function CertificatePage() {
     <Suspense fallback={<div>Loading...</div>}>
       <div className="container mx-auto mt-10 text-center min-h-screen">
         <div className="p-4 space-x-1">
-          <CertificateComponent fullName={name} date={date} ref={certRef} />
+          <AdvanceCertificate fullName={name} date={date} ref={certRef} />
 
           <button
             onClick={downloadCertificate}

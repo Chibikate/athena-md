@@ -1,14 +1,13 @@
 "use client";
 // CertificatePage.js
-import React, { useRef,} from "react";
-import CertificateComponent from "./component";
+import React, { useRef } from "react";
+
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
 import { Suspense } from "react";
-
-
+import AddDicommCertificate from "../../../components/certificate/adddicom/add_dicomm_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -37,11 +36,10 @@ function CertificatePage() {
   const certRef = useRef();
 
   return (
- 
     <Suspense fallback={<div>Loading...</div>}>
       <div className="container mx-auto mt-10 text-center min-h-screen">
         <div className="p-4 ">
-          <CertificateComponent fullName={name} date={date} ref={certRef} />
+          <AddDicommCertificate fullName={name} date={date} ref={certRef} />
 
           <button
             onClick={downloadCertificate}
@@ -49,7 +47,6 @@ function CertificatePage() {
           >
             Download Certificate
           </button>
-          
         </div>
         <div>
           <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
@@ -67,8 +64,7 @@ function CertificatePage() {
           </div>
         </Link>
       </div>
-      </Suspense>
-
+    </Suspense>
   );
 }
 

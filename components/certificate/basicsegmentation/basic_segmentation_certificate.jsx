@@ -8,7 +8,7 @@ import { EB_Garamond, MonteCarlo } from "next/font/google";
 const interGaramond = EB_Garamond({ subsets: ["latin"] });
 const interMonteCarlo = MonteCarlo({ subsets: ["latin"], weight: "400" });
 
-const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
+const BasicSegmentationCertificate = React.forwardRef(({ fullName, date }, ref) => {
   return (
 
     <div className="container mx-auto flex flex-row items-center justify-center" ref={ref}>
@@ -41,6 +41,6 @@ const CertificateComponent = React.forwardRef(({ fullName, date }, ref) => {
   );
 });
 
-CertificateComponent.displayName = 'CertificateComponent'; // Set the display name
+BasicSegmentationCertificate.displayName = 'BasicSegmentationCertificate'; // Set the display name
 
-export default CertificateComponent;
+export default BasicSegmentationCertificate;
