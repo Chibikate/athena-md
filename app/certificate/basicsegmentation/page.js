@@ -1,13 +1,11 @@
 "use client";
 // CertificatePage.js
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import { Suspense } from "react";
 import BasicSegmentationCertificate from "../../../components/certificate/basicsegmentation/basic_segmentation_certificate";
-
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -36,10 +34,13 @@ function CertificatePage() {
   const certRef = useRef();
 
   return (
-  <Suspense fallback={<div>Loading...</div>}>
     <div className="container mx-auto mt-10 text-center min-h-screen">
       <div className="p-4 space-x-1">
-        <BasicSegmentationCertificate fullName={name} date={date} ref={certRef} />
+        <BasicSegmentationCertificate
+          fullName={name}
+          date={date}
+          ref={certRef}
+        />
 
         <button
           onClick={downloadCertificate}
@@ -47,17 +48,17 @@ function CertificatePage() {
         >
           Download Certificate
         </button>
-        <Link href="https://drive.google.com/drive/u/0/folders/1qal07kayXmvM2ZTiYEacMoYaDebrfF9M?hl=en"
-            className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block "
-          >
-            Submission Bin
-           
-          </Link>
+        <Link
+          href="https://drive.google.com/drive/u/0/folders/1qal07kayXmvM2ZTiYEacMoYaDebrfF9M?hl=en"
+          className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block "
+        >
+          Submission Bin
+        </Link>
       </div>
       <div>
         <Link href="/course/3D%20slicer%20-%20Advanced%20Segmentation-1">
           <button className="bg-[#5d81dd] text-white font-bold px-4 py-2 cursor-pointer rounded-md hover:bg-[#1c1648] mt-4 inline-block">
-           Proceed to the Next Lesson
+            Proceed to the Next Lesson
           </button>
         </Link>
       </div>
@@ -69,7 +70,6 @@ function CertificatePage() {
         </div>
       </Link>
     </div>
-  </Suspense>
   );
 }
 
