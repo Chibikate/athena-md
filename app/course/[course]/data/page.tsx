@@ -85,6 +85,22 @@ const Home = ({ params }: Params) => {
     }
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        goToNextQuestion();
+      } else if (event.key === "ArrowLeft") {
+        goToPreviousQuestion();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [index]);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
