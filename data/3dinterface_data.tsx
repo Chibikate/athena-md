@@ -227,7 +227,7 @@ export const slicerTutorial1 = [
           Congratulation, you've to finish the lesson. For you to get the
           certificate, take the{" "}
           <Link
-            href="http://localhost:3000/quiz/interface"
+            href="/quiz/interface"
             className="font-bold underline"
           >
             Quiz

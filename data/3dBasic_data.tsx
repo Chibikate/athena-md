@@ -235,7 +235,7 @@ export const slicerTutorial4 = [
           Congratulation, you've able finish the lesson about Basic
           Segmentation. For you to get the certificate, take the{" "}
           <Link
-            href="http://localhost:3000/quiz/basic"
+            href="/quiz/basic"
             className="font-bold underline"
           >
             Quiz

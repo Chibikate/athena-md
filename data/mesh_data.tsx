@@ -349,7 +349,7 @@ export const MeshTutorial = [
           Congratulation, you've to finish the lesson. For you to get the
           certificate, take the{" "}
           <Link
-            href="http://localhost:3000/quiz/meshmixer"
+            href="/quiz/meshmixer"
             className="font-bold underline"
           >
             Quiz

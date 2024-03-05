@@ -117,7 +117,7 @@ export const slicerTutorial2 = [
           Congratulations! You have successfully added a DICOM dataset into 3D
           slicer. For you to get the certificate, take the{" "}
           <Link
-            href="http://localhost:3000/quiz/adddicom"
+            href="/quiz/adddicom"
             className="font-bold underline"
           >
             Quiz
