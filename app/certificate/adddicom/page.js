@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 
+
 function CertificatePage() {
   const searchParams = useSearchParams();
   const name = searchParams.get("name");
@@ -36,9 +37,10 @@ function CertificatePage() {
   const certRef = useRef();
 
   return (
+ 
     <Suspense fallback={<div>Loading...</div>}>
       <div className="container mx-auto mt-10 text-center min-h-screen">
-        <div className="p-4">
+        <div className="p-4 ">
           <CertificateComponent fullName={name} date={date} ref={certRef} />
 
           <button
@@ -47,6 +49,7 @@ function CertificatePage() {
           >
             Download Certificate
           </button>
+          
         </div>
         <div>
           <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
@@ -65,6 +68,7 @@ function CertificatePage() {
         </Link>
       </div>
       </Suspense>
+
   );
 }
 
