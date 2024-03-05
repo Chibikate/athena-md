@@ -211,7 +211,7 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="/mandiweb/mesh-mixer/frame">
+              <Link href="/fillup/meshmixer">
                 {" "}
                 <p className="text-green-900 font-bold">
                   Perfect! Now, Click here to get your{" "}
@@ -231,7 +231,7 @@ export default function QuizApp() {
                 >
                   Retake Quiz
                 </button>
-                <Link href="http://localhost:3000/course/MeshMixer%20-%20Virtual-Surgery">
+                <Link href="/course/MeshMixer%20-%20Virtual-Surgery">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>
