@@ -111,6 +111,65 @@ export const slicerTutorial1 = [
     alt: "",
   },
   {
+    title: "THE TEAM",
+    description: (
+      <div>
+        <p className="pl-3 pb-4">
+          Lemuel Clark Velasco <br />{" "}
+          <span className="font-bold text-sm pb-4">
+            Project Leader
+          </span>
+        </p>
+
+        <div className="pb-4">
+          <p>
+            Dr. Rentor Cafino <br /> MD, DPSO-HNS
+            <br />
+            <span className="font-semibold text-sm text-[#111033] ">
+              {" "}
+              Medical Adviser{" "}
+            </span>
+          </p>
+        </div>
+        <div className="pb-4">
+          <p >
+            Dr. Armando T. Isla <br /> MD, FPSO-HNS
+            <br />
+            <span className="font-semibold text-sm text-[#111033] ">
+              {" "}
+              Medical Adviser{" "}
+            </span>
+          </p>
+        </div>
+        <div className="flex flex-col pb-2">
+          <p>Karen Mae Ty - MD, FPSO-HNS</p>
+          <p>Jay Pee Amable - MD, FPSO-HNS</p>
+          <p>Isaac Cesar De Guzman - MD, FPSO-HNS</p>
+          <p>Jehan Grace Maglaya - MD, FPSO-HNS</p>
+          <p>Anna Carmina Zantua - MD, FPSO-HNS</p>
+          <p className="font-bold text-sm text-[#111033] ">
+            Content Validators
+          </p>
+        </div>
+        <p>
+          Kaye Q. Velarde <br />{" "}
+          <span className="font-bold  text-sm text-[#111033]  ">
+            Pedagogy Manager
+          </span>
+        </p>
+
+        <p>
+          Queenie Kate S. Cabanilla <br />{" "}
+          <span className="font-bold text-sm text-[#111033]">
+            Web Developer
+          </span>
+        </p>
+      </div>
+    ),
+    image: null,
+    alt: "",
+  },
+  {
     title: "Welcome to 3D Slicer Interface",
     description: (
       <div>
@@ -161,8 +220,8 @@ export const slicerTutorial1 = [
     title: "",
     description: (
       <div>
-        The <span className="font-bold">module interface</span> provides access to multiple options depending on
-        the module loaded. 
+        The <span className="font-bold">module interface</span> provides access
+        to multiple options depending on the module loaded.
       </div>
     ),
     image: Module1.Slicer4,
@@ -172,8 +231,8 @@ export const slicerTutorial1 = [
     title: "",
     description: (
       <div>
-        Clicking on the <span className="font-bold">module drop down menu</span> will provide access to different
-        modules available in the program.
+        Clicking on the <span className="font-bold">module drop down menu</span>{" "}
+        will provide access to different modules available in the program.
       </div>
     ),
     image: Module1.Slicer5,
@@ -181,41 +240,48 @@ export const slicerTutorial1 = [
   },
   {
     title: "",
-    description:
-      (
-        <div>
-          Alternatively, the user can search for a <span className="font-bold">module</span> by clicking on the <span className="font-bold">module finder icon.</span>
-        </div>
-      ),
+    description: (
+      <div>
+        Alternatively, the user can search for a{" "}
+        <span className="font-bold">module</span> by clicking on the{" "}
+        <span className="font-bold">module finder icon.</span>
+      </div>
+    ),
     image: Module1.Slicer6,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      (
-        <div>The <span className="font-bold">DICOM display window</span> displays the different views of the imaging of choice <span className="font-bold">(CT scan, MRI, etc.)</span></div>
-      ),
+    description: (
+      <div>
+        The <span className="font-bold">DICOM display window</span> displays the
+        different views of the imaging of choice{" "}
+        <span className="font-bold">(CT scan, MRI, etc.)</span>
+      </div>
+    ),
     image: Module1.Slicer7,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      (
-        <div>Different layouts for the DICOM display windows can be accessed by <span className="font-bold">clicking on the drop down menu</span> in the menu bar.</div>
-      ),
-    image: Module1.Slicer8, 
+    description: (
+      <div>
+        Different layouts for the DICOM display windows can be accessed by{" "}
+        <span className="font-bold">clicking on the drop down menu</span> in the
+        menu bar.
+      </div>
+    ),
+    image: Module1.Slicer8,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      (
-        <div>
-          Alternatively, different layouts can be accessed through the <span className="font-bold">toolbar.</span>
-        </div>
-      ),
+    description: (
+      <div>
+        Alternatively, different layouts can be accessed through the{" "}
+        <span className="font-bold">toolbar.</span>
+      </div>
+    ),
     image: Module1.Slicer9,
     alt: "illustration",
   },
@@ -226,10 +292,7 @@ export const slicerTutorial1 = [
         <p>
           Congratulation, you've to finish the lesson. For you to get the
           certificate, take the{" "}
-          <Link
-            href="/quiz/interface"
-            className="font-bold underline"
-          >
+          <Link href="/quiz/interface" className="font-bold underline">
             Quiz
           </Link>{" "}
           first.

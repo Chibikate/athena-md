@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/hero_page", "app/quiz/interfacequiz/page.js", "app/certificate/interface/Certificate/component.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/hero_page", "app/quiz/interfacequiz/page.js", "app/certificate/interface/Certificate/component.jsx", "components/progressbar/ProgressBar.js"],
   "exclude": ["node_modules"]
 }

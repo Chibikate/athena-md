@@ -40,6 +40,65 @@ export const MeshTutorial = [
     alt: "",
   },
   {
+    title: "THE TEAM",
+    description: (
+      <div>
+        <p className="pl-3 pb-4">
+          Lemuel Clark Velasco <br />{" "}
+          <span className="font-bold text-sm text-[#111033] pb-4">
+            Project Leader
+          </span>
+        </p>
+
+        <div className="pb-4">
+          <p>
+            Dr. Rentor Cafino <br /> MD, DPSO-HNS
+            <br />
+            <span className="font-semibold text-sm text-[#111033] ">
+              {" "}
+              Medical Adviser{" "}
+            </span>
+          </p>
+        </div>
+        <div className="pb-4">
+          <p >
+            Dr. Armando T. Isla <br /> MD, FPSO-HNS
+            <br />
+            <span className="font-semibold text-sm text-[#111033] ">
+              {" "}
+              Medical Adviser{" "}
+            </span>
+          </p>
+        </div>
+        <div className="flex flex-col pb-4">
+          <p>Karen Mae Ty - MD, FPSO-HNS</p>
+          <p>Jay Pee Amable - MD, FPSO-HNS</p>
+          <p>Isaac Cesar De Guzman - MD, FPSO-HNS</p>
+          <p>Jehan Grace Maglaya - MD, FPSO-HNS</p>
+          <p>Anna Carmina Zantua - MD, FPSO-HNS</p>
+          <p className="font-bold text-sm text-[#111033] ">
+            Content Validators
+          </p>
+        </div>
+        <p>
+          Kaye Q. Velarde <br />{" "}
+          <span className="font-bold text-sm text-[#111033]  ">
+            Pedagogy Manager
+          </span>
+        </p>
+
+        <p>
+          Queenie Kate S. Cabanilla <br />{" "}
+          <span className="font-bold text-sm text-[#111033]">
+            Web Developer
+          </span>
+        </p>
+      </div>
+    ),
+    image: null,
+    alt: "",
+  },
+  {
     title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>

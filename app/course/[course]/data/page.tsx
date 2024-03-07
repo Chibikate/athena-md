@@ -16,6 +16,7 @@ import {
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
 import { Suspense } from "react";
+import ProgressBar from "@/components/3dslicer_page/progress_bar";
 
 interface Params {
   params: {
@@ -105,7 +106,7 @@ const Home = ({ params }: Params) => {
     <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
         <Navigator />
-
+        <ProgressBar currentIndex={index} totalSteps={content.length} />
         <div className="flex flex-col md:flex-row items-center justify-center ">
           {index > 0 && (
             <button

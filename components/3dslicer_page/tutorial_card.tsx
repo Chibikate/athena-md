@@ -13,10 +13,10 @@ const TutorialCard = ({ title, description, image, alt }: Props) => {
   return (
     <div className="flex flex-col  justify-center flow-x-hidden ml-40 mr-40 text-black">
       <div className="flex flex-col items-center justify-center dark:bg-white">
-        <p className="p-4 text-center font-bold text-md md:text-4xl rounded-lg ">
+        <p className="p-4 text-center font-bold text-md md:text-4xl rounded-lg text-[#130e30] ">
           {title}
         </p>
-        <p className="text-center flex-col sm:pt-14 p-7 sm:text-lg text-black">
+        <p className="text-center flex-col sm:pt-14 p-7 sm:text-lg text-[#000000db]">
           {description}
         </p>
         {image !== null && image !== undefined && (

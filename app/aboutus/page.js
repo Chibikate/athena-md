@@ -8,7 +8,9 @@ const delius = Delius({ subsets: ["latin"], weight: "400" });
 
 const Aboutus = () => {
   return (
-    <div className={`flex flex-col dark:text-primary ${delius.className} bg-[#1c1648] text-white`}>
+    <div
+      className={`flex flex-col dark:text-primary ${delius.className} bg-[#1c1648] text-white`}
+    >
       <Navigator />
       <div className="area">
         <div className="area ">
@@ -32,12 +34,12 @@ const Aboutus = () => {
           accessible and enjoyable for everyone. Our team is dedicated to
           creating a user-friendly platform where learning is interactive and
           engaging. We believe that education should be fun and inspiring, and
-          that&apos;s why we&apos;re committed to providing a diverse range of courses and
-          resources. Whether you&apos;re a student looking to expand your knowledge,
-          a teacher seeking innovative teaching tools, or simply curious about
-          new topics, Web-based Tutoiral system, is here to empower you on your
-          learning journey. Join us and explore the exciting world of learning
-          today!
+          that&apos;s why we&apos;re committed to providing a diverse range of
+          courses and resources. Whether you&apos;re a student looking to expand
+          your knowledge, a teacher seeking innovative teaching tools, or simply
+          curious about new topics, Web-based Tutoiral system, is here to
+          empower you on your learning journey. Join us and explore the exciting
+          world of learning today!
         </p>
       </div>
       <p className="font-bold text-4xl pt-10 text-center text-[#ffc248]">
@@ -54,39 +56,44 @@ const Aboutus = () => {
       <div className="flex flex-col sm:flex-row  justify-between p-4 text-center">
         <p className="pl-3">
           Lemuel Clark Velasco <br />{" "}
-          <span className="font-bold text-sm text-[#ffc248]">Project Leader</span>
+          <span className="font-bold text-sm text-[#ffc248]">
+            The Project Leader
+          </span>
         </p>
 
         <div>
           <p>
             Dr. Rentor Cafino <br /> MD, DPSO-HNS
             <br />
-            <span className="font-semibold text-sm text-[#ffc248]"> Medical Adviser </span>
+            <span className="font-semibold text-sm text-[#ffc248]">
+              {" "}
+              Medical Consultant{" "}
+            </span>
           </p>
         </div>
         <div>
           <p>
             Dr. Armando T. Isla <br /> MD, FPSO-HNS
             <br />
-            <span className="font-semibold text-sm text-[#ffc248]"> Medical Adviser </span>
+            <span className="font-semibold text-sm text-[#ffc248]">
+              {" "}
+              Medical Consultant{" "}
+            </span>
           </p>
         </div>
-        <div className="flex flex-col">
-          <p>Karen Mae Ty - MD, FPSO-HNS</p>
-          <p>Jay Pee Amable - MD, FPSO-HNS</p>
-          <p>Isaac Cesar De Guzman - MD, FPSO-HNS</p>
-          <p>Jehan Grace Maglaya - MD, FPSO-HNS</p>
-          <p>Anna Carmina Zantua - MD, FPSO-HNS</p>
-          <p className="font-bold pb-4 text-sm text-[#ffc248]">Content Validators</p>
-        </div>
+
         <p>
           Kaye Q. Velarde <br />{" "}
-          <span className="font-bold pb-4 text-sm text-[#ffc248]">Pedagogy Manager</span>
+          <span className="font-bold pb-4 text-sm text-[#ffc248]">
+            Pedagogy Manager
+          </span>
         </p>
 
         <p>
           Queenie Kate S. Cabanilla <br />{" "}
-          <span className="font-bold pb-4 text-sm text-[#ffc248]">Web Developer</span>
+          <span className="font-bold pb-4 text-sm text-[#ffc248]">
+            Web Developer
+          </span>
         </p>
       </div>
       <div className="pt-4 text-center x-4 ">
@@ -140,7 +147,6 @@ const Aboutus = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 
