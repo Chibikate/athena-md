@@ -1,7 +1,7 @@
 // ProgressBar.js
 import React from "react";
 
-const ProgressBar = ({ currentIndex, totalSteps }) => {
+const ProgressBar = ({ currentIndex , totalSteps }) => {
   const progress = ((currentIndex + 1) / totalSteps) * 100;
 
   return (

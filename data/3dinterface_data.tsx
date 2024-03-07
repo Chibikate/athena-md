@@ -1,5 +1,8 @@
 import * as Module1 from "@/public/module1";
 import Link from "next/link";
+import Image8 from "@/public/Image8.jpg";
+import Image9 from "@/public/Image9.jpg";
+import Image10 from "@/public/Image10.jpg";
 
 export const slicerTutorial1 = [
   {
@@ -7,7 +10,7 @@ export const slicerTutorial1 = [
     description: (
       <div>
         <div className="flex flex-col items-center justify-center">
-          <ul className="list-disc list-inside space-y-2">
+          <ul className=" space-y-2">
             <li>
               <span className="font-semibold pb-4">
                 Download 3D slicer (Stable version 5.6.1):{" "}
@@ -38,7 +41,7 @@ export const slicerTutorial1 = [
         </div>
       </div>
     ),
-    image: null,
+    image:  null,
     alt: "",
   },
   {
@@ -66,7 +69,7 @@ export const slicerTutorial1 = [
         </p>
       </div>
     ),
-    image: null,
+    image: Image8,
     alt: "",
   },
   {
@@ -89,7 +92,7 @@ export const slicerTutorial1 = [
         </p>
       </div>
     ),
-    image: null,
+    image: Image9,
     alt: "",
   },
   {
@@ -107,7 +110,7 @@ export const slicerTutorial1 = [
         </p>
       </div>
     ),
-    image: null,
+    image: Image10,
     alt: "",
   },
   {
