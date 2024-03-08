@@ -105,8 +105,10 @@ const Home = ({ params }: Params) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
-        <Navigator />
-        <ProgressBar currentIndex={index} totalSteps={content.length} />
+        <div>
+          <Navigator />
+          <ProgressBar currentIndex={index} totalSteps={content.length} />
+        </div>
         <div className="flex flex-col md:flex-row items-center justify-center ">
           {index > 0 && (
             <button

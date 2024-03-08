@@ -268,7 +268,7 @@ export const slicerTutorial4 = [
     description: (
       <div>This image shows the skull with the <span className="font-bold">artifacts removed.</span></div>
     ),
-    image: Module4.Slicer80,
+    image: Module4.Slicer79,
     alt: "illustration",
   },
   {
@@ -277,12 +277,22 @@ export const slicerTutorial4 = [
       (
         <div>To <span className="font-bold">save</span> the 3D file, left click on the drop-down button and left click on <span className="font-bold">“export to files”.</span></div>
       ),
+    image: Module4.Slicer80,
+    alt: "illustration",
+  },
+  {
+    title: "",
+    description: (
+      <div>This will open up the window for exporting segments. The user can left click on the <span className="font-bold">destination folder</span> to change the destination folder. For now, leave all other options as default.</div>
+    ),
     image: Module4.Slicer81,
     alt: "illustration",
   },
   {
     title: "",
-    description: "",
+    description: (
+      <div>Left click on the <span className="font-bold">“export”</span> button to export the file. The file you saved will be named <span className="font-bold">“Segmentation_Skull”.</span></div>
+    ),
     image: Module4.Slicer82,
     alt: "illustration",
   },

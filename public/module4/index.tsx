@@ -23,6 +23,7 @@ import Slicer79 from "@/public/module4/slicer79.png";
 import Slicer80 from "@/public/module4/slicer80.png";
 import Slicer81 from "@/public/module4/slicer81.png";
 import Slicer82 from "@/public/module4/slicer82.png";
+import Slicer83 from "@/public/module4/slicer83.png";
 
 export {
   Slicer58,
@@ -50,4 +51,5 @@ export {
   Slicer80,
   Slicer81,
   Slicer82,
+  Slicer83,
 };
