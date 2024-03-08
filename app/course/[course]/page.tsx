@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import * as datas from "@/data/course_data";
 import Link from "next/link";
 import { Suspense } from "react";
+import TeamSection from "@/components/course_overview/team_section";
 
 interface Params {
   params: {
@@ -75,6 +76,7 @@ const Home = ({ params }: Params) => {
             </Link>
           </div>
         </div>
+        <TeamSection />
         <Footer />
       </section>
     </Suspense>
