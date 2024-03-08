@@ -170,7 +170,7 @@ export default function QuizApp() {
               </Link>
             ) : (
               <div className="text-red font-semibold">
-                <p className="text-red-600 text-center pt-4 pb-2">Sorry, you didn't pass. You can retake the quiz to improve your score.</p>
+                <p className="text-red-600 text-center pt-4 pb-2">Sorry, you didn&#39;t pass. You can retake the quiz to improve your score.</p>
                 <button onClick={retakeQuiz} style={retakeButtonStyle} className="text-right">Retake Quiz</button>
                 <Link href="http://localhost:3000/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
                   <button>Retake the Lesson</button>
