@@ -8,7 +8,7 @@ import Image3 from "@/public/quiz4/Image3.png";
 const quizQuestions = [
   {
     question:
-    "1. What feature enables users to quickly search for previously imported datasets?", 
+    "1. In the segment editor module, the segment color that represents the segmented area cannot be changed.", 
   
     options: [
       "True",
