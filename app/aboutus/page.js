@@ -2,7 +2,7 @@ import React from "react";
 import { Delius } from "next/font/google";
 import Image6 from "@/public/Image6.png";
 import Image from "next/image";
-import Navigator from "@/components/hero_page/navigator";
+import Navigator from "../navigator";
 
 const delius = Delius({ subsets: ["latin"], weight: "400" });
 
