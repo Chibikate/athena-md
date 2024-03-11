@@ -165,14 +165,14 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="http://localhost:3000/fillup/navigating">
+              <Link href="/fillup/navigating">
                 <p className="text-green-900 font-bold">Perfect! Now, Click here to get your <span className="underline font-bold">Certificate</span></p>
               </Link>
             ) : (
               <div className="text-red font-semibold">
                 <p className="text-red-600 text-center pt-4 pb-2">Sorry, you didn&#39;t pass. You can retake the quiz to improve your score.</p>
                 <button onClick={retakeQuiz} style={retakeButtonStyle} className="text-right">Retake Quiz</button>
-                <Link href="http://localhost:3000/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
+                <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>

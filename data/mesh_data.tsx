@@ -28,7 +28,7 @@ export const MeshTutorial = [
                 target="_blank"
               >
                 <span className=" underline">
-                  https://drive.google.com/drive/folders/1uHn8Ozf8MmxCrG45Wsuy-kLPiMcoC1gV?usp=sharing
+                https://drive.google.com/drive/folders/1uHn8Ozf8MmxCrG45Wsuy-kLPiMcoC1gV?fbclid=IwAR2sDCWMPkmXUNW6XvM95z63wzESKFvaoWQlBN-CrB2zn40OiuFilkHdRsA
                 </span>
               </Link>
             </li>
