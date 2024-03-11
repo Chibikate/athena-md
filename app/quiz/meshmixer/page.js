@@ -136,7 +136,7 @@ export default function QuizApp() {
     <div className="min-h-screen items-center p-6 ">
       <div className="quiz-container" style={quizContainerStyle}>
         <h1 className="text-primary py-4 text-center text-lg font-bold">
-          Mexhmixer Quiz
+          Meshmixer Quiz
         </h1>
         {!showResults ? (
           <div>
