@@ -66,7 +66,7 @@ const quizQuestions = [
       "D. Install extensions",
     ],
     image: Image5,
-    correctAnswer: "B. By drawing seeds in different regions of the image",
+    correctAnswer: "B. Show/hide an item in all views",
   },
 ];
 
