@@ -103,6 +103,13 @@
   animation-duration: 11s;
 }
 
+.zoomed {
+  transform: scale(1.5); /* Adjust the zoom level as needed */
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
 @keyframes animate {
   0% {
     transform: translateY(0) rotate(0deg);
