@@ -16,7 +16,7 @@ to - link kung aha sya mapadulong
 export const courses = [
   {
     image: course.Module1,
-    title: "3D slicer interface (Part 1)",
+    title: "3D slicer interface (A-1)",
     description: "Learn about the 3D slicer interface",
     level: "Beginner",
     time: "10 mins",
@@ -25,7 +25,7 @@ export const courses = [
   },
   {
     image: course.Module2,
-    title: "3D slicer - Adding DICOM datasets (Part 2)",
+    title: "3D slicer - Adding DICOM datasets (A-2)",
     description: "Learn how to add dicom datasets in 3D slcier",
     level: "Beginner",
     time: "10 mins",
@@ -34,7 +34,7 @@ export const courses = [
   },
   {
     image: course.Module3,
-    title: "3D slicer - Navigating DICOM display (Part 3)",
+    title: "3D slicer - Navigating DICOM display (A-3)",
     description: "Learn how navigate dicom display in 3D slicer",
     level: "Beginner",
     time: "15mins",
@@ -44,7 +44,7 @@ export const courses = [
 
   {
     image: course.Module5,
-    title: "3D slicer - Basic-Segmentation (Part 4)",
+    title: "3D slicer - Basic-Segmentation (A-4)",
     description: "Learn the Basic Segmenation in 3D slicer",
     level: "Hard",
     time: "30 mins",
@@ -53,7 +53,7 @@ export const courses = [
   },
   {
     image: course.Module4,
-    title: "3D slicer - Advanced Segmentation-1 (Part 5)",
+    title: "3D slicer - Advanced Segmentation-1 (A-5)",
     description: "Learn the Advanced Segmentation in 3D slicer",
     level: "Hard",
     time: "50 mins",
@@ -62,7 +62,7 @@ export const courses = [
   },
   {
     image: course.Module6,
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Virtual-Surgery (B-1)",
     description: "Learn how to use MeshMixer for Virtual Surgery",
     level: "Difficult",
     time: "1hr and 10mins",
@@ -95,7 +95,7 @@ export interface CourseDataProps {
 const slicerInterface: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D Slicer Interface (Part 1)",
+      title: "3D Slicer Interface (A-1)",
       difficulty: "Beginner",
       duration: "10 mins",
       language: "English",
@@ -112,7 +112,7 @@ const slicerInterface: CourseDataProps = {
 const dicomDatasets: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D slicer - Adding DICOM datasets (Part 2)",
+      title: "3D slicer - Adding DICOM datasets (A-2)",
       difficulty: "Beginner",
       duration: "10 mins",
       language: "English",
@@ -133,7 +133,7 @@ const dicomDatasets: CourseDataProps = {
 const dicomDisplay: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D slicer - Navigating DICOM display (Part 3)",
+      title: "3D slicer - Navigating DICOM display (A-3)",
       difficulty: "Beginner",
       duration: "15 mins",
       language: "English",
@@ -153,7 +153,7 @@ const dicomDisplay: CourseDataProps = {
 const basicSegmentation: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D slicer -  Basic-Segmentation (Part 4)",
+      title: "3D slicer -  Basic-Segmentation (A-4)",
       difficulty: "Difficult",
       duration: "30 mins",
       language: "English",
@@ -176,7 +176,7 @@ const basicSegmentation: CourseDataProps = {
 const advancedSegmentation1: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D slicer - Advanced Segmentation-1  (Part 5)",
+      title: "3D slicer - Advanced Segmentation-1  (A-5)",
       difficulty: "Difficult",
       duration: "50 mins",
       language: "English",
@@ -199,7 +199,7 @@ const advancedSegmentation1: CourseDataProps = {
 const MeshMixer: CourseDataProps = {
   hero: {
     hero: {
-      title: "MeshMixer - Virtual-Surgery",
+      title: "MeshMixer - Virtual-Surgery (B-1)",
       difficulty: "Difficult",
       duration: "1 hr and 10 mins",
       language: "English",
