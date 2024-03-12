@@ -57,7 +57,7 @@ const Aboutus = () => {
         <p className="pl-3">
           Lemuel Clark Velasco <br />{" "}
           <span className="font-bold text-sm text-[#ffc248]">
-            The Project Leader
+            Project Leader
           </span>
         </p>
 
