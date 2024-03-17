@@ -126,7 +126,7 @@ export const slicerTutorial4 = [
     title: "",
     description:
       (
-        <div>Once satisfied with the threshold intensity, left click on the  <span className="font-bold">“apply”</span> button to apply the changes.</div>
+        <div><span className="font-bold">Once satisfied</span> with the threshold intensity, left click on the  <span className="font-bold">“apply”</span> button to apply the changes.</div>
       ),
     image: Module4.Slicer70,
     alt: "illustration",
@@ -162,7 +162,7 @@ export const slicerTutorial4 = [
     title: "",
     description:
       (
-        <div>Once the 3D image of the skull is centered in the blue window, maximize the blue window by <span className="font-bold">double clicking with the left mouse button.</span> Often times, the 3D image has artifacts.</div>
+        <div><span className="font-bold">Once the 3D image of the skull is centered</span> in the blue window, maximize the blue window by <span className="font-bold">double clicking with the left mouse button.</span> Often times, the 3D image has artifacts.</div>
       ),
     image: Module4.Slicer74,
     alt: "illustration",
@@ -198,7 +198,7 @@ export const slicerTutorial4 = [
     description:
       (
         <div>
-        <span className="font-bold">Left click</span> on any part of the skull. This will <span className="font-bold">remove</span> the components not connected to the selected area hence removing the artifacts.
+        <span className="font-bold">Left click</span> on <span className="font-bold">any part of the skull</span>. This will <span className="font-bold">remove</span> the components not connected to the selected area hence removing the artifacts.
         </div>
       ),
     image: Module4.Slicer78,
