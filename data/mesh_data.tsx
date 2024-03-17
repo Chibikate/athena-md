@@ -88,7 +88,7 @@ export const MeshTutorial = [
     title: "",
     description: (
       <div>
-        The object browser will show the available{" "}
+        The <span className="font-bold">object browser</span> will show the available{" "}
         <span className="font-bold">3D object</span> currently open in the
         program. Currently, only 1 object is available.
       </div>
@@ -102,10 +102,10 @@ export const MeshTutorial = [
       <div>
         To separate the mandible, left click on the{" "}
         <span className="font-bold">Select</span> icon which will activate the
-        brush tool and allow the user to{" "}
+        <span className="font-bold">brush tool</span> and allow the user to{" "}
         <span className="font-bold">“paint”</span> or select any area of the 3D
         object. The <span className="font-bold">brush size</span> can be
-        increased or decreased by holding down the left mouse button and
+        <span className="font-bold">increased or decreased</span> by holding down the left mouse button and
         dragging the slider.
       </div>
     ),
@@ -167,7 +167,7 @@ export const MeshTutorial = [
     title: "",
     description:
       (
-        <div>Hide the rest of the skull and <span className="font-bold">leave only the mandible</span>. We can see that there is a tumor on the right side of the mandible. We can remove this tumor using the plane cut function. Position the mandible by clicking on the <span className="font-bold">“top”</span> area of the view cube.</div>
+        <div> <span className="font-bold">Hide the rest of the skull</span> and <span className="font-bold">leave only the mandible</span>. We can see that there is a <span className="font-bold">tumor</span> on the <span className="font-bold">right side</span> of the mandible. We can remove this tumor using the <span className="font-bold">plane cut</span> function. Position the mandible by clicking on the <span className="font-bold">“top”</span> area of the view cube.</div>
       ),
     image: Module6.Mesh13,
     alt: "illustration",
@@ -221,7 +221,7 @@ export const MeshTutorial = [
     title: "",
     description:
       (
-        <div>You can choose to move the plane by clicking on the <span className="font-bold">directional buttons and dragging</span> towards the desired area. Rotating the plane can also be done by clicking and dragging on the curved lines.</div>
+        <div>You can choose to move the plane by clicking on the <span className="font-bold">directional buttons and dragging</span> towards the desired area. <span className="font-bold">Rotating the plane</span> can also be done by clicking and dragging on the curved lines.</div>
       ),
     image: Module6.Mesh19,
     alt: "illustration",
@@ -239,7 +239,7 @@ export const MeshTutorial = [
     title: "",
     description:
       (
-        <div>Select the normal half of the mandible by double clicking using the select tool and separating using the separate function in the edit drop down menu, or simply use the hotkey <span className="font-bold">“Y”</span>.</div>
+        <div> <span className="font-bold">Select the normal half of the mandible</span> by double clicking using the <span className="font-bold">select tool</span> and separating using the <span className="font-bold">separate function</span> in the edit drop down menu, or simply use the hotkey <span className="font-bold">“Y”</span>.</div>
       ),
     image: Module6.Mesh21,
     alt: "illustration",

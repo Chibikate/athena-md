@@ -100,7 +100,7 @@ export const slicerTutorial5 = [
     title: "",
     description:
       (
-        <div>Clicking on <span className="font-bold">“use for  masking”</span> will automatically activate the <span className="font-bold">“paint”</span> function. This will allow the user to “paint” any area using the previously selected threshold intensity.</div>
+        <div>Clicking on <span className="font-bold">“use for  masking”</span> will automatically activate the <span className="font-bold">“paint”</span> function. This will allow the user to <span className="font-bold">“paint” any area</span> using the previously selected threshold intensity.</div>
       ),
     image: Module5.Slicer40,
     alt: "illustration",
@@ -109,7 +109,7 @@ export const slicerTutorial5 = [
     title: "",
     description:
       (
-        <div>The diameter of the brush can be changed by <span className="font-bold">holding down the left mouse button</span> and <span className="font-bold">dragging the slider</span> until the desired diameter is reached. Alternatively, the user can select any preset brush diameter available.</div>
+        <div>The <span className="font-bold">diameter of the brush</span> can be changed by <span className="font-bold">holding down the left mouse button</span> and <span className="font-bold">dragging the slider</span> until the desired diameter is reached. Alternatively, the user can select any preset brush diameter available.</div>
       ),
     image: Module5.Slicer41,
     alt: "illustration",
@@ -118,7 +118,7 @@ export const slicerTutorial5 = [
     title: "",
     description:
       (
-        <div>Using the <span className="font-bold">middle mouse scroll wheel</span>, adjust the image views so that the mandible and the rest of the skull are together in one image. Perform this action for all windows.</div>
+        <div>Using the <span className="font-bold">middle mouse scroll wheel</span>, adjust the <span className="font-bold">image views</span> so that the mandible and the rest of the skull are together in one image. Perform this action for all windows.</div>
       ),
     image: Module5.Slicer42,
     alt: "illustration",
@@ -190,7 +190,7 @@ export const slicerTutorial5 = [
     title: "",
     description:
       (
-        <div><span className="font-bold">"Selecting the “skull”</span> or <span className="font-bold">“mandible”</span> segments and painting the overlapping areas respectively will automatically update the preview.</div>
+        <div><span className="font-bold">Selecting the “skull”</span> or <span className="font-bold">“mandible”</span> segments and painting the overlapping areas respectively will automatically update the preview.</div>
       ),
     image: Module5.Slicer50,
     alt: "illustration",
