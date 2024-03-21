@@ -24,7 +24,7 @@ const quizQuestions = [
   },
   {
     question:
-      "2. What feature enables users to quickly search for previously imported datasets?",
+      "2. How can users move the 3D object around on the 3D panel (blue)?",
     options: [
       "A. Holding the left mouse button while dragging",
       "B. Holding down the left mouse button with the cursor on the slider button and dragging",
