@@ -63,11 +63,11 @@ const Aboutus = () => {
 
         <div>
           <p>
-            Dr. Rentor Cafino <br /> MD, DPSO-HNS
+            Dr. Rentor Cafino <br /> MD, DPBO-HNS
             <br />
             <span className="font-semibold text-sm text-[#ffc248]">
               {" "}
-              Medical Consultant{" "}
+              Content Developer{" "}
             </span>
           </p>
         </div>
