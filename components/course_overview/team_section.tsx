@@ -40,24 +40,24 @@ const TeamSection: React.FC = () => {
 
         <div>
           <p>
-            Dr. Rentor Cafino <br /> MD, DPSO-HNS
+            Rentor Cafino <br /> MD, DPBO-HNS
             <br />
-            <span className="font-semibold text-sm text-[#ffc248]"> Medical Adviser</span>
+            <span className="font-semibold text-sm text-[#ffc248]"> Content Developer</span>
           </p>
         </div>
         <div>
           <p>
-            Dr. Armando T. Isla <br /> MD, FPSO-HNS
+            Armando T. Isla <br /> MD, FPSO-HNS
             <br />
             <span className="font-semibold text-sm text-[#ffc248]">Medical Adviser</span>
           </p>
         </div>
         <div className="flex flex-col">
-          <p>Karen Mae Ty - MD, FPSO-HNS</p>
-          <p>Jay Pee Amable - MD, FPSO-HNS</p>
-          <p>Isaac Cesar De Guzman - MD, FPSO-HNS</p>
-          <p>Jehan Grace Maglaya - MD, FPSO-HNS</p>
-          <p>Anna Carmina Zantua - MD, FPSO-HNS</p>
+          <p>Karen Mae Ty, MD, FPSO-HNS</p>
+          <p>Jay Pee Amable, MD, FPSO-HNS</p>
+          <p>Isaac Cesar De Guzman, MD, FPSO-HNS</p>
+          <p>Jehan Grace Maglaya, MD, FPSO-HNS</p>
+          <p>Anna Carmina Zantua, MD, FPSO-HNS</p>
           <p className="font-bold pb-4 text-sm text-[#ffc248]">Content Validators</p>
         </div>
         <p>
