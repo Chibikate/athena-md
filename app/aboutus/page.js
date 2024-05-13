@@ -67,7 +67,7 @@ const Aboutus = () => {
             <br />
             <span className="font-semibold text-sm text-[#ffc248]">
               {" "}
-              Content Developer{" "}
+              Medical Adviser{" "}
             </span>
           </p>
         </div>
@@ -77,7 +77,7 @@ const Aboutus = () => {
             <br />
             <span className="font-semibold text-sm text-[#ffc248]">
               {" "}
-              Medical Consultant{" "}
+              Medical Adviser{" "}
             </span>
           </p>
         </div>
