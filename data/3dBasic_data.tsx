@@ -242,7 +242,7 @@ export const slicerTutorial4 = [
     description: (
       <div>
         <p>
-          Congratulation, you've able finish the lesson about Basic
+          Congratulations, you've able finish the lesson about Basic
           Segmentation. For you to get the certificate, take the{" "}
           <Link
             href="/quiz/basic"

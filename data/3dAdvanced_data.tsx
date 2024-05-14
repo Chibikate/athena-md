@@ -261,7 +261,7 @@ export const slicerTutorial5 = [
     description: (
       <div>
         <p>
-          Congratulation, you've able to finish the lesson in advance segmentation. For you to get the
+          Congratulations, you've able to finish the lesson in advance segmentation. For you to get the
           certificate, take the{" "}
           <Link
             href="/quiz/advance"

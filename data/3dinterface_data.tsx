@@ -234,7 +234,7 @@ export const slicerTutorial1 = [
     description: (
       <div>
         <p>
-          Congratulation, you've to finish the lesson. For you to get the
+          Congratulations, you've to finish the lesson. For you to get the
           certificate, take the{" "}
           <Link href="/quiz/interface" className="font-bold underline">
             Quiz
