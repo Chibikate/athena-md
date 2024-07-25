@@ -12,6 +12,12 @@ import {
   slicerTutorial4,
   slicerTutorial5,
   MeshTutorial,
+  slicerTutorial6,
+  slicerTutorial7,
+  slicerTutorial8,
+  slicerTutorial9,
+  slicerTutorial10,
+  MeshTutorial2,
 } from "@/data";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
@@ -69,6 +75,24 @@ const Home = ({ params }: Params) => {
         break;
       case "MeshMixer - Virtual-Surgery":
         setContent(MeshTutorial);
+        break;
+        case "3D slicer Part 1":
+        setContent(slicerTutorial6);
+        break;
+      case "3D slicer Part 2":
+        setContent(slicerTutorial7);
+        break;
+      case "3D slicer Part 3":
+        setContent(slicerTutorial8);
+        break;
+      case "3D slicer Part 4":
+        setContent(slicerTutorial9);
+        break;
+      case "3D slicer Part 5":
+        setContent(slicerTutorial10);
+        break;
+      case "MeshMixer - Virtual-Surgery":
+        setContent(MeshTutorial2);
         break;
     }
   }, [queryPage]);

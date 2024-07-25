@@ -1,7 +1,7 @@
 import * as D1 from "@/public/basic3D/D1";
 import Link from "next/link";
 
-export const MeshTutorial = [
+export const MeshTutorial2 = [
   {
     title:
       "3D file manipulation and separating the mandible in Meshmixer (Autodesk, San Rafael, California)",

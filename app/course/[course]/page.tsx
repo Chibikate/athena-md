@@ -57,7 +57,11 @@ const Home = ({ params }: Params) => {
     } else if (course === "MeshMixer - Virtual-Surgery") {
       setContent("MeshMixer - Virtual-Surgery");
       setData(datas.MeshMixer);
-    }
+    } else if (course === "3D Slicer Pelvis - Add DICOM") {
+      setContent("3D Slicer Pelvis C1");
+      setData(datas.slicerPelvis);
+    } 
+    
   }, [course]);
 
   return (
