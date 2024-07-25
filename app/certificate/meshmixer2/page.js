@@ -1,4 +1,4 @@
-fea"use client";
+"use client";
 // CertificatePage.js
 import { useRef } from "react";
 import { useSearchParams } from "next/navigation";
