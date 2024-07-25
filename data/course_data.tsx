@@ -89,7 +89,7 @@ export const courses = [
   },
   {
     image: course.Module10,
-    title: "3D Modellin for Pelvis - Navigating DICOM datasets (C-3)",
+    title: "3D Modelling for Pelvis - Navigating DICOM datasets (C-3)",
     description: "Learn how to navigate DICOM datasets in 3D slicer",
     level: "Beginner",
     time: "10 mins",
@@ -219,7 +219,7 @@ const basicSegmentation: CourseDataProps = {
       objectives: [
         "Import a DICOM dataset",
         "Navigate the Segment Editor Module",
-        "Isolate the skull via Thresholding function",
+        "Isolate the pelvis via Thresholding function",
         "Clean up 3D file using Islands function",
         "Export 3D file as .stl",
       ],
@@ -272,6 +272,128 @@ const MeshMixer: CourseDataProps = {
   },
   to: "data",
 };
+const pelvisInterface: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D Slicer Pelvis Interface (C1)",
+      difficulty: "Beginner",
+      duration: "10 mins",
+      language: "English",
+    },
+  },
+  objectives: {
+    objective: {
+      objectives: ["Familiarize oneself with the basic 3D slicer interface"],
+    },
+  },
+  to: "data",
+};
+const pelvisAddDICOM: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D Slicer Pelvis Add DICOM (C2)",
+      difficulty: "Beginner",
+      duration: "10 mins",
+      language: "English",
+    },
+  },
+  objectives: {
+    objective: {
+      objectives: [
+        "Import DICOM dataset into 3D slicer",
+        "Load the imported DICOM dataset",
+      ],
+    },
+  },
+  to: "data",
+};
+const pelvisdicomDisplay: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D slicer Pelvis - Navigating DICOM display (C3)",
+      difficulty: "Beginner",
+      duration: "15 mins",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Familiarize oneself with the basic controls in navigating 3D slicer.",
+      ],
+    },
+  },
+  to: "data",
+};
+
+const pelvisbasicSegmentation: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D slicer Pelvis-  Basic-Segmentation (C4)",
+      difficulty: "Difficult",
+      duration: "30 mins",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Import a DICOM dataset",
+        "Navigate the Segment Editor Module",
+        "Isolate the pelvis via Thresholding function",
+        "Clean up 3D file using Islands function",
+        "Export 3D file as .stl",
+      ],
+    },
+  },
+  to: "data",
+};
+const pelvisadvancedSegmentation1: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D slicer - Advanced Segmentation-1  (A-5)",
+      difficulty: "Difficult",
+      duration: "50 mins",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Load a DICOM dataset into 3D slicer",
+        "Familiarize oneself with the “grow from seeds” function",
+        "Remove unwanted artifacts using “Islands” function",
+        "Save it in one file.",
+      ],
+    },
+  },
+  to: "data",
+};
+const MeshMixer2: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "MeshMixer2 - Pelvis Virtual-Surgery (D-1)",
+      difficulty: "Difficult",
+      duration: "1 hr and 10 mins",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Import the .stl file from the exercise into Meshmixer",
+        "Separate the mandible from the rest of the skull",
+        "Remove the tumor side of the mandible using plane cut function",
+        "Reconstruct the tumor side using mirror function",
+      ],
+    },
+  },
+  to: "data",
+};
 export {
   slicerInterface,
   dicomDatasets,
@@ -279,4 +401,10 @@ export {
   basicSegmentation,
   advancedSegmentation1,
   MeshMixer,
+  pelvisInterface,
+  pelvisAddDICOM,
+  pelvisdicomDisplay,
+  pelvisbasicSegmentation,
+  pelvisadvancedSegmentation1,
+  MeshMixer2, 
 };

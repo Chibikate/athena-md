@@ -57,12 +57,27 @@ const Home = ({ params }: Params) => {
     } else if (course === "MeshMixer - Virtual-Surgery") {
       setContent("MeshMixer - Virtual-Surgery");
       setData(datas.MeshMixer);
-    } else if (course === "3D Slicer Pelvis - Add DICOM") {
+    } else if (course === "3D Slicer Pelvis - Interface") {
       setContent("3D Slicer Pelvis C1");
-      setData(datas.slicerPelvis);
+      setData(datas.pelvisInterface);
+    } else if (course === "3D Slicer Pelvis - add DICOM") {
+      setContent("3D Slicer Pelvis C2");
+      setData(datas.pelvisAddDICOM);
+    }  else if (course === "3D slicer Pelvis - Navigating DICOM") {
+      setContent("3D slicer Pelvis C3");
+      setData(datas.pelvisdicomDisplay);
+    } else if (course === "3D slicer Pelvis - Basic-Segmentation") {
+      setContent("3D slicer Pelvis C4");
+      setData(datas.pelvisbasicSegmentation);
+    } else if (course === "3D slicer Pelvis - Advanced Segmentation-1") {
+      setContent("3D slicer Pelvis C5");
+      setData(datas.pelvisadvancedSegmentation1);
+    } else if (course === "MeshMixer2 - Pelvis Virtual-Surgery") {
+      setContent("MeshMixer2 - Pelvis Virtual-Surgery");
+      setData(datas.MeshMixer2);
     } 
-    
-  }, [course]);
+  },
+  [course]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
