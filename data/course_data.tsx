@@ -1,4 +1,6 @@
 import * as course from "@/public/course";
+import TeamSection from "@/components/course_overview/team_section";
+import TeamSection2 from "@/components/course_overview/team_section2";
 // * If magdungag kag another course, dani lang pag input//
 
 {
@@ -80,7 +82,7 @@ export const courses = [
   },
   {
     image: course.Module9,
-    title: "3D Modelling for Pelvis Adding DICOM datasets (C-2)",
+    title: "3D Modelling for Pelvis- Adding DICOM datasets (C-2)",
     description: "Learn how to add DICOM datasets in 3D slicer",
     level: "Beginner",
     time: "10 mins",
@@ -144,8 +146,7 @@ export interface CourseDataProps {
   hero: HeroProps;
   objectives: ObjectiveProps;
   to: string;
-}
-
+} 
 const slicerInterface: CourseDataProps = {
   hero: {
     hero: {
@@ -272,6 +273,9 @@ const MeshMixer: CourseDataProps = {
   },
   to: "data",
 };
+export {
+  TeamSection2
+}
 const pelvisInterface: CourseDataProps = {
   hero: {
     hero: {
@@ -365,6 +369,7 @@ const pelvisadvancedSegmentation1: CourseDataProps = {
       objectives: [
         "Load a DICOM dataset into 3D slicer",
         "Familiarize oneself with the “grow from seeds” function",
+        "Separate the right ilium from the l eft ilium using the “grow from seeds” function",
         "Remove unwanted artifacts using “Islands” function",
         "Save it in one file.",
       ],
