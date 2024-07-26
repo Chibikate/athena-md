@@ -76,7 +76,7 @@ export const courses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer interface",
+    to: "/course/3D Slicer Pelvis - Interface",
   },
   {
     image: course.Module9,
@@ -85,7 +85,7 @@ export const courses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer interface",
+    to: "/course/3D Slicer Pelvis - add DICOM",
   },
   {
     image: course.Module10,
@@ -94,7 +94,7 @@ export const courses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer interface",
+    to: "/course/3D slicer Pelvis - Navigating DICOM",
   },
   {
     image: course.Module11,
@@ -103,7 +103,7 @@ export const courses = [
     level: "Hard",
     time: "30 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer interface",
+    to: "/course/3D slicer Pelvis - Basic-Segmentation",
   },
   {
     image: course.Module12,
@@ -112,7 +112,7 @@ export const courses = [
     level: "Hard",
     time: "50 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer interface",
+    to: "/course/3D slicer Pelvis - Advanced Segmentation-1",
   },
   {
     image: course.Module13,
@@ -121,7 +121,7 @@ export const courses = [
     level: "Difficult",
     time: "1hr and 10mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer interface",
+    to: "/course/MeshMixer2 - Pelvis Virtual-Surgery",
   },
 ];
 

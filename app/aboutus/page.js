@@ -83,18 +83,18 @@ const Aboutus = () => {
         </div>
 
         <p>
-          Kaye Q. Velarde <br />
-          Dianne Mel B. Arrubio {" "}
+          Kaye Q. Velarde <br /> {" "}
+          Dianne Mel B. Arrubio <br /> {" "}
           <span className="font-bold pb-4 text-sm text-[#ffc248]">
-            Pedagogy Manager
+            Pedagogy Managers
           </span>
         </p>
 
         <p>
-          Queenie Kate S. Cabanilla <br />
-          Zyrene Belle B. Alturas {" "}
+          Queenie Kate S. Cabanilla <br />  {" "}
+          Zyrene Belle B. Alturas <br /> {" "}
           <span className="font-bold pb-4 text-sm text-[#ffc248]">
-            Web Developer
+            Web Developers
           </span>
         </p>
       </div>
@@ -144,6 +144,40 @@ const Aboutus = () => {
                 />
               </svg>
               kaye.velarde@g.msuiit.edu.ph
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 inline mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 5l9 4-9 4-9-4 9-4zm0 0v6"
+                />
+              </svg>
+              zyrenebelle.alturas@g.msuiit.edu.ph
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 inline mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 5l9 4-9 4-9-4 9-4zm0 0v6"
+                />
+              </svg>
+             diannemel.arrubio@g.msuiit.edu.ph
             </p>
           </div>
         </div>
