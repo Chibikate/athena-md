@@ -83,14 +83,16 @@ const Aboutus = () => {
         </div>
 
         <p>
-          Kaye Q. Velarde <br />{" "}
+          Kaye Q. Velarde <br />
+          Dianne Mel B. Arrubio {" "}
           <span className="font-bold pb-4 text-sm text-[#ffc248]">
             Pedagogy Manager
           </span>
         </p>
 
         <p>
-          Queenie Kate S. Cabanilla <br />{" "}
+          Queenie Kate S. Cabanilla <br />
+          Zyrene Belle B. Alturas {" "}
           <span className="font-bold pb-4 text-sm text-[#ffc248]">
             Web Developer
           </span>
