@@ -82,7 +82,7 @@ export const courses = [
   },
   {
     image: course.Module9,
-    title: "3D Modelling for Pelvis- Adding DICOM datasets (C-2)",
+    title: "3D Modelling Pelvis- Adding DICOM datasets (C-2)",
     description: "Learn how to add DICOM datasets in 3D slicer",
     level: "Beginner",
     time: "10 mins",
@@ -91,7 +91,7 @@ export const courses = [
   },
   {
     image: course.Module10,
-    title: "3D Modelling for Pelvis - Navigating DICOM datasets (C-3)",
+    title: "3D Modelling Pelvis - Navigating DICOM datasets (C-3)",
     description: "Learn how to navigate DICOM datasets in 3D slicer",
     level: "Beginner",
     time: "10 mins",
@@ -100,7 +100,7 @@ export const courses = [
   },
   {
     image: course.Module11,
-    title: "3D Modelling for Pelvis - Basic Segmentation (C-4)",
+    title: "3D Modelling Pelvis - Basic Segmentation (C-4)",
     description: "Learn the Basic Segmenation in 3D slicer",
     level: "Hard",
     time: "30 mins",
@@ -109,7 +109,7 @@ export const courses = [
   },
   {
     image: course.Module12,
-    title: "3D Modelling for Pelvis - Advanced Segmentation (C-5)",
+    title: "3D Modelling Pelvis - Advanced Segmentation (C-5)",
     description: "Learn the Advanced Segmentation in 3D slicer",
     level: "Hard",
     time: "50 mins",
@@ -118,7 +118,7 @@ export const courses = [
   },
   {
     image: course.Module13,
-    title: "3D Modelling for Pelvis using MeshMixer Virtual-Surgery (D-1)",
+    title: "3D Modelling Pelvis using MeshMixer Virtual-Surgery (D-1)",
     description: "Learn how to use MeshMixer for Virtual Surgery",
     level: "Difficult",
     time: "1hr and 10mins",
@@ -392,7 +392,7 @@ const MeshMixer2: CourseDataProps = {
       objectives: [
         "Import the .stl file from the exercise into Meshmixer",
         "Separate the mandible from the rest of the skull",
-        "Remove the tumor side of the mandible using plane cut function",
+        "Remove the tumor side of the pelvis using plane cut function",
         "Reconstruct the tumor side using mirror function",
       ],
     },
