@@ -81,6 +81,7 @@ const Home = ({ params }: Params) => {
     } else if (course === "MeshMixer2 - Pelvis Virtual-Surgery") {
       setContent("MeshMixer2 - Pelvis Virtual-Surgery");
       setData(datas.MeshMixer2);
+      setNewCourse (true)
     } 
   },
   [course]);
