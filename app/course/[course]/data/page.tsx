@@ -76,22 +76,22 @@ const Home = ({ params }: Params) => {
       case "MeshMixer - Virtual-Surgery":
         setContent(MeshTutorial);
         break;
-        case "3D slicer Part 1":
+        case "3D Slicer Pelvis C1":
         setContent(slicerTutorial6);
         break;
-      case "3D slicer Part 2":
+      case "3D Slicer Pelvis C2":
         setContent(slicerTutorial7);
         break;
-      case "3D slicer Part 3":
+      case "3D slicer Pelvis C3":
         setContent(slicerTutorial8);
         break;
-      case "3D slicer Part 4":
+      case "3D slicer Pelvis C4":
         setContent(slicerTutorial9);
         break;
-      case "3D slicer Part 5":
+      case "3D slicer Pelvis C5":
         setContent(slicerTutorial10);
         break;
-      case "MeshMixer - Virtual-Surgery":
+      case "MeshMixer2 - Pelvis Virtual-Surgery":
         setContent(MeshTutorial2);
         break;
     }
