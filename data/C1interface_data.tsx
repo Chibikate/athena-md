@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const slicerTutorial6 = [
     {
-        title: "3D Modelling - 3D slicer Interface(C-1)",
+        title: "3D Modelling - Pelvis (C-1)",
         description: (
             <div>
               <div className="flex flex-col items-center justify-center">

@@ -4,7 +4,7 @@ import * as course from "@/public/course";
 
 export const slicerTutorial9 = [
   {
-    title: "Welcome to 3D slicer - Basic-Segmentation (Part 4)",
+    title: "3D Modelling Pelvis - Basic Segmentation (C-4)",
     description: (
       <div>
         Make sure to <span className="font-bold">install</span> your downloaded{" "}

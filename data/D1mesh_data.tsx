@@ -4,7 +4,7 @@ import Link from "next/link";
 export const MeshTutorial2 = [
   {
     title:
-      "3D file manipulation and separating the mandible in Meshmixer (Autodesk, San Rafael, California)",
+      "3D Modelling Pelvis using MeshMixer Virtual-Surgery (D-1)",
     description: (
       <div>
         <div className="flex flex-col items-center justify-center">
