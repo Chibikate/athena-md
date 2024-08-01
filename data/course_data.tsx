@@ -243,7 +243,7 @@ const advancedSegmentation1: CourseDataProps = {
       objectives: [
         "Load a DICOM dataset into 3D slicer",
         "Familiarize oneself with the “grow from seeds” function",
-        "Separate the mandible from the maxilla using the “grow from seeds” function",
+        "Separate the right and left ilium, sacrum, and fragment of the pelvis using the “grow from seeds” function",
         "Remove unwanted artifacts using “Islands” function",
         "Save both maxilla and mandible in one file.",
       ],
@@ -265,9 +265,10 @@ const MeshMixer: CourseDataProps = {
     objective: {
       objectives: [
         "Import the .stl file from the exercise into Meshmixer",
-        "Separate the mandible from the rest of the skull",
-        "Remove the tumor side of the mandible using plane cut function",
-        "Reconstruct the tumor side using mirror function",
+        "Manipulate the objects for good reduction of fractured area",
+        "Split a single 3D model into segments using a separate function",
+        "Reconstruct the objects using the mirror function",
+        
       ],
     },
   },

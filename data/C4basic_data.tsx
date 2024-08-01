@@ -2,7 +2,7 @@ import * as C4 from "@/public/basic3D/C4";
 import Link from "next/link";
 import * as course from "@/public/course";
 
-export const slicerTutorial9 = [
+export const Tutorial9 = [
   {
     title: "3D Modelling Pelvis - Basic Segmentation (C-4)",
     description: (

@@ -1,7 +1,7 @@
 import C1 from "@/public/basic3D/C1";
 import Link from "next/link";
 
-export const slicerTutorial6 = [
+export const Tutorial6 = [
     {
         title: "3D Modelling - Pelvis (C-1)",
         description: (
