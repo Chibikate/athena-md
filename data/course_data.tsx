@@ -392,9 +392,10 @@ const MeshMixer2: CourseDataProps = {
     objective: {
       objectives: [
         "Import the .stl file from the exercise into Meshmixer",
-        "Separate the mandible from the rest of the skull",
-        "Remove the tumor side of the pelvis using plane cut function",
-        "Reconstruct the tumor side using mirror function",
+        "Manipulate the objects for good reduction of fractured area",
+        "Split a single 3D model into segments using a separate function",
+        "Reconstruct the objects using the mirror function",
+
       ],
     },
   },
