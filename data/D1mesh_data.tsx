@@ -349,7 +349,7 @@ export const MeshTutorial2 = [
           Congratulations, you've to finish the lesson. For you to get the
           certificate, take the{" "}
           <Link
-            href="https://athena-md.vercel.app/quiz/meshmixer"
+            href="/quiz/meshmixer2"
             className="font-bold underline"
           >
             Quiz

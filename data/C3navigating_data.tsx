@@ -106,7 +106,7 @@ export const slicerTutorial8 = [
                 Congratulations, you've able to finish the lesson. For you to get the
                 certificate, take the{" "}
                 <Link
-                  href="/quiz/navigation"
+                  href="/quiz/pelvis_navigate"
                   className="font-bold underline"
                 >
                   Quiz

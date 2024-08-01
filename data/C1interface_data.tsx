@@ -110,4 +110,24 @@ export const slicerTutorial6 = [
           image: C1,
           alt: "",
         },
-]
+{
+title: "",
+      description: (
+        <div>
+          <p>
+            Congratulations! You have successfully added a DICOM dataset into 3D
+            slicer. For you to get the certificate, take the{" "}
+            <Link
+              href="/quiz/pelvis_interface"
+              className="font-bold underline"
+            >
+              Quiz
+            </Link>{" "}
+            first.
+          </p>
+        </div>
+      ),
+      image: null,
+      alt: "",
+    },
+  ];

@@ -264,7 +264,7 @@ export const slicerTutorial10 = [
           Congratulations, you've able to finish the lesson in advance segmentation. For you to get the
           certificate, take the{" "}
           <Link
-            href="https://athena-md.vercel.app/quiz/advance"
+            href="/quiz/pelvis_advance"
             className="font-bold underline"
           >
             Quiz

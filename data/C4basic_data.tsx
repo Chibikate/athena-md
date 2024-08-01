@@ -245,7 +245,7 @@ export const slicerTutorial9 = [
           Congratulations, you've able finish the lesson about Basic
           Segmentation. For you to get the certificate, take the{" "}
           <Link
-            href="https://athena-md.vercel.app/quiz/basic"
+            href="/quiz/pelvis_basic"
             className="font-bold underline"
           >
             Quiz
