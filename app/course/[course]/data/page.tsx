@@ -12,11 +12,11 @@ import {
   slicerTutorial4,
   slicerTutorial5,
   MeshTutorial,
-  Tutorial6,
-  Tutorial7,
-  Tutorial8,
-  Tutorial9,
-  Tutorial10,
+  slicerTutorial6,
+  slicerTutorial7,
+  slicerTutorial8,
+  slicerTutorial9,
+  slicerTutorial10,
   MeshTutorial2,
 } from "@/data";
 import { useSearchParams } from "next/navigation";
@@ -76,20 +76,20 @@ const Home = ({ params }: Params) => {
       case "MeshMixer - Virtual-Surgery":
         setContent(MeshTutorial);
         break;
-        case "Pelvis C1":
-        setContent(Tutorial6);
+        case "3D slicer Pelvis C1":
+        setContent(slicerTutorial6);
         break;
-      case "Pelvis C2":
-        setContent(Tutorial7);
+      case "3D slicer Pelvis C2":
+        setContent(slicerTutorial7);
         break;
-      case "Pelvis C3":
-        setContent(Tutorial8);
+      case "3D slicer Pelvis C3":
+        setContent(slicerTutorial8);
         break;
-      case "Pelvis C4":
-        setContent(Tutorial9);
+      case "3D slicer Pelvis C4":
+        setContent(slicerTutorial9);
         break;
-      case "Pelvis C5":
-        setContent(Tutorial10);
+      case "3D slicer Pelvis C5":
+        setContent(slicerTutorial10);
         break;
       case "MeshMixer2 - Pelvis Virtual-Surgery":
         setContent(MeshTutorial2);

@@ -59,23 +59,23 @@ const Home = ({ params }: Params) => {
       setContent("MeshMixer - Virtual-Surgery");
       setData(datas.MeshMixer);
     } else if (course === "3D Slicer Pelvis - Interface") {
-      setContent("Pelvis C1");
+      setContent("3D slicer Pelvis C1");
       setNewCourse (true)
       setData(datas.pelvisInterface);
     } else if (course === "3D Slicer Pelvis - add DICOM") {
-      setContent("Pelvis C2");
+      setContent("3D slicer Pelvis C2");
       setNewCourse (true)
       setData(datas.pelvisAddDICOM);
     }  else if (course === "3D slicer Pelvis - Navigating DICOM") {
-      setContent("Pelvis C3");
+      setContent("3D slicer Pelvis C3");
       setNewCourse (true)
       setData(datas.pelvisdicomDisplay);
     } else if (course === "3D slicer Pelvis - Basic-Segmentation") {
-      setContent("Pelvis C4");
+      setContent("3D slicer Pelvis C4");
       setNewCourse (true)
       setData(datas.pelvisbasicSegmentation);
     } else if (course === "3D slicer Pelvis - Advanced Segmentation-1") {
-      setContent("Pelvis C5");
+      setContent("3D slicer Pelvis C5");
       setNewCourse (true)
       setData(datas.pelvisadvancedSegmentation1);
     } else if (course === "MeshMixer2 - Pelvis Virtual-Surgery") {
