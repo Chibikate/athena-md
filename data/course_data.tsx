@@ -220,7 +220,7 @@ const basicSegmentation: CourseDataProps = {
       objectives: [
         "Import a DICOM dataset",
         "Navigate the Segment Editor Module",
-        "Isolate the pelvis via Thresholding function",
+        "Isolate the mandible via Thresholding function",
         "Clean up 3D file using Islands function",
         "Export 3D file as .stl",
       ],
@@ -243,7 +243,7 @@ const advancedSegmentation1: CourseDataProps = {
       objectives: [
         "Load a DICOM dataset into 3D slicer",
         "Familiarize oneself with the “grow from seeds” function",
-        "Separate the right and left ilium, sacrum, and fragment of the pelvis using the “grow from seeds” function",
+        "Separate the mandible and maxilla of the skull using the “grow from seeds” function",
         "Remove unwanted artifacts using “Islands” function",
         "Save both maxilla and mandible in one file.",
       ],
@@ -265,9 +265,9 @@ const MeshMixer: CourseDataProps = {
     objective: {
       objectives: [
         "Import the .stl file from the exercise into Meshmixer",
-        "Manipulate the objects for good reduction of fractured area",
-        "Split a single 3D model into segments using a separate function",
-        "Reconstruct the objects using the mirror function",
+        "Separate the mandible from the rest of the skull",
+        "Remove the tumor side of the mandible using plane cut function",
+        "Reconstruct the tumor side using mirror function",
         
       ],
     },
@@ -280,7 +280,7 @@ export {
 const pelvisInterface: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D Slicer Pelvis Interface (C1)",
+      title: "3D Slicer Pelvis Interface (C-1)",
       difficulty: "Beginner",
       duration: "10 mins",
       language: "English",
@@ -296,7 +296,7 @@ const pelvisInterface: CourseDataProps = {
 const pelvisAddDICOM: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D Slicer Pelvis Add DICOM (C2)",
+      title: "3D Slicer Pelvis Add DICOM (C-2)",
       difficulty: "Beginner",
       duration: "10 mins",
       language: "English",
@@ -315,7 +315,7 @@ const pelvisAddDICOM: CourseDataProps = {
 const pelvisdicomDisplay: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D slicer Pelvis - Navigating DICOM display (C3)",
+      title: "3D slicer Pelvis - Navigating DICOM display (C-3)",
       difficulty: "Beginner",
       duration: "15 mins",
       language: "English",
@@ -335,7 +335,7 @@ const pelvisdicomDisplay: CourseDataProps = {
 const pelvisbasicSegmentation: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D slicer Pelvis-  Basic-Segmentation (C4)",
+      title: "3D slicer Pelvis-  Basic-Segmentation (C-4)",
       difficulty: "Difficult",
       duration: "30 mins",
       language: "English",
@@ -358,7 +358,7 @@ const pelvisbasicSegmentation: CourseDataProps = {
 const pelvisadvancedSegmentation1: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D slicer - Advanced Segmentation-1  (A-5)",
+      title: "3D slicer - Advanced Segmentation-1  (C-5)",
       difficulty: "Difficult",
       duration: "50 mins",
       language: "English",
