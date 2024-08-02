@@ -100,7 +100,7 @@ export const MeshTutorial2 = [
     title: "",
     description: (
       <div>
-        To separate the mandible, left click on the{" "}
+        To separate the Right Ilium, left click on the{" "}
         <span className="font-bold">Select</span> icon which will activate the
         <span className="font-bold">brush tool</span> and allow the user to{" "}
         <span className="font-bold">“paint”</span> or select any area of the 3D
@@ -114,7 +114,10 @@ export const MeshTutorial2 = [
   },
   {
     title: "",
-    description: <div>The area highlighted in <span className="font-bold">dark grey</span> is the area of the brush.</div>,
+    description:
+      (
+        <div>To <span className="font-bold">select or “paint”</span> the area, press the <span className="font-bold">left mouse button</span> once. To continuously paint, <span className="font-bold">hold the left mouse button and drag the brush</span> over the desired area.</div>
+      ),
     image: D1.picture83,
     alt: "illustration",
   },
@@ -122,7 +125,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>To <span className="font-bold">select or “paint”</span> the area, press the <span className="font-bold">left mouse button</span> once. To continuously paint, <span className="font-bold">hold the left mouse button and drag the brush</span> over the desired area.</div>
+        <div>To select the entire Right Ilium, paint any area of the mandible using the brush tool and through the modify menu, select <span className="font-bold">“expand to connected”</span>. Alternatively, this can be done by pressing the hotkey <span className="font-bold">“E”</span> or simply <span className="font-bold">double clicking</span> on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the Right Ilium has already been separated in 3D slicer, it is not <span className="font-bold">“connected”</span> to the rest of the pelvis.</div>
       ),
     image: D1.picture84,
     alt: "illustration",
@@ -131,7 +134,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>To select the entire mandible, paint any area of the mandible using the brush tool and through the modify menu, select <span className="font-bold">“expand to connected”</span>. Alternatively, this can be done by pressing the hotkey <span className="font-bold">“E”</span> or simply <span className="font-bold">double clicking</span> on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the mandible has already been separated in 3D slicer, it is not <span className="font-bold">“connected”</span> to the rest of the skull.</div>
+        <div>To make the Right Ilium as a separate object, access the separate option through the <span className="font-bold">edit menu</span>. This can also be done by typing the hotkey <span className="font-bold">“Y”</span></div>
       ),
     image: D1.picture85,
     alt: "illustration",
@@ -140,7 +143,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>To make the mandible as a separate object, access the separate option through the <span className="font-bold">edit menu</span>. This can also be done by typing the hotkey <span className="font-bold">“Y”</span></div>
+        <div>Once the Right Ilium has been separated, it will appear as a separate object in the <span className="font-bold">object browser</span>. The <span className="font-bold">highlighted object</span> in the object browser is the object that is currently <span className="font-bold">“active”</span>. It will show up as the white object in the screen and all changes will be made on that object. The <span className="font-bold">Objects can be renamed</span> by <span className="font-bold">double clicking</span> on the object name. Do the same for the other Parts.</div>
       ),
     image: D1.picture86,
     alt: "illustration",
@@ -149,7 +152,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>Once the mandible has been separated, it will appear as a separate object in the <span className="font-bold">object browser</span>. The <span className="font-bold">highlighted object</span> in the object browser is the object that is currently <span className="font-bold">“active”</span>. It will show up as the white object in the screen and all changes will be made on that object. The <span className="font-bold">Objects can be renamed</span> by <span className="font-bold">double clicking</span> on the object name.</div>
+        <div>Once the Right Ilium has been separated, it will appear as a separate object in the object browser. The objects can be <span className="font-bold">hidden</span> by <span className="font-bold">left clicking on the “visibility”</span> icon on the right.</div>
       ),
     image: D1.picture87,
     alt: "illustration",
@@ -158,7 +161,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>Once the mandible has been separated, it will appear as a separate object in the object browser. The Objects can be <span className="font-bold">renamed</span> by <span className="font-bold">double clicking</span> on the object name for this tutorial rename the object to <span className="font-bold">“skull”</span>. The objects can be <span className="font-bold">hidden</span> by <span className="font-bold">left clicking on the “visibility”</span> icon on the right.</div>
+        <div> <span className="font-bold">We can see that the posterior wall fracture fragment is on the</span> and <span className="font-bold">right side</span>. We can fix this “fracture” in place using the <span className="font-bold">"Transform"</span> function. Position the pelvis posteriorly.</div>
       ),
     image: D1.picture88,
     alt: "illustration",
@@ -167,7 +170,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div> <span className="font-bold">Hide the rest of the skull</span> and <span className="font-bold">leave only the mandible</span>. We can see that there is a <span className="font-bold">tumor</span> on the <span className="font-bold">right side</span> of the mandible. We can remove this tumor using the <span className="font-bold">plane cut</span> function. Position the mandible by clicking on the <span className="font-bold">“top”</span> area of the view cube.</div>
+        <div>Click select, and double click the fragment. Click Transform. The fragment can be rotated and manipulated to fix it in the fractured area.</div>
       ),
     image: D1.picture89,
     alt: "illustration",
@@ -176,7 +179,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>We can remove the tumor side of the mandible using the <span className="font-bold">“plane cut”</span> function.</div>
+        <div>You can rotate the Whole model as needed by holding  <span className="font-bold">“Right Click and dragging the mouse ”</span> in the direction you want.</div>
       ),
     image: D1.picture90,
     alt: "illustration",
@@ -185,7 +188,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>The <span className="font-bold">“plane cut”</span> function is active when a grid is visible over the screen.</div>
+        <div>You can freely position or drag the fragment by  <span className="font-bold">Left Clicking and holding the Red or Blue Triangle </span> and dragging it to the position you want.</div>
       ),
     image: D1.picture91,
     alt: "illustration",
@@ -194,7 +197,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>To position the plane in the desired area, <span className="font-bold">hold down the left mouse</span> button and <span className="font-bold">drag downwards</span> through the middle of the mandible. The <span className="font-bold">red line</span> will show the area where the plane will be placed.</div>
+        <div>Rotate the fragment as needed until near the configuration to “fix” it to the right acetabulum .</div>
       ),
     image: D1.picture92,
     alt: "illustration",
@@ -203,7 +206,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>After dragging the red line through the middle, release the left mouse button and the plane will by placed. Note the transparent area is the area that will be cut. To <span className="font-bold">switch</span> this to the other side, <span className="font-bold">left click on the blue arrow.</span></div>
+        <div>Fit it to the Defect. To reduce and “fix” the fracture fragment. Rotate the whole model to check good fracture reduction</div>
       ),
     image: D1.picture93,
     alt: "illustration",
@@ -212,7 +215,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>You can choose to <span className="font-bold">remove one half or keep both halves</span> through the dropdown menu. For this tutorial, select <span className="font-bold">keep both.</span></div>
+        <div>Fit it to the Defect. To reduce and “fix” the fracture fragment. Rotate the whole model to check good fracture reduction</div>
       ),
     image: D1.picture94,
     alt: "illustration",
@@ -221,7 +224,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>You can choose to move the plane by clicking on the <span className="font-bold">directional buttons and dragging</span> towards the desired area. <span className="font-bold">Rotating the plane</span> can also be done by clicking and dragging on the curved lines.</div>
+        <div>Fit it to the Defect. To reduce and “fix” the fracture fragment. Rotate the whole model to check good fracture reduction</div>
       ),
     image: D1.picture95,
     alt: "illustration",
@@ -230,7 +233,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>For defects/tumors on one side of the mandible, position the plane slightly away from the middle towards the tumor side to allow for sufficient overlapping of the model during the next few steps. Once the position is sufficient, click on <span className="font-bold">accept.</span></div>
+        <div>You can compare your reduction with an intact Ilium <span className="font-bold">Mirroring</span>  the Left Ilium to the Right Ilium. Select the <span className="font-bold">Left Ilium </span> in the  <span className="font-bold">Object Browser</span>. Select Edit and<span className="font-bold">“Mirror”</span>.</div>
       ),
     image: D1.picture96,
     alt: "illustration",
@@ -239,25 +242,25 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div> <span className="font-bold">Select the normal half of the mandible</span> by double clicking using the <span className="font-bold">select tool</span> and separating using the <span className="font-bold">separate function</span> in the edit drop down menu, or simply use the hotkey <span className="font-bold">“Y”</span>.</div>
+        <div>This Creates a Mirror of the Left Ilium. For now, hide the  <span className="font-bold">"Right Ilium"</span> Select the mirror and separate it as another object by pressing <span className="font-bold"> "Y" </span> in the keyboard. This will create another object in Object Browser. We will rename it as <span className="font-bold">“LeftIlium Mirror”. </span></div>
       ),
     image: D1.picture97,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      (
-        <div>Once Successfully separated, a third object will be available in the object browser. <span className="font-bold">Rename</span> the part to <span className="font-bold">mandiblenormal</span>. Rename the other part to <span className="font-bold">mandibletumor.</span></div>
-      ),
+    description: (
+      <div>This Creates a Copy of the Left Ilium and deselects the original. We will rename it as “LeftIlium Mirror</div>
+    ),
     image: D1.picture98,
     alt: "illustration",
   },
   {
     title: "",
-    description: (
-      <div>Hide the mandibletumor object by clicking on the <span className="font-bold">“eye”</span> icon.</div>
-    ),
+    description:
+      (
+        <div>Hide the original <span className="font-bold">“Left Ilium”</span> and select the <span className="font-bold">“LeftIlium Mirror”</span></div>
+      ),
     image: D1.picture99,
     alt: "illustration",
   },
@@ -265,7 +268,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>To <span className="font-bold">“reconstruct”</span> the missing half, select the mirror function under the <span className="font-bold">“edit”</span> icon.</div>
+        <div>Since the pelvis is still unreduced, we can manipulate the mirrored object to fix it, by Clicking <span className="font-bold">Transform</span></div>
       ),
     image: D1.picture100,
     alt: "illustration",
@@ -274,7 +277,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>You can <span className="font-bold">mirror</span> the normal side of the mandible. It is important to not just reconstruct the missing side but also to make sure that it is in its <span className="font-bold">proper position.</span></div>
+        <div>Same with the fragment reduction earlier, we will manipulate the Mirror to reduce the pelvis. Check in all Views to carefully assess the reduction.</div>
       ),
     image: D1.picture101,
     alt: "illustration",
@@ -283,7 +286,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>To do this, <span className="font-bold">“show” the “skull”</span> object by clicking on the <span className="font-bold">“eye”</span> icon. Position the view to bottom via the view cube.</div>
+        <div>Now show the <span className="font-bold">"Right Ilium"</span> and <span className="font-bold">"Fragment"</span> objects in the browser. </div>
       ),
     image: D1.picture102,
     alt: "illustration",
@@ -292,7 +295,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>Take note of the position of the <span className="font-bold">condyles</span>. <span className="font-bold">Drag the blue</span> directional arrow until the left condyle is sitting in a similar position as the normal mandible.</div>
+        <div>This shows good overlap of the  <span className="font-bold">Left Ilium Mirror</span> the RightIlium and Fragment Objects.</div>
       ),
     image: D1.picture103,
     alt: "illustration",
@@ -301,7 +304,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>You can further <span className="font-bold">manipulate</span> the objects to fine-tune your reconstruction. <span className="font-bold">Once satisfied</span> with the position of the mirrored mandible, click <span className="font-bold">“accept”</span>.</div>
+        <div>Once satisfied, make the object into a solid by clicking on the <span className="font-bold">“edit”</span> icon and clicking on <span className="font-bold">“make solid”</span>. This will <span className="font-bold">“fill” the object and remove any internal geometry</span> making it ready for 3D printing. Do this for every object you are planning to print. For this case, we are only printing the fragment and the Right Ilium</div>
       ),
     image: D1.picture104,
     alt: "illustration",
@@ -310,35 +313,26 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>The position can be further confirmed by making the tumor side of the mandible visible and comparing the position of the condyle. This can only be done if the condyle in the tumor side is in its normal position. Very large tumors may displace the condyle away from its regular position and may serve as a good reference.</div>
+        <div>We want our print to be as Accurate as possible, so click Accurate and adjust the Solid Accuracy Slider to Max. Do this for every object you want to print.</div>
       ),
     image: D1.picture105,
     alt: "illustration",
   },
   {
     title: "",
-    description:
-      (
-        <div>Once satisfied, make the object into a solid by clicking on the <span className="font-bold">“edit”</span> icon and clicking on <span className="font-bold">“make solid”</span>. This will <span className="font-bold">“fill” the object and remove any internal geometry</span> making it ready for 3D printing.</div>
-      ),
+    description: (
+      <div>click on  <span className="font-bold">“accept”.</span></div>
+    ),
     image: D1.picture106,
     alt: "illustration",
   },
   {
     title: "",
-    description: (
-      <div>Use the default settings and click on  <span className="font-bold">“accept”.</span></div>
-    ),
-    image: D1.picture107,
-    alt: "illustration",
-  },
-  {
-    title: "",
     description:
       (
-        <div>To save the object, click on <span className="font-bold">“file”</span> then <span className="font-bold">“export”</span> and save the mandible into your desired folder. Congratulations! You have successfully removed the tumor side as well as reconstructed the mandible. This object can be used as a guide for pre-bending titanium implants. Although not a standalone process in mandibular reconstruction, this process shows the basics in extraction and manipulation of the mandible in a 3D environment.</div>
+        <div>To save the object, click on <span className="font-bold">“file”</span> then <span className="font-bold">“export”</span> and save the Right Ilium into your desired folder. Congratulations! You have successfully fixed the fractured side as well as Compare it to a Mirrored normal side. This object can be used as a guide for pre-bending your Stainless Steel Recon plates. Although not a standalone process in Pelvic Surgery, this process shows the basics in fixation and manipulation of the Fractured Fragments in a 3D environment.</div>
       ),
-    image: D1.picture108,
+    image: D1.picture107,
     alt: "illustration",
   },
   {

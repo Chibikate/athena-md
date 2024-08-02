@@ -73,7 +73,7 @@ export const slicerTutorial10 = [
   {
     title: "",
     description: (
-      <div><span className="font-bold">Rename</span> the upper segment to <span className="font-bold">“Skull”</span> and the lower segment to <span className="font-bold">“Mandible”</span>. These segments will represent the structures we will isolate. Changing the colors of each segment into contrasting colors will help improve visualization of the different areas of segmentation.</div>
+      <div><span className="font-bold">Rename</span> the right segment to <span className="font-bold">“Right Ilium”</span> and the left segment to <span className="font-bold">“Left Ilium”</span>. These segments will represent the structures we will isolate. Changing the colors of each segment into contrasting colors will help improve visualization of the different areas of segmentation.</div>
     ),
     image: C5.picture56,
     alt: "illustration",
@@ -118,7 +118,7 @@ export const slicerTutorial10 = [
     title: "",
     description:
       (
-        <div>Using the <span className="font-bold">middle mouse scroll wheel</span>, adjust the <span className="font-bold">image views</span> so that the mandible and the rest of the skull are together in one image. Perform this action for all windows.</div>
+        <div>Using the <span className="font-bold">middle mouse scroll wheel</span>, adjust the <span className="font-bold">image views</span> so that the right and left ilium, the fragment and sacrum are together in one image. Perform this action for all windows.</div>
       ),
     image: C5.picture61,
     alt: "illustration",
@@ -127,7 +127,7 @@ export const slicerTutorial10 = [
     title: "",
     description:
       (
-        <div>Make sure the <span className="font-bold">“skull”</span> segment is selected by <span className="font-bold">left clicking on it</span>. Using the paint function, <span className="font-bold">“paint”</span> areas of the skull that are near the mandible.</div>
+        <div>Make sure the <span className="font-bold">“Right Ilium”</span> segment is selected by <span className="font-bold">left clicking on it</span>. Using the paint function, <span className="font-bold">“paint”</span> areas of the Pelvis that are near the mandible.Do the same for the “Left Ilium”</div>
       ),
     image: C5.picture62,
     alt: "illustration",
@@ -136,7 +136,7 @@ export const slicerTutorial10 = [
     title: "",
     description:
       (
-        <div><span className="font-bold">Left click</span> on the <span className="font-bold">“mandible”</span> segment to activate it, then <span className="font-bold">“paint”</span> the mandible using the <span className="font-bold">paint function</span>. Make sure that the highlighted areas do not overlap. This can be done in different slices to ensure higher accuracy. Attention should be placed where both structures <span className="font-bold">(mandible & the rest of the skull)</span> overlap such as the teeth.</div>
+        <div><span className="font-bold">Left click</span> on the <span className="font-bold">“Sacrum”</span> segment to activate it, then <span className="font-bold">“paint”</span> the sacrum using the <span className="font-bold">paint function</span>.Do this also for the “Fragment”. Make sure that the highlighted areas do not overlap. This can be done in different slices to ensure higher accuracy. Attention should be placed where both structures <span className="font-bold">(sacroiliac joint, acetabulum and hip joint) </span> overlap.</div>
       ),
     image: C5.picture63,
     alt: "illustration",
@@ -190,7 +190,7 @@ export const slicerTutorial10 = [
     title: "",
     description:
       (
-        <div><span className="font-bold">Selecting the “skull”</span> or <span className="font-bold">“mandible”</span> segments and painting the overlapping areas respectively will automatically update the preview.</div>
+        <div><span className="font-bold">Selecting the “Right Ilium”</span> or <span className="font-bold">“Sacrum”</span> segments and painting the overlapping areas respectively will automatically update the preview.</div>
       ),
     image: C5.picture69,
     alt: "illustration",

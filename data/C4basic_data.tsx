@@ -73,7 +73,7 @@ export const slicerTutorial9 = [
     title: "",
     description:
       (
-        <div><span className="font-bold">Double clicking</span> with the left mouse button on the segment name will allow the user to <span className="font-bold">rename the segment</span>. For now, rename the segment to <span className="font-bold">“Skull”</span>.</div>
+        <div><span className="font-bold">Double clicking</span> with the left mouse button on the segment name will allow the user to <span className="font-bold">rename the segment</span>. For now, rename the segment to <span className="font-bold">“Pelvis”</span>.</div>
       ),
     image: C4.picture30,
     alt: "illustration",
@@ -162,7 +162,7 @@ export const slicerTutorial9 = [
     title: "",
     description:
       (
-        <div><span className="font-bold">Once the 3D image of the skull is centered</span> in the blue window, maximize the blue window by <span className="font-bold">double clicking with the left mouse button.</span> Often times, the 3D image has artifacts.</div>
+        <div><span className="font-bold">Once the 3D image of the pelvis is centered</span> in the blue window, maximize the blue window by <span className="font-bold">double clicking with the left mouse button.</span> Often times, the 3D image has artifacts.</div>
       ),
     image: C4.picture40,
     alt: "illustration",
@@ -198,7 +198,7 @@ export const slicerTutorial9 = [
     description:
       (
         <div>
-        <span className="font-bold">Left click</span> on <span className="font-bold">any part of the skull</span>. This will <span className="font-bold">remove</span> the components not connected to the selected area hence removing the artifacts.
+        <span className="font-bold">Left click</span> on <span className="font-bold">any part of the pelvis</span>. This will <span className="font-bold">remove</span> the components not connected to the selected area hence removing the artifacts.
         </div>
       ),
     image: C4.picture44,
@@ -207,7 +207,7 @@ export const slicerTutorial9 = [
   {
     title: "",
     description: (
-      <div>This image shows the skull with the <span className="font-bold">artifacts removed.</span></div>
+      <div>This image shows the pelvis with the <span className="font-bold">artifacts removed.</span></div>
     ),
     image: C4.picture45,
     alt: "illustration",
