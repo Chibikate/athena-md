@@ -1,7 +1,7 @@
 import * as C3 from "@/public/basic3D/C3";
 import Link from "next/link";
 
-export const Tutorial8 = [
+export const slicerTutorial8 = [
     {
         title: "3D Modelling Pelvis - Navigating DICOM datasets (C-3)",
         description: (
