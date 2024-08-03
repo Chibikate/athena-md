@@ -24,11 +24,11 @@ export const MeshTutorial2 = [
                 Download file to use for this activity:{" "}
               </span>
               <Link
-                href="https://drive.google.com/drive/folders/1742qADzEkJDJ-FBMINb89dR9A7L0fbc6"
+                href="https://drive.google.com/drive/folders/1KmdNecDiN-EMV3Mk39njesU-j51jRi3_?usp=drive_link"
                 target="_blank"
               >
                 <span className=" underline">
-                https://drive.google.com/drive/folders/1uHn8Ozf8MmxCrG45Wsuy-kLPiMcoC1gV?fbclid=IwAR2sDCWMPkmXUNW6XvM95z63wzESKFvaoWQlBN-CrB2zn40OiuFilkHdRsA
+                https://drive.google.com/drive/folders/1KmdNecDiN-EMV3Mk39njesU-j51jRi3_?usp=drive_link
                 </span>
               </Link>
             </li>
@@ -125,7 +125,7 @@ export const MeshTutorial2 = [
     title: "",
     description:
       (
-        <div>To select the entire Right Ilium, paint any area of the mandible using the brush tool and through the modify menu, select <span className="font-bold">“expand to connected”</span>. Alternatively, this can be done by pressing the hotkey <span className="font-bold">“E”</span> or simply <span className="font-bold">double clicking</span> on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the Right Ilium has already been separated in 3D slicer, it is not <span className="font-bold">“connected”</span> to the rest of the pelvis.</div>
+        <div>To select the entire Right Ilium, paint any area of the pelvis using the brush tool and through the modify menu, select <span className="font-bold">“expand to connected”</span>. Alternatively, this can be done by pressing the hotkey <span className="font-bold">“E”</span> or simply <span className="font-bold">double clicking</span> on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the Right Ilium has already been separated in 3D slicer, it is not <span className="font-bold">“connected”</span> to the rest of the pelvis.</div>
       ),
     image: D1.picture84,
     alt: "illustration",
