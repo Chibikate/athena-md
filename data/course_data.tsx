@@ -370,7 +370,7 @@ const pelvisadvancedSegmentation1: CourseDataProps = {
       objectives: [
         "Load a DICOM dataset into 3D slicer",
         "Familiarize oneself with the “grow from seeds” function",
-        "Separate the right ilium from the l eft ilium using the “grow from seeds” function",
+        "Separate the right ilium from the left ilium using the “grow from seeds” function",
         "Remove unwanted artifacts using “Islands” function",
         "Save it in one file.",
       ],

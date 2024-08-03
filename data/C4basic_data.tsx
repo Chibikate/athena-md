@@ -117,7 +117,7 @@ export const slicerTutorial9 = [
     title: "",
     description:
       (
-        <div>To change the threshold intensity, <span className="font-bold">click on the slider and hold down left button.</span> <span className="font-bold">Drag the slider</span> until the desired threshold intensity is reached. This can be determined if the highlighted areas in the DICOM window are to the users preference <span className="font-bold">(in this case the skull).</span></div>
+        <div>To change the threshold intensity, <span className="font-bold">click on the slider and hold down left button.</span> <span className="font-bold">Drag the slider</span> until the desired threshold intensity is reached. This can be determined if the highlighted areas in the DICOM window are to the users preference <span className="font-bold">(in this case the pelvis).</span></div>
       ),
     image: C4.picture35,
     alt: "illustration",
