@@ -174,7 +174,7 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="/fillup/interface">
+              <Link href="/fillup/pelvis_interface">
                 {" "}
                 <p className="text-green-900 font-bold">
                   Perfect! Now, Click here to get your{" "}
@@ -194,7 +194,7 @@ export default function QuizApp() {
                 >
                   Retake Quiz
                 </button>
-                <Link href="/course/3D%20slicer%20interface">
+                <Link href="/course/3D%20Slicer%20Pelvis%20-%20Interface">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>
