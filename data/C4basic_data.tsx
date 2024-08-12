@@ -10,7 +10,7 @@ export const slicerTutorial9 = [
         Make sure to <span className="font-bold">install</span> your downloaded{" "}
         <span className="font-bold">3D slicer software</span> before you start
         the lesson.
-        <p>You can find it in the 3D interface (Part 1).</p>
+        <p>You can find it in the Pelvis 3D interface (C-1).</p>
       </div>
     ),
     image: C4.picture23,

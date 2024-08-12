@@ -75,7 +75,7 @@ export const slicerTutorial7 = [
       title: "",
       description:
         (
-          <div>Navigate to your saved DICOM files and left click on the dataset of choice and click on <span className="font-bold">import</span>.</div>
+          <div>Navigate to your saved DICOM files and left click on the dataset of choice and click on <span className="font-bold">"import"</span>.</div>
         ),
       image: C2.picture9,
       alt: "illustration",
