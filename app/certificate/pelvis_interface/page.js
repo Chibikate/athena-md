@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import elvisInterfaceCertificate from "../../../components/certificate/pelvis_interface/pelvisinterface_certificate";
+import PelvisInterfaceCertificate from "../../../components/certificate/pelvis_interface/pelvisinterface_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
