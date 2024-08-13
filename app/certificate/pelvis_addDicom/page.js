@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import AddDicommCertificate from "../../../components/certificate/adddicom/add_dicomm_certificate";
+import PelvisAddDicomCertificate from "../../../components/certificate/pelvis_addDicom/pelvisaddDicom_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -37,7 +37,7 @@ function CertificatePage() {
   return (
     <div className="container mx-auto mt-10 text-center min-h-screen">
       <div className="p-4 ">
-        <AddDicommCertificate fullName={name} date={date} ref={certRef} />
+        <PelvisAddDicomCertificate fullName={name} date={date} ref={certRef} />
 
         <button
           onClick={downloadCertificate}

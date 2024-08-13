@@ -6,7 +6,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
 import { Suspense } from "react";
-import NavigatingCertificate from "../../../components/certificate/navigating/navigating_certificate";
+import PelvisNavigateCertificate from "../../../components/certificate/pelvis_navigate/pelvisnavigate_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -38,7 +38,7 @@ function CertificatePage() {
     <Suspense fallback={<div>Loading...</div>}>
       <div className="container mx-auto mt-10 text-center min-h-screen">
         <div className="p-4">
-          <NavigatingCertificate fullName={name} date={date} ref={certRef} />
+          <PelvisNavigateCertificate fullName={name} date={date} ref={certRef} />
 
           <button
             onClick={downloadCertificate}

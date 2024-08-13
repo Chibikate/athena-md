@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import BasicSegmentationCertificate from "../../../components/certificate/basicsegmentation/basic_segmentation_certificate";
+import PelvisBasicCertificate from "../../../components/certificate/pelvis_basic/pelvisbasic_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
@@ -36,7 +36,7 @@ function CertificatePage() {
   return (
     <div className="container mx-auto mt-10 text-center min-h-screen">
       <div className="p-4 space-x-1">
-        <BasicSegmentationCertificate
+        <PelvisBasicCertificate
           fullName={name}
           date={date}
           ref={certRef}
