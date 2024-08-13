@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import Meshmixer2Certificate from "../../../components/certificate/meshmixer2/meshmixer2certificate";
+import Meshmixer2Certificate from "../../../components/certificate/meshmixer2/meshmixer2_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
