@@ -29,7 +29,7 @@ const PelvisInterfaceCertificate = React.forwardRef(({ fullName, date }, ref) =>
         <p className={`absolute ml-36 pt-48 text-3xl italic text-red-600 ${interMonteCarlo.className}`}>{fullName}</p>
 
         <p className="absolute pt-64 ml-44">for successful completion of</p>
-        <p className="absolute pt-80 mb-24 ml-28 items-center"><span className="font-bold text-xl"J>3D Interface </span><br/> in Mobile-Responsive Web-based Tutorial System <br />
+        <p className="absolute pt-80 mb-24 ml-28 items-center"><span className="font-bold text-xl"J>3D INTERFACE </span><br/> in Mobile-Responsive Web-based Tutorial System <br />
           on Virtual Surgical Planning Technologies <br />
           for Pelvis Reconstruction</p>
         <p className="absolute mt-[450px] ml-[613px]">
