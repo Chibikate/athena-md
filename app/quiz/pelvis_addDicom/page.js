@@ -181,7 +181,7 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="/fillup/adddicom">
+              <Link href="/fillup/pelvis_addDicom">
                 {" "}
                 <p className="text-green-900 font-bold">
                   Perfect! Now, Click here to get your{" "}
