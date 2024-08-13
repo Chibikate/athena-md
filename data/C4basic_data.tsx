@@ -232,7 +232,7 @@ export const slicerTutorial9 = [
   {
     title: "",
     description: (
-      <div>Left click on the <span className="font-bold">“export”</span> button to export the file. The file you saved will be named <span className="font-bold">“Segmentation_Skull”.</span></div>
+      <div>Left click on the <span className="font-bold">“export”</span> button to export the file. The file you saved will be named <span className="font-bold">“Segmentation_Pelvis”.</span></div>
     ),
     image: C4.picture48,
     alt: "illustration",
