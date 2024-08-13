@@ -8,7 +8,7 @@ import { EB_Garamond, MonteCarlo } from "next/font/google";
 const interGaramond = EB_Garamond({ subsets: ["latin"] });
 const interMonteCarlo = MonteCarlo({ subsets: ["latin"], weight: "400" });
 
-const PelvisInterfaceCertificate = React.forwardRef(({ fullName, date }, ref) => {
+const PelvisAdvancedCertificate = React.forwardRef(({ fullName, date }, ref) => {
   return (
 
     <div className="container mx-auto flex flex-row items-center justify-center" ref={ref}>
@@ -41,6 +41,6 @@ const PelvisInterfaceCertificate = React.forwardRef(({ fullName, date }, ref) =>
   );
 });
 
-PelvisInterfaceCertificate.displayName = 'PelvisInterfaceCertificate'; // Set the display name
+PelvisAdvancedCertificate.displayName = 'PelvisAdvancedCertificate'; // Set the display name
 
-export default PelvisInterfaceCertificate;
+export default PelvisAdvancedCertificate;
