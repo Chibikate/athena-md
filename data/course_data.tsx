@@ -125,6 +125,42 @@ export const courses = [
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/course/MeshMixer2 - Pelvis Virtual-Surgery",
   },
+  {
+    image: course.Module14,
+    title: "3D Printing using Ultimaker Cura (E-1)",
+    description: "Learn how to download Ultimaker Cura",
+    level: "Easy",
+    time: "10mins",
+    alt: "3D printing using Ultimaker Cura course",
+    to: "/course/3D Printing - Part 1",
+  },
+  {
+    image: course.Module14,
+    title: "3D Printing using Ultimaker Cura (E-2)",
+    description: "Learn about the different features of Ultimaker Cura",
+    level: "Hard",
+    time: "1hr",
+    alt: "3D printing using Ultimaker Cura course",
+    to: "/course/3D Printing - Part 2",
+  },
+  {
+    image: course.Module14,
+    title: "3D Printing using Ultimaker Cura (E-3)",
+    description: "Learn how to use Ultimaker Cura for 3D printing",
+    level: "Hard",
+    time: "1hr",
+    alt: "3D printing using Ultimaker Cura course",
+    to: "/course/3D Printing - Part 3",
+  },
+  {
+    image: course.Module14,
+    title: "3D Printing using Ultimaker Cura (E-4)",
+    description: "Learn how to print using Ultimaker Cura",
+    level: "Hard",
+    time: "30mins",
+    alt: "3D printing using Ultimaker Cura course",
+    to: "/course/3D Printing - Part 4",
+  },
 ];
 
 export interface HeroProps {
@@ -401,6 +437,89 @@ const MeshMixer2: CourseDataProps = {
   },
   to: "data",
 };
+const printing1: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D Printing using Ultimaker Cura (E-1)",
+      difficulty: "Easy",
+      duration: "10 mins",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Download Ultimaker Cura",
+      ],
+    },
+  },
+  to: "data",
+};
+const printing2: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D Printing using Ultimaker Cura (E-2)",
+      difficulty: "Difficult",
+      duration: "1hr",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Learn different features of Ultimaker Cura",
+        "Familiaruze the features of the software",
+      ],
+    },
+  },
+  to: "data",
+};
+const printing3: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D Printing using Ultimaker Cura (E-3)",
+      difficulty: "Difficult",
+      duration: "1hr",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Learn different features of Ultimaker Cura",
+        "Familiaruze the features of the software",
+        "Learn how to use Ultimaker Cura for 3D printing",
+      ],
+    },
+  },
+  to: "data",
+};
+const printing4: CourseDataProps = {
+  hero: {
+    hero: {
+      title: "3D Printing using Ultimaker Cura (E-4)",
+      difficulty: "Hard",
+      duration: "30mins",
+      language: "English",
+    },
+  },
+
+  objectives: {
+    objective: {
+      objectives: [
+        "Learn to print using Ultimaker Cura",
+        "Add the 3D model to the software",
+        "Prepare the 3D model for printing",
+        "Print the 3D model",
+      ],
+    },
+  },
+  to: "data",
+};
+
 export {
   slicerInterface,
   dicomDatasets,
@@ -413,5 +532,9 @@ export {
   pelvisdicomDisplay,
   pelvisbasicSegmentation,
   pelvisadvancedSegmentation1,
-  MeshMixer2, 
+  MeshMixer2,
+  printing1,
+  printing2,
+  printing3,
+  printing4, 
 };
