@@ -10,6 +10,10 @@ import { slicerTutorial8 } from "./C3navigating_data";
 import { slicerTutorial9 } from "./C4basic_data";
 import { slicerTutorial10 } from "./C5advanced_data";
 import { MeshTutorial2 } from "./D1mesh_data";
+import {printingTutorial1} from "./3dprinting1_data";
+import {printingTutorial2} from "./3dprinting2_data";
+import {printingTutorial3} from "./3dprinting3_data";
+import {printingTutorial4} from "./3dprinting4_data";
 
 
 
@@ -26,4 +30,8 @@ export {
   slicerTutorial10,
   MeshTutorial,
   MeshTutorial2,
+  printingTutorial1,
+  printingTutorial2,
+  printingTutorial3,
+  printingTutorial4,
 };
