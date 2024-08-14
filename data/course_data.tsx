@@ -135,7 +135,7 @@ export const courses = [
     to: "/course/3D Printing - Part 1",
   },
   {
-    image: course.Module14,
+    image: course.Module15,
     title: "3D Printing using Ultimaker Cura (E-2)",
     description: "Learn about the different features of Ultimaker Cura",
     level: "Hard",
@@ -144,7 +144,7 @@ export const courses = [
     to: "/course/3D Printing - Part 2",
   },
   {
-    image: course.Module14,
+    image: course.Module16,
     title: "3D Printing using Ultimaker Cura (E-3)",
     description: "Learn how to use Ultimaker Cura for 3D printing",
     level: "Hard",
@@ -153,7 +153,7 @@ export const courses = [
     to: "/course/3D Printing - Part 3",
   },
   {
-    image: course.Module14,
+    image: course.Module17,
     title: "3D Printing using Ultimaker Cura (E-4)",
     description: "Learn how to print using Ultimaker Cura",
     level: "Hard",
