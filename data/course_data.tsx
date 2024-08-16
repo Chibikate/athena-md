@@ -310,10 +310,6 @@ const MeshMixer: CourseDataProps = {
   },
   to: "data",
 };
-
-export {
-  TeamSection2
-}
 const pelvisInterface: CourseDataProps = {
   hero: {
     hero: {

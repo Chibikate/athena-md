@@ -82,19 +82,19 @@ const Home = ({ params }: Params) => {
       setContent("MeshMixer2 - Pelvis Virtual-Surgery");
       setData(datas.MeshMixer2);
       setNewCourse (true)
-    } else if (course === "Optimizing 3D Printing for a Mandible- Part 1") {
+    } else if (course === "3D Printing for a Mandible- Part 1") {
       setContent("3D Printing  Part 1");
       setData(datas.printing1);
       setNewCourse (true)
-    } else if (course === "Optimizing 3D Printing for a Mandible- Part 2") {
+    } else if (course === "3D Printing for a Mandible- Part 2") {
       setContent("3D Printing  Part 2");
       setData(datas.printing2);
       setNewCourse (true)
-    } else if (course === "Optimizing 3D Printing for a Mandible- Part 3") {
+    } else if (course === "3D Printing for a Mandible- Part 3") {
       setContent("3D Printing  Part 3");
       setData(datas.printing3);
       setNewCourse (true)
-    } else if (course === "Optimizing 3D Printing for a Mandible- Part 4") {
+    } else if (course === "3D Printing for a Mandible- Part 4") {
       setContent("3D Printing  Part 4");
       setData(datas.printing4);
       setNewCourse (true)
