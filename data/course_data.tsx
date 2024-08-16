@@ -127,39 +127,39 @@ export const courses = [
   },
   {
     image: course.Module14,
-    title: "3D Printing using Ultimaker Cura (E-1)",
+    title: "Optimizing 3D Printing for a Mandible (E-1)",
     description: "Learn how to download Ultimaker Cura",
     level: "Easy",
     time: "10mins",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing - Part 1",
+    to: "/course/3D Printing  Part 1",
   },
   {
     image: course.Module15,
-    title: "3D Printing using Ultimaker Cura (E-2)",
+    title: "Optimizing 3D Printing for a Mandible (E-2)",
     description: "Learn about the different features of Ultimaker Cura",
     level: "Hard",
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing - Part 2",
+    to: "/course/3D Printing  Part 2",
   },
   {
     image: course.Module16,
-    title: "3D Printing using Ultimaker Cura (E-3)",
+    title: "Optimizing 3D Printing for a Mandible (E-3)",
     description: "Learn how to use Ultimaker Cura for 3D printing",
     level: "Hard",
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing - Part 3",
+    to: "/course/3D Printing  Part 3",
   },
   {
     image: course.Module17,
-    title: "3D Printing using Ultimaker Cura (E-4)",
+    title: "Optimizing 3D Printing for a Mandible (E-4)",
     description: "Learn how to print using Ultimaker Cura",
     level: "Hard",
     time: "30mins",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing - Part 4",
+    to: "/course/3D Printing  Part 4",
   },
 ];
 
@@ -310,6 +310,7 @@ const MeshMixer: CourseDataProps = {
   },
   to: "data",
 };
+
 export {
   TeamSection2
 }
