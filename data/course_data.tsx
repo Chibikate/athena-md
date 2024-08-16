@@ -489,8 +489,6 @@ const printing3: CourseDataProps = {
   objectives: {
     objective: {
       objectives: [
-        "Learn different features of Ultimaker Cura",
-        "Familiarize the features of the software",
         "Learn how to use Ultimaker Cura for 3D printing",
       ],
     },
