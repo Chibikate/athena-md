@@ -440,7 +440,7 @@ const MeshMixer2: CourseDataProps = {
 const printing1: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D Printing using Ultimaker Cura (E-1)",
+      title: "Optimizing 3D Printing for a Mandible (E-1)",
       difficulty: "Easy",
       duration: "10 mins",
       language: "English",
@@ -459,7 +459,7 @@ const printing1: CourseDataProps = {
 const printing2: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D Printing using Ultimaker Cura (E-2)",
+      title: "Optimizing 3D Printing for a Mandible (E-2)",
       difficulty: "Difficult",
       duration: "1hr",
       language: "English",
@@ -479,7 +479,7 @@ const printing2: CourseDataProps = {
 const printing3: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D Printing using Ultimaker Cura (E-3)",
+      title: "Optimizing 3D Printing for a Mandible (E-3)",
       difficulty: "Difficult",
       duration: "1hr",
       language: "English",
@@ -490,7 +490,7 @@ const printing3: CourseDataProps = {
     objective: {
       objectives: [
         "Learn different features of Ultimaker Cura",
-        "Familiaruze the features of the software",
+        "Familiarize the features of the software",
         "Learn how to use Ultimaker Cura for 3D printing",
       ],
     },
@@ -500,7 +500,7 @@ const printing3: CourseDataProps = {
 const printing4: CourseDataProps = {
   hero: {
     hero: {
-      title: "3D Printing using Ultimaker Cura (E-4)",
+      title: "Optimizing 3D Printing for a Mandible (E-4)",
       difficulty: "Hard",
       duration: "30mins",
       language: "English",
