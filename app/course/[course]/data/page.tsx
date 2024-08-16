@@ -18,6 +18,11 @@ import {
   slicerTutorial9,
   slicerTutorial10,
   MeshTutorial2,
+  printingTutorial1,
+  printingTutorial2,
+  printingTutorial3,
+  printingTutorial4,
+  
 } from "@/data";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
@@ -94,6 +99,19 @@ const Home = ({ params }: Params) => {
       case "MeshMixer2 - Pelvis Virtual-Surgery":
         setContent(MeshTutorial2);
         break;
+      case "3D Printing - Part 1":
+        setContent(printingTutorial1);
+        break;
+      case "3D Printing - Part 2":
+        setContent(printingTutorial2);
+        break;
+      case "3D Printing - Part 3":
+        setContent(printingTutorial3);
+        break;
+      case "3D Printing - Part 4":
+        setContent(printingTutorial4);
+        break;
+            
     }
   }, [queryPage]);
 
