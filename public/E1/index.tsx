@@ -1,6 +1,6 @@
-import Printing1 from "@/public/3DP1/1.png";
-import Printing2 from "@/public/3DP1/2.png";
-import Printing3 from "@/public/3DP1/3.png";
+import Printing1 from "@/public/E1/1.png";
+import Printing2 from "@/public/E1/2.png";
+import Printing3 from "@/public/E1/3.png";
 
 
 
