@@ -481,7 +481,7 @@ const printing3: CourseDataProps = {
     hero: {
       title: "Optimizing 3D Printing for a Mandible (E-3)",
       difficulty: "Difficult",
-      duration: "1hr",
+      duration: "50mins",
       language: "English",
     },
   },
