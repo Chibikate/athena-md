@@ -52,7 +52,7 @@ function CertificatePage() {
         </Link>
       </div>
       <div>
-        <Link href="/course/MeshMixer%20-%20Virtual-Surgery">
+        <Link href="https://athena-md.vercel.app/course/MeshMixer2%20-%20Pelvis%20Virtual-Surgery">
           <button className="bg-[#5d81dd] text-white font-bold px-4 py-2 cursor-pointer rounded-md hover:bg-[#1c1648] mt-4 inline-block">
             Proceed to the Next Lesson
           </button>

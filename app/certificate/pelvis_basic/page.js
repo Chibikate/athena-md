@@ -56,7 +56,7 @@ function CertificatePage() {
         </Link>
       </div>
       <div>
-        <Link href="/course/3D%20slicer%20-%20Advanced%20Segmentation-1">
+        <Link href="https://athena-md.vercel.app/course/3D%20slicer%20Pelvis%20-%20Advanced%20Segmentation-1">
           <button className="bg-[#5d81dd] text-white font-bold px-4 py-2 cursor-pointer rounded-md hover:bg-[#1c1648] mt-4 inline-block">
             Proceed to the Next Lesson
           </button>
