@@ -147,4 +147,5 @@ const TeamSection = ({ isNewCourse }: { isNewCourse: boolean }) => {
   );
 };
 
+
 export default TeamSection;
