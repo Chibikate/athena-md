@@ -132,7 +132,7 @@ export const courses = [
     level: "Easy",
     time: "10mins",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing  Part 1",
+    to: "/course/3D Printing for a Mandible-1",
   },
   {
     image: course.Module15,
@@ -141,7 +141,7 @@ export const courses = [
     level: "Hard",
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing  Part 2",
+    to: "/course/3D Printing for a Mandible-2",
   },
   {
     image: course.Module16,
@@ -150,7 +150,7 @@ export const courses = [
     level: "Hard",
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing  Part 3",
+    to: "/course/3D Printing for a Mandible-3",
   },
   {
     image: course.Module17,
@@ -159,7 +159,7 @@ export const courses = [
     level: "Hard",
     time: "30mins",
     alt: "3D printing using Ultimaker Cura course",
-    to: "/course/3D Printing  Part 4",
+    to: "/course/3D Printing for a Mandible-4",
   },
 ];
 
