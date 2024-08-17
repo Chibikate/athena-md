@@ -99,16 +99,16 @@ const Home = ({ params }: Params) => {
       case "MeshMixer2 - Pelvis Virtual-Surgery":
         setContent(MeshTutorial2);
         break;
-      case "3D Printing  Part 1":
+      case "3D printing  Part 1":
         setContent(printingTutorial1);
         break;
-      case "3D Printing  Part 2":
+      case "3D printing  Part 2":
         setContent(printingTutorial2);
         break;
-      case "3D Printing  Part 3":
+      case "3D printing  Part 3":
         setContent(printingTutorial3);
         break;
-      case "3D Printing  Part 4":
+      case "3D printing  Part 4":
         setContent(printingTutorial4);
         break;
             
