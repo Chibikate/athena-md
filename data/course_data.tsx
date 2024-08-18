@@ -127,7 +127,7 @@ export const courses = [
   },
   {
     image: course.Module14,
-    title: "Optimizing 3D Printing for a Mandible (E-1)",
+    title: "Optimizing 3D Printer Slicing for a Mandible (E-1)",
     description: "Learn how to download Ultimaker Cura",
     level: "Easy",
     time: "10mins",
@@ -136,7 +136,7 @@ export const courses = [
   },
   {
     image: course.Module15,
-    title: "Optimizing 3D Printing for a Mandible (E-2)",
+    title: "Optimizing 3D Printer Slicing for a Mandible (E-2)",
     description: "Learn about the different features of Ultimaker Cura",
     level: "Hard",
     time: "1hr",
@@ -145,7 +145,7 @@ export const courses = [
   },
   {
     image: course.Module16,
-    title: "Optimizing 3D Printing for a Mandible (E-3)",
+    title: "Optimizing 3D Printer Slicing for a Mandible (E-3)",
     description: "Learn how to use Ultimaker Cura for 3D printing",
     level: "Hard",
     time: "1hr",
@@ -154,7 +154,7 @@ export const courses = [
   },
   {
     image: course.Module17,
-    title: "Optimizing 3D Printing for a Mandible (E-4)",
+    title: "Optimizing 3D Printer Slicing for a Mandible (E-4)",
     description: "Learn how to print using Ultimaker Cura",
     level: "Hard",
     time: "30mins",
