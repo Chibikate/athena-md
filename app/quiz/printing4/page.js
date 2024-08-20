@@ -39,12 +39,12 @@ const quizQuestions = [
         "A. Profile setting",
         "B. Support setting",
         "C. Adhesion setting",
-        "D. Support setting",
+        "D. Shell thickness",
         
         
     ],
     image: "",
-    correctAnswer: "C. Adhesion setting"
+    correctAnswer: "A. Profile setting"
   },
   {
     question:
@@ -211,7 +211,7 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="/fillup/printing2">
+              <Link href="/fillup/printing4">
                 {" "}
                 <p className="text-green-900 font-bold">
                   Perfect! Now, Click here to get your{" "}
@@ -231,7 +231,7 @@ export default function QuizApp() {
                 >
                   Retake Quiz
                 </button>
-                <Link href="https://athena-md.vercel.app/course/3D%20Printing%20for%20a%20Mandible-2">
+                <Link href="https://athena-md.vercel.app/course/3D%20Printing%20for%20a%20Mandible-4">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>
