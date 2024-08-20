@@ -2,67 +2,38 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Picture82 from "@/public/basic3D/quizd1/Picture82.png";
-import Picture97 from "@/public/basic3D/quizd1/Picture97.png";
 const quizQuestions = [
   {
-    question: `1. This function shows the available 3D objects currently open or loaded in the program`,
-
+    question:
+    "1. How can users stop support structures from being built in specific areas of a model?", 
+  
     options: [
-        "A. Object Browser",
-        "B. Mirror",
-        "C.Transform",
-        "D. Brush Function",
+        "A. By activating the support blocker", 
+        "B. By adjusting the size of the model",
+        "C. By moving  the model in Cartesian coordinates",
         
     ],
     image: "",
-    correctAnswer: "A. Object Browser",
+    correctAnswer: "A. By activating the support blocker"
   },
   {
-    question: "2.What function is applied to convert the object into a solid form suitable for 3D printing?",
-
+    question:
+    "2. Which functions does the Print/Extruder selection option provide?", 
+  
     options: [
-        "A. Make solid",
-        "B. Mirror",
-        "C. Apply",
-        "D. Transform",
-    
+        "A. It enables the selection of the filament color for your print",
+        "B. It enables you to determine which printer will be employed for the task",
+        "C. It delineates the type of material that will be employed for printing",
+        "D. If your printer has multiple extruder heads, it determines which one will be used to produce the model",
+        
     ],
     image: "",
-    correctAnswer: "A. Make solid",
-  },
-  {
-    question: "3. The function allows users to create and compare the reduced or manipulated segment to see the changes made. ",
-
-    options: [
-        "A. Mirror",
-        "B. Transform",
-        "C. Plane Cut",
-        "D. Align",
-        
-    ],
-    image: Picture97,
-    correctAnswer: "A. Mirror",
-  },
-  {
-    question: "4. What is the primary purpose of the brush tool function?",
-
-    options: [
-        "A. Precision and control on objects",
-        "B. Navigate between objects",
-        "C. Convert model into solid form",
-        "D. Mirrors the objects",
-        
-    ],
-    image: Picture82,
-    correctAnswer: "A. Precision and control on objects",
+    correctAnswer: "D. If your printer has multiple extruder heads, it determines which one will be used to produce the model"
   },
 ];
 
 export default function QuizApp() {
-  const [userAnswers, setUserAnswers] = useState(
-    Array(quizQuestions.length).fill("")
-  );
+  const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(""));
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
 
@@ -125,7 +96,7 @@ export default function QuizApp() {
     <div className="min-h-screen items-center p-6 ">
       <div className="quiz-container" style={quizContainerStyle}>
         <h1 className="text-primary py-4 text-center text-lg font-bold">
-          Meshmixer Quiz
+          Optimizing 3D Printer Slicing Quiz
         </h1>
         {!showResults ? (
           <div>
@@ -133,13 +104,8 @@ export default function QuizApp() {
               <p>{quizQuestions[currentQuestion].question}</p>
               {quizQuestions[currentQuestion].image && (
                 <div className="flex justify-center items-center">
-                  <Image
-                    src={quizQuestions[currentQuestion].image}
-                    alt=""
-                    width="100%"
-                    height="auto"
-                  />
-                </div>
+                  <Image src={quizQuestions[currentQuestion].image} alt="" width="100%" height="auto" />
+                </div> 
               )}
               <ul className="pl-4">
                 {quizQuestions[currentQuestion].options.map(
@@ -200,7 +166,7 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="/fillup/meshmixer2">
+              <Link href="/fillup/printing3">
                 {" "}
                 <p className="text-green-900 font-bold">
                   Perfect! Now, Click here to get your{" "}
@@ -220,7 +186,7 @@ export default function QuizApp() {
                 >
                   Retake Quiz
                 </button>
-                <Link href="https://athena-md.vercel.app/course/MeshMixer2%20-%20Pelvis%20Virtual-Surgery">
+                <Link href="https://athena-md.vercel.app/course/3D%20Printing%20for%20a%20Mandible-3">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>

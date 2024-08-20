@@ -2,67 +2,72 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Picture82 from "@/public/basic3D/quizd1/Picture82.png";
-import Picture97 from "@/public/basic3D/quizd1/Picture97.png";
 const quizQuestions = [
   {
-    question: `1. This function shows the available 3D objects currently open or loaded in the program`,
-
+    question:
+    "1. Where can users see the file name and the dimensions of the loaded model within the project?", 
+  
     options: [
-        "A. Object Browser",
-        "B. Mirror",
-        "C.Transform",
-        "D. Brush Function",
+      "A. Object List",
+      "B. Model Settings",
+      "C. Configuration Panel",
+    ],
+    image: "",
+    correctAnswer: "A. Object List"
+  },
+  {
+    question:
+    "2. Ultimaker 3D printer settings vary by material; what measures should users take to achieve the desired print quality?", 
+  
+    options: [
+        "A. Select any printer brand included in the software",
+        "B. Select Ultimaker material and adjust the material accordingly",
+        "C. Click 1 or 2 to set up the machine's material and print core",
         
     ],
     image: "",
-    correctAnswer: "A. Object Browser",
+    correctAnswer: "B. Select Ultimaker material and adjust the material accordingly"
   },
   {
-    question: "2.What function is applied to convert the object into a solid form suitable for 3D printing?",
-
+    question:
+    "3. What is the default print core in printing 3D models?", 
     options: [
-        "A. Make solid",
-        "B. Mirror",
-        "C. Apply",
-        "D. Transform",
-    
+        "A. AA 0.25",
+        "B. AA 0.4",
+        "C. CC 0.4",
+        
     ],
     image: "",
-    correctAnswer: "A. Make solid",
+    correctAnswer: "B. AA 0.4"
   },
   {
-    question: "3. The function allows users to create and compare the reduced or manipulated segment to see the changes made. ",
-
+    question:
+    "4. What are the advantages of having a PC and 3D printer machine connected to the same network?", 
     options: [
-        "A. Mirror",
-        "B. Transform",
-        "C. Plane Cut",
-        "D. Align",
+        "A. Enhanced print quality",
+        "B. Advanced troubleshooting",
+        "C. Direct printer communication",
         
     ],
-    image: Picture97,
-    correctAnswer: "A. Mirror",
+    image: "",
+    correctAnswer: "C. Direct printer communication"
   },
   {
-    question: "4. What is the primary purpose of the brush tool function?",
-
+    question:
+    "5. Ultimaker Cura cannot print offline on a non-networked printer.", 
     options: [
-        "A. Precision and control on objects",
-        "B. Navigate between objects",
-        "C. Convert model into solid form",
-        "D. Mirrors the objects",
+        "True",
+        "False",
+        
         
     ],
-    image: Picture82,
-    correctAnswer: "A. Precision and control on objects",
+    image: "",
+    correctAnswer: "False"
   },
 ];
 
 export default function QuizApp() {
-  const [userAnswers, setUserAnswers] = useState(
-    Array(quizQuestions.length).fill("")
-  );
+  const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(""));
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
 
@@ -125,7 +130,7 @@ export default function QuizApp() {
     <div className="min-h-screen items-center p-6 ">
       <div className="quiz-container" style={quizContainerStyle}>
         <h1 className="text-primary py-4 text-center text-lg font-bold">
-          Meshmixer Quiz
+        Optimizing 3D Printer Slicing Quiz
         </h1>
         {!showResults ? (
           <div>
@@ -133,13 +138,8 @@ export default function QuizApp() {
               <p>{quizQuestions[currentQuestion].question}</p>
               {quizQuestions[currentQuestion].image && (
                 <div className="flex justify-center items-center">
-                  <Image
-                    src={quizQuestions[currentQuestion].image}
-                    alt=""
-                    width="100%"
-                    height="auto"
-                  />
-                </div>
+                  <Image src={quizQuestions[currentQuestion].image} alt="" width="100%" height="auto" />
+                </div> 
               )}
               <ul className="pl-4">
                 {quizQuestions[currentQuestion].options.map(
@@ -200,7 +200,7 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="/fillup/meshmixer2">
+              <Link href="/fillup/printing2">
                 {" "}
                 <p className="text-green-900 font-bold">
                   Perfect! Now, Click here to get your{" "}
@@ -220,7 +220,7 @@ export default function QuizApp() {
                 >
                   Retake Quiz
                 </button>
-                <Link href="https://athena-md.vercel.app/course/MeshMixer2%20-%20Pelvis%20Virtual-Surgery">
+                <Link href="https://athena-md.vercel.app/course/3D%20Printing%20for%20a%20Mandible-2">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>

@@ -201,7 +201,7 @@ export default function QuizApp() {
                 >
                   Retake Quiz
                 </button>
-                <Link href="/course/3D%20slicer%20-%20Adding%20DICOM%20datasets">
+                <Link href="https://athena-md.vercel.app/course/3D%20Slicer%20Pelvis%20-%20add%20DICOM">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>

@@ -2,67 +2,83 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Picture82 from "@/public/basic3D/quizd1/Picture82.png";
-import Picture97 from "@/public/basic3D/quizd1/Picture97.png";
 const quizQuestions = [
   {
-    question: `1. This function shows the available 3D objects currently open or loaded in the program`,
-
+    question:
+    "1. What feature allows the generation of support structures under the model to prevent the plastic from falling down?", 
+  
     options: [
-        "A. Object Browser",
-        "B. Mirror",
-        "C.Transform",
-        "D. Brush Function",
+        "A. Infill density",
+        "B. Support setting",
+        "C. Shell thickness",
+        "D. Adhesion setting",
         
     ],
     image: "",
-    correctAnswer: "A. Object Browser",
+    correctAnswer: "B. Support setting"
   },
   {
-    question: "2.What function is applied to convert the object into a solid form suitable for 3D printing?",
-
+    question:
+    "2.This tool allows you to choose the optimal build plate adhesion type for a model by displaying several types (skirt, brim, and raft).", 
+  
     options: [
-        "A. Make solid",
-        "B. Mirror",
-        "C. Apply",
-        "D. Transform",
-    
+        "A. Shell thickness",
+        "B. Profile setting",
+        "C. Adhesion setting",
+        "D. Support setting",
+        
+        
     ],
     image: "",
-    correctAnswer: "A. Make solid",
+    correctAnswer: "C. Adhesion setting"
   },
   {
-    question: "3. The function allows users to create and compare the reduced or manipulated segment to see the changes made. ",
-
+    question:
+    "3. This feature enables Ultimaker Cura settings (such as infill density and shell thickness) to be customized for each print profile.", 
     options: [
-        "A. Mirror",
-        "B. Transform",
-        "C. Plane Cut",
-        "D. Align",
+        "A. Profile setting",
+        "B. Support setting",
+        "C. Adhesion setting",
+        "D. Support setting",
+        
         
     ],
-    image: Picture97,
-    correctAnswer: "A. Mirror",
+    image: "",
+    correctAnswer: "C. Adhesion setting"
   },
   {
-    question: "4. What is the primary purpose of the brush tool function?",
-
+    question:
+    "4. In Ultimaker Cura, adjusting layer height allows users to achieve a balance between the speed and print quality of the model.", 
     options: [
-        "A. Precision and control on objects",
-        "B. Navigate between objects",
-        "C. Convert model into solid form",
-        "D. Mirrors the objects",
+        "A. Generate support",
+        "B. Strength (Infill)",
+        "C. Build plate adhesion",
+        "D. Resolution",
+        
         
     ],
-    image: Picture82,
-    correctAnswer: "A. Precision and control on objects",
+    image: "",
+    correctAnswer: "D. Resolution"
+  },
+  {
+    question:
+    "5. Where can users locate Ultimaker Cura's printing process settings?", 
+    options: [
+        "A. Resolution",
+        "B. Print settings",
+        "C. Adhesion settings",
+        "D. Profile settings",
+        
+        
+        
+    ],
+    image: "",
+    correctAnswer: "B. Print settings"
   },
 ];
 
 export default function QuizApp() {
-  const [userAnswers, setUserAnswers] = useState(
-    Array(quizQuestions.length).fill("")
-  );
+  const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(""));
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
 
@@ -125,7 +141,7 @@ export default function QuizApp() {
     <div className="min-h-screen items-center p-6 ">
       <div className="quiz-container" style={quizContainerStyle}>
         <h1 className="text-primary py-4 text-center text-lg font-bold">
-          Meshmixer Quiz
+        Optimizing 3D Printer Slicing Quiz
         </h1>
         {!showResults ? (
           <div>
@@ -133,13 +149,8 @@ export default function QuizApp() {
               <p>{quizQuestions[currentQuestion].question}</p>
               {quizQuestions[currentQuestion].image && (
                 <div className="flex justify-center items-center">
-                  <Image
-                    src={quizQuestions[currentQuestion].image}
-                    alt=""
-                    width="100%"
-                    height="auto"
-                  />
-                </div>
+                  <Image src={quizQuestions[currentQuestion].image} alt="" width="100%" height="auto" />
+                </div> 
               )}
               <ul className="pl-4">
                 {quizQuestions[currentQuestion].options.map(
@@ -200,7 +211,7 @@ export default function QuizApp() {
               {wrong.length > 0 && `You got a wrong answer on number ${wrong}`}
             </p>
             {score === quizQuestions.length ? (
-              <Link href="/fillup/meshmixer2">
+              <Link href="/fillup/printing2">
                 {" "}
                 <p className="text-green-900 font-bold">
                   Perfect! Now, Click here to get your{" "}
@@ -220,7 +231,7 @@ export default function QuizApp() {
                 >
                   Retake Quiz
                 </button>
-                <Link href="https://athena-md.vercel.app/course/MeshMixer2%20-%20Pelvis%20Virtual-Surgery">
+                <Link href="https://athena-md.vercel.app/course/3D%20Printing%20for%20a%20Mandible-2">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>

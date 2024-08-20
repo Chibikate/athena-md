@@ -157,7 +157,7 @@ export default function QuizApp() {
               <div className="text-red font-semibold">
                 <p className="text-red-600 text-center pt-4 pb-2">Sorry, you didn&#39;t pass. You can retake the quiz to improve your score.</p>
                 <button onClick={retakeQuiz} style={retakeButtonStyle} className="text-right">Retake Quiz</button>
-                <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
+                <Link href="https://athena-md.vercel.app/course/3D%20slicer%20Pelvis%20-%20Navigating%20DICOM">
                   <button>Retake the Lesson</button>
                 </Link>
               </div>
