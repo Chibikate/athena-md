@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/hero_page", "app/quiz/interfacequiz/page.js", "app/certificate/interface/Certificate/component.jsx", "components/progressbar/ProgressBar.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/hero_page", "app/quiz/interfacequiz/page.js", "app/certificate/interface/Certificate/component.jsx", "components/progressbar/ProgressBar.js", "components/certificate/printing2/printing2_certificate.jsx", "components/certificate/printing3/printing3_certificate.jsx"],
   "exclude": ["node_modules"]
 }
