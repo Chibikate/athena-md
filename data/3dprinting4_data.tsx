@@ -159,7 +159,7 @@ If your model has an overhang which is not supported by anything below, there’
       <div>
         <p>
         Congratulations, you already set the best settings for your model. For you to get the certificate, take the{" "}
-            <Link href="/quiz/3dprinting4"
+            <Link href="/quiz/printing4"
               className="font-bold underline"
             >
               Quiz

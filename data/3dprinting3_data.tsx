@@ -107,7 +107,7 @@ export const printingTutorial3 = [
       <div>
         <p>
         Congratulations you already set your model on the best placement. For you to get the certificate, take the{" "}
-            <Link href="/quiz/3dprinting3"
+            <Link href="/quiz/printing3"
               className="font-bold underline"
             >
               Quiz
