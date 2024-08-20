@@ -167,7 +167,7 @@ If your model has an overhang which is not supported by anything below, there’
         </p>
       </div>
     ),
-    image: Printing46,
+    image: null,
     alt: "",
   },
 ];

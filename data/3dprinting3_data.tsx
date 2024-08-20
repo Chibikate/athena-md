@@ -68,7 +68,7 @@ export const printingTutorial3 = [
     description: (
       <div>
         <p>
-        Mirror Mode: This settings allow just rotate the model like a mirror image
+        <span className="font-bold text-lg">Mirror Mode: </span>This settings allow just rotate the model like a mirror image
         If you click the arrow it will move according to the placement of the arrow.
         </p>
       </div>
@@ -81,7 +81,7 @@ export const printingTutorial3 = [
     description: (
       <div>
         <p>
-        Per Model Settings: This settings allow set settings per model. 
+        <span className="font-bold text-lg">Per Model Settings: </span>This settings allow set settings per model. 
         </p>
       </div>
     ),
@@ -93,7 +93,7 @@ export const printingTutorial3 = [
     description: (
       <div>
         <p>
-        Support Blocker: This option will create a cube that you can scale and move anywhere around your model.
+        <span className="font-bold text-lg">Support Blocker: </span>This option will create a cube that you can scale and move anywhere around your model.
         Once this is set. The model inside the cube will block all the support that will generate once you slice the model. 
         </p>
       </div>
@@ -101,6 +101,19 @@ export const printingTutorial3 = [
     image: Printing33,
     alt: "",
   },
+  {
+    title: "Ultimaker Cura: Model Settings",
+    description: (
+      <div>
+        <p>
+        <span className="font-bold text-lg">Print/Extruder selection: </span>This option allows you to choose which Extruder will be using to print the model. 
+        </p>
+      </div>
+    ),
+    image: Printing34,
+    alt: "",
+  },
+
   {
     title: "",
     description: (
@@ -115,7 +128,7 @@ export const printingTutorial3 = [
         </p>
       </div>
     ),
-    image: Printing34,
+    image: null,
     alt: "",
   },
 ];
