@@ -343,7 +343,7 @@ You can Enable or Disable an extruder, but this is not necessary once we select 
       <div>
         <p>
         Congratulations on learning the different features of the software.For you to get the certificate, take the{" "}
-            <Link href=""
+            <Link href="/quiz/3dprinting2"
               className="font-bold underline"
             >
               Quiz

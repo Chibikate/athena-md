@@ -15,23 +15,13 @@ import Printing46 from "@/public/E4/46.png";
 
 export const printingTutorial4 = [
   {
-    title: "Introduction of Ultimaker Cura",
+    title: "Welcome to Ultimaker Cura: Module 4",
     description: (
       <div>
         <div className="flex flex-col items-center justify-center">
           <ul className=" space-y-2">
             <li>
-              <span className="font-semibold pb-4">
-                Download Ultimaker Cura {" "}
-              </span>
-              <Link
-                href="  https://ultimaker.com/software/ultimaker-cura/"
-                className="underline"
-                target="_blank"
-              >
-                 https://ultimaker.com/software/ultimaker-cura/
-              </Link>
-              <p className="ml-6">Available in Windows, macOS and Linux </p>
+            For today, I will show you the Options on the Print Settings.   
             </li>
           </ul>
         </div>
@@ -41,16 +31,17 @@ export const printingTutorial4 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Print Settings",
     description: (
       <div>
         {" "}
         <p>
         Click the
           <span className="font-bold text-lg">
-          “Download for free icon”
+          Print Settings
           </span>{" "}
-           to get the latest version. Select the version according to the OS you are using.
+          The rightmost button in the stage menu contains the print settings panel, which includes all settings that define the printing strategy. By default, it opens in the recommended mode. This mode is ideal if you want to do a quick print with optimized printing profiles. 
+          There are a few parameters you can set
         </p>
       </div>
     ),
@@ -58,12 +49,17 @@ export const printingTutorial4 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
         <p>
-        Once download is done. You can proceed to install the application. 
-        Once you reach this part, this mean the software is ready to launch.
+        <li>Profiles – Preset option depending on the quality you want on your print. Settings will be pre defaulted according to the print profile you choose.</li>
+        <li>Resolution – Choose the layer height quality. The options available depend on your printer configuration</li>
+        <li>Recommended Print Settings – This is where we can see more than 200+ options to set on your model. (Please see Module 5 for this option.)</li>
+        <li>Strength (Infill) – Where we set how strong our model we want to build. This option can set the percentage of infill, the pattern we want to build, and the thickness of the shell.</li>
+        <li>Generate support – This will generate a support structure below overhanging parts of a model to prevent the model from sagging or printing mid-air.</li>
+        <li>Build plate adhesion – Adds a brim or raft around the base of the model to ensure the print doesn’t detach from the build plate.</li>
+
         </p>
       </div>
     ),
@@ -71,31 +67,21 @@ export const printingTutorial4 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Profiles",
     description: (
       <div>
-        <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
-        </p>
       </div>
     ),
     image: Printing38,
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Profiles",
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        The layer height is one of the most frequently changed settings. It is the thickness of one printed layer in millimeters. With a thinner layer height, you can increase the quality of the print, leading to a smoother surface and more detail visible in the Z-direction (height) of the model. 
+        On the other hand, by using thicker layers, you can decrease the print time substantially.
         </p>
       </div>
     ),
@@ -103,48 +89,27 @@ export const printingTutorial4 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Strength: Infill Density",
     description: (
       <div>
-        <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
-        </p>
       </div>
     ),
     image: Printing40,
     alt: "",
   },
   {
-    title: "",
+    title: "Strength: Shell Thickness",
     description: (
       <div>
-        <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
-        </p>
       </div>
     ),
     image: Printing41,
     alt: "",
   },
   {
-    title: "",
+    title: "Support Button",
     description: (
       <div>
-        <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
-        </p>
       </div>
     ),
     image: Printing42,
@@ -155,11 +120,10 @@ export const printingTutorial4 = [
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        What are supports?
+An FDM 3D printer works by depositing layer over layer of thermoplastics to create a 3D object. Because of that, each new layer must be supported by the layer beneath it.
+If your model has an overhang which is not supported by anything below, there’s a good chance it will drop or even fall, and you’ll need additional 3D printed support structures to ensure a successful print.
+
         </p>
       </div>
     ),
@@ -171,11 +135,9 @@ export const printingTutorial4 = [
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        Not all overhangs need to be supported. The general rule of thumb is: if an overhang tilts at an angle less than 45 degrees from the vertical, then you may be able to print that overhang without using 3D printing support structures. Before you start printing models with overhangs, it is a good idea to get an idea of your printer’s ability to print the tamer overhangs.
+        TIP: Each different 3D Printer model has different threshold angles where support will be needed
+
         </p>
       </div>
     ),
@@ -183,16 +145,9 @@ export const printingTutorial4 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Adhesion Button",
     description: (
       <div>
-        <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
-        </p>
       </div>
     ),
     image: Printing45,
@@ -203,11 +158,12 @@ export const printingTutorial4 = [
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        Congratulations, you already set the best settings for your model. For you to get the certificate, take the{" "}
+            <Link href="/quiz/3dprinting4"
+              className="font-bold underline"
+            >
+              Quiz
+            </Link>{" "}
         </p>
       </div>
     ),

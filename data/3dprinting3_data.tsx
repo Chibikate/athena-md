@@ -11,23 +11,13 @@ import Printing34 from "@/public/E3/34.png";
 
 export const printingTutorial3 = [
   {
-    title: "Introduction of Ultimaker Cura",
+    title: "Welcome to Ultimaker Cura: Module 3",
     description: (
       <div>
         <div className="flex flex-col items-center justify-center">
           <ul className=" space-y-2">
             <li>
-              <span className="font-semibold pb-4">
-                Download Ultimaker Cura {" "}
-              </span>
-              <Link
-                href="  https://ultimaker.com/software/ultimaker-cura/"
-                className="underline"
-                target="_blank"
-              >
-                 https://ultimaker.com/software/ultimaker-cura/
-              </Link>
-              <p className="ml-6">Available in Windows, macOS and Linux </p>
+            For today, I will show you the Options on the Model Settings. 
             </li>
           </ul>
         </div>
@@ -37,29 +27,23 @@ export const printingTutorial3 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
-        {" "}
-        <p>
-        Click the
-          <span className="font-bold text-lg">
-          “Download for free icon”
-          </span>{" "}
-           to get the latest version. Select the version according to the OS you are using.
-        </p>
+     <span className="font-bold text-lg"> Move: </span>
+     <p>This settings allow you to move the model in Cartesian coordinates. The number you will see are the exact coordinate of your model. </p>
       </div>
     ),
     image: Printing28,
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
         <p>
-        Once download is done. You can proceed to install the application. 
-        Once you reach this part, this mean the software is ready to launch.
+       <span className="font-bold text-lg"> Scale:</span>This settings allow you to adjust the Size of your model.
+        You can adjust scale in percentage or in actual size in metric. 
         </p>
       </div>
     ),
@@ -67,15 +51,12 @@ export const printingTutorial3 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        <span className="font-bold text-lg"> Rotate: </span>This settings allow you to set the orientation of your model
+          In a rule of thumb, The flastest surface of your model must be layered flat to the build platform.
         </p>
       </div>
     ),
@@ -83,15 +64,12 @@ export const printingTutorial3 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        Mirror Mode: This settings allow just rotate the model like a mirror image
+        If you click the arrow it will move according to the placement of the arrow.
         </p>
       </div>
     ),
@@ -99,15 +77,11 @@ export const printingTutorial3 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        Per Model Settings: This settings allow set settings per model. 
         </p>
       </div>
     ),
@@ -115,15 +89,12 @@ export const printingTutorial3 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        Support Blocker: This option will create a cube that you can scale and move anywhere around your model.
+        Once this is set. The model inside the cube will block all the support that will generate once you slice the model. 
         </p>
       </div>
     ),
@@ -135,11 +106,12 @@ export const printingTutorial3 = [
     description: (
       <div>
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+        Congratulations you already set your model on the best placement. For you to get the certificate, take the{" "}
+            <Link href="/quiz/3dprinting3"
+              className="font-bold underline"
+            >
+              Quiz
+            </Link>{" "}
         </p>
       </div>
     ),
