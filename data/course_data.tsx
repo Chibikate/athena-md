@@ -127,7 +127,7 @@ export const courses = [
   },
   {
     image: course.Module14,
-    title: "Optimizing 3D Printer Slicing for a Mandible (E-1)",
+    title: "Setting Up Ultimaker Cura (E-1)",
     description: "Learn how to download Ultimaker Cura",
     level: "Easy",
     time: "10mins",
@@ -136,7 +136,7 @@ export const courses = [
   },
   {
     image: course.Module15,
-    title: "Optimizing 3D Printer Slicing for a Mandible (E-2)",
+    title: "Ultimaker Cura Features (E-2)",
     description: "Learn about the different features of Ultimaker Cura",
     level: "Hard",
     time: "1hr",
@@ -145,7 +145,7 @@ export const courses = [
   },
   {
     image: course.Module16,
-    title: "Optimizing 3D Printer Slicing for a Mandible (E-3)",
+    title: "Preparing 3D Model using Ultimaker Cura (E-3)",
     description: "Learn how to use Ultimaker Cura for 3D printing",
     level: "Hard",
     time: "1hr",
@@ -154,8 +154,8 @@ export const courses = [
   },
   {
     image: course.Module17,
-    title: "Optimizing 3D Printer Slicing for a Mandible (E-4)",
-    description: "Learn how to print using Ultimaker Cura",
+    title: "Printing 3D Model using Ultimaker Cura (E-4)",
+    description: "Learn 3D print using Ultimaker Cura",
     level: "Hard",
     time: "30mins",
     alt: "3D printing using Ultimaker Cura course",
@@ -437,7 +437,7 @@ const MeshMixer2: CourseDataProps = {
 const printing1: CourseDataProps = {
   hero: {
     hero: {
-      title: "Optimizing 3D Printer Slicing for a Mandible (E-1)",
+      title: "Setting Up Ultimaker Cura (E-1)",
       difficulty: "Easy",
       duration: "10 mins",
       language: "English",
@@ -456,9 +456,9 @@ const printing1: CourseDataProps = {
 const printing2: CourseDataProps = {
   hero: {
     hero: {
-      title: "Optimizing 3D Printer Slicing for a Mandible (E-2)",
-      difficulty: "Difficult",
-      duration: "1hr",
+      title: "Ultimaker Cura Features (E-2)",
+      difficulty: "Hard",
+      duration: "40mins",
       language: "English",
     },
   },
@@ -476,9 +476,9 @@ const printing2: CourseDataProps = {
 const printing3: CourseDataProps = {
   hero: {
     hero: {
-      title: "Optimizing 3D Printer Slicing for a Mandible (E-3)",
+      title: "Preparing 3D Model using Ultimaker Cura (E-3)",
       difficulty: "Difficult",
-      duration: "50mins",
+      duration: "1hr",
       language: "English",
     },
   },
@@ -486,7 +486,8 @@ const printing3: CourseDataProps = {
   objectives: {
     objective: {
       objectives: [
-        "Learn how to use Ultimaker Cura for 3D printing",
+        "Learn how to use Ultimaker Cura for 3D printing (E-3)",
+        "Use the software to prepare the 3D model for printing",
       ],
     },
   },
@@ -495,9 +496,9 @@ const printing3: CourseDataProps = {
 const printing4: CourseDataProps = {
   hero: {
     hero: {
-      title: "Optimizing 3D Printer Slicing for a Mandible (E-4)",
+      title: "Printing 3D Model using Ultimaker Cura (E-4)",
       difficulty: "Hard",
-      duration: "30mins",
+      duration: "40mins",
       language: "English",
     },
   },
