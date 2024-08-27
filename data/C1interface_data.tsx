@@ -24,12 +24,12 @@ export const slicerTutorial6 = [
                   <li>
                     <span className="font-semibold">Download files: </span>
                     <Link
-                      href="https://drive.google.com/drive/folders/1KmdNecDiN-EMV3Mk39njesU-j51jRi3_"
+                      href="https://drive.google.com/drive/folders/1Gq2A8EL0izlRR7N0UtZFBZ9u-A6cFMSe"
                       className="underline"
                       target="_blank"
                     >
                       <span className="underline">
-                      https://drive.google.com/drive/folders/1KmdNecDiN-EMV3Mk39njesU-j51jRi3_
+                      https://drive.google.com/drive/folders/1Gq2A8EL0izlRR7N0UtZFBZ9u-A6cFMSe
                       </span>
                     </Link>
                     <p className="ml-6">(in zipped folder contains dicom files)</p>
