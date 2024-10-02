@@ -1,6 +1,5 @@
 import * as course from "@/public/course";
 import TeamSection from "@/components/course_overview/team_section";
-import TeamSection2 from "@/components/course_overview/team_section2";
 // * If magdungag kag another course, dani lang pag input//
 
 {
