@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Image6 from "@/public/Image6.png";
 
+
 const TeamSection = ({ isNewCourse }: { isNewCourse: boolean }) => {
   return (
-    <div className={`flex flex-col  bg-[#1c1648] text-white`}>
+    <div className={`flex flex-col  bg-[#EDF5FE] text-[#01062C]`}>
       <div className="area">
         <div className="area ">
           <ul className="circles ">
@@ -38,16 +39,15 @@ const TeamSection = ({ isNewCourse }: { isNewCourse: boolean }) => {
           <div className="flex flex-col sm:flex-row justify-between p-4 text-center">
             <p className="pl-3">
               Lemuel Clark Velasco <br />{" "}
-              <span className="font-bold text-sm text-[#ffc248] ">
+              <span className="font-bold text-sm text-[#151A40] ">
                 Project Leader
               </span>
             </p>
-
             <div>
               <p>
                 Rentor Cafino <br /> MD, DPBO-HNS
                 <br />
-                <span className="font-semibold text-sm text-[#ffc248]">
+                <span className="font-semibold text-sm text-[#151A40]">
                   {" "}
                   Content Developer
                 </span>
@@ -57,7 +57,7 @@ const TeamSection = ({ isNewCourse }: { isNewCourse: boolean }) => {
               <p>
                 Armando T. Isla <br /> MD, FPSO-HNS
                 <br />
-                <span className="font-semibold text-sm text-[#ffc248]">
+                <span className="font-semibold text-sm text-[#151A40]">
                   Medical Adviser
                 </span>
               </p>
@@ -68,20 +68,19 @@ const TeamSection = ({ isNewCourse }: { isNewCourse: boolean }) => {
               <p>Isaac Cesar De Guzman, MD, FPSO-HNS</p>
               <p>Jehan Grace Maglaya, MD, FPSO-HNS</p>
               <p>Anna Carmina Zantua, MD, FPSO-HNS</p>
-              <p className="font-bold pb-4 text-sm text-[#ffc248]">
+              <p className="font-bold pb-4 text-sm text-[#151A40]">
                 Content Validators
               </p>
             </div>
             <p>
               Kaye Q. Velarde <br />{" "}
-              <span className="font-bold pb-4 text-sm text-[#ffc248]">
+              <span className="font-bold pb-4 text-sm text-[#151A40]">
                 Pedagogy Manager
               </span>
             </p>
-
             <p>
               Queenie Kate S. Cabanilla <br />{" "}
-              <span className="font-bold pb-4 text-sm text-[#ffc248]">
+              <span className="font-bold pb-4 text-sm text-[#151A40]">
                 Web Developer
               </span>
             </p>
@@ -103,16 +102,15 @@ const TeamSection = ({ isNewCourse }: { isNewCourse: boolean }) => {
           <div className="flex flex-col sm:flex-row justify-between p-4 text-center">
             <p className="pl-3">
               Lemuel Clark Velasco <br />{" "}
-              <span className="font-bold text-sm text-[#ffc248] ">
+              <span className="font-bold text-sm text-[#151A40] ">
                 Project Leader
               </span>
             </p>
-
             <div>
               <p>
                 Darelle Jay P. Langga <br /> MD
                 <br />
-                <span className="font-semibold text-sm text-[#ffc248]">
+                <span className="font-semibold text-sm text-[#151A40]">
                   {" "}
                   Content Developer
                 </span>
@@ -123,20 +121,19 @@ const TeamSection = ({ isNewCourse }: { isNewCourse: boolean }) => {
               <p>Mark Louie M. Tangalin, MD</p>
               <p>Abegail Jane L. Jutba, MD</p>
               <p>Angelo Miguel D. Achacoso, MD</p>
-              <p className="font-bold pb-4 text-sm text-[#ffc248]">
+              <p className="font-bold pb-4 text-sm text-[#151A40]">
                 Content Validators
               </p>
             </div>
             <p>
               Dianne Mel B. Arrubio <br />{" "}
-              <span className="font-bold pb-4 text-sm text-[#ffc248]">
+              <span className="font-bold pb-4 text-sm text-[#151A40]">
                 Pedagogy Manager
               </span>
             </p>
-
             <p>
               Zyrene Belle B. Alturas <br />{" "}
-              <span className="font-bold pb-4 text-sm text-[#ffc248]">
+              <span className="font-bold pb-4 text-sm text-[#151A40]">
                 Web Developer
               </span>
             </p>
