@@ -13,7 +13,7 @@ const Home = () => {
   return (
     // * * ang rafce (react arrow function component export) para dli naka need mag mano2 og type //
     <section
-      className={` rounded-lg bg-[#1c1648] ${javanese.className } text-sm sm:text-xl `}
+      className={` rounded-lg bg-[#EDF5FE] ${javanese.className } text-sm sm:text-xl `}
     >
       <Navigator isCourse={true} />
       <HeroSection />
