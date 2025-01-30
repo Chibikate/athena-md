@@ -14,7 +14,7 @@ to - link kung aha sya mapadulong
 */
 }
 
-export const courses = [
+export const localCourses = [
   {
     image: course.Module1,
     title: "3D slicer interface (A-1)",
@@ -70,6 +70,7 @@ export const courses = [
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
     to: "/course/MeshMixer - Virtual-Surgery",
   },
+
   {
     image: course.Module8,
     title: "3D Modeling- Pelvis (C-1)",
@@ -78,6 +79,7 @@ export const courses = [
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/course/3D Slicer Pelvis - Interface",
+    courseName: "Pelvis",
   },
   {
     image: course.Module9,
@@ -87,6 +89,7 @@ export const courses = [
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/course/3D Slicer Pelvis - add DICOM",
+    courseName: "Pelvis",
   },
   {
     image: course.Module10,
@@ -96,6 +99,7 @@ export const courses = [
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/course/3D slicer Pelvis - Navigating DICOM",
+    courseName: "Pelvis",
   },
   {
     image: course.Module11,
@@ -105,6 +109,7 @@ export const courses = [
     time: "30 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/course/3D slicer Pelvis - Basic-Segmentation",
+    courseName: "Pelvis",
   },
   {
     image: course.Module12,
@@ -114,6 +119,7 @@ export const courses = [
     time: "50 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/course/3D slicer Pelvis - Advanced Segmentation-1",
+    courseName: "Pelvis",
   },
   {
     image: course.Module13,
@@ -123,6 +129,7 @@ export const courses = [
     time: "1hr and 10mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/course/MeshMixer2 - Pelvis Virtual-Surgery",
+    courseName: "Pelvis",
   },
   {
     image: course.Module14,
@@ -132,6 +139,7 @@ export const courses = [
     time: "10mins",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-1",
+    courseName: "UltimakerCura",
   },
   {
     image: course.Module15,
@@ -141,6 +149,7 @@ export const courses = [
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-2",
+    courseName: "UltimakerCura",
   },
   {
     image: course.Module16,
@@ -150,6 +159,7 @@ export const courses = [
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-3",
+    courseName: "UltimakerCura",
   },
   {
     image: course.Module17,
@@ -159,6 +169,7 @@ export const courses = [
     time: "30mins",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-4",
+    courseName: "UltimakerCura",
   },
 ];
 
@@ -531,5 +542,7 @@ export {
   printing1,
   printing2,
   printing3,
-  printing4, 
+  printing4,
+  localCourses as courses,
+  TeamSection,
 };
