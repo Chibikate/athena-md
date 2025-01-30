@@ -14,16 +14,16 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      screens: {
-        'tablet': '640px',
-        // => @media (min-width: 640px) { ... }
-  
-        'laptop': '1024px',
-        // => @media (min-width: 1024px) { ... }
-  
-        'desktop': '1280px',
-        // => @media (min-width: 1280px) { ... }
-      },
+      extend: {
+        screens: {
+          'xs': '360px', // Small mobile devices
+          'sm': '480px', // Standard small screens
+          'md': '768px', // Tablets
+          'lg': '1024px', // Laptops
+          'xl': '1280px', // Desktops
+          '2xl': '1536px', // Large screens
+        },
+      }
     },
   },
   
