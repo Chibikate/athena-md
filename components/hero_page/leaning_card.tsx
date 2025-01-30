@@ -23,14 +23,14 @@ const LearningCard = ({
   return (
     <div
       className={`flex flex-col sm:flex-row text-white items-center justify-center py-4 
-       ${bg ? "bg-[#1c1648]" : null}`}
+       ${bg ? "bg-[#EDF5FE]" : null}`}
     >
       {swap && <Image className="" src={image} alt={alt} height={400} />}
 
       {swap && <div className="w-44" />}
       <div className={`${large ? "w-[350px]" : "w-[235px] "}`}>
-        <p className="font-bold text-2xl pb-2 text-[#ffc248]">{title}</p>
-        <p className="">{description}</p>
+        <p className="font-bold text-2xl pb-2 text-[#043873]">{title}</p>
+        <p className="text-[#043873]">{description}</p>
       </div>
       {!swap && <div className="w-44" />}
       {!swap && <Image src={image} alt={alt} height={400} />}

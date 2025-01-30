@@ -4,11 +4,11 @@ import { courses } from "@/data/course_data";
 
 const CourseSection = () => {
   return (
-    <div className="flex flex-row sm:flex-col p-4">
-      <p className="text-md md:text-4xl font-bold text-shadow-[0_2px_2px_#000000] py-7 ">
+    <div className="flex flex-col p-4 items-start w-full min-h-screen">
+      <p className="text-md md:text-4xl font-bold text-shadow-[0_2px_2px_#000000] py-7">
         Explore Courses
       </p>
-      <div className="grid grid-rows-2 grid-flow-row md:grid-flow-col gap-2 text-black">
+      <div className="grid grid-rows-2 grid-flow-row md:grid-flow-col gap-2 text-black w-full h-full">
         {courses.map((course, index) => (
           <CourseCard
             key={index}
