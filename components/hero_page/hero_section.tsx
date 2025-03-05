@@ -33,17 +33,17 @@ const HeroSection = () => {
 
         {/* Search Bar and Buttons */}
         <div className="flex flex-col items-center w-full mt-6">
-          <div className="flex items-center gap-2 border border-[#043873] rounded-lg px-4 py-2 focus-within:ring-2 focus-within:ring-[#043873] bg-white shadow-md">
+          <div className="flex items-center gap-2 border border-[#043873] rounded-lg px-2 py-1 focus-within:ring-2 focus-within:ring-[#043873] bg-white shadow-md">
             <input
               type="text"
-              placeholder="Search for courses"
-              className="flex-1 outline-none bg-transparent"
+              placeholder="Search now"
+              className="flex-1 pt-[5px] outline-none bg-transparent text-center text-lg w-full"
             />
             {/* Search Icon */}
             <FiSearch className="text-[#043873] text-xl cursor-pointer" />
           </div>
           <Link href="/courses">
-            <button className="mt-6 px-6 py-3 bg-[#151A40] text-white font-bold rounded-lg hover:bg-[#0f1330]">
+            <button className="mt-6 pt-[15px] bg-blue px-5  py-2  bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-purple-950 text-sm rounded-lg hover:bg-[#0f1330]">
               View Courses
             </button>
           </Link>
