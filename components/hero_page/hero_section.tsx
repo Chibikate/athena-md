@@ -9,20 +9,18 @@ const abhaya = Abhaya_Libre({ subsets: ["latin"], weight: "400" });
 
 const HeroSection = () => {
   return (
-    <div className={`relative h-screen bg-[#D0E4F2] ${javanese.className}`}>
-      {/* Background Design */}
-      <div className="absolute inset-0">
-        <Image
-          src="/bgg5.png" // Replace with the correct path to your design image
-          alt="Background design"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-10 pointer-events-none"
-        />
-      </div>
+    <div className={`relative h-screen w-screen ${javanese.className}`}>
+      {/* Full Background Image */}
+      <Image
+        src="/bgg7.png" // Replace with the correct path to your design image
+        alt="Background design"
+        layout="fill"
+        objectFit="cover"
+        priority
+      />
 
       {/* Centered Content */}
-      <div className="absolute top-1/4 transform -translate-y-1/4 w-full flex flex-col items-center text-center">
+      <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 w-full flex flex-col items-center text-center">
         <p className="text-sm sm:text-4xl font-bold text-[#043873]">
           Develop Your Medical Skills
         </p>
@@ -35,11 +33,11 @@ const HeroSection = () => {
 
         {/* Search Bar and Buttons */}
         <div className="flex flex-col items-center w-full mt-6">
-          <div className="flex items-center gap-2 border border-[#043873]-300 rounded-lg px-4 py-2 focus-within:ring-2 focus-within:ring-[#043873]">
+          <div className="flex items-center gap-2 border border-[#043873] rounded-lg px-4 py-2 focus-within:ring-2 focus-within:ring-[#043873] bg-white shadow-md">
             <input
               type="text"
               placeholder="Search for courses"
-              className="flex-1 outline-none"
+              className="flex-1 outline-none bg-transparent"
             />
             {/* Search Icon */}
             <FiSearch className="text-[#043873] text-xl cursor-pointer" />

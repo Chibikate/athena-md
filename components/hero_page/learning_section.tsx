@@ -1,26 +1,36 @@
 import React from "react";
 import LearningCard from "@/components/hero_page/leaning_card";
-import bgg6 from "@/public/bgg6.svg";
+import bgg8 from "@/public/bgg8.png";
 import Interactive from "@/public/interactive.svg";
 import SelfDirect from "@/public/Self-direct.svg";
 import Realistic from "@/public/Realistic.svg";
-
+import Image from "next/image";
 
 const LearningSection = () => {
   return (
-    <div >
+    <div>
+      {/* First Learning Card - Only PNG */}
+      <div className="relative h-screen w-screen flex justify-center">
+        <Image 
+          src={bgg8} 
+          alt="Background image" 
+          layout="fill"
+          objectFit="cover" 
+        />
+      </div>
+      
       <LearningCard
         title="Interactive"
         bg={true}
         large={false}
-        description="Users can manipulate and visualize,  providing a hands-on approach  to learning."
+        description="Users can manipulate and visualize, providing a hands-on approach to learning."
         image={Interactive}
         alt="Interactive illustration"
         swap={false}
       />
       <LearningCard
         title="Self-Direct"
-        bg={true}
+        bg={false}
         large={true}
         description="They can set their own pace, choose the specific topics they want to explore, and navigate through the content independently, fostering self-directed learning."
         image={SelfDirect}
@@ -31,8 +41,7 @@ const LearningSection = () => {
         title="Realistic"
         bg={true}
         large={false}
-        description="Users engage with scenarios 
-        that closely mirror the real surgical environment, 
+        description="Users engage with scenarios that closely mirror the real surgical environment, 
         ensuring a true-to-life learning experience."
         image={Realistic}
         alt="Realistic illustration"

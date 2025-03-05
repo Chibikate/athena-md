@@ -9,7 +9,7 @@ interface Props {
 
 const Navigator = ({ isCourse }: Props) => {
   return (
-    <nav className="bg-[#ffffff] flex flex-row justify-between px-4 py-2 rounded-b-lg  ">
+    <nav className="bg-[#F5F8FE] flex flex-row justify-between px-4 py-2 rounded-b-lg  ">
       <Link href="/">
         <Image className="invert" alt="Athena logo" src={Logo} />
       </Link>
@@ -17,17 +17,25 @@ const Navigator = ({ isCourse }: Props) => {
         <Link
           className={`hover:bg-white ${
             !isCourse ? "py-1" : "pt-[8px] "
-          } text-blue hover:text-blue hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 hover:ring-offset-purple-950 text-xl px-5 rounded-lg   text-md font-bold`}
+          } text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 hover:ring-offset-purple-950 text-xl px-5 rounded-lg   text-md font-bold`}
           href="/aboutus"
         >
-          About Us
+          ABOUT
+        </Link>
+        <Link
+          className={`hover:bg-white ${
+            !isCourse ? "py-1" : "pt-[8px] "
+          } text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 hover:ring-offset-purple-950 text-xl px-5 rounded-lg   text-md font-bold`}
+          href="/"
+        >
+          CONTACT
         </Link>
         {isCourse && (
           <Link
-            className="bg-blue pt-[8px] hover:text-blue-900 hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 hover:ring-offset-purple-950 text-xl px-5 rounded-lg  text-md font-bold"
+            className="bg-blue pt-[8px] hover:text-[#ffffff]-900 hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 hover:ring-offset-purple-950 text-xl px-5 rounded-lg  text-md font-bold"
             href={"/courses"}
           >
-            Get started
+            GET STARTED
           </Link>
         )}
         {!isCourse && (
