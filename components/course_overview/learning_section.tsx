@@ -4,7 +4,7 @@ import Link from "next/link";
 const LearningSection = () => {
   return (
     <div className="flex flex-col">
-      <p className="text-3xl ml-52 p-10 text-[#772EFF] font-bold">
+      <p className="text-3xl ml-52 p-10 text-[#D0E4F2] font-bold">
         Course Overview
       </p>
       <div className="flex flex-col border-2 border-black mr-96 ml-60 p-5">

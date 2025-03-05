@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Navigator = () => {
   return (
-    <nav className="bg-white fixed top-0 left-0 right-0 w-full flex flex-row items-center px-4 py-3 shadow-md z-50 sm:px-6 md:px-8 lg:px-10">
+    <nav className="bg-[#ffffff] flex flex-row justify-between px-4 pb-1">
 
       <Link href="/">
         <Image className="invert" alt="Athena logo" src={Logo} />
