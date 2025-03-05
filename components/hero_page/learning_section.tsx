@@ -10,15 +10,15 @@ const LearningSection = () => {
   return (
     <div>
       {/* First Learning Card - Only PNG */}
-      <div className="relative h-screen w-screen flex justify-center">
-        <Image 
-          src={bgg8} 
-          alt="Background image" 
-          layout="fill"
-          objectFit="cover" 
+      {/* <div className="relative  flex justify-center">
+        <Image
+          src={bgg8}
+          alt="Background image"
+          objectFit="cover"
+          width={1500}
         />
-      </div>
-      
+      </div> */}
+
       <LearningCard
         title="Interactive"
         bg={true}

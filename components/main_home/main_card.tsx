@@ -13,7 +13,7 @@ interface Props {
   alt: string;
 }
 
-const CourseCard = ({
+const MainCard = ({
   image,
   title,
   description,
@@ -50,4 +50,4 @@ const CourseCard = ({
   );
 };
 
-export default CourseCard;
+export default MainCard;
