@@ -43,7 +43,7 @@ const HeroSection = () => {
             <FiSearch className="text-[#043873] text-xl cursor-pointer" />
           </div>
           <Link href="/courses">
-            <button className="mt-6 pt-[15px] bg-blue px-5  py-2  bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-purple-950 text-sm rounded-lg hover:bg-[#0f1330]">
+            <button className="mt-6 pt-[15px] bg-blue px-5  py-2  bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-300 text-sm rounded-lg hover:bg-[#0f1330]">
               View Courses
             </button>
           </Link>

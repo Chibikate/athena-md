@@ -17,7 +17,7 @@ const Navigator = ({ isCourse }: Props) => {
         <Link
           className={`hover:bg-white ${
             !isCourse ? "py-1" : "pt-[8px] "
-          } text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2  hover:ring-offset-purple-950 px-5 rounded-lg   text-sm font-semibold`}
+          } text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 px-5 rounded-lg   text-sm font-semibold`}
           href="/aboutus"
         >
           ABOUT
@@ -25,22 +25,28 @@ const Navigator = ({ isCourse }: Props) => {
         <Link
           className={`hover:bg-white ${
             !isCourse ? "py-1" : "pt-[8px] "
-          } text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2  hover:ring-offset-purple-950 px-5 rounded-lg   text-sm font-semibold`}
+          } text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 px-5 rounded-lg   text-sm font-semibold`}
           href="/"
         >
           CONTACT
         </Link>
         {isCourse && (
+          // <Link
+          //   className="bg-blue pt-[12px] py-1 bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 text-sm px-5 rounded-lg "
+          //   href={"/courses"}
+          // >
+          //   Get Started
+          // </Link>
           <Link
-            className="bg-blue pt-[12px] py-1 bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-purple-950 text-sm px-5 rounded-lg "
-            href={"/courses"}
-          >
-            Get Started
-          </Link>
+          className="bg-blue pt-[12px] py-1 bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 text-sm px-5 rounded-lg "
+          href={"components/main_home/dashboard"}
+        >
+          Get Started
+        </Link>
         )}
         {!isCourse && (
           <Link
-            className="bg-blue py-[4px] hover:text-blue-900 hover:ring-2 hover:ring-offset-2  hover:ring-offset-purple-950 text-xl px-5 rounded-lg  text-md font-bold"
+            className="bg-blue py-[4px] hover:text-blue-900 hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 text-xl px-5 rounded-lg  text-md font-bold"
             href={"/"}
           >
             Home
