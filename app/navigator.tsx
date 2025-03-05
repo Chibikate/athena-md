@@ -27,6 +27,7 @@ const Navigator = ({ isCourse }: Props) => {
         >
           Courses
         </Link>
+        
       </div>
     </nav>
   );
