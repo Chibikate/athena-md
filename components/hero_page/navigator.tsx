@@ -26,7 +26,7 @@ const Navigator = ({ isCourse }: Props) => {
           className={`hover:bg-white ${
             !isCourse ? "py-1" : "pt-[8px] "
           } text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 px-5 rounded-lg   text-sm font-semibold`}
-          href="/"
+          href="/contact_form"
         >
           CONTACT
         </Link>
@@ -39,7 +39,7 @@ const Navigator = ({ isCourse }: Props) => {
           // </Link>
           <Link
           className="bg-blue pt-[12px] py-1 bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 text-sm px-5 rounded-lg "
-          href={"components/main_home/dashboard"}
+          href={"/courses"}
         >
           Get Started
         </Link>
