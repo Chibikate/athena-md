@@ -39,7 +39,7 @@ const Navigator = ({ isCourse }: Props) => {
           // </Link>
           <Link
           className="bg-blue pt-[12px] py-1 bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 text-sm px-5 rounded-lg "
-          href={"/courses"}
+          href="main_homepage"
         >
           Get Started
         </Link>

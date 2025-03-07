@@ -1,29 +1,52 @@
 import React from "react";
-import MainCard from "./main_card";
-import { courses } from "@/data/course_data";
+import Link from "next/link";
+import MainCard from "@/components/main_home/main_card"; 
 
-const MainSection = () => {
+const MainCardSection = () => {
   return (
-    <div className="flex flex-col p-4 items-start w-full min-h-screen">
-      <p className="text-md md:text-4xl font-bold text-shadow-[0_2px_2px_#000000] py-7">
-        Explore Courses
-      </p>
-      <div className="grid grid-rows-2 grid-flow-row md:grid-flow-col gap-2 text-black w-full h-full">
-        {courses.map((course, index) => (
-          <MainCard
-            key={index}
-            image={course.image}
-            title={course.title}
-            description={course.description}
-            level={course.level}
-            alt={course.alt}
-            to={course.to}
-            time={course.time}
-          />
-        ))}
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-[#D0E4F2]">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#151A40] mb-4">
+            EXPLORE COURSES
+          </h2>
+        </div>
+        
+        <div className="flex justify-center space-x-8">
+          <div className="text-center">
+            <MainCard
+              title="Mandibular Reconstruction"
+              description="Courses offers step-by-step tutorial on tools used for medical planning"
+            />
+            <Link href="/mandibular-reconstruction">
+              <button className="mt-4 px-4 py-2 bg-[#165388] text-white rounded-md">View this course</button>
+            </Link>
+          </div>
+          <div className="text-center">
+            <MainCard
+              title="Pelvis Reconstruction"
+              description="Learn the free and available courses by taking the quiz to retain information"
+            />
+            <Link href="/pelvis-reconstruction">
+              <button className="mt-4 px-4 py-2 bg-[#165388] text-white rounded-md">View this course</button>
+            </Link>
+          </div>
+          <div className="text-center">
+            <MainCard
+              title="3D Printing"
+              description="Acquire background of tools used in the medical field"
+            />
+            <Link href="/3d-printing">
+              <button className="mt-4 px-4 py-2 bg-[#165388] text-white rounded-md">View this course</button>
+            </Link>
+          </div>
+        </div>    
+        </div>
       </div>
-    </div>
   );
 };
 
-export default MainSection;
+export default MainCardSection;
+  
+  //The  MainCardSection  component is responsible for rendering the main card section on the home page. It contains three  MainCard  components and a button to view all courses. 
+  //The  MainCard  component is responsible for rendering the individual card.
