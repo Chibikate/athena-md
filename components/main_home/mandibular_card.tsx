@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import TimeLogo from "@/public/time_icon.svg";
 
-interface Props {
+interface NewProps {
   image: StaticImageData;
   title: string;
   description: string;
@@ -13,7 +13,7 @@ interface Props {
   alt: string;
 }
 
-const CourseCard = ({
+const MandibularCard = ({
   image,
   title,
   description,
@@ -21,7 +21,7 @@ const CourseCard = ({
   time,
   to,
   alt,
-}: Props) => {
+}: NewProps) => {
   return (
     <div className="w-96 border-2 rounded-lg shadow-3xl  text-[] space-y-2 text-sm border- p-4 ">
       <div className={`py-2 rounded-t-lg`}>
@@ -50,4 +50,4 @@ const CourseCard = ({
   );
 };
 
-export default CourseCard;
+export default MandibularCard;

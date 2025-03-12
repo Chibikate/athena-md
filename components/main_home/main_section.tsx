@@ -23,7 +23,7 @@ const MainCardSection = () => {
               image="@/public/main_course/mandibular.png"
               alt="Mandibular Reconstruction"
             />
-            <Link href="/mandibular-reconstruction">
+            <Link href="/main_homepage/courses/mandible">
               <button className="mt-4 px-4 py-2 bg-[#165388] text-white rounded-md">View this course</button>
             </Link>
           </div>

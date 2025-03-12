@@ -1,0 +1,29 @@
+import React from "react";
+import MandibularCard from "@/components/main_home/mandibular_section/MandibularCard";
+import { courses } from "@/data/course_data";
+
+const MandibularSection = () => {
+  return (
+    <div className="flex flex-col p-4 items-start w-full min-h-screen">
+      <p className="text-md md:text-4xl font-bold text-shadow-[0_2px_2px_#000000] py-7">
+        Explore Courses
+      </p>
+      <div className="grid grid-rows-2 grid-flow-row md:grid-flow-col gap-2 text-black w-full h-full">
+        {courses.map((course, index) => (
+          <CourseCard
+            key={index}
+            image={course.image}
+            title={course.title}
+            description={course.description}
+            level={course.level}
+            alt={course.alt}
+            to={course.to}
+            time={course.time}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MandibularSection;
