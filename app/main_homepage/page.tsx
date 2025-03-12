@@ -1,17 +1,19 @@
 import React from "react";
 import MainCardSection from "@/components/main_home/main_section";
+import MainCard from "@/components/main_home/main_card";
+import Navigator from "@/components/hero_page/navigator";
+import Footer from "@/components/hero_page/footer";
+import Image from "next/image";
 
 const MainHomePage = () => {
   return (
     <div>
+            <Navigator />
       {/* Hero Section */}
-      <div className="bg-[#165388] text-white text-center py-20">
-        <h1 className="text-4xl font-bold">Welcome to Our Courses</h1>
-        <p className="mt-4 text-lg">Enhance your skills with our step-by-step tutorials</p>
-      </div>
       
       {/* Main Card Section */}
       <MainCardSection />
+      <Footer />
     </div>
   );
 };

@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import ContactCard from "@/components/hero_page/contactus_card";
 import { Delius } from "next/font/google";
 import ContactSection from "@/components/hero_page/contact_section";
-import Navigator from "../navigator";
+import Navigator from "@/components/hero_page/navigator"; // Import the Navigator component
 import Link from "next/link";
+import Footer from "@/components/hero_page/footer";
 
 const delius = Delius({ subsets: ["latin"], weight: "400" });
 
@@ -25,14 +26,18 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={`flex flex-col dark:text-primary ${delius.className} bg-[#1c1648] text-white p-10`}>
-      <h2 className="font-bold text-4xl text-center text-[#ffc248] pb-6">CONTACT US</h2>
+    <div className={`flex flex-col dark:text-primary ${delius.className} bg-[#F5F8FE] text-blue p-10`}>
+      <Navigator /> {/* Add Navigator at the top */}
+      
+      <h2 className="font-bold text-4xl text-center text-[#043873] pb-6">CONTACT US</h2>
       <p className="text-center pb-6">
-      If you have any questions, concerns, or feedback, please feel free to reach out to our dedicated team. 
+        If you have any questions, concerns, or feedback, please feel free to reach out to our dedicated team.
       </p>
+      
       <ContactSection />
+      
       <div className="flex justify-center mt-10">
-        <div className="w-full max-w-md bg-white text-black p-6 rounded-lg shadow-lg">
+        <div className="w-full max-w-md bg-[#F5F8FE] text-black p-6 rounded-lg shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block font-semibold">Name</label>
@@ -77,6 +82,8 @@ const ContactForm = () => {
           {submitted && <p className="text-center text-green-600 pt-4">Message sent successfully!</p>}
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

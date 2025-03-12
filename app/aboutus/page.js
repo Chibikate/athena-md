@@ -9,7 +9,7 @@ const delius = Delius({ subsets: ["latin"], weight: "400" });
 const Aboutus = () => {
   return (
     <div
-      className={`flex flex-col dark:text-primary ${delius.className} bg-[#1c1648] text-white`}
+      className={`flex flex-col dark:text-primary ${delius.className} bg-[#F5F8FE] text-[#043873]`}
     >
       <Navigator />
       <div className="area">
@@ -42,7 +42,7 @@ const Aboutus = () => {
           world of learning today!
         </p>
       </div>
-      <p className="font-bold text-4xl pt-10 text-center text-[#ffc248]">
+      <p className="font-bold text-4xl pt-10 text-center text-[#043873]">
         THE TEAM
       </p>
       <div className="flex justify-center invert">
@@ -56,7 +56,7 @@ const Aboutus = () => {
       <div className="flex flex-col sm:flex-row  justify-between p-4 text-center">
         <p className="pl-3">
           Lemuel Clark Velasco <br />{" "}
-          <span className="font-bold text-sm text-[#ffc248]">
+          <span className="font-bold text-sm text-[#043873]">
             Project Leader
           </span>
         </p>
@@ -65,7 +65,7 @@ const Aboutus = () => {
           <p>
             Rentor Cafino, <br /> MD, DPBO-HNS
             <br />
-            <span className="font-semibold text-sm text-[#ffc248]">
+            <span className="font-semibold text-sm text-[#043873]">
               {" "}
               Medical Adviser{" "}
             </span>
@@ -75,7 +75,7 @@ const Aboutus = () => {
           <p>
             Armando T. Isla, <br /> MD, FPSO-HNS
             <br />
-            <span className="font-semibold text-sm text-[#ffc248]">
+            <span className="font-semibold text-sm text-[#043873]">
               {" "}
               Medical Adviser{" "}
             </span>
@@ -85,7 +85,7 @@ const Aboutus = () => {
         <p>
           Kaye Q. Velarde <br /> {" "}
           Dianne Mel B. Arrubio <br /> {" "}
-          <span className="font-bold pb-4 text-sm text-[#ffc248]">
+          <span className="font-bold pb-4 text-sm text-[#043873]">
             Pedagogy Managers
           </span>
         </p>
@@ -93,7 +93,7 @@ const Aboutus = () => {
         <p>
           Queenie Kate S. Cabanilla <br />  {" "}
           Zyrene Belle B. Alturas <br /> {" "}
-          <span className="font-bold pb-4 text-sm text-[#ffc248]">
+          <span className="font-bold pb-4 text-sm text-[#043873]">
             Web Developers
           </span>
         </p>
@@ -107,7 +107,7 @@ const Aboutus = () => {
         </p>
         <div className=" py-4 items-center text-center ">
           <div className="flex flex-col text-center ">
-            <p className=" font-bold text-[#ffc248]">Email</p>
+            <p className=" font-bold text-[#043873]">Email</p>
           </div>
 
           <div className="text-center hover-border-white-400 hover-border-2">
