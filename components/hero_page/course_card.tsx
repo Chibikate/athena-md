@@ -36,7 +36,7 @@ const CourseCard = ({
         <Image src={TimeLogo} alt="" width={25} height={25} />
         <p className="pt-1 pl-2">{time} activity</p>
       </div>
-<br></br>
+      <br></br>
       <div className="flex-start">
         <div
           className={`cursor-pointer hover:border-white-400 hover:border-2 text-black hover-border rounded-md p-2 bg-[#a2bfde]`}
