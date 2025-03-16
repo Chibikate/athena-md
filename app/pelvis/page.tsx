@@ -5,7 +5,7 @@ import HeroSection from "@/components/course_overview/hero_section";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection from "@/components/course_overview/objective_section";
 import { useEffect, useState } from "react";
-import * as datas from "@/data/mandible_data";
+import * as datas from "@/data/course_data";
 import Link from "next/link";
 import { Suspense } from "react";
 import TeamSection from "@/components/course_overview/team_section";
@@ -16,7 +16,7 @@ interface Params {
   };
 }
 
-const dataValues: datas.MandibleDataProps = {
+const dataValues: datas.CourseDataProps = {
   hero: {
     hero: {
       title: "",
@@ -33,10 +33,10 @@ const dataValues: datas.MandibleDataProps = {
   to: "",
 };
 
-const Mandibular = ({ params }: Params) => {
+const Home = ({ params }: Params) => {
   const course = params["course"].replaceAll("%20", " ");
   const [content, setContent] = useState("");
-  const [data, setData] = useState<datas.MandibleDataProps>(dataValues);
+  const [data, setData] = useState<datas.CourseDataProps>(dataValues);
   const [isNewCourse, setNewCourse] = useState (false)
 
   useEffect(() => {
@@ -58,6 +58,46 @@ const Mandibular = ({ params }: Params) => {
     } else if (course === "MeshMixer - Virtual-Surgery") {
       setContent("MeshMixer - Virtual-Surgery");
       setData(datas.MeshMixer);
+    } else if (course === "3D Slicer Pelvis - Interface") {
+      setContent("3D slicer Pelvis C1");
+      setNewCourse (true)
+      setData(datas.pelvisInterface);
+    } else if (course === "3D Slicer Pelvis - add DICOM") {
+      setContent("3D slicer Pelvis C2");
+      setNewCourse (true)
+      setData(datas.pelvisAddDICOM);
+    }  else if (course === "3D slicer Pelvis - Navigating DICOM") {
+      setContent("3D slicer Pelvis C3");
+      setNewCourse (true)
+      setData(datas.pelvisdicomDisplay);
+    } else if (course === "3D slicer Pelvis - Basic-Segmentation") {
+      setContent("3D slicer Pelvis C4");
+      setNewCourse (true)
+      setData(datas.pelvisbasicSegmentation);
+    } else if (course === "3D slicer Pelvis - Advanced Segmentation-1") {
+      setContent("3D slicer Pelvis C5");
+      setNewCourse (true)
+      setData(datas.pelvisadvancedSegmentation1);
+    } else if (course === "MeshMixer2 - Pelvis Virtual-Surgery") {
+      setContent("MeshMixer2 - Pelvis Virtual-Surgery");
+      setData(datas.MeshMixer2);
+      setNewCourse (true)
+    } else if (course === "3D Printing for a Mandible-1") {
+      setContent("3D printing  Part 1");
+      setData(datas.printing1);
+      setNewCourse (true)
+    } else if (course === "3D Printing for a Mandible-2") {
+      setContent("3D printing  Part 2");
+      setData(datas.printing2);
+      setNewCourse (true)
+    } else if (course === "3D Printing for a Mandible-3") {
+      setContent("3D printing  Part 3");
+      setData(datas.printing3);
+      setNewCourse (true)
+    } else if (course === "3D Printing for a Mandible-4") {
+      setContent("3D printing  Part 4");
+      setData(datas.printing4);
+      setNewCourse (true)
     } 
   },
   [course]);
@@ -85,4 +125,4 @@ const Mandibular = ({ params }: Params) => {
   );
 };
 
-export default Mandibular;
+export default Home;
