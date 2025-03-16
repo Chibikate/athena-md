@@ -23,7 +23,7 @@ const MainCardSection = () => {
           time="1hr"
           video="2 Video"
           lesson="8 Lesson"
-          to="/main_homepage/courses/mandible"
+          to="/courses"
 
         />
 
@@ -35,7 +35,7 @@ const MainCardSection = () => {
           video="1 Video"
           lesson="5 Lesson"
           alt="Pelvis Reconstruction"
-          to="/pelvis-reconstruction"
+          to="/pelviscourses"
         />
 
         <MainCard

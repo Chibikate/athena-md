@@ -13,7 +13,7 @@ interface NewProps {
   alt: string;
 }
 
-const MandibularCard = ({
+const PelvisCard = ({
   image,
   title,
   description,
@@ -50,4 +50,4 @@ const MandibularCard = ({
   );
 };
 
-export default MandibularCard;
+export default PelvisCard;
