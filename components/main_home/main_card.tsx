@@ -6,9 +6,10 @@ interface Props {
   description: string;
   image: string | StaticImageData;  // Support imported images
   alt: string;
+  href?: string;
 }
 
-const MainCard = ({ title, description, image, alt }: Props) => {
+const MainCard = ({ title, description, image, alt, href }: Props) => {
   return (
     <div className="w-60 h-72 bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center">
       <Image 

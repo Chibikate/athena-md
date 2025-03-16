@@ -23,7 +23,7 @@ const MainCardSection = () => {
               image={Mandibular}
               alt="Mandibular Reconstruction"
             />
-            <Link href="/main_homepage/courses/mandible">
+            <Link href="/courses">
               <button className="mt-4 px-4 py-2 bg-[#165388] text-white rounded-md">View this course</button>
             </Link>
           </div>
