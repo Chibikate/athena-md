@@ -3,7 +3,7 @@ import Link from "next/link";
 import MainCard from "@/components/main_home/main_card";
 import Mandibular  from "@/public/main_course/mandibular.png";
 import Pelvis from "@/public/main_course/pelvis.png";
-import Printing from "@/public/main_course/3d-printing.png";
+import Printing3 from "@/public/main_course/printing.png";
 
 const MainCardSection = () => {
   return (
@@ -20,7 +20,7 @@ const MainCardSection = () => {
             <MainCard
               title="Mandibular Reconstruction"
               description="Courses offer step-by-step tutorial on tools used for medical planning"
-              image="@/public/main_course/mandibular.png"
+              image={Mandibular}
               alt="Mandibular Reconstruction"
             />
             <Link href="/main_homepage/courses/mandible">
@@ -31,7 +31,7 @@ const MainCardSection = () => {
             <MainCard
               title="Pelvis Reconstruction"
               description="Learn the free and available courses by taking the quiz to retain information"
-              image="/public/main_course/pelvis.png"
+              image={Pelvis}
               alt="Pelvis Reconstruction"
             />
             <Link href="/pelvis-reconstruction">
@@ -42,7 +42,7 @@ const MainCardSection = () => {
             <MainCard
               title="3D Printing"
               description="Acquire background of tools used in the medical field"
-              image="/images/3d-printing.png"
+              image={Printing3}
               alt="3D Printing"
             />
             <Link href="/3d-printing">
