@@ -18,8 +18,8 @@ const HeroSection = () => {
         objectFit="cover"
         priority
       />
-
       {/* Centered Content */}
+      
       <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 w-full flex flex-col items-center text-center">
         <p className="text-sm sm:text-4xl font-bold text-[#043873]">
           Develop <span className="text-[#151A40]">Your Medical Skills</span>
@@ -49,6 +49,17 @@ const HeroSection = () => {
           </Link>
         </div>
       </div>
+     {/* Full Background Image */}
+     <div className="relative  flex justify-center">
+     <Image
+        src="/bgg7.png" // Replace with the correct path to your design image
+        alt="Background design"
+        layout="fill"
+        objectFit="cover"
+        priority
+      />
+      </div>
+      {/* Centered Content */}
     </div>
   );
 };

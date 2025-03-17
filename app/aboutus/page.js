@@ -2,14 +2,20 @@ import React from "react";
 import { Delius } from "next/font/google";
 import Image6 from "@/public/Image6.png";
 import Image from "next/image";
+import About from "@/public/About.png";
 import Navigator from "../navigator";
+import ProfileCard from "@/components/aboutus/about_card";
+import AboutSection from "@/components/aboutus/about_section";
+import Link from "next/link";
+import Footer from "@/components/hero_page/footer";
 
-const delius = Delius({ subsets: ["latin"], weight: "400" });
+// const delius = Delius({ subsets: ["latin"], weight: "400" });
 
+// ${delius.className}
 const Aboutus = () => {
   return (
     <div
-      className={`flex flex-col dark:text-primary ${delius.className} bg-[#F5F8FE] text-[#043873]`}
+      className={`flex flex-col dark:text-primary  bg-[#e3f3ff] text-[#043873]`}
     >
       <Navigator />
       <div className="area">
@@ -28,32 +34,55 @@ const Aboutus = () => {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row p-10 items-center justify-center text-center text-sm sm:text-lg ">
-        <p>
-          At Web-based Tutorial System, we&apos;re on a mission to make learning
-          accessible and enjoyable for everyone. Our team is dedicated to
-          creating a user-friendly platform where learning is interactive and
-          engaging. We believe that education should be fun and inspiring, and
-          that&apos;s why we&apos;re committed to providing a diverse range of
-          courses and resources. Whether you&apos;re a student looking to expand
-          your knowledge, a teacher seeking innovative teaching tools, or simply
-          curious about new topics, Web-based Tutoiral system, is here to
-          empower you on your learning journey. Join us and explore the exciting
-          world of learning today!
+
+      <div className="flex flex-col  lg:flex-row items-center justify-center gap-8 py-16 w-[80%] mx-auto ">
+        <p className="font-bold text-4xl text-left text-[#043873] leading-snug lg:basis-1/3 ">
+          Helping <br /> individuals <br /> advance their <br /> skills
         </p>
-      </div>
-      <p className="font-bold text-4xl pt-10 text-center text-[#043873]">
-        THE TEAM
-      </p>
-      <div className="flex justify-center invert">
         <Image
           alt="somethings never change"
-          src={Image6}
-          width={200}
-          height={100}
+          src={About}
+          width={700}
+          height={200}
+          className="rounded-lg lg:basis-2/3"
         />
       </div>
-      <div className="flex flex-col sm:flex-row  justify-between p-4 text-center">
+      <div className="bg-white pt-16">
+        <p className="text-center font-bold text-[#151A40] text-3xl">
+          About Us
+        </p>
+        <div className="flex flex-row sm:flex-col py-10 items-center justify-center text-center text-sm sm:text-lg  text-[#165388]">
+          <p>
+            At Web-based Tutorial System, we&apos;re on a mission to make
+            learning accessible and enjoyable for everyone. Our team is
+            dedicated to creating a user-friendly <br />
+            platform where learning is interactive and engaging.
+          </p>
+          <p className="pt-4">
+            We believe that education should be fun and inspiring, and
+            that&apos;s why we&apos;re committed to providing a diverse range of{" "}
+            <br />
+            courses and resources.
+          </p>
+          <p className="pt-4">
+            Whether you&apos;re a student looking to expand your knowledge, a
+            teacher seeking innovative teaching tools, <br />
+            or simply curious about new topics, Web-based Tutorial System is
+            here to empower you on your learning journey.
+          </p>
+        </div>
+        <div className="text-center">
+          <p className="font-bold text-4xl pt-10 text-center text-[#043873]">
+            OUR TEAM
+          </p>
+          <p>
+            Our team consists of professionals from different parts of Mindanao.
+             
+          </p>
+        </div>
+      </div>
+      <AboutSection />
+      {/* <div className="flex flex-col sm:flex-row  justify-between p-4 text-center">
         <p className="pl-3">
           Lemuel Clark Velasco <br />{" "}
           <span className="font-bold text-sm text-[#043873]">
@@ -83,23 +112,21 @@ const Aboutus = () => {
         </div>
 
         <p>
-          Kaye Q. Velarde <br /> {" "}
-          Dianne Mel B. Arrubio <br /> {" "}
+          Kaye Q. Velarde <br /> Dianne Mel B. Arrubio <br />{" "}
           <span className="font-bold pb-4 text-sm text-[#043873]">
             Pedagogy Managers
           </span>
         </p>
 
         <p>
-          Queenie Kate S. Cabanilla <br />  {" "}
-          Zyrene Belle B. Alturas <br /> {" "}
+          Queenie Kate S. Cabanilla <br /> Zyrene Belle B. Alturas <br />{" "}
           <span className="font-bold pb-4 text-sm text-[#043873]">
             Web Developers
           </span>
         </p>
       </div>
-      <div className="pt-4 text-center x-4 ">
-        <p className="py-2 ">
+      {/* <div className="pt-4 text-center x-4 "> */}
+      {/* <p className="py-2 ">
           If you have any questions, concerns, or feedback, please feel free to
           reach out to our dedicated team.
           <br /> We&apos;re here to assist you, and your input is valuable to
@@ -177,12 +204,23 @@ const Aboutus = () => {
                   d="M12 5l9 4-9 4-9-4 9-4zm0 0v6"
                 />
               </svg>
-             diannemel.arrubio@g.msuiit.edu.ph
+              diannemel.arrubio@g.msuiit.edu.ph
             </p>
           </div>
         </div>
+      </div> */}
+      <div className="text-center p-4">
+        <p className="text-[#151A40] text-xl font-bold">Learn with AthenaMD for free!</p>
+        <p>Join us and explore the exciting world of learning today!</p>
+        <Link href="main_homepage">
+            <button className="mt-6 pt-[10px] bg-blue px-5 py-2  bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-300 text-sm rounded-lg hover:bg-[#0f1330]">
+              View Courses
+            </button>
+          </Link>
       </div>
+      <Footer />
     </div>
+    
   );
 };
 
