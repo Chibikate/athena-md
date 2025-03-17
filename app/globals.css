@@ -23,7 +23,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(254, 254, 254, 0.519);
+  background: rgba(9, 84, 170, 0.519);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }
