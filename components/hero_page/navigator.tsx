@@ -46,7 +46,7 @@ const Navigator = ({ isCourse }: Props) => {
         )}
         {!isCourse && (
           <Link
-            className="bg-blue py-[4px] hover:text-blue-900 hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-400 text-xl px-5 rounded-lg  text-md font-bold"
+            className="bg-[#165388] text-white py-[4px] hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-700 px-7 rounded-lg  text-md"
             href={"/"}
           >
             Home

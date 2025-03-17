@@ -22,12 +22,12 @@ const HeroSection = () => {
       {/* Centered Content */}
       <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 w-full flex flex-col items-center text-center">
         <p className="text-sm sm:text-4xl font-bold text-[#043873]">
-          Develop Your Medical Skills
+          Develop <span className="text-[#151A40]">Your Medical Skills</span>
         </p>
-        <p className="text-sm sm:text-2xl font-bold text-[#151A40] mt-2">
+        <p className="text-sm sm:text-2xl font-bold text-[#043873] mt-2">
           Your Journey Begins Now
         </p>
-        <p className="text-[#151A40] rounded-lg mt-2">
+        <p className="text-[#043873] rounded-lg mt-2">
           Explore free courses to learn
         </p>
 
