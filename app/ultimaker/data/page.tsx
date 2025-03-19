@@ -3,36 +3,34 @@ import { useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
-import TutorialCard from "@/components/3dslicer_page/tutorial_card";
+import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
 import Navigator from "@/components/course_overview/navigator";
 import {
-  slicerTutorial1,
-  slicerTutorial2,
-  slicerTutorial3,
-  slicerTutorial4,
-  slicerTutorial5,
-  MeshTutorial,
+  printingTutorial1,
+  printingTutorial2,
+  printingTutorial3,
+  printingTutorial4,
   
-} from "@/data";
+} from "../../../data/ultimaker";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
 import { Suspense } from "react";
 import ProgressBar from "@/components/3dslicer_page/progress_bar";
 
 interface Params {
-  params: {
+  params: { 
     course: string;
   };
 }
 
-interface ContentProps {
+interface ContentProps3 {
   title: string;
   description: React.JSX.Element | string;
   image?: null | StaticImageData | undefined;
   alt: string;
 }
 
-const data: ContentProps[] = [
+const data: ContentProps3[] = [
   {
     title: "",
     description: "",
@@ -48,29 +46,24 @@ const Home = ({ params }: Params) => {
   const queryPage = searchParams.get("content");
 
   const [index, setIndex] = useState(0);
-  const [content, setContent] = useState<ContentProps[]>(data);
+  const [content, setContent] = useState<ContentProps3[]>(data);
 
   /// mao nani sya magpakita ang data sa 5 ka module sa slicer pero wala pani nato gi tawag para ma display and data
   useEffect(() => {
     switch (queryPage) {
-      case "3D slicer Part 1":
-        setContent(slicerTutorial1);
+      case "3D printing  Part 1":
+        setContent(printingTutorial1);
         break;
-      case "3D slicer Part 2":
-        setContent(slicerTutorial2);
+      case "3D printing  Part 2":
+        setContent(printingTutorial2);
         break;
-      case "3D slicer Part 3":
-        setContent(slicerTutorial3);
+      case "3D printing  Part 3":
+        setContent(printingTutorial3);
         break;
-      case "3D slicer Part 4":
-        setContent(slicerTutorial4);
+      case "3D printing  Part 4":
+        setContent(printingTutorial4);
         break;
-      case "3D slicer Part 5":
-        setContent(slicerTutorial5);
-        break;
-      case "MeshMixer - Virtual-Surgery":
-        setContent(MeshTutorial);
-        break;
+            
     }
   }, [queryPage]);
 
@@ -123,7 +116,7 @@ const Home = ({ params }: Params) => {
 
           {index == 0 && (
             <Link
-              href={`/course/${course}`}
+              href={`/ultimaker`}
               onClick={goToPreviousQuestion}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
             bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
@@ -133,7 +126,7 @@ const Home = ({ params }: Params) => {
           )}
 
           {index < content.length && (
-            <TutorialCard
+            <UltimakerCard
               title={content[index].title}
               description={content[index].description}
               image={content[index].image}
@@ -153,7 +146,7 @@ const Home = ({ params }: Params) => {
 
             {index == 0 && (
               <Link
-                href={`/course/${course}`}
+                href={`/ultimaker`}
                 onClick={goToPreviousQuestion}
                 className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
             bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"

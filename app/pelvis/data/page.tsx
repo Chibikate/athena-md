@@ -25,14 +25,14 @@ interface Params {
   };
 }
 
-interface ContentProps {
+interface ContentProps2 {
   title: string;
   description: React.JSX.Element | string;
   image?: null | StaticImageData | undefined;
   alt: string;
 }
 
-const data: ContentProps[] = [
+const data: ContentProps2[] = [
   {
     title: "",
     description: "",
@@ -48,7 +48,7 @@ const Page = ({ params }: Params) => {
   const queryPage = searchParams.get("content");
 
   const [index, setIndex] = useState(0);
-  const [content, setContent] = useState<ContentProps[]>(data);
+  const [content, setContent] = useState<ContentProps2[]>(data);
 
   /// mao nani sya magpakita ang data sa 5 ka module sa slicer pero wala pani nato gi tawag para ma display and data
   useEffect(() => {

@@ -1,14 +1,14 @@
 "use client";
 
 import Navigator from "@/components/course_overview/navigator";
-import HeroSection from "@/components/course_overview/hero_section";
+import HeroSection2 from "@/components/course_overview/hero_section2";
 import Footer from "@/components/hero_page/footer";
-import ObjectiveSection from "@/components/course_overview/objective_section";
+import ObjectiveSection2 from "@/components/course_overview/objective_section2";
 import { useEffect, useState } from "react";
-import * as datas from "@/data/course_data";
+import * as datas from "@/data/pelvis/pelvis_data";
 import Link from "next/link";
 import { Suspense } from "react";
-import TeamSection from "@/components/course_overview/team_section";
+import TeamSection2 from "@/components/course_overview/team_section2";
 
 interface Params {
   params: {
@@ -16,7 +16,7 @@ interface Params {
   };
 }
 
-const dataValues: datas.CourseDataProps = {
+const dataValues: datas.CourseDataProps2 = {
   hero: {
     hero: {
       title: "",
@@ -36,29 +36,11 @@ const dataValues: datas.CourseDataProps = {
 const Home = ({ params }: Params) => {
   const course = params["course"].replaceAll("%20", " ");
   const [content, setContent] = useState("");
-  const [data, setData] = useState<datas.CourseDataProps>(dataValues);
+  const [data, setData] = useState<datas.CourseDataProps2>(dataValues);
   const [isNewCourse, setNewCourse] = useState (false)
 
   useEffect(() => {
-    if (course === "3D slicer interface") {
-      setData(datas.slicerInterface);
-      setContent("3D slicer Part 1");
-    } else if (course === "3D slicer - Adding DICOM datasets") {
-      setData(datas.dicomDatasets);
-      setContent("3D slicer Part 2");
-    } else if (course === "3D slicer - Navigating DICOM display") {
-      setContent("3D slicer Part 3");
-      setData(datas.dicomDisplay);
-    } else if (course === "3D slicer - Basic-Segmentation") {
-      setContent("3D slicer Part 4");
-      setData(datas.basicSegmentation);
-    } else if (course === "3D slicer - Advanced Segmentation-1") {
-      setContent("3D slicer Part 5");
-      setData(datas.advancedSegmentation1);
-    } else if (course === "MeshMixer - Virtual-Surgery") {
-      setContent("MeshMixer - Virtual-Surgery");
-      setData(datas.MeshMixer);
-    } else if (course === "3D Slicer Pelvis - Interface") {
+    if (course === "3D Slicer Pelvis - Interface") {
       setContent("3D slicer Pelvis C1");
       setNewCourse (true)
       setData(datas.pelvisInterface);
@@ -82,23 +64,7 @@ const Home = ({ params }: Params) => {
       setContent("MeshMixer2 - Pelvis Virtual-Surgery");
       setData(datas.MeshMixer2);
       setNewCourse (true)
-    } else if (course === "3D Printing for a Mandible-1") {
-      setContent("3D printing  Part 1");
-      setData(datas.printing1);
-      setNewCourse (true)
-    } else if (course === "3D Printing for a Mandible-2") {
-      setContent("3D printing  Part 2");
-      setData(datas.printing2);
-      setNewCourse (true)
-    } else if (course === "3D Printing for a Mandible-3") {
-      setContent("3D printing  Part 3");
-      setData(datas.printing3);
-      setNewCourse (true)
-    } else if (course === "3D Printing for a Mandible-4") {
-      setContent("3D printing  Part 4");
-      setData(datas.printing4);
-      setNewCourse (true)
-    } 
+    }
   },
   [course]);
 
@@ -107,8 +73,8 @@ const Home = ({ params }: Params) => {
       <section>
         <Navigator />
 
-        <HeroSection hero={data.hero.hero} />
-        <ObjectiveSection objective={data.objectives.objective} />
+        <HeroSection2 hero={data.hero.hero} />
+        <ObjectiveSection2 objective={data.objectives.objective} />
         <div className="flex flex-col items-center p-10 ">
           <div className="flex flex-row">
             <Link href={`${params["course"]}/${data.to}?content=${content}`}>
@@ -118,7 +84,7 @@ const Home = ({ params }: Params) => {
             </Link>
           </div>
         </div>
-        <TeamSection isNewCourse = {isNewCourse}/>
+        <TeamSection2/>
         <Footer />
       </section>
     </Suspense>
