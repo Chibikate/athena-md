@@ -8,32 +8,32 @@ const AboutSection = () => {
       <AboutCard
         image={kate}
         alt="User Image"
-        name="Kate Cabanilla"
-        role="Developer"
+        name="Lemuel Clark Velasco"
+        role=" Project Manager"
+      />
+      <AboutCard
+        image={kate}
+        alt="User Image"
+        name="Kaye Velarde"
+        role="Pedagogy Manager"
       />
       <AboutCard
         image={kate}
         alt="User Image"
         name="Kate Cabanilla"
+        role=" Web Developer"
+      />
+      <AboutCard
+        image={kate}
+        alt="User Image"
+        name="Zyrene Alturas"
         role="Developer"
       />
       <AboutCard
         image={kate}
         alt="User Image"
-        name="Kate Cabanilla"
-        role="Developer"
-      />
-      <AboutCard
-        image={kate}
-        alt="User Image"
-        name="Kate Cabanilla"
-        role="Developer"
-      />
-      <AboutCard
-        image={kate}
-        alt="User Image"
-        name="Kate Cabanilla"
-        role="Developer"
+        name="Dianne Mel Arrubio"
+        role="Pedagogy Manager"
       />
     </div>
   );

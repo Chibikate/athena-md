@@ -46,7 +46,7 @@ const MainCardSection = () => {
           video="2 Video"
           lesson="5 Lesson"
           alt="3D Printing"
-          to="/3d-printing"
+          to="/ultimakercourses"
         />
       </div>
 

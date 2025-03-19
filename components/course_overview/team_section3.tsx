@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Image6 from "@/public/Image6.png";
 
-const TeamSection = () => {
+const TeamSection3 = () => {
   return (
     <div className="flex flex-col bg-[#EDF5FE] text-[#01062C]">
       <div className="area">
@@ -45,44 +45,30 @@ const TeamSection = () => {
         
         <div>
           <p>
-            Rentor Cafino <br /> MD, DPBO-HNS
-            <br />
+          Julius Banquiso
             <span className="font-semibold text-sm text-[#151A40]">
               Content Developer
             </span>
           </p>
         </div>
         
-        <div>
-          <p>
-            Armando T. Isla <br /> MD, FPSO-HNS
-            <br />
-            <span className="font-semibold text-sm text-[#151A40]">
-              Medical Adviser
-            </span>
-          </p>
-        </div>
         
         <div className="flex flex-col">
-          <p>Karen Mae Ty, MD, FPSO-HNS</p>
-          <p>Jay Pee Amable, MD, FPSO-HNS</p>
-          <p>Isaac Cesar De Guzman, MD, FPSO-HNS</p>
-          <p>Jehan Grace Maglaya, MD, FPSO-HNS</p>
-          <p>Anna Carmina Zantua, MD, FPSO-HNS</p>
-          <p className="font-bold pb-4 text-sm text-[#151A40]">
-            Content Validators
-          </p>
-        </div>
+              <p>Justin Gabitan</p>
+              <p className="font-bold pb-4 text-sm text-[#151A40]">
+                Content Validator
+              </p>
+            </div>
         
         <p>
-          Kaye Q. Velarde <br />
+          Dianne Mel B. Arrubio <br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">
             Pedagogy Manager
           </span>
         </p>
         
         <p>
-          Queenie Kate S. Cabanilla <br />
+          Zyrene Belle b. Alturas<br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">
             Web Developer
           </span>
@@ -92,4 +78,4 @@ const TeamSection = () => {
   );
 };
 
-export default TeamSection;
+export default TeamSection3;
