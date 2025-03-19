@@ -28,7 +28,7 @@ export const printingTutorial1 = [
         </div>
       </div>
     ),
-    image:  Printing1,
+    image:  E1.Printing1,
     alt: "",
   },
   {

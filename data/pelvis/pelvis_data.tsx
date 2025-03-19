@@ -1,5 +1,5 @@
 import * as course from "@/public/course";
-import TeamSection from "@/components/course_overview/team_section";
+import TeamSection2 from "@/components/course_overview/team_section2";
 // * If magdungag kag another course, dani lang pag input//
 
 {
@@ -30,7 +30,7 @@ export const PelvisCourses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D Slicer Pelvis - Interface",
+    to: "/pelvis/3D Slicer Pelvis - Interface",
     courseName: "Pelvis",
   },
   {
@@ -85,7 +85,7 @@ export const PelvisCourses = [
   },
 ];
 
-export interface HeroProps {
+export interface HeroProps2 {
   hero: {
     title: string;
     difficulty: string;
@@ -94,18 +94,18 @@ export interface HeroProps {
   };
 }
 
-export interface ObjectiveProps {
+export interface ObjectiveProps2 {
   objective: {
     objectives: string[];
   };
 }
 
-export interface CourseDataProps {
-  hero: HeroProps;
-  objectives: ObjectiveProps;
+export interface CourseDataProps2 {
+  hero: HeroProps2;
+  objectives: ObjectiveProps2;
   to: string;
 } 
-const pelvisInterface: CourseDataProps = {
+const pelvisInterface: CourseDataProps2 = {
   hero: {
     hero: {
       title: "3D Slicer Pelvis Interface (C-1)",
@@ -121,7 +121,7 @@ const pelvisInterface: CourseDataProps = {
   },
   to: "data",
 };
-const pelvisAddDICOM: CourseDataProps = {
+const pelvisAddDICOM: CourseDataProps2 = {
   hero: {
     hero: {
       title: "3D Slicer Pelvis Add DICOM (C-2)",
@@ -140,7 +140,7 @@ const pelvisAddDICOM: CourseDataProps = {
   },
   to: "data",
 };
-const pelvisdicomDisplay: CourseDataProps = {
+const pelvisdicomDisplay: CourseDataProps2 = {
   hero: {
     hero: {
       title: "3D slicer Pelvis - Navigating DICOM display (C-3)",
@@ -160,7 +160,7 @@ const pelvisdicomDisplay: CourseDataProps = {
   to: "data",
 };
 
-const pelvisbasicSegmentation: CourseDataProps = {
+const pelvisbasicSegmentation: CourseDataProps2 = {
   hero: {
     hero: {
       title: "3D slicer Pelvis-  Basic-Segmentation (C-4)",
@@ -183,7 +183,7 @@ const pelvisbasicSegmentation: CourseDataProps = {
   },
   to: "data",
 };
-const pelvisadvancedSegmentation1: CourseDataProps = {
+const pelvisadvancedSegmentation1: CourseDataProps2 = {
   hero: {
     hero: {
       title: "3D slicer - Advanced Segmentation-1  (C-5)",
@@ -206,7 +206,7 @@ const pelvisadvancedSegmentation1: CourseDataProps = {
   },
   to: "data",
 };
-const MeshMixer2: CourseDataProps = {
+const MeshMixer2: CourseDataProps2 = {
   hero: {
     hero: {
       title: "MeshMixer2 - Pelvis Virtual-Surgery (D-1)",
@@ -238,5 +238,5 @@ export {
   pelvisadvancedSegmentation1,
   MeshMixer2,
   PelvisCourses as pelviscourses,
-  TeamSection,
+  TeamSection2,
 };
