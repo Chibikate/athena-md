@@ -6,14 +6,20 @@ import Footer from "@/components/hero_page/footer";
 import PelvisCard from "@/components/3dslicer_page/pelvis_tutorial";
 import Navigator from "@/components/course_overview/navigator";
 import {
+  pelvisInterface,
+  pelvisAddDICOM,
+  pelvisdicomDisplay,
+  pelvisbasicSegmentation,
+  pelvisadvancedSegmentation1,
+  MeshMixer2,
   slicerTutorial6,
   slicerTutorial7,
   slicerTutorial8,
   slicerTutorial9,
   slicerTutorial10,
   MeshTutorial2,
-  
-} from "../../../data/pelvis";
+} from "@/data/pelvis/pelvis_data";
+
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
 import { Suspense } from "react";

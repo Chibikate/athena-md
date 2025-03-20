@@ -34,31 +34,30 @@ const dataValues: datas.CourseDataProps3 = {
 };
 
 const Home = ({ params }: Params) => {
-  const pelviscourse = params["course"].replaceAll("%20", " ");
+  const ultimakercourse = params["course"].replaceAll("%20", " ");
   const [content, setContent] = useState("");
   const [data, setData] = useState<datas.CourseDataProps3>(dataValues);
-  const [isNewCourse, setNewCourse] = useState (false)
 
   useEffect(() => {
-    if (pelviscourse === "3D Printing for a Mandible-1") {
+    if (ultimakercourse === "3D Printing for a Mandible-1") {
       setContent("3D printing  Part 1");
       setData(datas.printing1);
-      setNewCourse (true)
-    } else if (pelviscourse === "3D Printing for a Mandible-2") {
+
+    } else if (ultimakercourse === "3D Printing for a Mandible-2") {
       setContent("3D printing  Part 2");
       setData(datas.printing2);
-      setNewCourse (true)
-    } else if (pelviscourse === "3D Printing for a Mandible-3") {
+
+    } else if (ultimakercourse === "3D Printing for a Mandible-3") {
       setContent("3D printing  Part 3");
       setData(datas.printing3);
-      setNewCourse (true)
-    } else if (pelviscourse === "3D Printing for a Mandible-4") {
+
+    } else if (ultimakercourse=== "3D Printing for a Mandible-4") {
       setContent("3D printing  Part 4");
       setData(datas.printing4);
-      setNewCourse (true)
+  
     } 
   },
-  [pelviscourse]);
+  [ultimakercourse]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -68,14 +67,12 @@ const Home = ({ params }: Params) => {
         <HeroSection3 hero={data.hero.hero} />
         <ObjectiveSection3 objective={data.objectives.objective} />
         <div className="flex flex-col items-center p-10 ">
-          <div className="flex flex-row">
-            <Link href={`${params["course"]}/${data.to}?content=${content}`}>
+            <Link href={`${params['course']}/${data.to}?content=${content}`}>
               <p className="p-2 rounded-md  text-white hover:font-bold font-bold cursor bg-[#160c35] hover-border hover:ring-offset-[#b7d5eb]   hover:ring-2 hover:ring-offset-2">
                 Start Learning
               </p>
             </Link>
           </div>
-        </div>
         <TeamSection3/>
         <Footer />
       </section>

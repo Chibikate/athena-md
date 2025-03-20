@@ -116,7 +116,7 @@ const Home = ({ params }: Params) => {
 
           {index == 0 && (
             <Link
-              href={`/ultimaker`}
+              href={`/course/${course}`}
               onClick={goToPreviousQuestion}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
             bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
@@ -146,7 +146,7 @@ const Home = ({ params }: Params) => {
 
             {index == 0 && (
               <Link
-                href={`/ultimaker`}
+                href={`/course/${course}`}
                 onClick={goToPreviousQuestion}
                 className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
             bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
