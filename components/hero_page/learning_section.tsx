@@ -6,6 +6,8 @@ import SelfDirect from "@/public/Self-direct.svg";
 import Realistic from "@/public/Realistic.svg";
 import Image from "next/image";
 
+// Data sulod sa Leaning Card
+
 const LearningSection = () => {
   return (
     <div>

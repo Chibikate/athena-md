@@ -2,6 +2,8 @@ import React from "react";
 import CourseCard from "./course_card";
 import { courses } from "@/data/course_data";
 
+// Component sa gawas sa card
+
 const CourseSection = () => {
   return (
     <div className="flex flex-col p-4 items-start w-full min-h-screen">
