@@ -4,8 +4,8 @@ import { PelvisCourses } from "../../data//pelvis/pelvis_data";
 
 const PelvisSection = () => {
   return (
-    <div className="flex flex-col p-4 items-start w-full min-h-screen">
-      <p className="text-md md:text-4xl font-bold text-shadow-[0_2px_2px_#000000] py-7">
+    <div className="flex flex-col p-4  w-full min-h-screen">
+      <p className="text-md md:text-3xl font-semibold text-center text-shadow-[0_2px_2px_#696767FF] py-7 text-[#0b0d0f]">
         Pelvis Course
       </p>
       <div className="grid grid-rows-2 grid-flow-row md:grid-flow-col gap-2 text-black w-full h-full">
