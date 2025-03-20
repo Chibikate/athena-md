@@ -28,7 +28,6 @@ export const UltimakerCourses = [
     time: "10mins",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-1",
-    courseName: "UltimakerCura",
   },
   {
     image: ultimakercourse.Module15,
@@ -38,7 +37,6 @@ export const UltimakerCourses = [
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-2",
-    courseName: "UltimakerCura",
   },
   {
     image: ultimakercourse.Module16,
@@ -48,7 +46,7 @@ export const UltimakerCourses = [
     time: "1hr",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-3",
-    courseName: "UltimakerCura",
+
   },
   {
     image: ultimakercourse.Module17,
@@ -58,7 +56,6 @@ export const UltimakerCourses = [
     time: "30mins",
     alt: "3D printing using Ultimaker Cura course",
     to: "/course/3D Printing for a Mandible-4",
-    courseName: "UltimakerCura",
   },
 ];
 

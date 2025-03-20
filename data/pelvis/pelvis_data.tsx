@@ -1,4 +1,4 @@
-import * as course from "@/public/course";
+import * as pelviscourse from "@/public/course";
 import TeamSection2 from "@/components/course_overview/team_section2";
 // * If magdungag kag another course, dani lang pag input//
 
@@ -13,14 +13,6 @@ alt - alternative sa image if walay net
 to - link kung aha sya mapadulong
 */
 }
-const pelviscourse = {
-  Module8: course.Module8,
-  Module9: course.Module9,
-  Module10: course.Module10,
-  Module11: course.Module11,
-  Module12: course.Module12,
-  Module13: course.Module13,
-};
 // * If magdungag kag another course, dani lang pag input//
 export const PelvisCourses = [
   {
@@ -40,7 +32,7 @@ export const PelvisCourses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D Slicer Pelvis - add DICOM",
+    to: "/pelvis/3D Slicer Pelvis - add DICOM",
     courseName: "Pelvis",
   },
   {
@@ -50,7 +42,7 @@ export const PelvisCourses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer Pelvis - Navigating DICOM",
+    to: "/pelvis/3D slicer Pelvis - Navigating DICOM",
     courseName: "Pelvis",
   },
   {
@@ -60,7 +52,7 @@ export const PelvisCourses = [
     level: "Hard",
     time: "30 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer Pelvis - Basic-Segmentation",
+    to: "/pelvis/3D slicer Pelvis - Basic-Segmentation",
     courseName: "Pelvis",
   },
   {
@@ -70,7 +62,7 @@ export const PelvisCourses = [
     level: "Hard",
     time: "50 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D slicer Pelvis - Advanced Segmentation-1",
+    to: "/pelvis/3D slicer Pelvis - Advanced Segmentation-1",
     courseName: "Pelvis",
   },
   {
@@ -80,7 +72,7 @@ export const PelvisCourses = [
     level: "Difficult",
     time: "1hr and 10mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/MeshMixer2 - Pelvis Virtual-Surgery",
+    to: "/pelvis/MeshMixer2 - Pelvis Virtual-Surgery",
     courseName: "Pelvis",
   },
 ];
@@ -105,6 +97,14 @@ export interface CourseDataProps2 {
   objectives: ObjectiveProps2;
   to: string;
 } 
+
+export interface ContentProps2 {
+  title: string;
+  description: React.JSX.Element | string;
+  image?: null | any;
+  alt: string;
+}
+
 const pelvisInterface: CourseDataProps2 = {
   hero: {
     hero: {
@@ -121,6 +121,7 @@ const pelvisInterface: CourseDataProps2 = {
   },
   to: "data",
 };
+
 const pelvisAddDICOM: CourseDataProps2 = {
   hero: {
     hero: {
@@ -140,6 +141,7 @@ const pelvisAddDICOM: CourseDataProps2 = {
   },
   to: "data",
 };
+
 const pelvisdicomDisplay: CourseDataProps2 = {
   hero: {
     hero: {
@@ -149,7 +151,6 @@ const pelvisdicomDisplay: CourseDataProps2 = {
       language: "English",
     },
   },
-
   objectives: {
     objective: {
       objectives: [
@@ -169,7 +170,6 @@ const pelvisbasicSegmentation: CourseDataProps2 = {
       language: "English",
     },
   },
-
   objectives: {
     objective: {
       objectives: [
@@ -183,6 +183,7 @@ const pelvisbasicSegmentation: CourseDataProps2 = {
   },
   to: "data",
 };
+
 const pelvisadvancedSegmentation1: CourseDataProps2 = {
   hero: {
     hero: {
@@ -192,20 +193,20 @@ const pelvisadvancedSegmentation1: CourseDataProps2 = {
       language: "English",
     },
   },
-
   objectives: {
     objective: {
       objectives: [
         "Load a DICOM dataset into 3D slicer",
-        "Familiarize oneself with the “grow from seeds” function",
-        "Separate the right ilium from the left ilium using the “grow from seeds” function",
-        "Remove unwanted artifacts using “Islands” function",
+        "Familiarize oneself with the grow from seeds function",
+        "Separate the right ilium from the left ilium using the grow from seeds function",
+        "Remove unwanted artifacts using Islands function",
         "Save it in one file.",
       ],
     },
   },
   to: "data",
 };
+
 const MeshMixer2: CourseDataProps2 = {
   hero: {
     hero: {
@@ -215,7 +216,6 @@ const MeshMixer2: CourseDataProps2 = {
       language: "English",
     },
   },
-
   objectives: {
     objective: {
       objectives: [
@@ -223,12 +223,72 @@ const MeshMixer2: CourseDataProps2 = {
         "Manipulate the objects for good reduction of fractured area",
         "Split a single 3D model into segments using a separate function",
         "Reconstruct the objects using the mirror function",
-
       ],
     },
   },
   to: "data",
 };
+
+// Define tutorial content arrays
+export const slicerTutorial6: ContentProps2[] = [
+  {
+    title: "3D Slicer Pelvis Interface - Tutorial 1",
+    description: "Introduction to the 3D Slicer interface for pelvis reconstruction",
+    image: null,
+    alt: "3D Slicer Interface Tutorial",
+  },
+  // Add more slides as needed
+];
+
+export const slicerTutorial7: ContentProps2[] = [
+  {
+    title: "Adding DICOM Datasets - Tutorial 2",
+    description: "Learn how to add and import DICOM datasets in 3D Slicer",
+    image: null,
+    alt: "Adding DICOM Tutorial",
+  },
+  // Add more slides as needed
+];
+
+export const slicerTutorial8: ContentProps2[] = [
+  {
+    title: "Navigating DICOM Datasets - Tutorial 3",
+    description: "Learn how to navigate and manipulate DICOM datasets in 3D Slicer",
+    image: null,
+    alt: "Navigating DICOM Tutorial",
+  },
+  // Add more slides as needed
+];
+
+export const slicerTutorial9: ContentProps2[] = [
+  {
+    title: "Basic Segmentation - Tutorial 4",
+    description: "Learn basic segmentation techniques for pelvis reconstruction",
+    image: null,
+    alt: "Basic Segmentation Tutorial",
+  },
+  // Add more slides as needed
+];
+
+export const slicerTutorial10: ContentProps2[] = [
+  {
+    title: "Advanced Segmentation - Tutorial 5",
+    description: "Advanced segmentation techniques for pelvis reconstruction",
+    image: null,
+    alt: "Advanced Segmentation Tutorial",
+  },
+  // Add more slides as needed
+];
+
+export const MeshTutorial2: ContentProps2[] = [
+  {
+    title: "MeshMixer Virtual Surgery - Tutorial",
+    description: "Learn how to use MeshMixer for virtual surgery planning",
+    image: null,
+    alt: "MeshMixer Virtual Surgery Tutorial",
+  },
+  // Add more slides as needed
+];
 
 export {
   pelvisInterface,
