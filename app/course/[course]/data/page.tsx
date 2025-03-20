@@ -12,7 +12,7 @@ import {
   slicerTutorial4,
   slicerTutorial5,
   MeshTutorial,
-  
+
 } from "@/data";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
@@ -24,7 +24,7 @@ interface Params {
     course: string;
   };
 }
-
+// Dari ko sugod ayha sa course page.tsx
 interface ContentProps {
   title: string;
   description: React.JSX.Element | string;
@@ -175,7 +175,7 @@ const Home = ({ params }: Params) => {
         </div>
 
         <div>
-          <div className="h-[1px] w-full bg-[#FDCC6D] " />
+
           <Footer />
         </div>
       </section>
