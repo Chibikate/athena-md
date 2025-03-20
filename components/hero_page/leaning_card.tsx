@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+// Component ubos sa How it Works
+
 interface Props {
   title: string;
   description: string;

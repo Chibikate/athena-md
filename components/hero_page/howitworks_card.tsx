@@ -5,9 +5,11 @@ interface Props {
   description: string;
 }
 
+//Home page details
+
 const HowItWorks = ({ title, description }: Props) => {
   return (
-    
+
     <div className="w-64 h-60 bg-white rounded-lg shadow-lg p-6 text-center flex flex-col justify-center">
       <h3 className="text-xl font-bold text-[#165388] mb-4">
         {title}
