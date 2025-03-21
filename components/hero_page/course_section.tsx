@@ -1,6 +1,6 @@
 import React from "react";
 import CourseCard from "./course_card";
-import { courses } from "@/data/course_data";
+import { courses } from "@/data/mandibular/course_data";
 
 // Component sa gawas sa card. 
 

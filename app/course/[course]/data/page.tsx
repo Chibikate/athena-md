@@ -13,7 +13,7 @@ import {
   slicerTutorial5,
   MeshTutorial,
 
-} from "@/data";
+} from "@/data/mandibular";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
 import { Suspense } from "react";
