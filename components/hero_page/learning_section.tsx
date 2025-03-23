@@ -1,9 +1,9 @@
 import React from "react";
 import LearningCard from "@/components/hero_page/leaning_card";
 import bgg8 from "@/public/bgg8.png";
-import Interactive from "@/public/interactive.svg";
-import SelfDirect from "@/public/Self-direct.svg";
-import Realistic from "@/public/Realistic.svg";
+import Interactive from "@/public/Intereactive1.svg";
+import SelfDirect from "@/public/SelfDirect.svg";
+import Realistic from "@/public/Realistic1.svg";
 import Image from "next/image";
 
 // Data sulod sa Leaning Card

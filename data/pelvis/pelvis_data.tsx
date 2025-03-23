@@ -1,4 +1,4 @@
-import * as pelviscourse from "@/public/course";
+import * as pelviscourse from "@/public/pelviscourse";
 import TeamSection2 from "@/components/course_overview/team_section2";
 // * If magdungag kag another course, dani lang pag input//
 
@@ -22,7 +22,7 @@ export const PelvisCourses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/pelvis/3D Slicer Pelvis - Interface",
+    to: "/course/3D Slicer Pelvis - Interface",
     courseName: "Pelvis",
   },
   {

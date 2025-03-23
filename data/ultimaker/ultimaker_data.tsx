@@ -1,4 +1,4 @@
-import * as course from "@/public/course";
+import * as course from "@/public/ultimakercourse";
 import TeamSection3 from "@/components/course_overview/team_section3";
 // * If magdungag kag another course, dani lang pag input//
 

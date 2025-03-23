@@ -49,7 +49,7 @@ const data: ContentProps2[] = [
 
 /// mao ni sya nag pag fetch sa data//
 const Page = ({ params }: Params) => {
-  const course = params["course"].replaceAll("%20", " ");
+  const pelviscourse = params["course"].replaceAll("%20", " ");
   const searchParams = useSearchParams();
   const queryPage = searchParams.get("content");
 
