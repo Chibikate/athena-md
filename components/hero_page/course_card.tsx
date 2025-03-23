@@ -13,6 +13,8 @@ interface Props {
   alt: string;
 }
 
+// Mao ni ang gawas sa card
+
 const CourseCard = ({
   image,
   title,

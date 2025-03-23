@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Image3 from "@/public/Image3.svg";
-import { HeroProps } from "@/data/course_data";
+import { HeroProps } from "@/data/mandibular/course_data";
 
 const HeroSection = ({ hero }: HeroProps) => {
   const { title, difficulty, duration, language } = hero;

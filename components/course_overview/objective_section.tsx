@@ -1,7 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Image5 from "@/public/Image5.svg";
-import { ObjectiveProps } from "@/data/course_data";
+import { ObjectiveProps } from "@/data/mandibular/course_data";
 
 const ObjectiveSection = ({ objective }: ObjectiveProps) => {
   const { objectives } = objective;
