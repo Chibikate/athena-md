@@ -94,6 +94,8 @@ export const slicerTutorial6 = [
         },
         {
           title: "",
+          image: C1,
+          alt: "",
           description: (
             <div>
               <p>
@@ -107,8 +109,6 @@ export const slicerTutorial6 = [
               </p>
             </div>
           ),
-          image: C1,
-          alt: "",
         },
 {
 title: "",

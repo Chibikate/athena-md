@@ -22,17 +22,17 @@ export const PelvisCourses = [
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/course/3D Slicer Pelvis - Interface",
+    to: "/pelvis/3D slicer Pelvis - Interface",
     courseName: "Pelvis",
   },
   {
     image: pelviscourse.Module9,
-    title: "3D Modeling Pelvis- Adding DICOM datasets (C-2)",
+    title: "3D Modeling Pelvis- Adding DICOM (C-2)",
     description: "Learn how to add DICOM datasets in 3D slicer",
     level: "Beginner",
     time: "10 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
-    to: "/pelvis/3D Slicer Pelvis - add DICOM",
+    to: "/pelvis/3D slicer Pelvis - AddDICOM",
     courseName: "Pelvis",
   },
   {
@@ -228,67 +228,6 @@ const MeshMixer2: CourseDataProps2 = {
   },
   to: "data",
 };
-
-// Define tutorial content arrays
-export const slicerTutorial6: ContentProps2[] = [
-  {
-    title: "3D Slicer Pelvis Interface - Tutorial 1",
-    description: "Introduction to the 3D Slicer interface for pelvis reconstruction",
-    image: null,
-    alt: "3D Slicer Interface Tutorial",
-  },
-  // Add more slides as needed
-];
-
-export const slicerTutorial7: ContentProps2[] = [
-  {
-    title: "Adding DICOM Datasets - Tutorial 2",
-    description: "Learn how to add and import DICOM datasets in 3D Slicer",
-    image: null,
-    alt: "Adding DICOM Tutorial",
-  },
-  // Add more slides as needed
-];
-
-export const slicerTutorial8: ContentProps2[] = [
-  {
-    title: "Navigating DICOM Datasets - Tutorial 3",
-    description: "Learn how to navigate and manipulate DICOM datasets in 3D Slicer",
-    image: null,
-    alt: "Navigating DICOM Tutorial",
-  },
-  // Add more slides as needed
-];
-
-export const slicerTutorial9: ContentProps2[] = [
-  {
-    title: "Basic Segmentation - Tutorial 4",
-    description: "Learn basic segmentation techniques for pelvis reconstruction",
-    image: null,
-    alt: "Basic Segmentation Tutorial",
-  },
-  // Add more slides as needed
-];
-
-export const slicerTutorial10: ContentProps2[] = [
-  {
-    title: "Advanced Segmentation - Tutorial 5",
-    description: "Advanced segmentation techniques for pelvis reconstruction",
-    image: null,
-    alt: "Advanced Segmentation Tutorial",
-  },
-  // Add more slides as needed
-];
-
-export const MeshTutorial2: ContentProps2[] = [
-  {
-    title: "MeshMixer Virtual Surgery - Tutorial",
-    description: "Learn how to use MeshMixer for virtual surgery planning",
-    image: null,
-    alt: "MeshMixer Virtual Surgery Tutorial",
-  },
-  // Add more slides as needed
-];
 
 export {
   pelvisInterface,

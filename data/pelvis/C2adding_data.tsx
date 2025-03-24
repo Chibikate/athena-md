@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const slicerTutorial7 = [
     {
-      title: "3D Modeling Pelvis- Adding DICOM datasets (C-2)",
+      title: "3D Modeling Pelvis- Adding DICOM (C-2)",
       description: (
         <div>
           Make sure to <span className="font-bold">install</span> your downloaded{" "}
