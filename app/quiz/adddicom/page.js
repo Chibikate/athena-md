@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Image1 from "@/public/quiz2/Image1.png";
+import Navigator from "@/components/hero_page/navigator";
 const quizQuestions = [
   {
     question:
