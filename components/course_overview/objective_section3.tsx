@@ -1,9 +1,9 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Image5 from "@/public/Image5.svg";
-import { ObjectiveProps } from "@/data/ultimaker/ultimaker_data";
+import { ObjectiveProps3 } from "@/data/ultimaker/ultimaker_data";
 
-const ObjectiveSection3 = ({ objective }: ObjectiveProps) => {
+const ObjectiveSection3 = ({ objective }: ObjectiveProps3) => {
   const { objectives } = objective;
   return (
     <div className="flex flex-col">

@@ -44,11 +44,9 @@ const TeamSection3 = () => {
         </p>
         
         <div>
-          <p>
-          Julius Banquiso
-            <span className="font-semibold text-sm text-[#151A40]">
+          <p>Julius Banquiso</p>
+            <p className="font-semibold text-sm text-[#151A40]">
               Content Developer
-            </span>
           </p>
         </div>
         
@@ -61,14 +59,14 @@ const TeamSection3 = () => {
             </div>
         
         <p>
-          Dianne Mel B. Arrubio <br />
+          Dianne Mel Arrubio <br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">
             Pedagogy Manager
           </span>
         </p>
         
         <p>
-          Zyrene Belle b. Alturas<br />
+          Zyrene Belle Alturas<br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">
             Web Developer
           </span>

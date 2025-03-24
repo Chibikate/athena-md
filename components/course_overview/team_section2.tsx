@@ -45,7 +45,7 @@ const TeamSection2 = () => {
         
         <div>
           <p>
-          Darelle Jay P. Langga <br /> MD
+          Darelle Jay P. Langga,  MD
             <br />
             <span className="font-semibold text-sm text-[#151A40]">
               Content Developer
@@ -65,14 +65,14 @@ const TeamSection2 = () => {
             </div>
         
         <p>
-          Dianne Mel B. Arrubio <br />
+          Dianne Mel Arrubio <br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">
             Pedagogy Manager
           </span>
         </p>
         
         <p>
-          Zyrene Belle b. Alturas<br />
+          Zyrene Belle Alturas<br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">
             Web Developer
           </span>

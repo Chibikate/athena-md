@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
 import TimeLogo from "@/public/time_icon.svg";
+import { Pelvis } from "@/public/main_course";
 
 interface NewProps {
   image: StaticImageData;

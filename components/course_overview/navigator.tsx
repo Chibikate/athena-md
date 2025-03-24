@@ -11,7 +11,7 @@ const Navigator = () => {
         <Image className="" alt="Athena logo" src={Logo} />
       </Link>
       <div className="flex flex-row items-center text-black bg-primary justify-end space-x-4">
-        <Link href="/courses">
+        <Link href={"/"}>
           <p className="bg-blue py-[4px] hover:text-blue-900 hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 text-xl px-5 rounded-lg text-md font-bold">
             Home
           </p>
