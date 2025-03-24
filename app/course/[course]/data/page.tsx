@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
@@ -12,11 +12,9 @@ import {
   slicerTutorial4,
   slicerTutorial5,
   MeshTutorial,
-
 } from "@/data/mandibular";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
-import { Suspense } from "react";
 import ProgressBar from "@/components/3dslicer_page/progress_bar";
 
 interface Params {
@@ -24,7 +22,7 @@ interface Params {
     course: string;
   };
 }
-// Dari ko sugod ayha sa course page.tsx
+
 interface ContentProps {
   title: string;
   description: React.JSX.Element | string;
@@ -41,16 +39,13 @@ const data: ContentProps[] = [
   },
 ];
 
-/// mao ni sya nag pag fetch sa data//
 const Home = ({ params }: Params) => {
   const course = params["course"].replaceAll("%20", " ");
   const searchParams = useSearchParams();
   const queryPage = searchParams.get("content");
-
   const [index, setIndex] = useState(0);
   const [content, setContent] = useState<ContentProps[]>(data);
 
-  /// mao nani sya magpakita ang data sa 5 ka module sa slicer pero wala pani nato gi tawag para ma display and data
   useEffect(() => {
     switch (queryPage) {
       case "3D slicer Part 1":
@@ -75,7 +70,6 @@ const Home = ({ params }: Params) => {
   }, [queryPage]);
 
   const goToNextQuestion = () => {
-    console.log(index);
     if (index < content.length) {
       setIndex(index + 1);
     }
@@ -95,9 +89,7 @@ const Home = ({ params }: Params) => {
         goToPreviousQuestion();
       }
     };
-
     window.addEventListener("keydown", handleKeyDown);
-
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -114,24 +106,20 @@ const Home = ({ params }: Params) => {
           {index > 0 && (
             <button
               onClick={goToPreviousQuestion}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-          hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35] "
+              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35] "
             >
               <ChevronLeftIcon className="w-8 h-8" />
             </button>
           )}
-
           {index == 0 && (
             <Link
               href={`/course/${course}`}
               onClick={goToPreviousQuestion}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-            bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
             >
               <ChevronLeftIcon className="w-8 h-8" />
             </Link>
           )}
-
           {index < content.length && (
             <TutorialCard
               title={content[index].title}
@@ -144,40 +132,31 @@ const Home = ({ params }: Params) => {
             {index > 0 && (
               <button
                 onClick={goToPreviousQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-           md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
               >
                 <ChevronLeftIcon className="w-8 h-8" />
               </button>
             )}
-
             {index == 0 && (
               <Link
                 href={`/course/${course}`}
                 onClick={goToPreviousQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2  
-            bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
               >
                 <ChevronLeftIcon className="w-8 h-8 " />
               </Link>
             )}
-
             {index < content.length - 1 && (
               <button
                 onClick={goToNextQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2
-          bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
               >
                 <ChevronRightIcon className="w-8 h-8" />
               </button>
             )}
           </div>
         </div>
-
-        <div>
-
-          <Footer />
-        </div>
+        <Footer />
       </section>
     </Suspense>
   );
