@@ -7,14 +7,13 @@ import Printing3 from "@/public/main_course/printing.png";
 const MainCardSection = () => {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F5F8FE]">
-
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#151A40] mb-4">
           EXPLORE COURSES
         </h2>
       </div>
-
-      <div className="flex justify-center space-x-8">
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
         <MainCard
           title="Mandibular Reconstruction"
           description="Courses offer step-by-step tutorial on tools used for medical planning"
@@ -24,7 +23,6 @@ const MainCardSection = () => {
           video="2 Video"
           lesson="8 Lesson"
           to="/courses"
-
         />
 
         <MainCard
@@ -49,7 +47,6 @@ const MainCardSection = () => {
           to="/ultimakercourses"
         />
       </div>
-
     </div>
   );
 };

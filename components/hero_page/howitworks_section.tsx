@@ -1,26 +1,24 @@
 import React from "react";
 import HowItWorks from "@/components/hero_page/howitworks_card";
 
-// Data sulod sa How it Works Card
-
 const HowItWorksSection = () => {
   return (
-    <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#D0E4F2]">
+    <div className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#D0E4F2]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl font-bold text-[#151A40] mb-4">
-            How does it works?
+        <div className="text-center mb-10 sm:mb-16 lg:mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#151A40] mb-2 sm:mb-4">
+            How does it work?
           </h2>
-          <p className="text-lg text-[#043873] max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#043873] max-w-xl sm:max-w-2xl mx-auto px-2">
             Are you looking for courses that can help you hone your technical skills
             while having a medical background or the other way around?
           </p>
         </div>
       </div>
 
-
-      <div className="absolute left-0 right-0 -bottom-12 mt-24">
-        <div className="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-6 md:space-y-0">
+      {/* Cards container with improved responsiveness */}
+      <div className="relative mt-8 sm:mt-12 lg:mt-16 px-2 sm:px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           <HowItWorks
             title="Explore"
             description="Courses offers step-by-step tutorial on tools used for medical planning"
@@ -36,8 +34,7 @@ const HowItWorksSection = () => {
         </div>
       </div>
 
-
-      <div className="pb-24"></div>
+      <div className="pb-16 sm:pb-20 lg:pb-24"></div>
     </div>
   );
 };
