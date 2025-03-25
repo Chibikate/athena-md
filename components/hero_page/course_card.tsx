@@ -3,50 +3,66 @@ import Link from "next/link";
 import React from "react";
 import TimeLogo from "@/public/time_icon.svg";
 
+
 interface Props {
-  image: StaticImageData;
+  image: string | StaticImageData;
   title: string;
   description: string;
   level: string;
-  time: string;
-  to: string;
   alt: string;
+  to: string;
+  time: string;
+  className?: string;
 }
 
-// Mao ni ang gawas sa card
-
-const CourseCard = ({
+const CourseCard: React.FC<Props> = ({
   image,
   title,
   description,
   level,
-  time,
-  to,
   alt,
-}: Props) => {
+  to,
+  time,
+  className = ''
+}) => {
   return (
-    <div className="w-96 border-2 rounded-lg shadow-3xl  text-[] space-y-2 text-sm border- p-4 ">
-      <div className={`py-2 rounded-t-lg`}>
-        <Image alt={alt} src={image.src} width={500} height={500} />
+    <div className={`
+      bg-white rounded-lg shadow-lg overflow-hidden
+      transition-all duration-300
+      ${className}
+    `}>
+      {/* Image Container */}
+      <div className="relative w-full h-48 md:h-56 overflow-hidden">
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          className="object-cover hover:scale-110 transition-transform duration-300"
+        />
       </div>
-      <br></br>
-      <br></br>
-      <p className="font-bold text-xl ">{title}</p>
-      <p>{description}</p>
-      <p className="font-bold">Level: {level}</p>
-      <div className="flex items-center">
-        <Image src={TimeLogo} alt="" width={25} height={25} />
-        <p className="pt-1 pl-2">{time} activity</p>
-      </div>
-      <br></br>
-      <div className="flex-start">
-        <div
-          className={`cursor-pointer hover:border-white-400 hover:border-2 text-black hover-border rounded-md p-2 bg-[#a2bfde]`}
-        >
-          <Link href={to}>
-            <p className="font-semibold text-center">Start now</p>
-          </Link>
+      
+      {/* Content Container */}
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-[#165388] mb-3">
+          {title}
+        </h3>
+        
+        <p className="text-[#165388] text-sm mb-4 line-clamp-3">
+          {description}
+        </p>
+        
+        <div className="flex justify-between text-[#165388] text-sm mb-4">
+          <span>📚 {level}</span>
+          <span>⏱️ {time}</span>
         </div>
+        
+        <Link 
+          href={to} 
+          className="block w-full text-center bg-[#165388] text-white py-2 rounded-md 
+          hover:bg-[#1a64a3] transition-colors duration-300"
+        >
+          Explore Course
+        </Link>
       </div>
     </div>
   );

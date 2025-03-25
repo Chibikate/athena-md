@@ -1,26 +1,32 @@
 import React from "react";
 import PelvisCard from "@/components/hero_page/pelvis_card";
-import { PelvisCourses } from "../../data//pelvis/pelvis_data";
+import { PelvisCourses } from "../../data/pelvis/pelvis_data";
 
 const PelvisSection = () => {
   return (
-    <div className="flex flex-col p-4  w-full min-h-screen">
-      <p className="text-md md:text-3xl font-semibold text-center text-shadow-[0_2px_2px_#696767FF] py-7 text-[#0b0d0f]">
-        Pelvis Course
-      </p>
-      <div className="grid grid-rows-2 grid-flow-row md:grid-flow-col gap-2 text-black w-full h-full">
-        {PelvisCourses.map((pelviscourse, index) => (
-          <PelvisCard
-            key={index}
-            image={pelviscourse.image}
-            title={pelviscourse.title}
-            description={pelviscourse.description}
-            level={pelviscourse.level}
-            alt={pelviscourse.alt}
-            to={pelviscourse.to}
-            time={pelviscourse.time}
-          />
-        ))}
+    <div className="bg-[#F5F8FE] py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-[#0b0d0f] mb-12 
+          drop-shadow-md">
+          Pelvis Course
+        </h2>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center">
+          {PelvisCourses.map((pelviscourse, index) => (
+            <div key={index} className="flex justify-center">
+              <PelvisCard
+                image={pelviscourse.image}
+                title={pelviscourse.title}
+                description={pelviscourse.description}
+                level={pelviscourse.level}
+                alt={pelviscourse.alt}
+                to={pelviscourse.to}
+                time={pelviscourse.time}
+                className="w-full max-w-[350px] transform transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

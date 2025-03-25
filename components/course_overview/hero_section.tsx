@@ -25,7 +25,7 @@ const HeroSection = ({ hero }: HeroProps) => {
 
       {/* Course Details (Responsive) */}
       <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-6">
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm p-2 rounded-md">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm p-2 rounded-md text">
           Level: {difficulty}
         </p>
         <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm p-2 rounded-md">

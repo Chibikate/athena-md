@@ -1,56 +1,67 @@
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 import React from "react";
-import TimeLogo from "@/public/time_icon.svg";
+import Image from "next/image";
+import Link from "next/link";
+import { StaticImageData } from "next/image";
 
-interface NewProps {
-  image: StaticImageData;
+interface UltimakerCardProps {
+  image: string | StaticImageData;
   title: string;
   description: string;
   level: string;
-  time: string;
-  to: string;
   alt: string;
+  to: string;
+  time: string;
+  className?: string;
 }
 
-const UltimakerCard = ({
+const UltimakerCard: React.FC<UltimakerCardProps> = ({
   image,
   title,
   description,
   level,
-  time,
-  to,
   alt,
-}: NewProps) => {
+  to,
+  time,
+  className = ''
+}) => {
   return (
-    <div className="w-96 border-2 rounded-lg shadow-3xl text-[] space-y-2 text-sm border- p-4">
-      <div className="h-48 w-full overflow-hidden rounded-t-lg">
-        {/* Fixed height for consistent sizing */}
+    <div className={`
+      bg-white rounded-lg shadow-lg overflow-hidden
+      transition-all duration-300
+      ${className}
+    `}>
+      {/* Image Container */}
+      <div className="relative w-full h-48 md:h-56 overflow-hidden">
         <Image
+          src={image}
           alt={alt}
-          src={image.src}
-          width={500}
-          height={500}
-          className="object-cover w-full h-full"
+          fill
+          className="object-cover hover:scale-110 transition-transform duration-300"
         />
       </div>
-
-      <p className="font-bold text-xl">{title}</p>
-      <p>{description}</p>
-      <p className="font-bold">Level: {level}</p>
-      <div className="flex items-center">
-        <Image src={TimeLogo} alt="" width={25} height={25} />
-        <p className="pt-1 pl-2">{time} activity</p>
-      </div>
-
-      <div className="flex-start">
-        <div
-          className={`cursor-pointer hover:border-white-400 hover:border-2 text-black hover-border rounded-md p-2 bg-[#a2bfde]`}
-        >
-          <Link href={to}>
-            <p className="font-semibold text-center">Start now</p>
-          </Link>
+      
+      {/* Content Container */}
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-[#165388] mb-3">
+          {title}
+        </h3>
+        
+        <p className="text-[#165388] text-sm mb-4 line-clamp-3">
+          {description}
+        </p>
+        
+        <div className="flex justify-between text-[#165388] text-sm mb-4">
+          <span>📚 {level}</span>
+          <span>⏱️ {time}</span>
         </div>
+        
+        <Link 
+          href={to} 
+          className="block w-full text-center bg-[#165388] text-white py-2 rounded-md 
+          hover:bg-[#1a64a3] transition-colors duration-300"
+        >
+          Explore Course
+        </Link>
       </div>
     </div>
   );
