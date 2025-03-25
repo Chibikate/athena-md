@@ -27,7 +27,7 @@ const LearningCard = ({
       className={`flex flex-col sm:flex-row text-white items-center justify-center py-4 
        ${bg ? "bg-[#ffffff]" : null}`}
     >
-      {swap && <Image className="" src={image} alt={alt} height={300} />}
+      {swap && <Image className="" src={image} alt={alt} height={200} />}
 
       {swap && <div className="w-44" />}
       <div className={`${large ? "w-[250px]" : "w-[135px] "}`}>
@@ -35,7 +35,7 @@ const LearningCard = ({
         <p className="text-[#043873] text-justify">{description}</p>
       </div>
       {!swap && <div className="w-44" />}
-      {!swap && <Image src={image} alt={alt} height={300} />}
+      {!swap && <Image src={image} alt={alt} height={200} />}
     </div>
   );
 };

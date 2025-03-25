@@ -1,62 +1,65 @@
-import Image, { StaticImageData } from "next/image";
 import React from "react";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import TimeLogo from "@/public/time_icon.svg";
-import Lesson from "@/public/lesson.png";
-import Video from "@/public/video.png";
 
-interface Props {
+interface MainCardProps {
   title: string;
   description: string;
-  image: string | StaticImageData;
+  image: StaticImageData;
   alt: string;
-  to: string;
   time: string;
   video: string;
   lesson: string;
+  to: string;
+  className?: string;
 }
 
-const MainCard = ({ title, description, image, alt, to, time, video, lesson }: Props) => {
+const MainCard: React.FC<MainCardProps> = ({
+  title,
+  description,
+  image,
+  alt,
+  time,
+  video,
+  lesson,
+  to,
+  className = ''
+}) => {
   return (
-    <div className="w-72 bg-white rounded-md shadow-sm overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
-
-      <Image
-        src={image}
-        alt={alt}
-        width={300}
-        height={144}
-        className=" h-36 object-cover"
-      />
-
-      <h3 className="text-lg font-bold text-[#151A40] mb-1 p-2">
-        {title}
-      </h3>
-      <p className="text-[#5A5A5A] text-sm mb-4 p-2">
-        {description}
-      </p>
-
-      <div className="flex items-center justify-around border-t pt-3 p-2">
-        <div className="flex items-center text-sm">
-          <Image src={TimeLogo} alt="Time Icon" width={20} height={20} />
-          <span className="pl-1">{time}</span>
-        </div>
-
-        <div className="flex items-center text-sm">
-          <Image src={Video} alt="Video Icon" width={20} height={20} />
-          <span className="pl-1">{video}</span>
-        </div>
-
-        <div className="flex items-center text-sm">
-          <Image src={Lesson} alt="Lesson Icon" width={20} height={20} />
-          <span className="pl-1">{lesson}</span>
-        </div>
-
+    <div className={`
+      bg-white rounded-lg shadow-lg overflow-hidden
+      transition-all duration-300 
+      ${className}
+    `}>
+      <div className="relative w-full h-48 md:h-56 overflow-hidden">
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          className="object-cover hover:scale-110 transition-transform duration-300"
+        />
       </div>
-      <div className="px-16 pb-2 pt-3">
-        <Link href={to}>
-          <div className=" bg-[#165388] text-white text-center font-semibold p-2 rounded-lg cursor-pointer text-sm">
-            View this course
-          </div>
+      
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-[#165388] mb-3">
+          {title}
+        </h3>
+        
+        <p className="text-[#165388] text-sm mb-4">
+          {description}
+        </p>
+        
+        <div className="flex justify-between text-[#165388] text-sm mb-4">
+          <span>⏱️ {time}</span>
+          <span>🎥 {video}</span>
+          <span>📚 {lesson}</span>
+        </div>
+        
+        <Link 
+          href={to} 
+          className="block w-full text-center bg-[#165388] text-white py-2 rounded-md hover:bg-[#1a64a3] transition-colors duration-300"
+        >
+          View Course
         </Link>
       </div>
     </div>

@@ -34,7 +34,8 @@ const LearningSection = () => {
         title="Self-Direct"
         bg={false}
         large={true}
-        description="They can set their own pace, choose the specific topics they want to explore, and navigate through the content independently, fostering self-directed learning."
+        description="They can set their own pace, choose the specific topics they want to explore, 
+        and navigate through the content independently, fostering self-directed learning."
         image={SelfDirect}
         alt="Self-Direct illustration"
         swap={true}

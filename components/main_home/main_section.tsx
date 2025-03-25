@@ -13,39 +13,50 @@ const MainCardSection = () => {
         </h2>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-        <MainCard
-          title="Mandibular Reconstruction"
-          description="Courses offer step-by-step tutorial on tools used for medical planning"
-          image={Mandibular}
-          alt="Mandibular Reconstruction"
-          time="1hr"
-          video="2 Video"
-          lesson="8 Lesson"
-          to="/courses"
-        />
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center">
+          <div className="flex justify-center">
+            <MainCard
+              title="Mandibular Reconstruction"
+              description="Courses offer step-by-step tutorial on tools used for medical planning"
+              image={Mandibular}
+              alt="Mandibular Reconstruction"
+              time="1hr"
+              video="2 Video"
+              lesson="8 Lesson"
+              to="/courses"
+              className="w-full max-w-[350px] transform transition-transform duration-300 hover:scale-105"
+            />
+          </div>
 
-        <MainCard
-          title="Pelvis Reconstruction"
-          description="Learn the free and available courses by taking the quiz to retain information"
-          image={Pelvis}
-          time="1hr"
-          video="1 Video"
-          lesson="5 Lesson"
-          alt="Pelvis Reconstruction"
-          to="/pelviscourses"
-        />
+          <div className="flex justify-center">
+            <MainCard
+              title="Pelvis Reconstruction"
+              description="Learn the free and available courses by taking the quiz to retain information"
+              image={Pelvis}
+              time="1hr"
+              video="1 Video"
+              lesson="5 Lesson"
+              alt="Pelvis Reconstruction"
+              to="/pelviscourses"
+              className="w-full max-w-[350px] transform transition-transform duration-300 hover:scale-105"
+            />
+          </div>
 
-        <MainCard
-          title="3D Printing"
-          description="Acquire background of tools used in the medical field"
-          image={Printing3}
-          time="1hr"
-          video="2 Video"
-          lesson="5 Lesson"
-          alt="3D Printing"
-          to="/ultimakercourses"
-        />
+          <div className="flex justify-center">
+            <MainCard
+              title="3D Printing"
+              description="Acquire background of tools used in the medical field"
+              image={Printing3}
+              time="1hr"
+              video="2 Video"
+              lesson="5 Lesson"
+              alt="3D Printing"
+              to="/ultimakercourses"
+              className="w-full max-w-[350px] transform transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
