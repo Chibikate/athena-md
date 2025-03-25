@@ -6,6 +6,7 @@ interface Props {
   className?: string; // Optional className for additional styling
 }
 
+
 const HowItWorks = ({ title, description, className = '' }: Props) => {
   return (
     <div className={`w-full max-w-64 h-60 bg-white rounded-lg shadow-lg p-6 text-center flex flex-col justify-center ${className}`}>

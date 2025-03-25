@@ -1,9 +1,9 @@
 import React from "react";
 import LearningCard from "@/components/hero_page/leaning_card";
 import bgg8 from "@/public/bgg8.png";
-import Interactive from "@/public/Intereactive1.svg";
-import SelfDirect from "@/public/SelfDirect.svg";
-import Realistic from "@/public/Realistic1.svg";
+import Interactive from "@/public/interactive.svg";
+import SelfDirect from "@/public/Self-direct.svg";
+import Realistic from "@/public/Realistic.svg";
 import Image from "next/image";
 
 // Data sulod sa Leaning Card
@@ -34,8 +34,7 @@ const LearningSection = () => {
         title="Self-Direct"
         bg={false}
         large={true}
-        description="They can set their own pace, choose the specific topics they want to explore, 
-        and navigate through the content independently, fostering self-directed learning."
+        description="They can set their own pace, choose the specific topics they want to explore, and navigate through the content independently, fostering self-directed learning."
         image={SelfDirect}
         alt="Self-Direct illustration"
         swap={true}
