@@ -17,29 +17,54 @@ const UltimakerCard = ({ title, description, image, alt }: Props) => {
   };
 
   return (
-    <div className="flex flex-col justify-center ml-40 mr-40 text-black">
-      <div className="flex flex-col items-center justify-center dark:bg-white">
-        <p className="p-4 text-center font-bold text-md md:text-4xl rounded-lg text-[#130e30]">
-          {title}
-        </p>
-        <p className="text-center flex-col sm:pt-14 p-7 sm:text-lg text-[#000000db]">
-          {description}
-        </p>
-        {image !== null && image !== undefined && (
-          <div className="relative">
-            <button onClick={handleZoom} className="absolute top-0 right-0 z-10 p-2 bg-gray-200   text-black rounded-full hover:bg-[#8069ff] focus:outline-none">
-              +
-            </button>
-            <div className={`relative cursor-pointer ${zoomed ? 'zoomed' : ''}`} onClick={handleZoom}>
-              <Image src={image} alt={alt} className="cursor-pointer" />
-            </div>
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-white-800 rounded-lg shadow-md overflow-hidden">
+        <div className="p-4 md:p-6">
+          <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[#130e30] mb-4">
+            {title}
+          </h2>
+          
+          <div className="text-center text-sm sm:text-base md:text-lg text-[#000000db] mb-6">
+            {description}
           </div>
-        )}
+          
+          {image !== null && image !== undefined && (
+            <div className="relative max-w-xl mx-auto">
+              <button 
+                onClick={handleZoom} 
+                className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center bg-white-200 text-black rounded-full hover:bg-[#8069ff] focus:outline-none transition-colors"
+              >
+                +
+              </button>
+              
+              <div 
+                className={`relative cursor-pointer overflow-hidden ${zoomed ? 'zoomed' : ''}`} 
+                onClick={handleZoom}
+              >
+                <Image 
+                  src={image} 
+                  alt={alt} 
+                  className="w-full h-auto object-contain" 
+                  priority 
+                />
+              </div>
+            </div>
+          )}
+        </div>
       </div>
+      
       <style jsx>{`
         .zoomed img {
-          transform: scale(2); /* Adjust the zoom level as needed */
+          transform: scale(2);
           transition: transform 0.3s ease-in-out;
+          max-width: none;
+          width: auto;
+        }
+        
+        @media (max-width: 640px) {
+          .zoomed img {
+            transform: scale(1.5);
+          }
         }
       `}</style>
     </div>
