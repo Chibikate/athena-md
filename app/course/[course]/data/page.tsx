@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, Suspense } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
 import TutorialCard from "@/components/3dslicer_page/tutorial_card";
@@ -108,7 +108,7 @@ const Home = ({ params }: Params) => {
               onClick={goToPreviousQuestion}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35] "
             >
-              <ChevronLeftIcon className="w-8 h-8" />
+              <ChevronDoubleLeftIcon className="w-8 h-8" />
             </button>
           )}
           {index == 0 && (
@@ -117,13 +117,15 @@ const Home = ({ params }: Params) => {
               onClick={goToPreviousQuestion}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
             >
-              <ChevronLeftIcon className="w-8 h-8" />
+              <ChevronDoubleLeftIcon className="w-8 h-8" />
             </Link>
           )}
           {index < content.length && (
             <TutorialCard
               title={content[index].title}
-              description={content[index].description}
+              description={
+                <div className="text-justify">{content[index].description}</div>
+              }
               image={content[index].image}
               alt={content[index].alt}
             />
@@ -134,7 +136,7 @@ const Home = ({ params }: Params) => {
                 onClick={goToPreviousQuestion}
                 className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
               >
-                <ChevronLeftIcon className="w-8 h-8" />
+                <ChevronDoubleLeftIcon className="w-8 h-8" />
               </button>
             )}
             {index == 0 && (
@@ -143,7 +145,7 @@ const Home = ({ params }: Params) => {
                 onClick={goToPreviousQuestion}
                 className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
               >
-                <ChevronLeftIcon className="w-8 h-8 " />
+                <ChevronDoubleLeftIcon className="w-8 h-8 " />
               </Link>
             )}
             {index < content.length - 1 && (
@@ -151,7 +153,7 @@ const Home = ({ params }: Params) => {
                 onClick={goToNextQuestion}
                 className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
               >
-                <ChevronRightIcon className="w-8 h-8" />
+                <ChevronDoubleRightIcon className="w-8 h-8" />
               </button>
             )}
           </div>
