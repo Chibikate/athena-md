@@ -4,15 +4,19 @@ import Image from "next/image";
 import Image1 from "@/public/Image1.svg";
 import { EB_Garamond, MonteCarlo } from "next/font/google";
 
-
 const interGaramond = EB_Garamond({ subsets: ["latin"] });
 const interMonteCarlo = MonteCarlo({ subsets: ["latin"], weight: "400" });
 
 const InterfaceCertificate = React.forwardRef(({ fullName, date }, ref) => {
   return (
-
-    <div className="container mx-auto flex flex-row items-center justify-center" ref={ref}>
-      <div className={`w-[845px] mx-auto  bg-[#ffffff] p-5 border-x-2 m-8 border-y-2 rounded-md shadow-md ${interGaramond.className} border-[#10172c] flex flex-col`}>
+    <div
+      className="container mx-auto flex flex-row items-center justify-center"
+      ref={ref}
+    >
+      <div
+        className={`w-[845px] mx-auto bg-[#ffffff] p-1 sm:p-5 border-x-2 m-8 border-y-2 rounded-md shadow-md 
+          ${interGaramond.className} border-[#10172c] flex flex-col relative`}
+      >
         <div className="rounded-full">
           <Image
             alt="Something never change"
@@ -22,25 +26,42 @@ const InterfaceCertificate = React.forwardRef(({ fullName, date }, ref) => {
           />
         </div>
 
-        <h2 className="absolute text-3xl font-semibold mb-4 pt-14 font-3xl ml-40 text-primary text-left">
-          CERTIFICATE <span className={`text-rose-600 italic ${interMonteCarlo.className}`}>Of</span> <br /> COMPLETION
-        </h2>
-        <p className="absolute pt-36 ml-44">This certificate is presented to</p>
-        <p className={`absolute ml-36 pt-48 text-3xl italic text-red-600 ${interMonteCarlo.className}`}>{fullName}</p>
+        {/* Certificate Heading */}
+        <div className="text-left pl-5 sm:pl-20 pt-10 absolute mt-0 p-20 pb-0 sm:mt-10 sm:text-center sm:pb-20">
+          <h2 className="text-sm font-semibold mb-0 sm:mb-4 text-primary sm:text-2xl md:text-3xl">
+            CERTIFICATE{" "}
+            <span
+              className={`text-rose-600 italic ${interMonteCarlo.className}`}
+            >
+              Of
+            </span>{" "}
+            <br /> COMPLETION
+          </h2>
 
-        <p className="absolute pt-64 ml-44">for successful completion of</p>
-        <p className="absolute pt-80 mb-24 ml-28 items-center"><span className="font-bold text-xl"J>3D Interface</span><br/> in Web-based Tutorial System on the Standardized <br />
-          Process of Virtual Surgical Planning <br />
-          for Mandibular Reconstruction</p>
-        <p className="absolute mt-[450px] ml-[613px]">
-          {date}
-        </p>
+          {/* Recipient Info */}
+          <p className="text-sm sm:text-base md:text-lg">This certificate is presented to</p>
+          <p
+            className={`text-md sm:text-3xl italic text-red-600 my-0 sm:my-4 ${interMonteCarlo.className}`}
+          >
+            {fullName}
+          </p>
+
+          {/* Completion Details */}
+          <p className="text-sm sm:text-base md:text-lg">for successful completion of</p>
+          <p className="font-bold text-lg sm:text-md md:text-lg my-0 sm:my-2 ">3D Interface</p>
+          < p className = "text-sm sm:text-base md:text-lg my-0 sm:my-1" >
+            in Web-based Tutorial System on the Standardized <br />
+            Process of Virtual Surgical Planning <br />
+            for Mandibular Reconstruction
+          </p>
+
+          <p className="mt-2 sm:mt-8 text-center text-sm">{date}</p>
+        </div>
       </div>
     </div>
-   
   );
 });
 
-InterfaceCertificate.displayName = 'InterfaceCertificate'; // Set the display name
+InterfaceCertificate.displayName = "InterfaceCertificate"; // Set the display name
 
 export default InterfaceCertificate;

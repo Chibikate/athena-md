@@ -63,7 +63,7 @@ const Navigator = ({ isCourse = false }: Props) => {
           </Link>
           {isCourse ? (
             <Link
-              className="block lg:inline-block w-full lg:w-auto text-center bg-[#043873] hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-sm font-semibold"
+              className="block lg:inline-block w-full lg:w-auto text-center bg-[#043873] pt-[14px] text-white p-2 px-4 rounded-lg text-sm font-semibold hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-400"
               href="/main_homepage"
               onClick={() => setIsOpen(false)}
             >
