@@ -1,6 +1,6 @@
 "use client";
 
-import Navigator from "@/components/course_overview/navigator";
+import Navigator3 from "@/components/course_overview/navigator3";
 import HeroSection3 from "@/components/course_overview/hero_section3";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection3 from "@/components/course_overview/objective_section3";
@@ -51,14 +51,14 @@ const defaultData: datas.CourseDataProps3 = {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section>
-        <Navigator />
+        <Navigator3 />
         <HeroSection3 hero={data.hero.hero} />
         <ObjectiveSection3 objective={data.objectives.objective} />
 
         <div className="flex flex-col items-center p-10">
           {data.to && (
             <Link href={`${params.ultimakercourse}/${data.to}?content=${content}`}>
-              <p className="p-2 rounded-md text-white font-bold bg-[#160c35] hover:font-bold hover:border hover:ring-2 hover:ring-offset-2 hover:ring-offset-[#b7d5eb] cursor-pointer">
+              <p className="p-2 rounded-md text-white font-bold bg-[#043873] hover:font-bold hover:border hover:ring-2 hover:ring-offset-2 hover:ring-offset-[#b7d5eb] cursor-pointer">
                 Start Learning
               </p>
             </Link>

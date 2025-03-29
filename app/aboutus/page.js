@@ -15,14 +15,12 @@ import Footer from "@/components/hero_page/footer";
 const Aboutus = () => {
   return (
     <div
-      className={`flex flex-col dark:text-primary  bg-[#e3f3ff] text-[#043873]`}
+      className={`flex flex-col dark:text-primary bg-[#e3f3ff] text-[#043873] min-h-screen`}
     >
       <Navigator />
-      <div className="area">
-        <div className="area ">
-          <ul className="circles ">
-            <li></li>
-            <li></li>
+      <div className="area relative">
+        <div className="area absolute inset-0 overflow-hidden">
+          <ul className="circles">
             <li></li>
             <li></li>
             <li></li>
@@ -35,192 +33,69 @@ const Aboutus = () => {
         </div>
       </div>
 
-      <div className="flex flex-col  lg:flex-row items-center justify-center gap-8 py-16 w-[80%] mx-auto ">
-        <p className="font-bold text-4xl text-left text-[#043873] leading-snug lg:basis-1/3 ">
-          Helping <br /> individuals <br /> advance their <br /> skills
-        </p>
-        <Image
-          alt="somethings never change"
-          src={About}
-          width={700}
-          height={200}
-          className="rounded-lg lg:basis-2/3"
-        />
+      <div className="relative flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 py-8 sm:py-12 lg:py-16 w-[90%] sm:w-[85%] lg:w-[80%] mx-auto">
+        <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-left text-[#043873] leading-snug lg:basis-1/3 mb-6 lg:mb-0">
+          Helping individuals <br /> advance their <br /> skills
+        </h1>
+        <div className="lg:basis-2/3 w-full">
+          <Image
+            alt="somethings never change"
+            src={About}
+            width={700}
+            height={200}
+            className="rounded-lg w-full h-auto object-cover"
+            priority
+          />
+        </div>
       </div>
-      <div className="bg-white pt-16">
-        <p className="text-center font-bold text-[#151A40] text-3xl">
+      
+      <div className="bg-white pt-8 sm:pt-12 lg:pt-16">
+        <h2 className="text-center font-bold text-[#151A40] text-2xl sm:text-3xl mb-6">
           About Us
-        </p>
-        <div className="flex flex-row sm:flex-col py-10 items-center justify-center text-center text-sm sm:text-lg  text-[#165388]">
-          <p>
+        </h2>
+        <div className="flex flex-col py-4 sm:py-6 lg:py-10 items-center justify-center text-center px-4 sm:px-8 lg:px-16">
+          <p className="text-sm sm:text-base lg:text-lg text-[#165388] max-w-4xl">
             At Web-based Tutorial System, we&apos;re on a mission to make
             learning accessible and enjoyable for everyone. Our team is
-            dedicated to creating a user-friendly <br />
-            platform where learning is interactive and engaging.
+            dedicated to creating a user-friendly platform where learning is interactive and engaging.
           </p>
-          <p className="pt-4">
+          <p className="pt-4 text-sm sm:text-base lg:text-lg text-[#165388] max-w-4xl">
             We believe that education should be fun and inspiring, and
-            that&apos;s why we&apos;re committed to providing a diverse range of{" "}
-            <br />
+            that&apos;s why we&apos;re committed to providing a diverse range of
             courses and resources.
           </p>
-          <p className="pt-4">
+          <p className="pt-4 text-sm sm:text-base lg:text-lg text-[#165388] max-w-4xl">
             Whether you&apos;re a student looking to expand your knowledge, a
-            teacher seeking innovative teaching tools, <br />
+            teacher seeking innovative teaching tools,
             or simply curious about new topics, Web-based Tutorial System is
             here to empower you on your learning journey.
           </p>
         </div>
-        <div className="text-center">
-          <p className="font-bold text-4xl pt-10 text-center text-[#043873]">
+        
+        <div className="text-center px-4 sm:px-6">
+          <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl pt-6 sm:pt-8 lg:pt-10 text-center text-[#043873] mb-2 sm:mb-4">
             OUR TEAM
-          </p>
-          <p>
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
             Our team consists of professionals from different parts of Mindanao.
-             
           </p>
         </div>
       </div>
+      
       <AboutSection />
-      {/* <div className="flex flex-col sm:flex-row  justify-between p-4 text-center">
-        <p className="pl-3">
-          Lemuel Clark Velasco <br />{" "}
-          <span className="font-bold text-sm text-[#043873]">
-            Project Leader
-          </span>
-        </p>
-
-        <div>
-          <p>
-            Rentor Cafino, <br /> MD, DPBO-HNS
-            <br />
-            <span className="font-semibold text-sm text-[#043873]">
-              {" "}
-              Medical Adviser{" "}
-            </span>
-          </p>
-        </div>
-        <div>
-          <p>
-            Armando T. Isla, <br /> MD, FPSO-HNS
-            <br />
-            <span className="font-semibold text-sm text-[#043873]">
-              {" "}
-              Medical Adviser{" "}
-            </span>
-          </p>
-        </div>
-
-        <p>
-          Kaye Q. Velarde <br /> Dianne Mel B. Arrubio <br />{" "}
-          <span className="font-bold pb-4 text-sm text-[#043873]">
-            Pedagogy Managers
-          </span>
-        </p>
-
-        <p>
-          Queenie Kate S. Cabanilla <br /> Zyrene Belle B. Alturas <br />{" "}
-          <span className="font-bold pb-4 text-sm text-[#043873]">
-            Web Developers
-          </span>
-        </p>
-      </div>
-      {/* <div className="pt-4 text-center x-4 "> */}
-      {/* <p className="py-2 ">
-          If you have any questions, concerns, or feedback, please feel free to
-          reach out to our dedicated team.
-          <br /> We&apos;re here to assist you, and your input is valuable to
-          us.
-        </p>
-        <div className=" py-4 items-center text-center ">
-          <div className="flex flex-col text-center ">
-            <p className=" font-bold text-[#043873]">Email</p>
-          </div>
-
-          <div className="text-center hover-border-white-400 hover-border-2">
-            <p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 5l9 4-9 4-9-4 9-4zm0 0v6"
-                />
-              </svg>
-              queeniekate.cabanilla@g.msuiit.edu.ph
-            </p>
-            <p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 5l9 4-9 4-9-4 9-4zm0 0v6"
-                />
-              </svg>
-              kaye.velarde@g.msuiit.edu.ph
-            </p>
-            <p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 5l9 4-9 4-9-4 9-4zm0 0v6"
-                />
-              </svg>
-              zyrenebelle.alturas@g.msuiit.edu.ph
-            </p>
-            <p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 5l9 4-9 4-9-4 9-4zm0 0v6"
-                />
-              </svg>
-              diannemel.arrubio@g.msuiit.edu.ph
-            </p>
-          </div>
-        </div>
-      </div> */}
-      <div className="text-center p-4">
-        <p className="text-[#151A40] text-xl font-bold">Learn with AthenaMD for free!</p>
-        <p>Join us and explore the exciting world of learning today!</p>
+      
+      <div className="text-center p-4 sm:p-6 lg:p-8 bg-white">
+        <h3 className="text-[#151A40] text-lg sm:text-xl font-bold mb-2">Learn with AthenaMD for free!</h3>
+        <p className="text-sm sm:text-base mb-4">Join us and explore the exciting world of learning today!</p>
         <Link href="main_homepage">
-            <button className="mt-6 pt-[10px] bg-blue px-5 py-2  bg-[#043873] hover:text-[#ffffff]-900 text-white hover:ring-2 hover:ring-offset-2  hover:ring-offset-blue-300 text-sm rounded-lg hover:bg-[#0f1330]">
-              View Courses
-            </button>
-          </Link>
+          <button className="mt-2 sm:mt-4 lg:mt-6 bg-[#043873] px-4 sm:px-5 py-2 text-white text-sm sm:text-base rounded-lg hover:bg-[#0f1330] transition-colors duration-300 hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300">
+            View Courses
+          </button>
+        </Link>
       </div>
+      
       <Footer />
     </div>
-    
   );
 };
 

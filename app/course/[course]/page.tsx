@@ -68,7 +68,8 @@ const Home = ({ params }: Params) => {
 
         <HeroSection hero={data.hero.hero} />
         <ObjectiveSection objective={data.objectives.objective} />
-        <div className="flex flex-col items-center p-10 ">
+
+        <div className="flex flex-col items-center p-3 ">
           <div className="flex flex-row">
             <Link href={`${params["course"]}/${data.to}?content=${content}`}>
               <p className="p-2 rounded-md  text-white hover:font-bold font-bold cursor bg-[#043873] hover-border hover:ring-offset-[#b7d5eb]   hover:ring-2 hover:ring-offset-2">

@@ -1,6 +1,6 @@
 "use client";
 
-import Navigator from "@/components/course_overview/navigator";
+import Navigator2 from "@/components/course_overview/navigator2";
 import HeroSection2 from "@/components/course_overview/hero_section2";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection2 from "@/components/course_overview/objective_section2";
@@ -51,7 +51,7 @@ const Home = ({ params }: Params) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section>
-        <Navigator />
+        <Navigator2 />
         <HeroSection2 hero={data.hero.hero} />
         <ObjectiveSection2 objective={data.objectives.objective} />
 
