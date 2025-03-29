@@ -10,7 +10,7 @@ const HeroSection2 = ({ hero }: HeroProps2) => {
     <div className="flex flex-col bg-[#EDF5FE] px-4 sm:px-10 lg:px-40 py-10">
       <div className="flex flex-col md:flex-row items-center md:items-start">
         {/* Image (Hidden on small screens) */}
-        <div className="hidden md:block md:mr-8">
+        <div className="hidden md:block md:mr-6">
           <Image alt="rocket" src={Image3} />
         </div>
 
@@ -25,13 +25,13 @@ const HeroSection2 = ({ hero }: HeroProps2) => {
 
       {/* Course Details (Responsive) */}
       <div className="flex flex-wrap justify-center md:justify-center gap-3 mt-6">
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md">
           Level: {difficulty}
         </p>
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md ">
           Duration: {duration}
         </p>
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md ">
           Language: {language}
         </p>
       </div>

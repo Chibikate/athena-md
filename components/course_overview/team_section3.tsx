@@ -16,8 +16,6 @@ const TeamSection3 = () => {
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
-            <li></li>
           </ul>
         </div>
       </div>
@@ -38,25 +36,25 @@ const TeamSection3 = () => {
       <div className="flex flex-col sm:flex-row justify-between p-4 text-center">
         <p className="pl-3">
           Lemuel Clark Velasco <br />
-          <span className="font-bold text-sm text-[#151A40]">
+          <span className="font-bold bold-8 text-sm text-[#151A40]">
             Project Leader
           </span>
         </p>
-        
+
+
         <div>
           <p>Julius Banquiso</p>
             <p className="font-semibold text-sm text-[#151A40]">
               Content Developer
           </p>
         </div>
-        
-        
+
         <div className="flex flex-col">
               <p>Justin Gabitan</p>
               <p className="font-bold pb-4 text-sm text-[#151A40]">
                 Content Validator
               </p>
-            </div>
+        </div>
         
         <p>
           Dianne Mel Arrubio <br />
@@ -64,7 +62,8 @@ const TeamSection3 = () => {
             Pedagogy Manager
           </span>
         </p>
-        
+
+
         <p>
           Zyrene Belle Alturas<br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">

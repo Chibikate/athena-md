@@ -14,10 +14,6 @@ const TeamSection = () => {
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
           </ul>
         </div>
       </div>
@@ -42,7 +38,7 @@ const TeamSection = () => {
             Project Leader
           </span>
         </p>
-        
+        <br></br>
         <div>
           <p>
             Rentor Cafino <br /> MD, DPBO-HNS
@@ -52,7 +48,7 @@ const TeamSection = () => {
             </span>
           </p>
         </div>
-        
+        <br></br>
         <div>
           <p>
             Armando T. Isla <br /> MD, FPSO-HNS
@@ -62,7 +58,7 @@ const TeamSection = () => {
             </span>
           </p>
         </div>
-        
+        <br></br>
         <div className="flex flex-col">
           <p>Karen Mae Ty, MD, FPSO-HNS</p>
           <p>Jay Pee Amable, MD, FPSO-HNS</p>

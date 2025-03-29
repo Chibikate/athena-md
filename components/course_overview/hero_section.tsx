@@ -23,15 +23,15 @@ const HeroSection = ({ hero }: HeroProps) => {
         </div>
       </div>
 
-      {/* Course Details (Responsive) */}
-      <div className="flex flex-wrap justify-center md:justify-center gap-3 mt-6">
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+      {/* Course Details (Now visible on all devices) */}
+      <div className="flex flex-wrap justify-center md:justify-center gap-1 mt-6">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md">
           Level: {difficulty}
         </p>
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md">
           Duration: {duration}
         </p>
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md">
           Language: {language}
         </p>
       </div>

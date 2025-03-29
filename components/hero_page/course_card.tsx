@@ -61,7 +61,7 @@ const CourseCard: React.FC<Props> = ({
           className="block w-full text-center bg-[#165388] text-white py-2 rounded-md 
           hover:bg-[#1a64a3] transition-colors duration-300"
         >
-          Explore Course
+          Explore Lesson
         </Link>
       </div>
     </div>

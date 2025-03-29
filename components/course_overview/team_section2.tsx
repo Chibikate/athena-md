@@ -16,8 +16,6 @@ const TeamSection2 = () => {
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
-            <li></li>
           </ul>
         </div>
       </div>
@@ -42,7 +40,7 @@ const TeamSection2 = () => {
             Project Leader
           </span>
         </p>
-        
+        <br></br>
         <div>
           <p>
           Darelle Jay P. Langga,  MD
@@ -52,8 +50,7 @@ const TeamSection2 = () => {
             </span>
           </p>
         </div>
-        
-        
+        <br></br>
         <div className="flex flex-col">
               <p>Jesronne C. Abrea, MD, FPOA</p>
               <p>Mark Louie M. Tangalin, MD</p>
@@ -63,7 +60,7 @@ const TeamSection2 = () => {
                 Content Validators
               </p>
             </div>
-        
+        <br></br>
         <p>
           Dianne Mel Arrubio <br />
           <span className="font-bold pb-4 text-sm text-[#151A40]">

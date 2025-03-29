@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Image3 from "@/public/Image3.svg";
-import { HeroProps2 } from "@/data/pelvis/pelvis_data";
 import { HeroProps3 } from "@/data/ultimaker/ultimaker_data";
 
 const HeroSection3 = ({ hero }: HeroProps3) => {
@@ -26,13 +25,13 @@ const HeroSection3 = ({ hero }: HeroProps3) => {
 
       {/* Course Details (Responsive) */}
       <div className="flex flex-wrap justify-center md:justify-center gap-3 mt-6">
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md">
           Level: {difficulty}
         </p>
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md ">
           Duration: {duration}
         </p>
-        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md hidden md:block">
+        <p className="border-2 border-[#043873] bg-[#043873] text-white text-sm px-4 py-2 rounded-md ">
           Language: {language}
         </p>
       </div>
