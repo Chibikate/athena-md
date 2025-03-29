@@ -5,10 +5,10 @@ import { StaticImageData } from "next/image";
 interface Props {
   title: string;
   description: React.JSX.Element | string;
-  image: StaticImageData | null | undefined;
+  image?: StaticImageData | null;
   alt: string;
+  onClick?: () => void; // Added onClick prop
 }
-
 const UltimakerCard = ({ title, description, image, alt }: Props) => {
   const [zoomed, setZoomed] = useState(false);
 

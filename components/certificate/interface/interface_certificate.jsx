@@ -22,16 +22,17 @@ const InterfaceCertificate = React.forwardRef(({ fullName, date }, ref) => {
             alt="Something never change"
             src={Image1}
             width={900}
-            height={283}
+            height={500}
+            className="w-full h-auto rounded-t-md"
           />
         </div>
 
         {/* Certificate Heading */}
         <div className="text-left pl-5 sm:pl-20 pt-10 absolute mt-0 p-20 pb-0 sm:mt-10 sm:text-center sm:pb-20">
-          <h2 className="text-sm font-semibold mb-0 sm:mb-4 text-primary sm:text-2xl md:text-3xl">
+          <h2 className="text-sm font-semibold mb-0 sm:mb-4 text-primary sm:text-2xl md:text-3xl text-center">
             CERTIFICATE{" "}
             <span
-              className={`text-rose-600 italic ${interMonteCarlo.className}`}
+              className={`text-rose-600 italic text-center ${interMonteCarlo.className}`}
             >
               Of
             </span>{" "}
@@ -39,23 +40,23 @@ const InterfaceCertificate = React.forwardRef(({ fullName, date }, ref) => {
           </h2>
 
           {/* Recipient Info */}
-          <p className="text-sm sm:text-base md:text-lg">This certificate is presented to</p>
+          <p className="text-sm sm:text-base md:text-lg text-center">This certificate is presented to</p>
           <p
-            className={`text-md sm:text-3xl italic text-red-600 my-0 sm:my-4 ${interMonteCarlo.className}`}
+            className={`text-md sm:text-3xl italic text-red-600 my-0 sm:my-4 text-center ${interMonteCarlo.className}`}
           >
             {fullName}
           </p>
 
           {/* Completion Details */}
-          <p className="text-sm sm:text-base md:text-lg">for successful completion of</p>
-          <p className="font-bold text-lg sm:text-md md:text-lg my-0 sm:my-2 ">3D Interface</p>
-          < p className = "text-sm sm:text-base md:text-lg my-0 sm:my-1" >
+          <p className="text-sm sm:text-base md:text-lg text-center">for successful completion of</p>
+          <p className="font-bold text-lg sm:text-md md:text-lg my-0 sm:my-2 text-center ">3D Interface</p>
+          < p className = "text-sm sm:text-base md:text-lg my-0 sm:my-1 text-center" >
             in Web-based Tutorial System on the Standardized <br />
             Process of Virtual Surgical Planning <br />
             for Mandibular Reconstruction
           </p>
 
-          <p className="mt-2 sm:mt-8 text-center text-sm">{date}</p>
+          <p className="absolute bottom-4 right-4 text-sm sm:text-base text-gray-700">{date}</p>
         </div>
       </div>
     </div>

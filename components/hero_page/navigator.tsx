@@ -13,16 +13,18 @@ const Navigator = ({ isCourse = false }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#F5F8FE] flex items-center justify-between px-6 md:px-12 lg:px-20 py-3 rounded-b-lg relative z-50 w-full max-w-screen-2xl mx-auto">
+    <nav className="bg-[#F5F8FE] flex items-center justify-between px-6 md:px-12 lg:px-20 py-4 rounded-b-lg relative z-50 w-full max-w-screen-l mx-auto shadow-md">
+      {/* Logo */}
       <Link href="/" className="flex-shrink-0">
         <Image 
-          className="w-auto max-w-[150px] md:max-w-[200px]" 
+          className="w-auto max-w-[180px] md:max-w-[200px]" 
           alt="Athena logo" 
           src={Logo} 
           priority 
         />
       </Link>
       
+      {/* Mobile Menu Button */}
       <button
         className="lg:hidden block text-gray-700 focus:outline-none z-50"
         aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -31,31 +33,27 @@ const Navigator = ({ isCourse = false }: Props) => {
         {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
       </button>
       
+      {/* Mobile Menu */}
       <div
         className={`
-          fixed lg:static inset-0 top-16 lg:top-auto
-          bg-[#F5F8FE] lg:bg-transparent
-          w-full lg:w-auto
-          transition-all duration-300 ease-in-out
-          ${isOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'}
-          lg:flex flex-col lg:flex-row 
-          items-center justify-between
-          p-6 lg:p-0
-          space-y-6 lg:space-y-0 lg:space-x-8
-          absolute lg:relative
-          z-40 lg:z-auto
+          fixed top-0 right-0 h-full w-3/4 max-w-sm bg-[#F5F8FE]
+          transition-transform duration-300 ease-in-out transform
+          ${isOpen ? "translate-x-0" : "translate-x-full"}
+          lg:translate-x-0 lg:static lg:h-auto lg:w-auto lg:bg-transparent
+          flex flex-col lg:flex-row items-start lg:items-center
+          p-6 lg:p-0 shadow-lg lg:shadow-none z-40
         `}
       >
-        <div className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
           <Link
-            className="block lg:inline-block w-full lg:w-auto text-center hover:bg-white py-2 px-5 text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-400 rounded-lg text-sm font-semibold"
+            className="block lg:inline-block w-full lg:w-auto text-left lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2 hover:ring-blue-400 rounded-lg text-sm font-semibold transition"
             href="/aboutus"
             onClick={() => setIsOpen(false)}
           >
             ABOUT
           </Link>
           <Link
-            className="block lg:inline-block w-full lg:w-auto text-center hover:bg-white py-2 px-5 text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-400 rounded-lg text-sm font-semibold"
+            className="block lg:inline-block w-full lg:w-auto text-left lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-2 hover:ring-offset-2 hover:ring-blue-400 rounded-lg text-sm font-semibold transition"
             href="/contact_form"
             onClick={() => setIsOpen(false)}
           >
@@ -63,7 +61,7 @@ const Navigator = ({ isCourse = false }: Props) => {
           </Link>
           {isCourse ? (
             <Link
-              className="block lg:inline-block w-full lg:w-auto text-center bg-[#043873] pt-[14px] text-white p-2 px-4 rounded-lg text-sm font-semibold hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-400"
+              className="block lg:inline-block w-full lg:w-auto text-left lg:text-center bg-[#043873] pt-[14px] text-white p-2 px-4 rounded-lg text-sm font-semibold hover:bg-opacity-80 hover:ring-2 hover:ring-offset-2 hover:ring-blue-400 transition"
               href="/main_homepage"
               onClick={() => setIsOpen(false)}
             >
@@ -71,7 +69,7 @@ const Navigator = ({ isCourse = false }: Props) => {
             </Link>
           ) : (
             <Link
-              className="block lg:inline-block w-full lg:w-auto text-center bg-[#165388] text-white py-2 px-7 rounded-lg text-md hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-700"
+              className="block lg:inline-block w-full lg:w-auto text-left lg:text-center bg-[#043873] text-white py-2 px-7 rounded-lg text-md hover:bg-opacity-80 hover:ring-2 hover:ring-offset-2 hover:ring-blue-700 transition"
               href="/"
               onClick={() => setIsOpen(false)}
             >
@@ -81,9 +79,10 @@ const Navigator = ({ isCourse = false }: Props) => {
         </div>
       </div>
 
+      {/* Overlay (closes menu on click) */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 lg:hidden z-30" 
+          className="fixed inset-0 bg-black/50 backdrop-blur-md lg:hidden z-30 transition-opacity"
           onClick={() => setIsOpen(false)}
         />
       )}

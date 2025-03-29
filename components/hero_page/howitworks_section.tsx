@@ -3,7 +3,7 @@ import HowItWorks from "@/components/hero_page/howitworks_card"; // Adjust impor
 
 const HowItWorksSection = () => {
   return (
-    <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#D0E4F2]">
+    <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#EDF5FE]">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-20">

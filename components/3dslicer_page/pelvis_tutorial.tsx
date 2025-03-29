@@ -4,16 +4,18 @@ import { StaticImageData } from "next/image";
 
 interface Props {
   title: string;
-  description: React.JSX.Element | string;
-  image: StaticImageData | null | undefined;
+  description: React.ReactNode;
+  image?: StaticImageData | null;
   alt: string;
+  onClick?: () => void;
 }
 
-const PelvisCard = ({ title, description, image, alt }: Props) => {
+const PelvisCard = ({ title, description, image, alt, onClick }: Props) => {
   const [zoomed, setZoomed] = useState(false);
-
+  
   const handleZoom = () => {
     setZoomed(!zoomed);
+    if (onClick) onClick();
   };
 
   return (
