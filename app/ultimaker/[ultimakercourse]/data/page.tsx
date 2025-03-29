@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, Suspense } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
 import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
@@ -10,8 +10,6 @@ import {
   printingTutorial2,
   printingTutorial3,
   printingTutorial4,
- 
-
 } from "@/data/ultimaker";
 import { useSearchParams } from "next/navigation";
 import { StaticImageData } from "next/image";
@@ -23,24 +21,29 @@ interface Params {
   };
 }
 
-interface ContentProps3 {
+interface ContentProps {
   title: string;
   description: React.JSX.Element | string;
-  image?: StaticImageData | null;
+  image?: StaticImageData | null | undefined;
   alt: string;
 }
 
-const defaultData: ContentProps3[] = [{ title: "", description: "", image: null, alt: "" }];
+const data: ContentProps[] = [
+  {
+    title: "",
+    description: "",
+    image: null,
+    alt: "",
+  },
+];
 
 const Home = ({ params }: Params) => {
-  const ultimakercourse = decodeURIComponent(params?.ultimakercourse || "");
-  console.log("UltimakerCourse:", ultimakercourse);
-
+  const ultimakercourse = params["ultimakercourse"].replaceAll("%20", " ");
   const searchParams = useSearchParams();
-  const queryPage = searchParams.get("content") || "";
-
+  const queryPage = searchParams.get("content");
   const [index, setIndex] = useState(0);
-  const [content, setContent] = useState<ContentProps3[]>(defaultData);
+  const [content, setContent] = useState<ContentProps[]>(data);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   useEffect(() => {
     switch (queryPage) {
@@ -56,77 +59,97 @@ const Home = ({ params }: Params) => {
       case "3D printing  Part 4":
         setContent(printingTutorial4);
         break;
-            
     }
   }, [queryPage]);
-  const goToNext = () => {
+
+  const goToNextQuestion = () => {
     if (index < content.length - 1) {
-      setIndex((prev) => prev + 1);
+      setIndex(index + 1);
     }
   };
 
-  const goToPrevious = () => {
+  const goToPreviousQuestion = () => {
     if (index > 0) {
-      setIndex((prev) => prev - 1);
+      setIndex(index - 1);
     }
   };
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowRight") goToNext();
-      else if (event.key === "ArrowLeft") goToPrevious();
+      if (event.key === "ArrowRight") {
+        goToNextQuestion();
+      } else if (event.key === "ArrowLeft") {
+        goToPreviousQuestion();
+      }
     };
-
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [index, content.length]);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [index]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
+        {zoomedImage && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            onClick={() => setZoomedImage(null)}
+          >
+            <img src={zoomedImage} alt="Zoomed" className="max-w-3/4 max-h-3/4 rounded-lg shadow-lg" />
+          </div>
+        )}
         <div>
           <Navigator />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
-
         <div className="flex flex-col md:flex-row items-center justify-center">
-          {index > 0 ? (
+          {index > 0 && (
             <button
-              onClick={goToPrevious}
-              className="w-16 h-16 hover:border hover:border-white-400 md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+              onClick={goToPreviousQuestion}
+              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
             >
-              <ChevronLeftIcon className="w-8 h-8" />
+              <ChevronDoubleLeftIcon className="w-8 h-8" />
             </button>
-          ) : (
+          )}
+          {index == 0 && (
             <Link
               href={`/ultimakercourse/${ultimakercourse}`}
-              className="w-16 h-16 hover:border hover:border-white-400 bg-[#160c35] md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
             >
-              <ChevronLeftIcon className="w-8 h-8" />
+              <ChevronDoubleLeftIcon className="w-8 h-8" />
             </Link>
           )}
-
-          {content.length > 0 && (
+          {index < content.length && (
             <UltimakerCard
-              title={content[index]?.title || ""}
-              description={content[index]?.description || ""}
-              image={content[index]?.image}
-              alt={content[index]?.alt || ""}
+              title={content[index].title}
+              description={
+                <div className="text-justify">{content[index].description}</div>
+              }
+              image={content[index].image}
+              alt={content[index].alt}
+              onClick={() => content[index].image && setZoomedImage(content[index].image.src)}
             />
           )}
-
           <div className="flex flex-row md:flex-col">
+            {index > 0 && (
+              <button
+                onClick={goToPreviousQuestion}
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+              >
+                <ChevronDoubleLeftIcon className="w-8 h-8" />
+              </button>
+            )}
             {index < content.length - 1 && (
               <button
-                onClick={goToNext}
-                className="w-16 h-16 hover:border hover:border-white-400 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
+                onClick={goToNextQuestion}
+                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
               >
-                <ChevronRightIcon className="w-8 h-8" />
+                <ChevronDoubleRightIcon className="w-8 h-8" />
               </button>
             )}
           </div>
         </div>
-
         <div>
           <div className="h-[1px] w-full bg-[#FDCC6D]" />
           <Footer />

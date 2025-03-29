@@ -58,7 +58,7 @@ const Home = ({ params }: Params) => {
         <div className="flex flex-col items-center p-10">
           <div className="flex flex-row">
           <Link href={`${params.pelviscourse}/${data.to}?content=${content}`}>
-              <p className="p-2 rounded-md text-white hover:font-bold font-bold cursor bg-[#160c35] hover:border hover:ring-offset-[#b7d5eb] hover:ring-2 hover:ring-offset-2">
+              <p className="p-2 rounded-md text-white hover:font-bold font-bold cursor bg-[#043873] hover:border hover:ring-offset-[#b7d5eb] hover:ring-2 hover:ring-offset-2">
                 Start Learning
               </p>
             </Link>

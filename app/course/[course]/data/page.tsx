@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, Suspense } from "react";
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import { MinusIcon, PlusIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
 import TutorialCard from "@/components/3dslicer_page/tutorial_card";
@@ -26,7 +27,7 @@ interface Params {
 interface ContentProps {
   title: string;
   description: React.JSX.Element | string;
-  image?: null | StaticImageData | undefined;
+  image?: StaticImageData | null | undefined;
   alt: string;
 }
 
@@ -45,6 +46,8 @@ const Home = ({ params }: Params) => {
   const queryPage = searchParams.get("content");
   const [index, setIndex] = useState(0);
   const [content, setContent] = useState<ContentProps[]>(data);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   useEffect(() => {
     switch (queryPage) {
@@ -70,7 +73,7 @@ const Home = ({ params }: Params) => {
   }, [queryPage]);
 
   const goToNextQuestion = () => {
-    if (index < content.length) {
+    if (index < content.length - 1) {
       setIndex(index + 1);
     }
   };
@@ -95,18 +98,93 @@ const Home = ({ params }: Params) => {
     };
   }, [index]);
 
+  const handleZoomIn = () => {
+    setZoomLevel(prev => Math.min(prev + 0.2, 3));
+  };
+
+  const handleZoomOut = () => {
+    setZoomLevel(prev => Math.max(prev - 0.2, 0.5));
+  };
+
+  const handleCloseZoom = () => {
+    setZoomedImage(null);
+    setZoomLevel(1);
+  };
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
+        {zoomedImage && (
+          <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col">
+            {/* Top bar */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <div className="flex items-center text-white">
+                <button 
+                  onClick={handleCloseZoom}
+                  className="mr-4 p-2 rounded-full hover:bg-gray-700"
+                >
+                  ✕
+                </button>
+                <span className="text-sm">{content[index].title}</span>
+              </div>
+              <div className="flex items-center">
+                <button className="text-white p-2 rounded-full hover:bg-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M3 3a2 2 0 012-2h10a2 2 0 012 2v1h-2V3H5v1H3V3zm12 10V7H5v6h10zm0 2H5v1a2 2 0 002 2h6a2 2 0 002-2v-1zm2-8v8a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4h6a4 4 0 014 4z" />
+                  </svg>
+                </button>
+                <button className="text-white p-2 rounded-full hover:bg-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M4.5 4.5a.5.5 0 00-1 0v11a.5.5 0 001 0v-11zm3 0a.5.5 0 00-1 0v11a.5.5 0 001 0v-11zm5 0a.5.5 0 00-1 0v11a.5.5 0 001.0v-11zm3 0a.5.5 0 00-1 0v11a.5.5 0 001 0v-11z" />
+                  </svg>
+                </button>
+                <button className="text-white p-2 ml-2 rounded-full hover:bg-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9V5a1 1 0 112 0v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H5a1 1 0 110-2h4z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            {/* Main image area */}
+            <div className="flex-1 flex items-center justify-center overflow-auto">
+              <img 
+                src={zoomedImage} 
+                alt="Zoomed" 
+                className="max-h-full object-contain transition-transform duration-200"
+                style={{ transform: `scale(${zoomLevel})` }}
+              />
+            </div>
+            
+            {/* Bottom controls */}
+            <div className="p-3 bg-black flex items-center justify-center">
+              <div className="bg-gray-800 rounded-full flex items-center px-2 py-1">
+                <button 
+                  onClick={handleZoomOut}
+                  className="text-white p-2 opacity-80 hover:opacity-100"
+                >
+                  <MinusIcon className="h-4 w-4" />
+                </button>
+                <MagnifyingGlassIcon className="h-4 w-4 mx-1 text-white" />
+                <button 
+                  onClick={handleZoomIn}
+                  className="text-white p-2 opacity-80 hover:opacity-100"
+                >
+                  <PlusIcon className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
         <div>
           <Navigator />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center ">
+        <div className="flex flex-col md:flex-row items-center justify-center">
           {index > 0 && (
             <button
               onClick={goToPreviousQuestion}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35] "
+              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
             >
               <ChevronDoubleLeftIcon className="w-8 h-8" />
             </button>
@@ -114,7 +192,6 @@ const Home = ({ params }: Params) => {
           {index == 0 && (
             <Link
               href={`/course/${course}`}
-              onClick={goToPreviousQuestion}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
             >
               <ChevronDoubleLeftIcon className="w-8 h-8" />
@@ -128,6 +205,7 @@ const Home = ({ params }: Params) => {
               }
               image={content[index].image}
               alt={content[index].alt}
+              onClick={() => content[index].image && setZoomedImage(content[index].image.src)}
             />
           )}
           <div className="flex flex-row md:flex-col">
@@ -139,15 +217,6 @@ const Home = ({ params }: Params) => {
                 <ChevronDoubleLeftIcon className="w-8 h-8" />
               </button>
             )}
-            {index == 0 && (
-              <Link
-                href={`/course/${course}`}
-                onClick={goToPreviousQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] md:hidden flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
-              >
-                <ChevronDoubleLeftIcon className="w-8 h-8 " />
-              </Link>
-            )}
             {index < content.length - 1 && (
               <button
                 onClick={goToNextQuestion}
@@ -158,7 +227,10 @@ const Home = ({ params }: Params) => {
             )}
           </div>
         </div>
-        <Footer />
+        <div>
+          <div className="h-[1px] w-full bg-[#FDCC6D]" />
+          <Footer />
+        </div>
       </section>
     </Suspense>
   );

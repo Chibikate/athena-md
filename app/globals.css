@@ -59,14 +59,14 @@
 }
 
 .circles li:nth-child(5) {
-  left: 65%;
+  left: 60%;
   width: 20px;
   height: 20px;
   animation-delay: 0s;
 }
 
 .circles li:nth-child(6) {
-  left: 75%;
+  left: 60%;
   width: 110px;
   height: 110px;
   animation-delay: 3s;
@@ -123,3 +123,158 @@
     border-radius: 50%;
   }
 }
+/* Squares Animation */
+.squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.squares li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(79, 192, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+/* Triangles Animation */
+.triangles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.triangles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 26px solid rgba(79, 192, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+/* Dots Animation */
+.dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dots li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(79, 192, 255, 0.4);
+  animation: animate 20s linear infinite;
+  bottom: -150px;
+}
+
+/* Blobs Animation */
+.blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.blobs li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 40px;
+  height: 40px;
+  background: rgba(79, 192, 255, 0.2);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: animate 25s linear infinite, morph 8s ease-in-out infinite;
+  bottom: -150px;
+}
+
+@keyframes morph {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  67% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+
+/* Stars Animation */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.stars li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.stars li:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 17px solid rgba(79, 192, 255, 0.3);
+  transform: rotate(0deg);
+}
+
+.stars li:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 17px solid rgba(79, 192, 255, 0.3);
+  transform: rotate(72deg);
+  top: 0;
+  left: 0;
+}
+
+/* Make sure you keep your existing animate keyframes */
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+/* You'll also need to add different sizes and animation delays 
+   just like you had with your circles */
