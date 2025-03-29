@@ -22,8 +22,8 @@ const ultimakercourse = {
 export const UltimakerCourses = [
   {
     image: ultimakercourse.Module14,
-    title: "Setting Up Ultimaker Cura (E-1)",
-    description: "Learn how to download Ultimaker Cura",
+    title: "Setting Up the Ultimaker Cura (E-1)",
+    description: "Learn how to download and set-up Ultimaker Cura",
     level: "Easy",
     time: "10mins",
     alt: "3D printing using Ultimaker Cura course",
@@ -31,7 +31,7 @@ export const UltimakerCourses = [
   },
   {
     image: ultimakercourse.Module15,
-    title: "Ultimaker Cura Features (E-2)",
+    title: "Features of Ultimaker Cura (E-2)",
     description: "Learn about the different features of Ultimaker Cura",
     level: "Hard",
     time: "1hr",

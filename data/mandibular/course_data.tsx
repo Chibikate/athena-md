@@ -17,7 +17,7 @@ to - link kung aha sya mapadulong
 export const localCourses = [
   {
     image: course.Module1,
-    title: "3D slicer interface (A-1)",
+    title: "3D slicer interface- Mandibular (A-1)",
     description: "Learn about the 3D slicer interface",
     level: "Beginner",
     time: "10 mins",
@@ -36,7 +36,7 @@ export const localCourses = [
   {
     image: course.Module3,
     title: "3D slicer - Navigating DICOM display (A-3)",
-    description: "Learn how navigate dicom display in 3D slicer",
+    description: "Learn how to navigate dicom display",
     level: "Beginner",
     time: "15mins",
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",
@@ -46,7 +46,7 @@ export const localCourses = [
   {
     image: course.Module5,
     title: "3D slicer - Basic-Segmentation (A-4)",
-    description: "Learn the Basic Segmenation in 3D slicer",
+    description: "Learn the Basic Segmenation in 3D slicer for Mandibular",
     level: "Hard",
     time: "30 mins",
     alt: "Virtual Surgical Planning for Mandibular Reconstruction course",

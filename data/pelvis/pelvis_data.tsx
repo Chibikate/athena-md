@@ -17,17 +17,17 @@ to - link kung aha sya mapadulong
 export const PelvisCourses = [
   {
     image: pelviscourse.Module8,
-    title: "3D Modeling- Pelvis (C-1)",
-    description: "Learn about the 3D slicer interface",
+    title: "3D Modeling - Pelvis Reconstruction (C-1)",
+    description:"Learn about the 3D slicer interface for Pelvis Reconstruction",
     level: "Beginner",
-    time: "10 mins",
+    time: "10 mins",  
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
     to: "/pelvis/3D slicer Pelvis - Interface",
     courseName: "Pelvis",
   },
   {
     image: pelviscourse.Module9,
-    title: "3D Modeling Pelvis- Adding DICOM (C-2)",
+    title: "3D Modeling Pelvis - Adding DICOM (C-2)",
     description: "Learn how to add DICOM datasets in 3D slicer",
     level: "Beginner",
     time: "10 mins",
@@ -37,7 +37,7 @@ export const PelvisCourses = [
   },
   {
     image: pelviscourse.Module10,
-    title: "3D Modeling Pelvis - Navigating DICOM datasets (C-3)",
+    title: "3D Modeling Pelvis-Navigating DICOM  (C-3)",
     description: "Learn how to navigate DICOM datasets in 3D slicer",
     level: "Beginner",
     time: "10 mins",
@@ -48,7 +48,7 @@ export const PelvisCourses = [
   {
     image: pelviscourse.Module11,
     title: "3D Modeling Pelvis - Basic Segmentation (C-4)",
-    description: "Learn the Basic Segmenation in 3D slicer",
+    description: "Learn the Basic Segmenation in 3D slicer for Pelvis",
     level: "Hard",
     time: "30 mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
@@ -67,8 +67,8 @@ export const PelvisCourses = [
   },
   {
     image: pelviscourse.Module13,
-    title: "3D Modeling Pelvis using MeshMixer Virtual-Surgery (D-1)",
-    description: "Learn how to use MeshMixer for Virtual Surgery",
+    title: "3D Modeling Pelvis-MeshMixer(D-1)",
+    description: "Learn how to use MeshMixer in Virtual-Surgery",
     level: "Difficult",
     time: "1hr and 10mins",
     alt: "Virtual Surgical Planning for Pelvis Reconstruction course",
