@@ -52,15 +52,14 @@ export const printingTutorial4 = [
     title: "Ultimaker Cura: Model Settings",
     description: (
       <div>
-        <p>
-        <li>Profiles – Preset option depending on the quality you want on your print. Settings will be pre defaulted according to the print profile you choose.</li>
-        <li>Resolution – Choose the layer height quality. The options available depend on your printer configuration</li>
-        <li>Recommended Print Settings – This is where we can see more than 200+ options to set on your model. (Please see Module 5 for this option.)</li>
-        <li>Strength (Infill) – Where we set how strong our model we want to build. This option can set the percentage of infill, the pattern we want to build, and the thickness of the shell.</li>
-        <li>Generate support – This will generate a support structure below overhanging parts of a model to prevent the model from sagging or printing mid-air.</li>
-        <li>Build plate adhesion – Adds a brim or raft around the base of the model to ensure the print doesn’t detach from the build plate.</li>
+        <p>Profiles – Preset option depending on the quality you want on your print. Settings will be pre defaulted according to the print profile you choose.</p>
+        <p>Resolution – Choose the layer height quality. The options available depend on your printer configuration        </p>
+        <p>Recommended Print Settings – This is where we can see more than 200+ options to set on your model. (Please see Module 5 for this option.)        </p>
+        <p>Strength (Infill) – Where we set how strong our model we want to build. This option can set the percentage of infill, the pattern we want to build, and the thickness of the shell.        </p>
+        <p>Generate support – This will generate a support structure below overhanging parts of a model to prevent the model from sagging or printing mid-air.        </p>
+        <p>Build plate adhesion – Adds a brim or raft around the base of the model to ensure the print doesn’t detach from the build plate.        </p>
 
-        </p>
+
       </div>
     ),
     image: Printing37,

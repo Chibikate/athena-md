@@ -1,5 +1,6 @@
 import * as E3 from "@/public/E3";
 import Link from "next/link";
+import Image from "next/image";
 import Printing27 from "@/public/E3/27.png";
 import Printing28 from "@/public/E3/28.png";
 import Printing29 from "@/public/E3/29.png";
@@ -8,6 +9,8 @@ import Printing31 from "@/public/E3/31.png";
 import Printing32 from "@/public/E3/32.png";
 import Printing33 from "@/public/E3/33.png";
 import Printing34 from "@/public/E3/34.png";
+import rotateGif from "@/public/ultimakercourse/rotate.gif";
+import { useState } from "react";
 
 export const printingTutorial3 = [
   {
@@ -55,9 +58,23 @@ export const printingTutorial3 = [
     description: (
       <div>
         <p>
-        <span className="font-bold text-lg"> Rotate: </span>This settings allow you to set the orientation of your model
-          In a rule of thumb, The flastest surface of your model must be layered flat to the build platform.
-        </p>
+        <span className="font-bold text-lg"> Rotate: </span>This settings allow you to set the orientation of your model.
+          In a rule of thumb, The flastest surface of your model must be layered flat to the build platform.</p>
+          <p>View below how rotation works:</p>
+          <div className="mt-2">
+            <a href="/ultimakercourse/rotate.gif" target="_blank" className="cursor-pointer block relative">
+              <Image 
+                src={rotateGif} 
+                alt="Demonstration of the rotate function" 
+                width={400} 
+                height={300}
+                className="hover:opacity-90 transition-opacity"
+              />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-md">Click to view full size</span>
+              </div>
+            </a>
+          </div>
       </div>
     ),
     image: Printing30,
@@ -68,7 +85,7 @@ export const printingTutorial3 = [
     description: (
       <div>
         <p>
-        <span className="font-bold text-lg">Mirror Mode: </span>This settings allow just rotate the model like a mirror image
+        <span className="font-bold text-lg">Mirror Mode: </span>This settings allow just rotate the model like a mirror image.
         If you click the arrow it will move according to the placement of the arrow.
         </p>
       </div>

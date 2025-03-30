@@ -60,11 +60,10 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Navigation Tools",
     description: (
       <div>
-        <p>
-        <li>1. Open file – Opens a 3D file.</li>
-        <li>2. Printer selection panel – Displays the selected printer.</li>
-        <li>3. Configuration panel – Contains the material and print core setup.</li>
-        <li>4. Stages – The Prepare, Preview and Monitor stage. Each stage is arranged to efficiently go through each 3D printing step.</li>
+        <p>1. Open file – Opens a 3D file.</p>
+        <p>2. Printer selection panel – Displays the selected printer.</p>
+        <p>3. Configuration panel – Contains the material and print core setup.</p>
+        <p>4. Stages – The Prepare, Preview and Monitor stage. Each stage is arranged to efficiently go through each 3D printing step.
 
         </p>
       </div>
@@ -76,10 +75,9 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Navigation Tools",
     description: (
       <div>
-        <p>
-        <li>5. Print settings panel – Contains all the slice strategy parameters.</li>
-        <li>6. Marketplace – Contains plugins and material packages.</li>
-        <li>7. Ultimaker account – Allows access to cloud functionality, Marketplace plugins and print profiles, backups and more.</li>
+        <p>5. Print settings panel – Contains all the slice strategy parameters.</p>
+        <p>6. Marketplace – Contains plugins and material packages.</p>
+        <p>7. Ultimaker account – Allows access to cloud functionality, Marketplace plugins and print profiles, backups and more.
         </p>
       </div>
     ),
@@ -90,11 +88,9 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Navigation Tools",
     description: (
       <div>
-        <p>
-        <li>8. Action panel – Contains an action button dependent on the current stage.</li>
-        <li>9. Print over network – Allows you to print over network, save gcode to removable disk or save to file.</li>
-        <li>10. Preview – Proceeds to the next stage, the preview stage
-        </li>
+        <p>8. Action panel – Contains an action button dependent on the current stage.</p>
+        <p>9. Print over network – Allows you to print over network, save gcode to removable disk or save to file.</p>
+        <p>10. Preview – Proceeds to the next stage, the preview stage
         </p>
       </div>
     ),
@@ -106,9 +102,9 @@ export const printingTutorial2 = [
     description: (
       <div>
         <p>
-        <li>11. Camera position tool – Easily positions the camera to default viewing angles.</li>
-        <li>12. Model information – Contains the model name and dimensions of all printable models on the build plate.</li>
-        <li>13. Model Settings – Contains all settings you can do on your model to fit into the build platform of the tour printer. This will only highlight once the model is selected</li>
+        11. Camera position tool – Easily positions the camera to default viewing angles.</p>
+        <p>12. Model information – Contains the model name and dimensions of all printable models on the build plate.</p>
+        <p>13. Model Settings – Contains all settings you can do on your model to fit into the build platform of the tour printer. This will only highlight once the model is selected
         </p>
       </div>
     ),
@@ -212,11 +208,10 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Model Selection",
     description: (
       <div>
-        <p>
-        <li><span className="font-bold text-lg">There are 3 ways to add printers on Ultimaker Software.</span></li>
-        <li>1. Add a networked printer.</li>
-        <li>2. Add printer by IP.</li>
-        <li>3. Add a non – Networked printer.</li></p></div>
+        <p><span className="font-bold text-lg">There are 3 ways to add printers on Ultimaker Software.</span></p>
+        <p>1. Add a networked printer.</p>
+        <p>2. Add printer by IP.</p>
+        <p>3. Add a non – Networked printer.</p></div>
     ),
     image: Printing16,
     alt: "",
@@ -248,9 +243,9 @@ export const printingTutorial2 = [
     description: (
       <div>
         <p>
-        <li><span className="font-bold text-lg">Adding a non-networked printer is one way to print offline.You just need to do the following:</span></li>
-        <li>1. Select the printer to be used</li>
-        <li>2.The click the “Add” icon to appear on the User interface. </li></p></div>
+        <span className="font-bold text-lg">Adding a non-networked printer is one way to print offline.You just need to do the following:</span></p>
+        <p>1. Select the printer to be used</p>
+        <p>2.The click the “Add” icon to appear on the User interface. </p></div>
     ),
     image: Printing19,
     alt: "",
@@ -270,12 +265,10 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Model Selection",
     description: (
       <div>
-        <p><li><span className="font-bold text-lg">Configure your Setup</span></li>
-        <li>Network-enabled printers will indicate a valid connection with a checkmark icon. Select the printer you would like to use.
-        </li>
-        <li>Click on the configuration panel. Once opened, the panel displays your current print core/nozzle and material setup.</li>
-        <li>Network-enabled printers will display available configurations in your printer group. Non-network enabled printers need to be configured manually.
-        </li></p>
+        <p><span className="font-bold text-lg">Configure your Setup</span></p>
+        <p>Network-enabled printers will indicate a valid connection with a checkmark icon. Select the printer you would like to use.</p>
+        <p>Click on the configuration panel. Once opened, the panel displays your current print core/nozzle and material setup.</p>
+        <p>Network-enabled printers will display available configurations in your printer group. Non-network enabled printers need to be configured manually.</p>
       </div>
     ),
     image: Printing21,
@@ -297,8 +290,8 @@ You can Enable or Disable an extruder, but this is not necessary once we select 
     title: "Slicing: Ultimaker CURA",
     description: (
       <div>
-        <p>Ultimaker 3D printers have different settings in different materials that are optimized for each. For us users to have the best quality and successful print.
-        <li>You can choose from Ultimaker material to Generic material if you are using non-Ultimaker brand filaments.</li></p>
+        <p>Ultimaker 3D printers have different settings in different materials that are optimized for each. For us users to have the best quality and successful print.</p>
+        <p>You can choose from Ultimaker material to Generic material if you are using non-Ultimaker brand filaments.</p>
       </div>
     ),
     image: Printing23,
@@ -308,8 +301,8 @@ You can Enable or Disable an extruder, but this is not necessary once we select 
     title: "Slicing: Ultimaker CURA",
     description: (
       <div>
-        <p>This option is where we will select the Printcore we are about to use to print our model. 
-        <li>Note: AA 0.4 is the default printcore and this will be used to print this model. </li></p>
+        <p>This option is where we will select the Printcore we are about to use to print our model. </p>
+        <p>Note: AA 0.4 is the default printcore and this will be used to print this model. </p>
       </div>
     ),
     image: Printing24,
@@ -319,8 +312,8 @@ You can Enable or Disable an extruder, but this is not necessary once we select 
     title: "Slicing: Ultimaker CURA",
     description: (
       <div>
-        <p>Once you are done with the configuration of the material and the printcore the Interface should look like this.
-        <li>You were able to see the Material and the printcore you are about to use.</li></p>
+        <p>Once you are done with the configuration of the material and the printcore the Interface should look like this.</p>
+        <p>You were able to see the Material and the printcore you are about to use.</p>
       </div>
     ),
     image: Printing25,
@@ -330,8 +323,8 @@ You can Enable or Disable an extruder, but this is not necessary once we select 
     title: "Slicing: Ultimaker CURA",
     description: (
       <div>
-        <p>This option is where we will select the Printcore we are about to use to print our model. 
-        <li>Note: AA 0.4 is the default printcore and this will be used to print this model. </li></p>
+        <p>This option is where we will select the Printcore we are about to use to print our model. </p>
+        <p>Note: AA 0.4 is the default printcore and this will be used to print this model.</p>
       </div>
     ),
     image: Printing26,

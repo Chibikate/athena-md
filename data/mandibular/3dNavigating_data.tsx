@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const slicerTutorial3 = [
   {
-    title: "Welocme to 3D slicer - Navigating DICOM display (Part 3)",
+    title: "Welcome to 3D slicer - Navigating DICOM display (Part 3)",
     description: (
       <div>
         Make sure to <span className="font-bold">install</span> your downloaded{" "}
@@ -16,7 +16,7 @@ export const slicerTutorial3 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div>The <span className="font-bold">middle mouse button</span> can be used to scroll through the DICOM files. <span className="font-bold">Hovering the mouse pointer</span> over a window will <span className="font-bold">“select”</span> the window and activate the function.</div>
@@ -25,7 +25,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div>
@@ -36,7 +36,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div>Quickly tapping the left mouse button twice <span className="font-bold">(double click) </span>will maximize the selected window.</div>
@@ -45,7 +45,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div><span className="font-bold">Double clicking again</span> will return the window to its original size. This function can be utilized for all the windows in the DICOM display.</div>
@@ -54,7 +54,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div><span className="font-bold">Holding down the right mouse</span> button while dragging downwards will zoom in the image. <span className="font-bold">Dragging upwards</span> will zoom out.</div>
@@ -63,7 +63,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div>On the <span className="font-bold">3D panel (blue) holding the left mouse button while dragging</span> will allow the user to move the 3D object around.</div>
@@ -72,7 +72,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div><span className="font-bold">Scrolling upwards</span> using the middle mouse button will zoom in on the 3D model. <span className="font-bold">Scrolling downwards</span> will zoom out.</div>
@@ -81,7 +81,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div><span className="font-bold">Holding down</span> the middle mouse button and <span className="font-bold">dragging</span> will pan the 3D image.</div>
@@ -90,7 +90,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description:
       (
         <div>Alternatively, <span className="font-bold">holding down the right mouse button while dragging upwards</span> will zoom in on the 3D model. Dragging downwards will zoom out.</div>
@@ -99,7 +99,7 @@ export const slicerTutorial3 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "Navigating DICOM display (Part 3)",
     description: (
       <div>
         <p>

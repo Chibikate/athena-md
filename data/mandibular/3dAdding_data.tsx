@@ -16,7 +16,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
       <div>To <span className="font-bold">add datasets</span> to the program, left click on the  <span className="font-bold">add DICOM data button</span> located in the module interface panel.</div>
@@ -25,7 +25,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div>
@@ -36,7 +36,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div>
@@ -47,7 +47,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div><span className="font-bold">Left clicking</span> on the Add DICOM data will direct the user to the add DICOM database module.</div>
@@ -56,7 +56,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div>The <span className="font-bold">DICOM data interface</span> will show the details of the available datasets.</div>
@@ -65,7 +65,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div>The <span className="font-bold">search bar</span> above can be used to quickly search for previously imported datasets.</div>
@@ -74,7 +74,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div>Once in the DICOM database module, <span className="font-bold">left click</span> on the <span className="font-bold">import DICOM files</span> button.</div>
@@ -83,7 +83,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div>Navigate to your saved DICOM files and left click on the dataset of choice and click on <span className="font-bold">import</span>.</div>
@@ -92,7 +92,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
       (
         <div>The selected dataset will be available in the DICOM database. <span className="font-bold">Left click</span> on the dataset and <span className="font-bold">left click</span> on the <span className="font-bold">load</span> button.</div>
@@ -101,7 +101,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description:
      (
       <div>The DICOM images will immediately be loaded into the <span className="font-bold">DICOM display window</span> for viewing.</div>
@@ -110,7 +110,7 @@ export const slicerTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D slicer - Adding DICOM datasets (Part 2)",
     description: (
       <div>
         <p>
