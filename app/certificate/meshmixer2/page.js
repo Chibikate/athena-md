@@ -40,13 +40,13 @@ function CertificatePage() {
 
         <button
           onClick={downloadCertificate}
-          className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
+          className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
         >
           Download Certificate
         </button>
         <Link
           href="https://drive.google.com/drive/u/0/folders/1TDPx-77IlDwHfEuy2nsCkjsqNKBPdqzO"
-          className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block "
+          className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block "
         >
           Submission Bin
         </Link>

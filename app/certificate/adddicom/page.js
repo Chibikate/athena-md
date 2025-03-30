@@ -1,7 +1,6 @@
 "use client";
 // CertificatePage.js
 import { useRef } from "react";
-
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -41,14 +40,14 @@ function CertificatePage() {
 
         <button
           onClick={downloadCertificate}
-          className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
+          className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
         >
           Download Certificate
         </button>
       </div>
       <div>
         <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
-          <button className="bg-[#1c1648] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
+          <button className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
           Proceed to the Next Lesson
           </button>
         </Link>
