@@ -40,7 +40,7 @@ const CourseSection = () => {
                   duration-300
                 " 
               />
-              <span className="text-sm font-medium">Courses</span>
+              <span className="text-sm font-medium">Main Courses</span>
             </Link>
 
             {/* Page Title */}
