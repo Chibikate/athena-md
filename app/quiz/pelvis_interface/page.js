@@ -293,7 +293,7 @@ return (
               <p className="text-green-600 font-bold text-lg md:text-xl mb-4">
                 Perfect! Congratulations on completing the quiz.
               </p>
-              <Link href="/fillup/interface">
+              <Link href="/fillup/pelvis_interface">
                 <button className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800">
                   Get Your Certificate
                 </button>
@@ -305,7 +305,7 @@ return (
                 Sorry, you didn't pass. You can retake the quiz to improve your score.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                <Link href="/course/3D%20slicer%20interface" className="w-full sm:w-auto">
+                <Link href="/pelvis/3D%20slicer%20Pelvis%20-%20Interface/data?content=3D%20slicer%20Pelvis%20C1" className="w-full sm:w-auto">
                   <button className="w-full px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50">
                     Retake the Lesson
                   </button>
