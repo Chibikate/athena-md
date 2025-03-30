@@ -4,7 +4,7 @@ import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
 import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
-import Navigator from "@/components/course_overview/navigator";
+import Navigator3 from "@/components/course_overview/navigator3";
 import {
   printingTutorial1,
   printingTutorial2,
@@ -100,7 +100,7 @@ const Home = ({ params }: Params) => {
           </div>
         )}
         <div>
-          <Navigator />
+          <Navigator3 />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center">

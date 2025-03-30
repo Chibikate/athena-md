@@ -48,6 +48,9 @@ const Home = ({ params }: Params) => {
   const [content, setContent] = useState<ContentProps[]>(data);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     switch (queryPage) {
@@ -99,17 +102,70 @@ const Home = ({ params }: Params) => {
   }, [index]);
 
   const handleZoomIn = () => {
-    setZoomLevel(prev => Math.min(prev + 0.2, 3));
+    setZoomLevel(prev => Math.min(prev + 0.5, 5)); // Increased max zoom to 5x
+    // Reset position when zooming to avoid image getting lost
+    setPosition({ x: 0, y: 0 });
   };
 
   const handleZoomOut = () => {
-    setZoomLevel(prev => Math.max(prev - 0.2, 0.5));
+    setZoomLevel(prev => {
+      const newZoom = Math.max(prev - 0.5, 0.5);
+      // Reset position when zooming out to minimum
+      if (newZoom === 0.5) {
+        setPosition({ x: 0, y: 0 });
+      }
+      return newZoom;
+    });
   };
 
   const handleCloseZoom = () => {
     setZoomedImage(null);
     setZoomLevel(1);
+    setPosition({ x: 0, y: 0 });
   };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoomLevel > 1) {
+      setIsDragging(true);
+      setStartPosition({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y
+      });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && zoomLevel > 1) {
+      setPosition({
+        x: e.clientX - startPosition.x,
+        y: e.clientY - startPosition.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Reset position and zoom when changing images
+  useEffect(() => {
+    if (!zoomedImage) {
+      setZoomLevel(1);
+      setPosition({ x: 0, y: 0 });
+    }
+  }, [zoomedImage]);
+
+  // Add mouse up event to window to handle cases when mouse is released outside the image
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+    };
+    
+    window.addEventListener('mouseup', handleGlobalMouseUp);
+    return () => {
+      window.removeEventListener('mouseup', handleGlobalMouseUp);
+    };
+  }, []);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -146,29 +202,46 @@ const Home = ({ params }: Params) => {
               </div>
             </div>
             
-            {/* Main image area */}
-            <div className="flex-1 flex items-center justify-center overflow-auto">
-              <img 
-                src={zoomedImage} 
-                alt="Zoomed" 
-                className="max-h-full object-contain transition-transform duration-200"
-                style={{ transform: `scale(${zoomLevel})` }}
-              />
+            {/* Main image area - added cursor styles and mouse event handlers */}
+            <div 
+              className="flex-1 flex items-center justify-center overflow-hidden"
+              style={{ cursor: isDragging ? 'grabbing' : (zoomLevel > 1 ? 'grab' : 'default') }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+            >
+              <div className="relative">
+                <img 
+                  src={zoomedImage} 
+                  alt="Zoomed" 
+                  className="max-h-full max-w-full object-contain transition-transform duration-200"
+                  style={{ 
+                    transform: `scale(${zoomLevel}) translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
+                    transformOrigin: 'center center',
+                  }}
+                  draggable="false"
+                />
+              </div>
             </div>
             
-            {/* Bottom controls */}
+            {/* Bottom controls - improved with current zoom level display */}
             <div className="p-3 bg-black flex items-center justify-center">
-              <div className="bg-gray-800 rounded-full flex items-center px-2 py-1">
+              <div className="bg-gray-800 rounded-full flex items-center px-3 py-1">
                 <button 
                   onClick={handleZoomOut}
                   className="text-white p-2 opacity-80 hover:opacity-100"
+                  disabled={zoomLevel <= 0.5}
                 >
                   <MinusIcon className="h-4 w-4" />
                 </button>
-                <MagnifyingGlassIcon className="h-4 w-4 mx-1 text-white" />
+                <div className="flex items-center mx-2">
+                  <MagnifyingGlassIcon className="h-4 w-4 mr-1 text-white" />
+                  <span className="text-white text-xs">{Math.round(zoomLevel * 100)}%</span>
+                </div>
                 <button 
                   onClick={handleZoomIn}
                   className="text-white p-2 opacity-80 hover:opacity-100"
+                  disabled={zoomLevel >= 5}
                 >
                   <PlusIcon className="h-4 w-4" />
                 </button>

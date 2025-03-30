@@ -4,7 +4,7 @@ import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
 import PelvisCard from "@/components/3dslicer_page/pelvis_tutorial";
-import Navigator from "@/components/course_overview/navigator";
+import Navigator2 from "@/components/course_overview/navigator2";
 import {
   slicerTutorial6,
   slicerTutorial7,
@@ -108,7 +108,7 @@ const Home = ({ params }: Params) => {
           </div>
         )}
         <div>
-          <Navigator />
+          <Navigator2 />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center">
