@@ -8,7 +8,6 @@ interface MainCardProps {
   image: StaticImageData;
   alt: string;
   time: string;
-  video: string;
   lesson: string;
   to: string;
   className?: string;
@@ -20,7 +19,6 @@ const MainCard: React.FC<MainCardProps> = ({
   image,
   alt,
   time,
-  video,
   lesson,
   to,
   className = ''
@@ -51,7 +49,6 @@ const MainCard: React.FC<MainCardProps> = ({
         
         <div className="flex justify-between text-[#165388] text-sm mb-4">
           <span>⏱️ {time}</span>
-          <span>🎥 {video}</span>
           <span>📚 {lesson}</span>
         </div>
         

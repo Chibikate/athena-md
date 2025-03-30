@@ -22,8 +22,7 @@ const MainCardSection = () => {
               image={Mandibular}
               alt="Mandibular Reconstruction"
               time="1hr"
-              video="2 Video"
-              lesson="8 Lesson"
+              lesson="6 Lessons"
               to="/courses"
               className="w-full max-w-[350px] transform transition-transform duration-300 hover:scale-105"
             />
@@ -35,8 +34,7 @@ const MainCardSection = () => {
               description="Learn the free and available courses by taking the quiz to retain information"
               image={Pelvis}
               time="1hr"
-              video="1 Video"
-              lesson="5 Lesson"
+              lesson="6 Lessons"
               alt="Pelvis Reconstruction"
               to="/pelviscourses"
               className="w-full max-w-[350px] transform transition-transform duration-300 hover:scale-105"
@@ -45,12 +43,11 @@ const MainCardSection = () => {
 
           <div className="flex justify-center">
             <MainCard
-              title="3D Printing"
+              title="Ultimaker Cura"
               description="Acquire background of tools used in the medical field"
               image={Printing3}
               time="1hr"
-              video="2 Video"
-              lesson="5 Lesson"
+              lesson="4 Lessons"
               alt="3D Printing"
               to="/ultimakercourses"
               className="w-full max-w-[350px] transform transition-transform duration-300 hover:scale-105"

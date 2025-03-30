@@ -46,14 +46,14 @@ const Navigator = ({ isCourse = false }: Props) => {
       >
         <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
           <Link
-            className="block lg:inline-block w-full lg:w-auto text-center lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-4 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-200 rounded-lg text-xs font-semibold transition"
+            className="block lg:inline-block w-full lg:w-auto text-center lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-200 rounded-lg text-xs font-semibold transition"
             href="/aboutus"
             onClick={() => setIsOpen(false)}
           >
             ABOUT
           </Link>
           <Link
-            className="block lg:inline-block w-full lg:w-auto text-center lg:text-center hover:bg-white hover:bg-opacity-60 py-2 px-4 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-200 rounded-lg text-xs font-semibold transition"
+            className="block lg:inline-block w-full lg:w-auto text-center lg:text-center hover:bg-white hover:bg-opacity-60 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-200 rounded-lg text-xs font-semibold transition"
             href="/contact_form"
             onClick={() => setIsOpen(false)}
           >
@@ -61,7 +61,7 @@ const Navigator = ({ isCourse = false }: Props) => {
           </Link>
           {isCourse ? (
             <Link
-              className="block lg:inline-block w-full lg:w-auto text-left lg:text-center bg-[#043873] pt-[10px] text-white p-2 px-4 rounded-lg text-sm font-semibold hover:bg-opacity-80 hover:ring-1 hover:ring-offset-2 hover:ring-blue-400 transition"
+              className="block lg:inline-block w-full lg:w-auto text-left lg:text-center bg-[#043873] pt-[10px] text-white py-2 px-5 rounded-lg text-sm font-semibold hover:bg-opacity-80 hover:ring-1 hover:ring-offset-2 hover:ring-blue-400 transition"
               href="/main_homepage"
               onClick={() => setIsOpen(false)}
             >

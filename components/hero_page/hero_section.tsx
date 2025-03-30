@@ -40,7 +40,7 @@ const HeroSection = () => {
           </p>
 
           {/* Search Bar */}
-          <div className="flex flex-col items-center w-full mt-4 sm:mt-6 md:mt-8">
+          {/*<div className="flex flex-col items-center w-full mt-4 sm:mt-6 md:mt-8">
             <div className="flex items-center gap-2 border border-[#043873] rounded-lg px-3 py-2 w-full max-w-md sm:max-w-lg bg-white shadow-md">
               <input
                 type="text"
@@ -48,7 +48,7 @@ const HeroSection = () => {
                 className="flex-1 outline-none bg-transparent text-center text-[#043873] placeholder-[#043873]"
               />
               <FiSearch className="text-[#043873] text-xl cursor-pointer" />
-            </div>
+            </div>/}
 
             {/* Button */}
             <Link href="/main_homepage">
@@ -59,7 +59,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
