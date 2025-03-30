@@ -1,4 +1,4 @@
-import * as course from "@/public/ultimakercourse";
+import * as ultimakercourse from "@/public/ultimakercourse";
 import TeamSection3 from "@/components/course_overview/team_section3";
 // * If magdungag kag another course, dani lang pag input//
 
@@ -13,12 +13,6 @@ alt - alternative sa image if walay net
 to - link kung aha sya mapadulong
 */
 }
-const ultimakercourse = {
-  Module14: course.Module14,
-  Module15: course.Module15,
-  Module16: course.Module16,
-  Module17: course.Module17,
-};
 export const UltimakerCourses = [
   {
     image: ultimakercourse.Module14,
