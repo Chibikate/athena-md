@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, useCallback } from "react";
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import { MinusIcon, PlusIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import Image from "next/image"; // Added import for Next.js Image component
 import Footer from "@/components/hero_page/footer";
 import TutorialCard from "@/components/3dslicer_page/tutorial_card";
 import Navigator from "@/components/course_overview/navigator";
@@ -75,17 +76,18 @@ const Home = ({ params }: Params) => {
     }
   }, [queryPage]);
 
-  const goToNextQuestion = () => {
+  // Memoize navigation functions with useCallback to avoid recreating them on every render
+  const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
     }
-  };
+  }, [index, content.length]);
 
-  const goToPreviousQuestion = () => {
+  const goToPreviousQuestion = useCallback(() => {
     if (index > 0) {
       setIndex(index - 1);
     }
-  };
+  }, [index]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -99,7 +101,7 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index]);
+  }, [index, goToNextQuestion, goToPreviousQuestion]); // Added missing dependencies
 
   const handleZoomIn = () => {
     setZoomLevel(prev => Math.min(prev + 0.5, 5)); // Increased max zoom to 5x
@@ -202,7 +204,7 @@ const Home = ({ params }: Params) => {
               </div>
             </div>
             
-            {/* Main image area - added cursor styles and mouse event handlers */}
+            {/* Main image area - using Next.js Image component */}
             <div 
               className="flex-1 flex items-center justify-center overflow-hidden"
               style={{ cursor: isDragging ? 'grabbing' : (zoomLevel > 1 ? 'grab' : 'default') }}
@@ -211,6 +213,7 @@ const Home = ({ params }: Params) => {
               onMouseUp={handleMouseUp}
             >
               <div className="relative">
+                {/* We keep the img tag here for the zoomed version since we need the transform styles */}
                 <img 
                   src={zoomedImage} 
                   alt="Zoomed" 

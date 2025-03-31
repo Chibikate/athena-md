@@ -59,7 +59,7 @@ export default function QuizApp() {
       setShowConfetti(true);
       // No timeout to clear the confetti - it will run continuously
     }
-  }, [showResults]);
+  }, [showResults, calculateScore]);
 
   const handleAnswerChange = (event, questionIndex) => {
     const updatedAnswers = [...userAnswers];
@@ -339,7 +339,7 @@ export default function QuizApp() {
             ) : (
               <div className="space-y-4">
                 <p className="text-red-600 font-medium text-sm md:text-base">
-                  Sorry, you didn't pass. You can retake the quiz to improve your score.
+                  Sorry, you didn&apos;t pass. You can retake the quiz to improve your score.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
                   <Link href="/pelvis/3D%20slicer%20Pelvis%20-%20AddDICOM"className="w-full sm:w-auto">
