@@ -60,23 +60,8 @@ export const printingTutorial3 = [
         <p>
         <span className="font-bold text-lg"> Rotate: </span>This settings allow you to set the orientation of your model.
           In a rule of thumb, The flastest surface of your model must be layered flat to the build platform.</p>
-          <p>View below how rotation works:</p>
-          <div className="mt-2">
-            <a href="/ultimakercourse/rotate.gif" target="_blank" className="cursor-pointer block relative">
-              <Image 
-                src={rotateGif} 
-                alt="Demonstration of the rotate function" 
-                width={400} 
-                height={300}
-                className="hover:opacity-90 transition-opacity"
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-md">Click to view full size</span>
-              </div>
-            </a>
-          </div>
-      </div>
-    ),
+</div>
+),
     image: Printing30,
     alt: "",
   },
