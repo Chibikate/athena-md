@@ -279,7 +279,7 @@ const Home = ({ params }: Params) => {
               }
               image={content[index].image}
               alt={content[index].alt}
-              onClick={() => content[index].image?.src && setZoomedImage(content[index].image.src)}
+              onClick={() => content[index].image?.src && setZoomedImage(content[index].image?.src)}
             />
           )}
           <div className="flex flex-row md:flex-col">
