@@ -79,7 +79,7 @@ export default function QuizApp() {
     }
   };
 
-  const calculateScore = () => {
+  const calculateScore = useCallback(() => {
     let score = 0;
     userAnswers.forEach((answer, index) => {
       if (answer.trim() === quizQuestions[index].correctAnswer.trim()) {
@@ -87,7 +87,7 @@ export default function QuizApp() {
       }
     });
     return score;
-  };
+  }, [userAnswers]);
 
   const checkWrong = () => {
     let wrong = [];

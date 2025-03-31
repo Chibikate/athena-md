@@ -2,6 +2,7 @@
 import { useEffect, useState, Suspense } from "react";
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image"; // Added import for Next.js Image component
 import Footer from "@/components/hero_page/footer";
 import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
 import Navigator3 from "@/components/course_overview/navigator3";
@@ -86,7 +87,7 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index]);
+  }, [index, goToNextQuestion, goToPreviousQuestion]); // Fixed: Added missing dependencies
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -96,7 +97,16 @@ const Home = ({ params }: Params) => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setZoomedImage(null)}
           >
-            <img src={zoomedImage} alt="Zoomed" className="max-w-3/4 max-h-3/4 rounded-lg shadow-lg" />
+            {/* Replaced img with Next.js Image component */}
+            <div className="relative max-w-[75%] max-h-[75%] w-auto h-auto">
+              <Image 
+                src={zoomedImage} 
+                alt="Zoomed" 
+                className="rounded-lg shadow-lg" 
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
           </div>
         )}
         <div>
