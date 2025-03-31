@@ -88,6 +88,8 @@ export default function QuizApp() {
     }
   };
 
+  // Removed duplicate calculateScore function
+
   const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
