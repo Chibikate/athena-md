@@ -4,21 +4,18 @@ import { StaticImageData } from "next/image";
 
 interface Props {
   title: string;
-  description: React.JSX.Element | string;
+  description: React.ReactNode;
   image?: StaticImageData | null;
   alt: string;
   onClick?: () => void;
 }
 
-const TutorialCard = ({ title, description, image, alt, onClick }: Props) => {
+const TutorialCard = ({ title, description, image, alt, onClick}: Props) => {
   const [zoomed, setZoomed] = useState(false);
 
   const handleZoom = () => {
     setZoomed(!zoomed);
-    // Call the external onClick if provided (for the main component's full-screen viewer)
-    if (onClick) {
-      onClick();
-    }
+    if (onClick) onClick();
   };
 
   return (
