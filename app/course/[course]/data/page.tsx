@@ -214,7 +214,7 @@ const Home = ({ params }: Params) => {
             >
               <div className="relative">
                 {/* We keep the img tag here for the zoomed version since we need the transform styles */}
-                <img 
+                <Image 
                   src={zoomedImage} 
                   alt="Zoomed" 
                   className="max-h-full max-w-full object-contain transition-transform duration-200"
