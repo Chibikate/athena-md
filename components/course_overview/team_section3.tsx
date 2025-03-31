@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Image6 from "@/public/Image6.png";
-import Image13 from "@/public/Image13.png";
 
 const TeamSection3 = () => {
   return (
@@ -28,7 +27,7 @@ const TeamSection3 = () => {
       <div className="flex justify-center invert">
         <Image
           alt="somethings never change"
-          src={Image13}
+          src={Image6}
           width={200}
           height={100}
         />
