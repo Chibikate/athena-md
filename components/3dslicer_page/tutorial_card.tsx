@@ -10,11 +10,15 @@ interface Props {
   onClick?: () => void; // Added onClick prop
 }
 
-const TutorialCard = ({ title, description, image, alt }: Props) => {
+const TutorialCard = ({ title, description, image, alt, onClick }: Props) => {
   const [zoomed, setZoomed] = useState(false);
 
   const handleZoom = () => {
     setZoomed(!zoomed);
+    // If external onClick is provided, call it when zooming locally
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (
