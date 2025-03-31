@@ -2,7 +2,7 @@
 import { useEffect, useState, Suspense, useCallback } from "react"; // Added useCallback
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Image from "next/image"; // Added import for Next.js Image component
+import Image from "next/image";
 import Footer from "@/components/hero_page/footer";
 import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
 import Navigator3 from "@/components/course_overview/navigator3";
@@ -46,36 +46,41 @@ const Home = ({ params }: Params) => {
   const [content, setContent] = useState<ContentProps[]>(data);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
+  // Update content based on queryPage
   useEffect(() => {
     switch (queryPage) {
-      case "3D printing  Part 1":
+      case "3D printing Part 1":
         setContent(printingTutorial1);
         break;
-      case "3D printing  Part 2":
+      case "3D printing Part 2":
         setContent(printingTutorial2);
         break;
-      case "3D printing  Part 3":
+      case "3D printing Part 3":
         setContent(printingTutorial3);
         break;
-      case "3D printing  Part 4":
+      case "3D printing Part 4":
         setContent(printingTutorial4);
         break;
+      default:
+        setContent([]);
     }
   }, [queryPage]);
 
-  // Memoize navigation functions with useCallback
+  // goToNextQuestion with useCallback to avoid unnecessary re-renders
   const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
     }
   }, [index, content.length]);
 
+  // goToPreviousQuestion with useCallback
   const goToPreviousQuestion = useCallback(() => {
     if (index > 0) {
       setIndex(index - 1);
     }
   }, [index]);
 
+  // Event listener for key navigation (ArrowLeft, ArrowRight)
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
@@ -88,7 +93,8 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index, goToNextQuestion, goToPreviousQuestion]); // Added missing dependencies
+  }, [goToNextQuestion, goToPreviousQuestion]);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
@@ -97,20 +103,20 @@ const Home = ({ params }: Params) => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setZoomedImage(null)}
           >
-            {/* Using Next.js Image component for zoomed image view */}
-            <div className="relative max-w-3/4 max-h-3/4 w-auto h-auto">
-              <Image 
-                src={zoomedImage} 
-                alt="Zoomed" 
-                className="rounded-lg shadow-lg" 
+            {/* Replaced img with Next.js Image component */}
+            <div className="relative max-w-[75%] max-h-[75%] w-auto h-auto">
+              <Image
+                src={zoomedImage}
+                alt="Zoomed"
+                className="rounded-lg shadow-lg"
                 fill
-                style={{ objectFit: 'contain' }}
+                style={{ objectFit: "contain" }}
                 sizes="(max-width: 768px) 100vw, 75vw"
                 priority
               />
             </div>
           </div>
-)}
+        )}
         <div>
           <Navigator3 />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
@@ -124,7 +130,7 @@ const Home = ({ params }: Params) => {
               <ChevronDoubleLeftIcon className="w-8 h-8" />
             </button>
           )}
-          {index == 0 && (
+          {index === 0 && (
             <Link
               href={`/ultimakercourse/${ultimakercourse}`}
               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
