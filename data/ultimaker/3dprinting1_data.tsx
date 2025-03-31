@@ -68,7 +68,7 @@ export const printingTutorial1 = [
         <p>
         Congratulations on downloading the Ultimaker Cura software. On the next module, 
         we will discuss the features of the software.{" "}         
-          <Link href="https://athena-md.vercel.app/course/3D%20Printing%20for%20a%20Mandible-2" className="font-bold underline">
+          <Link href="/ultimaker/3D%20Printing%20for%20a%20Mandible-2" className="font-bold underline">
             Next Module
           </Link>{" "}
         </p>
