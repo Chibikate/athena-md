@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, useCallback } from "react"; // Added useCallback
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Image from "next/image"; // Added import for Next.js Image component
+import Image from "next/image";
 import Footer from "@/components/hero_page/footer";
 import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
 import Navigator3 from "@/components/course_overview/navigator3";
@@ -63,17 +63,19 @@ const Home = ({ params }: Params) => {
     }
   }, [queryPage]);
 
-  const goToNextQuestion = () => {
+  // Wrapped in useCallback
+  const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
     }
-  };
+  }, [index, content.length]);
 
-  const goToPreviousQuestion = () => {
+  // Wrapped in useCallback
+  const goToPreviousQuestion = useCallback(() => {
     if (index > 0) {
       setIndex(index - 1);
     }
-  };
+  }, [index]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -87,7 +89,7 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index, goToNextQuestion, goToPreviousQuestion]); // Fixed: Added missing dependencies
+  }, [goToNextQuestion, goToPreviousQuestion]); // Now these dependencies are stable
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -97,7 +99,6 @@ const Home = ({ params }: Params) => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setZoomedImage(null)}
           >
-            {/* Replaced img with Next.js Image component */}
             <div className="relative max-w-[75%] max-h-[75%] w-auto h-auto">
               <Image 
                 src={zoomedImage} 
