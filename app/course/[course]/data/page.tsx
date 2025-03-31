@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useState, Suspense, useCallback } from "react";
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
-import { MinusIcon, PlusIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Footer from "@/components/hero_page/footer";
 import TutorialCard from "@/components/3dslicer_page/tutorial_card";
 import Navigator from "@/components/course_overview/navigator";
@@ -16,7 +15,6 @@ import {
   MeshTutorial,
 } from "@/data/mandibular";
 import { useSearchParams } from "next/navigation";
-import { StaticImageData } from "next/image";
 import ProgressBar from "@/components/3dslicer_page/progress_bar";
 
 interface Params {
@@ -28,7 +26,7 @@ interface Params {
 interface ContentProps {
   title: string;
   description: React.JSX.Element | string;
-  image?: StaticImageData | null | undefined;
+  image?: StaticImageData | null;
   alt: string;
 }
 
@@ -48,10 +46,6 @@ const Home = ({ params }: Params) => {
   const [index, setIndex] = useState(0);
   const [content, setContent] = useState<ContentProps[]>(data);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
-  const [zoomLevel, setZoomLevel] = useState(1);
-  const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     switch (queryPage) {
@@ -73,10 +67,11 @@ const Home = ({ params }: Params) => {
       case "MeshMixer - Virtual-Surgery":
         setContent(MeshTutorial);
         break;
+      default:
+        setContent([]);
     }
   }, [queryPage]);
 
-  // Memoize navigation functions with useCallback
   const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
@@ -101,60 +96,66 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index, goToNextQuestion, goToPreviousQuestion]); // Added missing dependencies
-
+  }, [goToNextQuestion, goToPreviousQuestion]);
 
   return (
-     <Suspense fallback={<div>Loading...</div>}>
-       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
-         {zoomedImage && (
-           <div
-             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-             onClick={() => setZoomedImage(null)}
-           >
-             {/* Using Next.js Image component for zoomed image view */}
-             <div className="relative max-w-3/4 max-h-3/4 w-auto h-auto">
-               <Image 
-                 src={zoomedImage} 
-                 alt="Zoomed" 
-                 className="rounded-lg shadow-lg" 
-                 fill
-                 style={{ objectFit: 'contain' }}
-                 sizes="(max-width: 768px) 100vw, 75vw"
-                 priority
-               />
-             </div>
-           </div>
-         )}
-         <div>
-           <Navigator />
-           <ProgressBar currentIndex={index} totalSteps={content.length} />
-         </div>
-         <div className="flex flex-col md:flex-row items-center justify-center">
-           {index > 0 && (
-             <button
-               onClick={goToPreviousQuestion}
-               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
-             >
-               <ChevronDoubleLeftIcon className="w-8 h-8" />
-             </button>
-           )}
-           {index == 0 && (
-             <Link
-               href={`/course/${course}`}
-               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
-             >
-               <ChevronDoubleLeftIcon className="w-8 h-8" />
-             </Link>
-           )}
+    <Suspense fallback={<div>Loading...</div>}>
+      <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
+        {zoomedImage && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            onClick={() => setZoomedImage(null)}
+          >
+            {/* Using Next.js Image component for zoomed image view */}
+            <div className="relative max-w-3/4 max-h-3/4 w-auto h-auto">
+              <Image 
+                src={zoomedImage} 
+                alt="Zoomed" 
+                className="rounded-lg shadow-lg" 
+                fill
+                style={{ objectFit: 'contain' }}
+                sizes="(max-width: 768px) 100vw, 75vw"
+                priority
+              />
+            </div>
+          </div>
+        )}
+        <div>
+          <Navigator />
+          <ProgressBar currentIndex={index} totalSteps={content.length} />
+        </div>
+        <div className="flex flex-col md:flex-row items-center justify-center">
+          {index > 0 && (
+            <button
+              onClick={goToPreviousQuestion}
+              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+              aria-label="Previous Question"
+            >
+              <ChevronDoubleLeftIcon className="w-8 h-8" />
+            </button>
+          )}
+          {index === 0 && (
+            <Link
+              href={`/course/${course}`}
+              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+              aria-label="Back to Course"
+            >
+              <ChevronDoubleLeftIcon className="w-8 h-8" />
+            </Link>
+          )}
           {index < content.length && (
             <TutorialCard
-              title={content[index].title}
-              description={<div className="text-justify">{content[index].description}</div>}
-              image={content[index].image}
-              alt={content[index].alt}
-              onClick={() => content[index].image && setZoomedImage(content[index].image.src)}
-            />
+            title={content[index].title}
+            description={
+              <div className="text-justify">{content[index].description}</div>
+            }
+            image={content[index].image}
+            alt={content[index].alt}
+            onClick={() => {
+              const imageSrc = content[index].image?.src;
+              if (imageSrc) setZoomedImage(imageSrc);
+            }}
+          />
           )}
           <div className="flex flex-row md:flex-col">
             {index > 0 && (
