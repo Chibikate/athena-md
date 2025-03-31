@@ -1,8 +1,8 @@
 import React from "react";
 import MainCard from "@/components/main_home/main_card";
-import Mandibular from "@/public/main_course/mandibular.png";
-import Pelvis from "@/public/main_course/pelvis.png";
-import Printing3 from "@/public/main_course/printing.png";
+import mandibular from "@/public/main_course/mandibular.png";
+import Pelvis from "@/public/main_course/Pelvis.png";
+import Printing from "@/public/main_course/printing.png";
 
 const MainCardSection = () => {
   return (
@@ -19,7 +19,7 @@ const MainCardSection = () => {
             <MainCard
               title="Mandibular Reconstruction"
               description="Courses offer step-by-step tutorial on tools used for medical planning"
-              image={Mandibular}
+              image={mandibular}
               alt="Mandibular Reconstruction"
               time="1hr"
               lesson="6 Lessons"
@@ -45,7 +45,7 @@ const MainCardSection = () => {
             <MainCard
               title="Ultimaker Cura"
               description="Acquire background of tools used in the medical field"
-              image={Printing3}
+              image={Printing}
               time="1hr"
               lesson="4 Lessons"
               alt="3D Printing"
