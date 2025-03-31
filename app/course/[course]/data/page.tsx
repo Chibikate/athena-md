@@ -76,6 +76,7 @@ const Home = ({ params }: Params) => {
     }
   }, [queryPage]);
 
+  // Memoize navigation functions with useCallback
   const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
@@ -100,169 +101,59 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index, goToNextQuestion, goToPreviousQuestion]);
+  }, [index, goToNextQuestion, goToPreviousQuestion]); // Added missing dependencies
 
-  const handleZoomIn = () => {
-    setZoomLevel(prev => Math.min(prev + 0.5, 5));
-    setPosition({ x: 0, y: 0 });
-  };
-
-  const handleZoomOut = () => {
-    setZoomLevel(prev => {
-      const newZoom = Math.max(prev - 0.5, 0.5);
-      if (newZoom === 0.5) {
-        setPosition({ x: 0, y: 0 });
-      }
-      return newZoom;
-    });
-  };
-
-  const handleCloseZoom = () => {
-    setZoomedImage(null);
-    setZoomLevel(1);
-    setPosition({ x: 0, y: 0 });
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (zoomLevel > 1) {
-      setIsDragging(true);
-      setStartPosition({
-        x: e.clientX - position.x,
-        y: e.clientY - position.y
-      });
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && zoomLevel > 1) {
-      setPosition({
-        x: e.clientX - startPosition.x,
-        y: e.clientY - startPosition.y
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  useEffect(() => {
-    if (!zoomedImage) {
-      setZoomLevel(1);
-      setPosition({ x: 0, y: 0 });
-    }
-  }, [zoomedImage]);
-
-  useEffect(() => {
-    const handleGlobalMouseUp = () => {
-      setIsDragging(false);
-    };
-
-    window.addEventListener('mouseup', handleGlobalMouseUp);
-    return () => {
-      window.removeEventListener('mouseup', handleGlobalMouseUp);
-    };
-  }, []);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
-        {zoomedImage && (
-          <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col">
-            <div className="flex items-center justify-between p-4 border-b border-gray-700">
-              <div className="flex items-center text-white">
-                <button 
-                  onClick={handleCloseZoom}
-                  className="mr-4 p-2 rounded-full hover:bg-gray-700"
-                >
-                  ✕
-                </button>
-                <span className="text-sm">{content[index].title}</span>
-              </div>
-              <div className="flex items-center">
-                <button className="text-white p-2 rounded-full hover:bg-gray-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M3 3a2 2 0 012-2h10a2 2 0 012 2v1h-2V3H5v1H3V3zm12 10V7H5v6h10zm0 2H5v1a2 2 0 002 2h6a2 2 0 002-2v-1zm2-8v8a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4h6a4 4 0 014 4z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div 
-              className="flex-1 flex items-center justify-center overflow-hidden"
-              style={{ cursor: isDragging ? 'grabbing' : (zoomLevel > 1 ? 'grab' : 'default') }}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-            >
-              <div className="relative">
-                {/* We keep the img tag here for the zoomed version since we need the transform styles */}
-                <Image 
-                  src={zoomedImage} 
-                  alt="Zoomed" 
-                  className="max-h-full max-w-full object-contain transition-transform duration-200"
-                  style={{ 
-                    transform: `scale(${zoomLevel}) translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
-                    transformOrigin: 'center center',
-                  }}
-                  draggable="false"
-                />
-              </div>
-            </div>
-            <div className="p-3 bg-black flex items-center justify-center">
-              <div className="bg-gray-800 rounded-full flex items-center px-3 py-1">
-                <button 
-                  onClick={handleZoomOut}
-                  className="text-white p-2 opacity-80 hover:opacity-100"
-                  disabled={zoomLevel <= 0.5}
-                >
-                  <MinusIcon className="h-4 w-4" />
-                </button>
-                <div className="flex items-center mx-2">
-                  <MagnifyingGlassIcon className="h-4 w-4 mr-1 text-white" />
-                  <span className="text-white text-xs">{Math.round(zoomLevel * 100)}%</span>
-                </div>
-                <button 
-                  onClick={handleZoomIn}
-                  className="text-white p-2 opacity-80 hover:opacity-100"
-                  disabled={zoomLevel >= 5}
-                >
-                  <PlusIcon className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-        <div>
-          <Navigator />
-          <ProgressBar currentIndex={index} totalSteps={content.length} />
-        </div>
-        <div className="flex flex-col md:flex-row items-center justify-center">
-          {index > 0 && (
-            <button
-              onClick={goToPreviousQuestion}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
-            >
-              <ChevronDoubleLeftIcon className="w-8 h-8" />
-            </button>
-          )}
-          {index == 0 && (
-            <Link
-              href={`/course/${course}`}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
-            >
-              <ChevronDoubleLeftIcon className="w-8 h-8" />
-            </Link>
-          )}
+     <Suspense fallback={<div>Loading...</div>}>
+       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
+         {zoomedImage && (
+           <div
+             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+             onClick={() => setZoomedImage(null)}
+           >
+             {/* Using Next.js Image component for zoomed image view */}
+             <div className="relative max-w-3/4 max-h-3/4 w-auto h-auto">
+               <Image 
+                 src={zoomedImage} 
+                 alt="Zoomed" 
+                 className="rounded-lg shadow-lg" 
+                 fill
+                 style={{ objectFit: 'contain' }}
+                 sizes="(max-width: 768px) 100vw, 75vw"
+                 priority
+               />
+             </div>
+           </div>
+         )}
+         <div>
+           <Navigator />
+           <ProgressBar currentIndex={index} totalSteps={content.length} />
+         </div>
+         <div className="flex flex-col md:flex-row items-center justify-center">
+           {index > 0 && (
+             <button
+               onClick={goToPreviousQuestion}
+               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+             >
+               <ChevronDoubleLeftIcon className="w-8 h-8" />
+             </button>
+           )}
+           {index == 0 && (
+             <Link
+               href={`/course/${course}`}
+               className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+             >
+               <ChevronDoubleLeftIcon className="w-8 h-8" />
+             </Link>
+           )}
           {index < content.length && (
             <TutorialCard
               title={content[index].title}
               description={<div className="text-justify">{content[index].description}</div>}
               image={content[index].image}
               alt={content[index].alt}
-              onClick={() => {
-                const imageSrc = content[index].image?.src;
-                if (imageSrc) setZoomedImage(imageSrc);
-              }}
+              onClick={() => content[index].image && setZoomedImage(content[index].image.src)}
             />
           )}
           <div className="flex flex-row md:flex-col">
