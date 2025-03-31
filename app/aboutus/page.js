@@ -1,21 +1,15 @@
 import React from "react";
-import { Delius } from "next/font/google";
-import Image6 from "@/public/Image6.png";
 import Image from "next/image";
 import About from "@/public/about.png";
 import Navigator from "../navigator";
-import ProfileCard from "@/components/aboutus/about_card";
 import AboutSection from "@/components/aboutus/about_section";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
 
-// const delius = Delius({ subsets: ["latin"], weight: "400" });
-
-// ${delius.className}
 const Aboutus = () => {
   return (
     <div
-      className={`flex flex-col dark:text-primary bg-[#e3f3ff] text-[#043873] min-h-screen`}
+      className="flex flex-col dark:text-primary bg-[#e3f3ff] text-[#043873] min-h-screen"
     >
       <Navigator />
       <div className="area relative">
@@ -87,7 +81,7 @@ const Aboutus = () => {
       <div className="text-center p-4 sm:p-6 lg:p-8 bg-white">
         <h3 className="text-[#151A40] text-lg sm:text-xl font-bold mb-2">Learn with AthenaMD for free!</h3>
         <p className="text-sm sm:text-base mb-4">Join us and explore the exciting world of learning today!</p>
-        <Link href="main_homepage">
+        <Link href="/main_homepage">
           <button className="mt-2 sm:mt-4 lg:mt-6 bg-[#043873] px-4 sm:px-5 py-2 text-white text-sm sm:text-base rounded-lg hover:bg-[#0f1330] transition-colors duration-300 hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300">
             View Courses
           </button>

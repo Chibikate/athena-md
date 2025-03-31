@@ -59,10 +59,6 @@ export const printingTutorial3 = [
         <p>
         <span className="font-bold text-lg"> Rotate: </span>This settings allow you to set the orientation of your model.
           In a rule of thumb, The flastest surface of your model must be layered flat to the build platform.</p>
-          <p>View how rotation works:</p>
-          <div className="mt-2">
-            <Image src={rotateGif} alt="Demonstration of the rotate function" width={400} height={300} />
-          </div>
       </div>
     ),
     image: Printing30,
