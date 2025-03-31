@@ -112,6 +112,8 @@ export default function QuizApp() {
       setCurrentQuestion(currentQuestion - 1);
     }
   };
+
+
   const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {

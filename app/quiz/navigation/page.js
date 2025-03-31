@@ -88,7 +88,9 @@ export default function QuizApp() {
     }
   };
 
-  const checkWrong = useCallback(() => {
+
+
+  const checkWrong = useCallback() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
       if (answer.trim() !== quizQuestions[index].correctAnswer.trim()) {

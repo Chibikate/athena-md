@@ -2,7 +2,7 @@
 import { useEffect, useState, Suspense, useCallback } from "react"; // Added useCallback
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/image"; // Added import for Next.js Image component
 import Footer from "@/components/hero_page/footer";
 import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
 import Navigator3 from "@/components/course_overview/navigator3";
@@ -63,14 +63,13 @@ const Home = ({ params }: Params) => {
     }
   }, [queryPage]);
 
-  // Wrapped in useCallback
+  // Memoize navigation functions with useCallback
   const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
     }
   }, [index, content.length]);
 
-  // Wrapped in useCallback
   const goToPreviousQuestion = useCallback(() => {
     if (index > 0) {
       setIndex(index - 1);
@@ -89,8 +88,7 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [goToNextQuestion, goToPreviousQuestion]); // Now these dependencies are stable
-
+  }, [index, goToNextQuestion, goToPreviousQuestion]); // Added missing dependencies
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
@@ -99,17 +97,20 @@ const Home = ({ params }: Params) => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setZoomedImage(null)}
           >
-            <div className="relative max-w-[75%] max-h-[75%] w-auto h-auto">
+            {/* Using Next.js Image component for zoomed image view */}
+            <div className="relative max-w-3/4 max-h-3/4 w-auto h-auto">
               <Image 
                 src={zoomedImage} 
                 alt="Zoomed" 
                 className="rounded-lg shadow-lg" 
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: 'contain' }}
+                sizes="(max-width: 768px) 100vw, 75vw"
+                priority
               />
             </div>
           </div>
-        )}
+)}
         <div>
           <Navigator3 />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
@@ -133,17 +134,15 @@ const Home = ({ params }: Params) => {
           )}
           {index < content.length && (
             <UltimakerCard
-            title={content[index].title}
-            description={
-              <div className="text-justify">{content[index].description}</div>
-            }
-            image={content[index].image}
-            alt={content[index].alt}
-            onClick={() => {
-              const imageSrc = content[index].image?.src;
-              if (imageSrc) setZoomedImage(imageSrc);
-            }}
-          />
+              title={content[index].title}
+              description={<div className="text-justify">{content[index].description}</div>}
+              image={content[index].image}
+              alt={content[index].alt}
+              onClick={() => {
+                const imageSrc = content[index].image?.src;
+                if (imageSrc) setZoomedImage(imageSrc);
+              }}
+            />
           )}
           <div className="flex flex-row md:flex-col">
             {index > 0 && (
