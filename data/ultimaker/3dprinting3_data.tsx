@@ -9,7 +9,6 @@ import Printing31 from "@/public/E3/31.png";
 import Printing32 from "@/public/E3/32.png";
 import Printing33 from "@/public/E3/33.png";
 import Printing34 from "@/public/E3/34.png";
-import rotateGif from "@/public/ultimakercourse/rotate.gif";
 
 export const printingTutorial3 = [
   {
