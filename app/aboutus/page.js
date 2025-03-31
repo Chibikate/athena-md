@@ -1,5 +1,4 @@
 import React from "react";
-import { Delius } from "next/font/google";
 import Image from "next/image";
 import About from "@/public/about.png";
 import Navigator from "../navigator";
@@ -7,12 +6,10 @@ import AboutSection from "@/components/aboutus/about_section";
 import Link from "next/link";
 import Footer from "@/components/hero_page/footer";
 
-const delius = Delius({ subsets: ["latin"], weight: "400" });
-
 const Aboutus = () => {
   return (
     <div
-      className={`flex flex-col dark:text-primary bg-[#e3f3ff] text-[#043873] min-h-screen ${delius.className}`}
+      className="flex flex-col dark:text-primary bg-[#e3f3ff] text-[#043873] min-h-screen"
     >
       <Navigator />
       <div className="area relative">
