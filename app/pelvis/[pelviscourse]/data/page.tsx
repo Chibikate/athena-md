@@ -143,14 +143,17 @@ const Home = ({ params }: Params) => {
           )}
           {index < content.length && (
             <PelvisCard
-              title={content[index].title}
-              description={
-                <div className="text-justify">{content[index].description}</div>
-              }
-              image={content[index].image}
-              alt={content[index].alt}
-              onClick={() => content[index].image && setZoomedImage(content[index].image.src)}
-            />
+            title={content[index].title}
+            description={
+              <div className="text-justify">{content[index].description}</div>
+            }
+            image={content[index].image}
+            alt={content[index].alt}
+            onClick={() => {
+              const imageSrc = content[index].image?.src;
+              if (imageSrc) setZoomedImage(imageSrc);
+            }}
+          />
           )}
           <div className="flex flex-row md:flex-col">
             {index > 0 && (
