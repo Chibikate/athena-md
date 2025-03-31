@@ -195,6 +195,7 @@ const Home = ({ params }: Params) => {
               onMouseUp={handleMouseUp}
             >
               <div className="relative">
+                {/* We keep the img tag here for the zoomed version since we need the transform styles */}
                 <Image 
                   src={zoomedImage} 
                   alt="Zoomed" 
