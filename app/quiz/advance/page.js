@@ -8,8 +8,8 @@ import Image2 from "@/public/quiz5/Image2.png";
 const quizQuestions = [
   {
     question:
-    "1. Changing the colors of each segment into contrasting colors will help improve visualization of the different areas of segmentation.", 
-  
+      "1. Changing the colors of each segment into contrasting colors will help improve visualization of the different areas of segmentation.",
+
     options: [
       "True",
       "False",
@@ -19,8 +19,8 @@ const quizQuestions = [
   },
   {
     question:
-    `2. Which option under the threshold function automatically activates the "paint" function, allowing the user to paint any area using the previously selected threshold intensity?`, 
-  
+      `2. Which option under the threshold function automatically activates the "paint" function, allowing the user to paint any area using the previously selected threshold intensity?`,
+
     options: [
       "A. Masking",
       "B. Apply",
@@ -32,8 +32,8 @@ const quizQuestions = [
   },
   {
     question:
-    `3. How does the "Grow from seed" function primarily work?`, 
-  
+      `3. How does the "Grow from seed" function primarily work?`,
+
     options: [
       "A. By planting physical seeds in the image",
       "B. By drawing seeds in different regions of the image",
@@ -56,7 +56,7 @@ export default function QuizApp() {
       setShowConfetti(true);
       // No timeout to clear the confetti - it will run continuously
     }
-  }, [showResults]);
+  }, [showResults, calculateScore]);
 
   const handleAnswerChange = (event, questionIndex) => {
     const updatedAnswers = [...userAnswers];
@@ -121,17 +121,17 @@ export default function QuizApp() {
   // Continuous CSS Confetti Animation
   const renderConfetti = () => {
     if (!showConfetti) return null;
-    
+
     const confettiPieces = [];
     const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#800080'];
-    
+
     for (let i = 0; i < 100; i++) {
       const left = `${Math.random() * 100}%`;
       const animationDelay = `${Math.random() * 5}s`;
       const animationDuration = `${Math.random() * 2 + 2}s`; // Between 2-4 seconds
       const color = colors[Math.floor(Math.random() * colors.length)];
       const size = `${Math.random() * 0.5 + 0.5}rem`; // Random size between 0.5rem and 1rem
-      
+
       confettiPieces.push(
         <div
           key={i}
@@ -149,7 +149,7 @@ export default function QuizApp() {
         />
       );
     }
-    
+
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
         <style jsx>{`
@@ -181,23 +181,23 @@ export default function QuizApp() {
       <div className="w-full max-w-screen-l mx-auto shadow-md">
         <Navigator />
       </div>
-      
+
       {/* Quiz title */}
       <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Advanced Segmentation Quiz</h1>
-      
+
       {/* Quiz container */}
       <div className="bg-white rounded-lg shadow-md p-4 md:p-6 lg:p-8 w-full max-w-4xl mt-6">
         {!showResults ? (
           <div>
             <div className="mb-4 md:mb-8">
               <p className="text-base md:text-lg font-medium mb-4 md:mb-6">{quizQuestions[currentQuestion].question}</p>
-              
+
               {quizQuestions[currentQuestion].image && (
                 <div className="flex justify-center mb-6">
                   <div className="relative w-full max-w-md md:max-w-lg">
-                    <Image 
-                      src={quizQuestions[currentQuestion].image} 
-                      alt="Question illustration" 
+                    <Image
+                      src={quizQuestions[currentQuestion].image}
+                      alt="Question illustration"
                       className="border border-gray-200 rounded"
                       width={550}
                       height={300}
@@ -205,19 +205,18 @@ export default function QuizApp() {
                       priority
                     />
                   </div>
-                </div> 
+                </div>
               )}
-              
+
               <div className="space-y-2 md:space-y-3">
                 {quizQuestions[currentQuestion].options.map(
                   (option, optionIndex) => {
                     const isSelected = userAnswers[currentQuestion] === option.trim();
                     return (
-                      <div 
-                        key={optionIndex} 
-                        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
-                          isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
-                        }`}
+                      <div
+                        key={optionIndex}
+                        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
+                          }`}
                         onClick={() => {
                           const event = { target: { value: option } };
                           handleAnswerChange(event, currentQuestion);
@@ -239,7 +238,7 @@ export default function QuizApp() {
                   }
                 )}
               </div>
-              
+
               <div className="flex justify-between mt-6 md:mt-8">
                 {currentQuestion > 0 ? (
                   <button
@@ -249,15 +248,14 @@ export default function QuizApp() {
                     Previous
                   </button>
                 ) : <div></div>}
-                
+
                 {currentQuestion < quizQuestions.length - 1 ? (
                   <button
                     onClick={goToNextQuestion}
-                    className={`px-4 md:px-6 py-2 rounded text-sm md:text-base ${
-                      isCurrentQuestionAnswered() 
-                        ? 'bg-blue-900 text-white hover:bg-blue-800' 
+                    className={`px-4 md:px-6 py-2 rounded text-sm md:text-base ${isCurrentQuestionAnswered()
+                        ? 'bg-blue-900 text-white hover:bg-blue-800'
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    }`}
+                      }`}
                     disabled={!isCurrentQuestionAnswered()}
                   >
                     Next
@@ -265,11 +263,10 @@ export default function QuizApp() {
                 ) : (
                   <button
                     onClick={() => setShowResults(areAllQuestionsAnswered())}
-                    className={`px-4 md:px-6 py-2 rounded text-sm md:text-base ${
-                      areAllQuestionsAnswered() 
-                        ? 'bg-blue-900 text-white hover:bg-blue-800' 
+                    className={`px-4 md:px-6 py-2 rounded text-sm md:text-base ${areAllQuestionsAnswered()
+                        ? 'bg-blue-900 text-white hover:bg-blue-800'
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    }`}
+                      }`}
                     disabled={!areAllQuestionsAnswered()}
                   >
                     Submit
@@ -283,13 +280,13 @@ export default function QuizApp() {
             <p className="text-lg md:text-xl mb-3 md:mb-4">
               Your Score: {score} out of {quizQuestions.length}
             </p>
-            
+
             {wrong.length > 0 && (
               <p className="text-red-600 mb-4 md:mb-6 text-sm md:text-base">
                 You got a wrong answer on question{wrong.length > 1 ? 's' : ''} #{wrong.join(', #')}
               </p>
             )}
-            
+
             {score === quizQuestions.length ? (
               <div>
                 <p className="text-green-600 font-bold text-lg md:text-xl mb-4">
@@ -304,7 +301,7 @@ export default function QuizApp() {
             ) : (
               <div className="space-y-4">
                 <p className="text-red-600 font-medium text-sm md:text-base">
-                  Sorry, you didn't pass. You can retake the quiz to improve your score.
+                  Sorry, you didn&apos;t pass. You can retake the quiz to improve your score.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
                   <Link href="/course/3D%20slicer%20-%20Advanced%20Segmentation-1" className="w-full sm:w-auto">
