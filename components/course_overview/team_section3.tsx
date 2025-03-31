@@ -28,7 +28,7 @@ const TeamSection3 = () => {
       <div className="flex justify-center invert">
         <Image
           alt="somethings never change"
-          src={Image13}
+          src={Image6}
           width={200}
           height={100}
         />
