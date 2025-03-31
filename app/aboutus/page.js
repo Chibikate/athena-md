@@ -2,7 +2,7 @@ import React from "react";
 import { Delius } from "next/font/google";
 import Image6 from "@/public/Image6.png";
 import Image from "next/image";
-import About from "@/public/About.png";
+import About from "@/public/about.png";
 import Navigator from "../navigator";
 import ProfileCard from "@/components/aboutus/about_card";
 import AboutSection from "@/components/aboutus/about_section";
