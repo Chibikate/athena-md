@@ -3,7 +3,7 @@ import { useEffect, useState, Suspense, useCallback } from "react";
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import { MinusIcon, PlusIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import Image from "next/image"; // Added import for Next.js Image component
+import Image from "next/image";
 import Footer from "@/components/hero_page/footer";
 import TutorialCard from "@/components/3dslicer_page/tutorial_card";
 import Navigator from "@/components/course_overview/navigator";
@@ -101,18 +101,16 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index, goToNextQuestion, goToPreviousQuestion]); // Added missing dependencies
+  }, [index, goToNextQuestion, goToPreviousQuestion]);
 
   const handleZoomIn = () => {
-    setZoomLevel(prev => Math.min(prev + 0.5, 5)); // Increased max zoom to 5x
-    // Reset position when zooming to avoid image getting lost
+    setZoomLevel(prev => Math.min(prev + 0.5, 5));
     setPosition({ x: 0, y: 0 });
   };
 
   const handleZoomOut = () => {
     setZoomLevel(prev => {
       const newZoom = Math.max(prev - 0.5, 0.5);
-      // Reset position when zooming out to minimum
       if (newZoom === 0.5) {
         setPosition({ x: 0, y: 0 });
       }
@@ -281,7 +279,7 @@ const Home = ({ params }: Params) => {
               }
               image={content[index].image}
               alt={content[index].alt}
-              onClick={() => content[index].image && setZoomedImage(content[index].image.src)}
+              onClick={() => content[index].image?.src && setZoomedImage(content[index].image.src)}
             />
           )}
           <div className="flex flex-row md:flex-col">
