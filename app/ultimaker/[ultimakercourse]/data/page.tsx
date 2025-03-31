@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, Suspense, useCallback } from "react"; // Added useCallback
+import { useEffect, useState, Suspense, useCallback } from "react";
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,7 +25,7 @@ interface Params {
 interface ContentProps {
   title: string;
   description: React.JSX.Element | string;
-  image?: StaticImageData | null | undefined;
+  image?: StaticImageData | null;
   alt: string;
 }
 
@@ -103,7 +103,6 @@ const Home = ({ params }: Params) => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setZoomedImage(null)}
           >
-            {/* Replaced img with Next.js Image component */}
             <div className="relative max-w-[75%] max-h-[75%] w-auto h-auto">
               <Image
                 src={zoomedImage}
@@ -125,7 +124,7 @@ const Home = ({ params }: Params) => {
           {index > 0 && (
             <button
               onClick={goToPreviousQuestion}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+              className="w-16 h-16 hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
             >
               <ChevronDoubleLeftIcon className="w-8 h-8" />
             </button>
@@ -133,7 +132,7 @@ const Home = ({ params }: Params) => {
           {index === 0 && (
             <Link
               href={`/ultimakercourse/${ultimakercourse}`}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+              className="w-16 h-16 hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
             >
               <ChevronDoubleLeftIcon className="w-8 h-8" />
             </Link>
@@ -154,7 +153,7 @@ const Home = ({ params }: Params) => {
             {index > 0 && (
               <button
                 onClick={goToPreviousQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+                className="w-16 h-16 hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
               >
                 <ChevronDoubleLeftIcon className="w-8 h-8" />
               </button>
@@ -162,7 +161,7 @@ const Home = ({ params }: Params) => {
             {index < content.length - 1 && (
               <button
                 onClick={goToNextQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
+                className="w-16 h-16 hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
               >
                 <ChevronDoubleRightIcon className="w-8 h-8" />
               </button>
