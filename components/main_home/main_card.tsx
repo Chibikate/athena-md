@@ -5,7 +5,7 @@ import Link from "next/link";
 interface MainCardProps {
   title: string;
   description: string;
-  image: StaticImageData;
+  image: string | StaticImageData;
   alt: string;
   time: string;
   lesson: string;
