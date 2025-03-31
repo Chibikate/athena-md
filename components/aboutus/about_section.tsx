@@ -1,9 +1,9 @@
 import React from "react";
 import kate from "@/public/kate.jpg";
-import lemuel from "@/public/lemuel.jpg";
-import zyrene from "@/public/zyrene.jpg";
+import lemuel from "@/public/Lemuel.jpg";
+import zyrene from "@/public/Zyrene.jpg";
 import dianne from "@/public/dianne.jpg";
-import kaye from "@/public/kaye.jpg";
+import kaye from "@/public/Kaye.jpg";
 import AboutCard from "@/components/aboutus/about_card";
 
 const AboutSection = () => {
