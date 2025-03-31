@@ -1,6 +1,6 @@
 import React from "react";
 import MainCard from "@/components/main_home/main_card";
-import mandibular from "@/public/main_course/mandibular.png";
+import Mandibular from "@/public/main_course/mandibular.png";
 import Pelvis from "@/public/main_course/Pelvis.png";
 import Printing from "@/public/main_course/printing.png";
 
@@ -19,7 +19,7 @@ const MainCardSection = () => {
             <MainCard
               title="Mandibular Reconstruction"
               description="Courses offer step-by-step tutorial on tools used for medical planning"
-              image={mandibular}
+              image={Mandibular}
               alt="Mandibular Reconstruction"
               time="1hr"
               lesson="6 Lessons"

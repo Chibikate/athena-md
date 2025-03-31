@@ -5,7 +5,7 @@ import Link from "next/link";
 interface MainCardProps {
   title: string;
   description: string;
-  image: StaticImageData;
+  image: string | StaticImageData;
   alt: string;
   time: string;
   lesson: string;
@@ -24,19 +24,14 @@ const MainCard: React.FC<MainCardProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`
-      bg-white rounded-lg shadow-lg overflow-hidden
-      transition-all duration-300 
-      ${className}
-    `}>
-      <div className="relative w-full h-48 md:h-56 overflow-hidden">
-        <Image
-          src={image}
-          alt={alt}
-          fill
-          className="object-cover hover:scale-110 transition-transform duration-300"
-        />
-      </div>
+    <div className="w-60 h-72 bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center">
+       <Image 
+         src={image} 
+         alt={alt} 
+         width={240} 
+         height={128} 
+         className="w-full h-32 object-cover rounded-md mb-4" 
+       />
       
       <div className="p-6">
         <h3 className="text-xl font-bold text-[#165388] mb-3">
