@@ -76,7 +76,6 @@ const Home = ({ params }: Params) => {
     }
   }, [queryPage]);
 
-  // Memoize navigation functions with useCallback to avoid recreating them on every render
   const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
@@ -147,7 +146,6 @@ const Home = ({ params }: Params) => {
     setIsDragging(false);
   };
 
-  // Reset position and zoom when changing images
   useEffect(() => {
     if (!zoomedImage) {
       setZoomLevel(1);
@@ -155,12 +153,11 @@ const Home = ({ params }: Params) => {
     }
   }, [zoomedImage]);
 
-  // Add mouse up event to window to handle cases when mouse is released outside the image
   useEffect(() => {
     const handleGlobalMouseUp = () => {
       setIsDragging(false);
     };
-    
+
     window.addEventListener('mouseup', handleGlobalMouseUp);
     return () => {
       window.removeEventListener('mouseup', handleGlobalMouseUp);
@@ -172,7 +169,6 @@ const Home = ({ params }: Params) => {
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
         {zoomedImage && (
           <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col">
-            {/* Top bar */}
             <div className="flex items-center justify-between p-4 border-b border-gray-700">
               <div className="flex items-center text-white">
                 <button 
@@ -189,20 +185,8 @@ const Home = ({ params }: Params) => {
                     <path d="M3 3a2 2 0 012-2h10a2 2 0 012 2v1h-2V3H5v1H3V3zm12 10V7H5v6h10zm0 2H5v1a2 2 0 002 2h6a2 2 0 002-2v-1zm2-8v8a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4h6a4 4 0 014 4z" />
                   </svg>
                 </button>
-                <button className="text-white p-2 rounded-full hover:bg-gray-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M4.5 4.5a.5.5 0 00-1 0v11a.5.5 0 001 0v-11zm3 0a.5.5 0 00-1 0v11a.5.5 0 001 0v-11zm5 0a.5.5 0 00-1 0v11a.5.5 0 001.0v-11zm3 0a.5.5 0 00-1 0v11a.5.5 0 001 0v-11z" />
-                  </svg>
-                </button>
-                <button className="text-white p-2 ml-2 rounded-full hover:bg-gray-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9V5a1 1 0 112 0v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H5a1 1 0 110-2h4z" clipRule="evenodd" />
-                  </svg>
-                </button>
               </div>
             </div>
-            
-            {/* Main image area - using Next.js Image component */}
             <div 
               className="flex-1 flex items-center justify-center overflow-hidden"
               style={{ cursor: isDragging ? 'grabbing' : (zoomLevel > 1 ? 'grab' : 'default') }}
@@ -211,7 +195,6 @@ const Home = ({ params }: Params) => {
               onMouseUp={handleMouseUp}
             >
               <div className="relative">
-                {/* We keep the img tag here for the zoomed version since we need the transform styles */}
                 <Image 
                   src={zoomedImage} 
                   alt="Zoomed" 
@@ -224,8 +207,6 @@ const Home = ({ params }: Params) => {
                 />
               </div>
             </div>
-            
-            {/* Bottom controls - improved with current zoom level display */}
             <div className="p-3 bg-black flex items-center justify-center">
               <div className="bg-gray-800 rounded-full flex items-center px-3 py-1">
                 <button 
@@ -273,17 +254,15 @@ const Home = ({ params }: Params) => {
           )}
           {index < content.length && (
             <TutorialCard
-  title={content[index].title}
-  description={
-    <div className="text-justify">{content[index].description}</div>
-  }
-  image={content[index].image}
-  alt={content[index].alt}
-  onClick={() => {
-    const imageSrc = content[index].image?.src;
-    if (imageSrc) setZoomedImage(imageSrc);
-  }}
-/>
+              title={content[index].title}
+              description={<div className="text-justify">{content[index].description}</div>}
+              image={content[index].image}
+              alt={content[index].alt}
+              onClick={() => {
+                const imageSrc = content[index].image?.src;
+                if (imageSrc) setZoomedImage(imageSrc);
+              }}
+            />
           )}
           <div className="flex flex-row md:flex-col">
             {index > 0 && (
