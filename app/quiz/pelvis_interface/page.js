@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigator from "@/components/hero_page/navigator";
@@ -49,12 +49,22 @@ export default function QuizApp() {
   const [showResults, setShowResults] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
+  const calculateScore = useCallback(() => {
+    let score = 0;
+    userAnswers.forEach((answer, index) => {
+      if (answer.trim() === quizQuestions[index].correctAnswer.trim()) {
+        score++;
+      }
+    });
+    return score;
+  }, [userAnswers]);
+
   useEffect(() => {
     if (showResults && calculateScore() === quizQuestions.length) {
       setShowConfetti(true);
       // No timeout to clear the confetti - it will run continuously
     }
-  }, [showResults]);
+  }, [showResults, calculateScore]);
 
   const handleAnswerChange = (event, questionIndex) => {
     const updatedAnswers = [...userAnswers];
@@ -74,17 +84,7 @@ export default function QuizApp() {
     }
   };
 
-  const calculateScore = () => {
-    let score = 0;
-    userAnswers.forEach((answer, index) => {
-      if (answer.trim() === quizQuestions[index].correctAnswer.trim()) {
-        score++;
-      }
-    });
-    return score;
-  };
-
-  const checkWrong = () => {
+  const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
       if (answer.trim() !== quizQuestions[index].correctAnswer.trim()) {
@@ -92,7 +92,7 @@ export default function QuizApp() {
       }
     });
     return wrong;
-  };
+  }, [userAnswers]);
 
   const retakeQuiz = () => {
     setUserAnswers(Array(quizQuestions.length).fill(""));
