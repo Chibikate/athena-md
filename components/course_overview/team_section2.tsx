@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import Image6 from "@/public/Image6.png";
+import Image13 from "@/public/Image13.png";
 
 
 const TeamSection2 = () => {
   return (
-    <div className="flex flex-col bg-[#EDF5FE] text-[#01062C]">
+    <div className="flex flex-col bg-[#EDF5FE] text-[#043873]">
       <div className="area">
         <div className="area">
           <ul className="circles">
@@ -28,16 +28,16 @@ const TeamSection2 = () => {
       <div className="flex justify-center invert">
         <Image
           alt="somethings never change"
-          src={Image6}
-          width={200}
-          height={100}
+          src={Image13}
+          width={150}
+          height={80}
         />
       </div>
       
       <div className="flex flex-col sm:flex-row justify-between p-4 text-center">
         <p className="pl-3">
           Lemuel Clark Velasco <br />
-          <span className="font-bold text-sm text-[#151A40]">
+          <span className="font-bold text-sm text-[#043873]">
             Project Leader
           </span>
         </p>
@@ -46,7 +46,7 @@ const TeamSection2 = () => {
           <p>
           Darelle Jay P. Langga,  MD
             <br />
-            <span className="font-semibold text-sm text-[#151A40]">
+            <span className="font-bold text-sm text-[#043873]">
               Content Developer
             </span>
           </p>
@@ -57,21 +57,21 @@ const TeamSection2 = () => {
               <p>Mark Louie M. Tangalin, MD</p>
               <p>Abegail Jane L. Jutba, MD</p>
               <p>Angelo Miguel D. Achacoso, MD</p>
-              <p className="font-bold pb-4 text-sm text-[#151A40]">
+              <p className="font-bold pb-4 text-sm text-[#043873]">
                 Content Validators
               </p>
             </div>
         <br></br>
         <p>
           Dianne Mel Arrubio <br />
-          <span className="font-bold pb-4 text-sm text-[#151A40]">
+          <span className="font-bold pb-4 text-sm text-[#043873]">
             Pedagogy Manager
           </span>
         </p>
         
         <p>
           Zyrene Belle Alturas<br />
-          <span className="font-bold pb-4 text-sm text-[#151A40]">
+          <span className="font-bold pb-4 text-sm text-[#043873]">
             Web Developer
           </span>
         </p>
