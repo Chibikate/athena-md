@@ -9,6 +9,23 @@ import Image3 from "@/public/quiz3/Image3.png";
 import Image4 from "@/public/quiz3/Image4.png";
 import Image5 from "@/public/quiz3/Image5.png";
 
+// Define the CSS for confetti animation
+const confettiAnimation = `
+  @keyframes confetti-fall-continuous {
+    0% {
+      transform: translateY(-20px) rotate(0deg);
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+`;
+
 const quizQuestions = [
   {
     question:
@@ -88,9 +105,7 @@ export default function QuizApp() {
     }
   };
 
-
-
-  const checkWrong = useCallback() => {
+  const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
       if (answer.trim() !== quizQuestions[index].correctAnswer.trim()) {
@@ -114,7 +129,6 @@ export default function QuizApp() {
   const areAllQuestionsAnswered = () => {
     return userAnswers.every((answer) => answer !== "");
   };
-
 
   const score = calculateScore();
   const wrong = checkWrong();
@@ -153,21 +167,7 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
-          @keyframes confetti-fall-continuous {
-            0% {
-              transform: translateY(-20px) rotate(0deg);
-              opacity: 1;
-            }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}</style>
+        <style dangerouslySetInnerHTML={{ __html: confettiAnimation }} />
         {confettiPieces}
       </div>
     );
@@ -189,7 +189,6 @@ export default function QuizApp() {
                 className="border border-gray-200 rounded"
                 width={550}
                 height={300}
-                layout="responsive"
                 priority
               />
             </div>
@@ -207,7 +206,6 @@ export default function QuizApp() {
               className="border border-gray-200 rounded"
               width={550}
               height={300}
-              layout="responsive"
               priority
             />
           </div>

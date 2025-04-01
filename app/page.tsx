@@ -2,7 +2,7 @@ import HeroSection from "@/components/hero_page/hero_section";
 import Navigator from "@/components/hero_page/navigator";
 import Footer from "@/components/hero_page/footer";
 import React from "react";
-import { Noto_Sans_Javanese, Abhaya_Libre } from "next/font/google";
+import { Noto_Sans_Javanese} from "next/font/google";
 import LearningSection from "@/components/hero_page/learning_section";
 import HowItWorks from "@/components/hero_page/howitworks_section";
 import Image from "next/image";

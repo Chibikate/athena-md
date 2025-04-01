@@ -5,6 +5,23 @@ import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
 import Picture40 from "@/public/basic3D/quizc4/Picture40.png";
 
+// Define the CSS for confetti animation
+const confettiAnimation = `
+  @keyframes confetti-fall-continuous {
+    0% {
+      transform: translateY(-20px) rotate(0deg);
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+`;
+
 const quizQuestions = [
   {
     question:
@@ -14,8 +31,6 @@ const quizQuestions = [
         "A. Left-click on the module dropdown box to access the different modules", 
         "B. Double-clicking with the left mouse button on the segment", 
         "C. Click on the slider and hold down the left button",
-        
-      
     ],
     image: "",
     correctAnswer: "A. Left-click on the module dropdown box to access the different modules"
@@ -28,7 +43,6 @@ const quizQuestions = [
         "A. Threshold function",
         "B. Show 3D button",
         "C. Selection function"
-        
     ],
     image: "",
     correctAnswer: "B. Show 3D button",
@@ -41,7 +55,6 @@ const quizQuestions = [
         "A. Center view button on the blue window",
         "B. Maximize view button",
         "C. Selection function",
-        
     ],
     image: "",
     correctAnswer: "A. Center view button on the blue window"
@@ -54,7 +67,6 @@ const quizQuestions = [
         "A. Blur Function",
         "B. Threshold Function",
         "C. Islands Function",
-    
     ],
     image: Picture40,
     correctAnswer: "C. Islands Function"
@@ -165,21 +177,7 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
-          @keyframes confetti-fall-continuous {
-            0% {
-              transform: translateY(-20px) rotate(0deg);
-              opacity: 1;
-            }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}</style>
+        <style>{confettiAnimation}</style>
         {confettiPieces}
       </div>
     );
@@ -201,7 +199,6 @@ export default function QuizApp() {
                 className="border border-gray-200 rounded"
                 width={550}
                 height={300}
-                layout="responsive"
                 priority
               />
             </div>
@@ -219,7 +216,6 @@ export default function QuizApp() {
               className="border border-gray-200 rounded"
               width={550}
               height={300}
-              layout="responsive"
               priority
             />
           </div>
@@ -340,7 +336,7 @@ export default function QuizApp() {
                 <p className="text-green-600 font-bold text-lg md:text-xl mb-4">
                   Perfect! Congratulations on completing the quiz.
                 </p>
-                <Link href="/fillup/pelvis_basic">
+                <Link href="/fillup/pelvis_basic" className="inline-block">
                   <button className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800">
                     Get Your Certificate
                   </button>

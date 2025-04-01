@@ -8,10 +8,10 @@ import Image2 from "@/public/quiz7/Image2.png";
 import Image3 from "@/public/quiz7/Image3.png";
 import Image4 from "@/public/quiz7/Image4.png";
 import Image5 from "@/public/quiz7/Image5.png";
+
 const quizQuestions = [
   {
     question: `1. Which tool allows the user to "paint" or select any area of the 3D object?`,
-
     options: [
       "A. Rotate tool",
       "B. Scale tool",
@@ -23,7 +23,6 @@ const quizQuestions = [
   },
   {
     question: "2. What function is used to remove the tumor side of the mandible?",
-
     options: [
       "A. Plane cut function",
       "B. Rotate function",
@@ -35,7 +34,6 @@ const quizQuestions = [
   },
   {
     question: "3. After cutting the diseased side, what function is used to reconstruct the missing half of the mandible?",
-
     options: [
       "A. Rotate function",
       "B. Scale function",
@@ -47,7 +45,6 @@ const quizQuestions = [
   },
   {
     question: "4. What function is applied to convert the object (mandible) into a solid form suitable for 3D printing?",
-
     options: [
       "A. Apply",
       "B. Edit",
@@ -59,7 +56,6 @@ const quizQuestions = [
   },
   {
     question: `5.What does clicking the "eye" icon do?`,
-
     options: [
       "A. Adjust transparency",
       "B. Show/hide an item in all views",
@@ -70,7 +66,6 @@ const quizQuestions = [
     correctAnswer: "B. Show/hide an item in all views",
   },
 ];
-
 
 export default function QuizApp() {
   const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(""));
@@ -113,7 +108,6 @@ export default function QuizApp() {
     }
   };
 
-
   const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
@@ -138,7 +132,6 @@ export default function QuizApp() {
   const areAllQuestionsAnswered = () => {
     return userAnswers.every((answer) => answer !== "");
   };
-
 
   const score = calculateScore();
   const wrong = checkWrong();
@@ -177,7 +170,7 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
+        <style>{`
           @keyframes confetti-fall-continuous {
             0% {
               transform: translateY(-20px) rotate(0deg);
@@ -226,7 +219,6 @@ export default function QuizApp() {
                       className="border border-gray-200 rounded"
                       width={550}
                       height={300}
-                      layout="responsive"
                       priority
                     />
                   </div>

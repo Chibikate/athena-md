@@ -91,14 +91,13 @@ export default function QuizApp() {
       confettiPieces.push(
         <div
           key={i}
-          className="absolute rounded-full"
+          className="absolute rounded-full animate-confetti-fall"
           style={{
             left,
             top: '-20px',
             width: size,
             height: size,
             backgroundColor: color,
-            animation: 'confetti-fall-continuous infinite linear',
             animationDelay,
             animationDuration
           }}
@@ -108,8 +107,17 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
-          @keyframes confetti-fall-continuous {
+        {confettiPieces}
+      </div>
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-6 md:px-6">
+      {/* Add the keyframes animation using a style tag without jsx prop */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes confetti-fall {
             0% {
               transform: translateY(-20px) rotate(0deg);
               opacity: 1;
@@ -122,14 +130,12 @@ export default function QuizApp() {
               opacity: 0;
             }
           }
-        `}</style>
-        {confettiPieces}
-      </div>
-    );
-  };
+          .animate-confetti-fall {
+            animation: confetti-fall infinite linear;
+          }
+        `
+      }} />
 
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-6 md:px-6">
       {/* CSS Confetti */}
       {renderConfetti()}
 
@@ -157,7 +163,6 @@ export default function QuizApp() {
                       className="border border-gray-200 rounded"
                       width={550}
                       height={300}
-                      layout="responsive"
                       priority
                     />
                   </div>

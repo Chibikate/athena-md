@@ -6,6 +6,24 @@ import Image from "next/image";
 import Picture3 from "@/public/basic3D/quizc2/Picture3.png";
 import Picture6 from "@/public/basic3D/quizc2/Picture6.png";
 import Picture11 from "@/public/basic3D/quizc2/Picture11.png";
+
+// Define the CSS for confetti animation
+const confettiAnimation = `
+  @keyframes confetti-fall-continuous {
+    0% {
+      transform: translateY(-20px) rotate(0deg);
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+`;
+
 const quizQuestions = [
   {
     question:
@@ -153,21 +171,7 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
-          @keyframes confetti-fall-continuous {
-            0% {
-              transform: translateY(-20px) rotate(0deg);
-              opacity: 1;
-            }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}</style>
+        <style dangerouslySetInnerHTML={{ __html: confettiAnimation }} />
         {confettiPieces}
       </div>
     );
@@ -189,7 +193,6 @@ export default function QuizApp() {
                 className="border border-gray-200 rounded"
                 width={550}
                 height={300}
-                layout="responsive"
                 priority
               />
             </div>
@@ -207,7 +210,6 @@ export default function QuizApp() {
               className="border border-gray-200 rounded"
               width={550}
               height={300}
-              layout="responsive"
               priority
             />
           </div>

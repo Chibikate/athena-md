@@ -164,21 +164,23 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
-          @keyframes confetti-fall-continuous {
-            0% {
-              transform: translateY(-20px) rotate(0deg);
-              opacity: 1;
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes confetti-fall-continuous {
+              0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+              }
+              80% {
+                opacity: 1;
+              }
+              100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+              }
             }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}</style>
+          `
+        }} />
         {confettiPieces}
       </div>
     );
