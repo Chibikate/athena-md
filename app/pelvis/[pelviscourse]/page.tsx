@@ -46,7 +46,8 @@ const Home = ({ params }: Params) => {
       setContent("MeshMixer2 - Pelvis Virtual-Surgery");
       setData(datas.MeshMixer2);
     }
-  }, [pelviscourse]);
+  }, 
+  [pelviscourse]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

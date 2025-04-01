@@ -57,11 +57,11 @@ const defaultData: datas.CourseDataProps3 = {
 
         <div className="flex flex-col items-center p-10">
           {data.to && (
-            <Link href={`${params.ultimakercourse}/${data.to}?content=${content}`}>
-              <p className="p-2 rounded-md text-white font-bold bg-[#043873] hover:font-bold hover:border hover:ring-2 hover:ring-offset-2 hover:ring-offset-[#b7d5eb] cursor-pointer">
-                Start Learning
-              </p>
-            </Link>
+          <Link href={`${params.ultimakercourse}/${data.to}?content=${content}`}>
+          <p className="p-2 rounded-md text-white hover:font-bold font-bold cursor bg-[#043873] hover:border hover:ring-offset-[#b7d5eb] hover:ring-2 hover:ring-offset-2">
+            Start Learning
+          </p>
+        </Link>
           )}
         </div>
 

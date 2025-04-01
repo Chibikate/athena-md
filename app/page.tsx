@@ -31,7 +31,7 @@ const Home = () => {
       <HowItWorks />
       <LearningSection />
       <div className="area">
-        <div className="area ">
+        <div className="area__background">
           <ul className="circles">
             <li></li>
             <li></li>
