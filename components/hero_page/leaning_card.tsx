@@ -29,7 +29,7 @@ const LearningCard = ({ title, description, image, alt, bg, swap }: Props) => {
 
         {/* Text Section */}
         <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-          <p className="font-bold text-2xl md:text-3xl text-[#043873] border-b-2 border-blue-500 pb-2 mb-4">
+          <p className="font-bold text-3xl md:text-4xl text-[#043873] border-b-2 border-blue-500 pb-2 mb-4">
             {title}
           </p>
           <p className="text-[#043873] leading-relaxed text-sm md:text-base">

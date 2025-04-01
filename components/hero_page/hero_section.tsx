@@ -25,8 +25,8 @@ const HeroSection = () => {
         <div className="w-full max-w-md md:max-w-lg lg:max-w-xl text-center">
           
           {/* Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#043873]">
-            Develop <span className="text-[#151A40]">Your Medical Skills</span>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-3xl text-[#043873]">
+            Develop <span className="text-bold text-[#151A40]">Your Medical Skills</span>
           </h1>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#043873] mt-2 sm:mt-3">
