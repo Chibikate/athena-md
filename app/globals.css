@@ -19,12 +19,12 @@
 
 .circles li {
   position: absolute;
-  display: block;
+  display:flow-root;
   list-style: none;
   width: 20px;
   height: 20px;
   background: rgba(9, 84, 170, 0.519);
-  animation: animate 25s linear infinite;
+  animation: animate 10s linear infinite;
   bottom: -150px;
 }
 
@@ -40,7 +40,7 @@
   width: 20px;
   height: 20px;
   animation-delay: 2s;
-  animation-duration: 12s;
+  animation-duration: 6s;
 }
 
 .circles li:nth-child(3) {
@@ -55,7 +55,7 @@
   width: 60px;
   height: 60px;
   animation-delay: 0s;
-  animation-duration: 18s;
+  animation-duration: 10s;
 }
 
 .circles li:nth-child(5) {
@@ -76,7 +76,7 @@
   left: 35%;
   width: 150px;
   height: 150px;
-  animation-delay: 7s;
+  animation-delay: 4s;
 }
 
 .circles li:nth-child(8) {
@@ -84,7 +84,7 @@
   width: 25px;
   height: 25px;
   animation-delay: 15s;
-  animation-duration: 45s;
+  animation-duration: 15s;
 }
 
 .circles li:nth-child(9) {
