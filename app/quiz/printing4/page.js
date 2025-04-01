@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
+
 const quizQuestions = [
   {
     question:
@@ -13,7 +14,6 @@ const quizQuestions = [
         "B. Support setting",
         "C. Shell thickness",
         "D. Adhesion setting",
-        
     ],
     image: "",
     correctAnswer: "B. Support setting"
@@ -27,8 +27,6 @@ const quizQuestions = [
         "B. Profile setting",
         "C. Adhesion setting",
         "D. Support setting",
-        
-        
     ],
     image: "",
     correctAnswer: "C. Adhesion setting"
@@ -41,8 +39,6 @@ const quizQuestions = [
         "B. Support setting",
         "C. Adhesion setting",
         "D. Shell thickness",
-        
-        
     ],
     image: "",
     correctAnswer: "A. Profile setting"
@@ -55,8 +51,6 @@ const quizQuestions = [
         "B. Strength (Infill)",
         "C. Build plate adhesion",
         "D. Resolution",
-        
-        
     ],
     image: "",
     correctAnswer: "D. Resolution"
@@ -69,9 +63,6 @@ const quizQuestions = [
         "B. Print settings",
         "C. Adhesion settings",
         "D. Profile settings",
-        
-        
-        
     ],
     image: "",
     correctAnswer: "B. Print settings"
@@ -181,7 +172,7 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx="true">{`
+        <style>{`
           @keyframes confetti-fall-continuous {
             0% {
               transform: translateY(-20px) rotate(0deg);
