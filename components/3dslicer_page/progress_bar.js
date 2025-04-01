@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+
 
 const ProgressBar = ({ currentIndex, totalSteps }) => {
   const progress = ((currentIndex + 1) / totalSteps) * 100;
@@ -17,12 +17,6 @@ const ProgressBar = ({ currentIndex, totalSteps }) => {
       </div>
     </div>
   );
-};
-
-// Add prop-types validation
-ProgressBar.propTypes = {
-  currentIndex: PropTypes.number.isRequired,
-  totalSteps: PropTypes.number.isRequired
 };
 
 export default ProgressBar;
