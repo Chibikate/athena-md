@@ -20,7 +20,7 @@ const ProgressBar = ({ currentIndex, totalSteps, label }) => {
             className="h-full rounded-full transition-all duration-500 ease-out flex items-center justify-end px-2"
             style={{ 
               width: `${progress}%`,
-              background: "linear-gradient(to right, #3b82f6, #06b6d4, #8b5cf6, #2563eb)"
+              background: "linear-gradient(to right,rgb(169, 195, 237),rgb(55, 147, 234),rgb(136, 92, 246),rgb(212, 37, 235))"
             }}
           >
             {progress > 10 && (
@@ -38,7 +38,7 @@ const ProgressBar = ({ currentIndex, totalSteps, label }) => {
           <span className="hidden xs:inline">Start</span>
         </div>
         <div className="font-semibold text-blue-900">
-          Phase {currentIndex + 1}/{totalSteps}
+          Step {currentIndex + 1} of {totalSteps}
         </div>
         <div className="text-gray-500 flex items-center">
           <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-blue-500 inline-block mr-1"></span>

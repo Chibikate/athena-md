@@ -9,7 +9,7 @@ const Navigator = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#ffffff] flex items-center justify-between px-6 md:px-12 lg:px-20 py-4 rounded-b-lg relative z-50 w-full max-w-screen-l mx-auto shadow-md">
+    <nav className="bg-[#F5F8FE] flex items-center justify-between px-6 md:px-12 lg:px-20 py-4 rounded-b-lg relative z-50 w-full max-w-screen-l mx-auto shadow-md">
       {/* Logo */}
       <Link href="/" className="flex-shrink-0">
         <Image 

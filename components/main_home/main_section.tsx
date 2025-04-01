@@ -8,9 +8,16 @@ const MainCardSection = () => {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F5F8FE]">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-[#151A40] mb-4">
-          EXPLORE COURSES
-        </h2>
+        <h2 className="
+              text-2xl 
+              md:text-3xl 
+              font-bold 
+              text-[#165388] 
+              text-center
+              drop-shadow-md
+            ">
+              EXPLORE COURSES
+            </h2>
       </div>
       
       <div className="max-w-7xl mx-auto">
@@ -18,7 +25,7 @@ const MainCardSection = () => {
           <div className="flex justify-center">
             <MainCard
               title="Mandibular Reconstruction"
-              description="Courses offer step-by-step tutorial on tools used for medical planning"
+              description="Learn to reconstruct the mandible using 3D printing technology"
               image={Mandibular}
               alt="Mandibular Reconstruction"
               time="1hr"
@@ -31,7 +38,7 @@ const MainCardSection = () => {
           <div className="flex justify-center">
             <MainCard
               title="Pelvis Reconstruction"
-              description="Learn the free and available courses by taking the quiz to retain information"
+              description="Learn to reconstruct the pelvis using 3D printing technology"
               image={Pelvis}
               time="1hr"
               lesson="6 Lessons"
@@ -44,7 +51,7 @@ const MainCardSection = () => {
           <div className="flex justify-center">
             <MainCard
               title="Ultimaker Cura"
-              description="Acquire background of tools used in the medical field"
+              description="Learn to use Ultimaker Cura for 3D printing preparation"
               image={Printing}
               time="1hr"
               lesson="4 Lessons"

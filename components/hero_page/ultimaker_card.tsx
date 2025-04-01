@@ -31,7 +31,7 @@ const UltimakerCard: React.FC<UltimakerCardProps> = ({
       ${className}
     `}>
       {/* Image Container */}
-      <div className="relative w-full h-48 md:h-56 overflow-hidden">
+      <div className="relative w-full h-55 md:h-56 overflow">
         <Image
           src={image}
           alt={alt}
