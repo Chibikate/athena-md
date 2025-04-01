@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
@@ -142,10 +142,6 @@ export default function QuizApp() {
 
   const areAllQuestionsAnswered = () => {
     return userAnswers.every((answer) => answer !== "");
-  };
-
-  const calculateProgress = () => {
-    return ((currentQuestion + 1) / quizQuestions.length) * 100;
   };
 
   const score = calculateScore();

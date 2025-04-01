@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
@@ -11,9 +11,8 @@ const quizQuestions = [
       "1. Which mouse button does the user use to move the 3D object around on the 3D panel (blue)?",
     options: [
       "A. Holding the left mouse button while dragging",
-	    "B. Holding down the middle mouse button and dragging",
-	    "C. Quickly tapping the left mouse button twice",
-
+      "B. Holding down the middle mouse button and dragging",
+      "C. Quickly tapping the left mouse button twice",
     ],
     image: Picture18,
     correctAnswer:
@@ -24,8 +23,8 @@ const quizQuestions = [
       "2. What mouse button allows the users to pan the 3D images displayed on the 3D panel?",
     options: [
       "A. Holding the left mouse button while dragging",
-	    "B. Holding down the middle mouse button and dragging",
-	    "C. Quickly tapping the left mouse button twice",
+      "B. Holding down the middle mouse button and dragging",
+      "C. Quickly tapping the left mouse button twice",
     ],
     image: Picture18,
     correctAnswer: "B. Holding down the middle mouse button and dragging",
@@ -97,10 +96,6 @@ export default function QuizApp() {
 
   const areAllQuestionsAnswered = () => {
     return userAnswers.every((answer) => answer !== "");
-  };
-
-  const calculateProgress = () => {
-    return ((currentQuestion + 1) / quizQuestions.length) * 100;
   };
 
   const score = calculateScore();

@@ -1,6 +1,6 @@
 "use client";
 // CertificatePage.js
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";

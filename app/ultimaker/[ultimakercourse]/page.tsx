@@ -4,7 +4,7 @@ import Navigator3 from "@/components/course_overview/navigator3";
 import HeroSection3 from "@/components/course_overview/hero_section3";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection3 from "@/components/course_overview/objective_section3";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as datas from "@/data/ultimaker/ultimaker_data";
 import Link from "next/link";
 import { Suspense } from "react";

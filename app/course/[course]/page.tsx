@@ -7,7 +7,7 @@ import ObjectiveSection from "@/components/course_overview/objective_section";
 import { useEffect, useState } from "react";
 import * as datas from "@/data/mandibular/course_data";
 import Link from "next/link";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import TeamSection from "@/components/course_overview/team_section";
 
 interface Params {

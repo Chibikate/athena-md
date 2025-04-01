@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function FillUpPage() {
   const [fullName, setFullName] = useState("");
