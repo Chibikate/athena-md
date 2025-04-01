@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
@@ -133,7 +133,7 @@ export default function QuizApp() {
 
   const score = calculateScore();
   const wrong = checkWrong();
-  
+
   // Continuous CSS Confetti Animation
   const renderConfetti = () => {
     if (!showConfetti) return null;
