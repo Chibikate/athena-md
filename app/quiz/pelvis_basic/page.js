@@ -101,6 +101,7 @@ export default function QuizApp() {
     });
     return score;
   }, [userAnswers]);
+
   const checkWrong = () => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
@@ -132,7 +133,7 @@ export default function QuizApp() {
 
   const score = calculateScore();
   const wrong = checkWrong();
-
+  
   // Continuous CSS Confetti Animation
   const renderConfetti = () => {
     if (!showConfetti) return null;

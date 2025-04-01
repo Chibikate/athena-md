@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigator from "@/components/hero_page/navigator";
@@ -83,7 +83,7 @@ export default function QuizApp() {
     });
     return score;
   }, [userAnswers]);
-  
+
   const checkWrong = () => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
