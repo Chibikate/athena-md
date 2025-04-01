@@ -61,6 +61,12 @@ const NavigatingCertificate = React.forwardRef(({ fullName, date }, ref) => {
   );
 });
 
+// Add PropTypes validation
+NavigatingCertificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 NavigatingCertificate.displayName = 'NavigatingCertificate'; // Set the display name
 
 export default NavigatingCertificate;

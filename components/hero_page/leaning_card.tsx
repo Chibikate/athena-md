@@ -7,11 +7,10 @@ interface Props {
   image: string;
   alt: string;
   bg: boolean;
-  large: boolean;
   swap: boolean;
 }
 
-const LearningCard = ({ title, description, image, alt, bg, large, swap }: Props) => {
+const LearningCard = ({ title, description, image, alt, bg, swap }: Props) => {
   return (
     <div className={`w-full ${bg ? "bg-white" : "bg-[#EDF5FE]"}`}>
       <div className="max-w-[1000px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-y-6 lg:gap-8 py-12 px-6 md:px-8 lg:px-12">

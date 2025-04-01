@@ -63,6 +63,13 @@ const Meshmixer2Certificate = React.forwardRef(({ fullName, date }, ref) => {
     </div>
   );
 });
+
+// Add PropTypes validation
+Meshmixer2Certificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 Meshmixer2Certificate.displayName = 'PMeshmixer2Certificate'; // Set the display name
 
 export default Meshmixer2Certificate;

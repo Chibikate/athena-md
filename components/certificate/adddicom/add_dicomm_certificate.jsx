@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Image1 from "@/public/Image1.svg";
 import { EB_Garamond, MonteCarlo } from "next/font/google";
+import PropTypes from 'prop-types'; // Import PropTypes
 
 const interGaramond = EB_Garamond({ subsets: ["latin"] });
 const interMonteCarlo = MonteCarlo({ subsets: ["latin"], weight: "400" });
@@ -47,7 +48,7 @@ const AddDicommCertificate = React.forwardRef(({ fullName, date }, ref) => {
           </p>
           <p className="text-sm sm:text-base md:text-lg text-center">for successful completion of</p>
           <p className="font-bold text-lg sm:text-md md:text-lg my-0 sm:my-2 text-center ">3D Adding DICOM</p>
-          < p className = "text-sm sm:text-base md:text-lg my-0 sm:my-1 text-center" >
+          <p className="text-sm sm:text-base md:text-lg my-0 sm:my-1 text-center">
             in Web-based Tutorial System on the Standardized <br />
             Process of Virtual Surgical Planning <br />
             for Mandibular Reconstruction
@@ -60,6 +61,11 @@ const AddDicommCertificate = React.forwardRef(({ fullName, date }, ref) => {
   );
 });
 
+// Add PropTypes validation
+AddDicommCertificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
 
 AddDicommCertificate.displayName = 'AddDicommCertificate'; // Set the display name
 
