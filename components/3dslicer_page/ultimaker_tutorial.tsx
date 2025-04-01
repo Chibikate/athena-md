@@ -7,8 +7,9 @@ interface Props {
   description: React.JSX.Element | string;
   image?: StaticImageData | null;
   alt: string;
-  onClick?: () => void; // Added onClick prop
+  onClick?: () => void;
 }
+
 const UltimakerCard = ({ title, description, image, alt }: Props) => {
   const [zoomed, setZoomed] = useState(false);
 
@@ -18,7 +19,7 @@ const UltimakerCard = ({ title, description, image, alt }: Props) => {
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
-      <div className="max-w-4xl mx-auto bg-white dark:bg-white-800 rounded-lg shadow-md overflow-hidden">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
         <div className="p-4 md:p-6">
           <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-[#130e30] mb-4">
             {title}
@@ -28,11 +29,11 @@ const UltimakerCard = ({ title, description, image, alt }: Props) => {
             {description}
           </div>
           
-          {image !== null && image !== undefined && (
+          {image && (
             <div className="relative max-w-xl mx-auto">
               <button 
                 onClick={handleZoom} 
-                className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center bg-white-200 text-black rounded-full hover:bg-[#8069ff] focus:outline-none transition-colors"
+                className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center bg-gray-200 text-black rounded-full hover:bg-[#8069ff] focus:outline-none transition-colors"
               >
                 +
               </button>

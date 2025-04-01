@@ -1,5 +1,5 @@
 import React from "react";
-import { Noto_Sans_Javanese, Abhaya_Libre } from "next/font/google";
+import { Noto_Sans_Javanese} from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 

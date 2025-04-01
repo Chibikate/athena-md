@@ -55,7 +55,7 @@ const PelvisCard = ({ title, description, image, alt, onClick }: Props) => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style global jsx>{`
         .zoomed img {
           transform: scale(2);
           transition: transform 0.3s ease-in-out;
