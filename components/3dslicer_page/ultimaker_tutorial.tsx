@@ -54,20 +54,6 @@ const UltimakerCard = ({ title, description, image, alt }: Props) => {
         </div>
       </div>
       
-      <style jsx>{`
-        .zoomed img {
-          transform: scale(2);
-          transition: transform 0.3s ease-in-out;
-          max-width: none;
-          width: auto;
-        }
-        
-        @media (max-width: 640px) {
-          .zoomed img {
-            transform: scale(1.5);
-          }
-        }
-      `}</style>
     </div>
   );
 };
