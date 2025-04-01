@@ -2,10 +2,8 @@ import React from "react";
 import { Noto_Sans_Javanese, Abhaya_Libre } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { FiSearch } from "react-icons/fi";
 
 const javanese = Noto_Sans_Javanese({ subsets: ["javanese"], weight: "400" });
-const abhaya = Abhaya_Libre({ subsets: ["latin"], weight: "400" });
 
 const HeroSection = () => {
   return (

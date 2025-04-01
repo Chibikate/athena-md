@@ -64,6 +64,12 @@ const BasicSegmentationCertificate = React.forwardRef(({ fullName, date }, ref) 
   );
 });
 
+// Add PropTypes validation
+BasicSegmentationCertificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 BasicSegmentationCertificate.displayName = 'BasicSegmentationCertificate'; // Set the display name
 
 export default BasicSegmentationCertificate;

@@ -63,6 +63,12 @@ const InterfaceCertificate = React.forwardRef(({ fullName, date }, ref) => {
   );
 });
 
+// Add PropTypes validation
+InterfaceCertificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 InterfaceCertificate.displayName = "InterfaceCertificate"; // Set the display name
 
 export default InterfaceCertificate;

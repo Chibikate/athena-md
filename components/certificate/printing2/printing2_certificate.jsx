@@ -63,6 +63,11 @@ const Printing2Certificate = React.forwardRef(({ fullName, date }, ref) => {
   );
 });
 
+Printing2Certificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 Printing2Certificate.displayName = 'Printing2Certificate'; // Set the display name
 
 export default Printing2Certificate;

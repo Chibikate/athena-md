@@ -1,21 +1,28 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ProgressBar = ({ currentIndex, totalSteps }) => {
   const progress = ((currentIndex + 1) / totalSteps) * 100;
 
   return (
-    <div className="w-full max-w-2xl mx-auto py-2">
-      <div className="relative w-full h-4 bg-gray-300 rounded-full shadow-inner">
-        <div
-          className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-500 ease-in-out shadow-md"
+    <div className="progress-container">
+      <div className="progress-bar">
+        <div 
+          className="progress-fill" 
           style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <p className="text-center text-sm mt-2 text-gray-700 font-semibold">
+      <div className="progress-text">
         Step {currentIndex + 1} of {totalSteps}
-      </p>
+      </div>
     </div>
   );
+};
+
+// Add prop-types validation
+ProgressBar.propTypes = {
+  currentIndex: PropTypes.number.isRequired,
+  totalSteps: PropTypes.number.isRequired
 };
 
 export default ProgressBar;

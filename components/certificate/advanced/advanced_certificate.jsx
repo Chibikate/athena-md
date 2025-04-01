@@ -63,6 +63,12 @@ const AdvanceCertificate = React.forwardRef(({ fullName, date }, ref) => {
   );
 });
 
+// Add PropTypes validation
+AdvanceCertificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 AdvanceCertificate.displayName = 'AdvanceCertificate'; // Set the display name
 
 export default AdvanceCertificate;

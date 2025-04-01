@@ -64,6 +64,13 @@ const PelvisAddDicomCertificate = React.forwardRef(({ fullName, date }, ref) => 
   );
 });
 
+
+// Add PropTypes validation
+PelvisAddDicomCertificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 PelvisAddDicomCertificate.displayName = 'PelvisAddDicomCertificate'; // Set the display name
 
 export default PelvisAddDicomCertificate;

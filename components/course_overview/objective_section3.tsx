@@ -1,5 +1,5 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Image5 from "@/public/Image5.svg";
 import { ObjectiveProps3 } from "@/data/ultimaker/ultimaker_data";
 

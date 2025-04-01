@@ -64,6 +64,11 @@ const PelvisBasicCertificate = React.forwardRef(({ fullName, date }, ref) => {
   );
 });
 
+PelvisBasicCertificate.propTypes = {
+  fullName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+};
+
 PelvisBasicCertificate.displayName = 'PelvisBasicCertificate'; // Set the display name
 
 export default PelvisBasicCertificate;

@@ -1,5 +1,6 @@
-import { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import React, { useState } from "react";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 interface Props {
   title: string;
