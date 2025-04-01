@@ -117,6 +117,23 @@ export default function QuizApp() {
   const score = calculateScore();
   const wrong = checkWrong();
 
+  // Define the confetti animation styles
+  const confettiKeyframes = `
+    @keyframes confetti-fall-continuous {
+      0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  `;
+
   // Continuous CSS Confetti Animation
   const renderConfetti = () => {
     if (!showConfetti) return null;
@@ -151,21 +168,7 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
-          @keyframes confetti-fall-continuous {
-            0% {
-              transform: translateY(-20px) rotate(0deg);
-              opacity: 1;
-            }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}</style>
+        <style dangerouslySetInnerHTML={{ __html: confettiKeyframes }} />
         {confettiPieces}
       </div>
     );
@@ -200,7 +203,6 @@ export default function QuizApp() {
                       className="border border-gray-200 rounded"
                       width={550}
                       height={300}
-                      layout="responsive"
                       priority
                     />
                   </div>

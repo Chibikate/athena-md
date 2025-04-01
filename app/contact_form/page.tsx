@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactCard from "@/components/hero_page/contactus_card";
 import ContactSection from "@/components/hero_page/contact_section";
 import Navigator from "@/components/hero_page/navigator";
 import Footer from "@/components/hero_page/footer";

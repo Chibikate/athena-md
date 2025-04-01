@@ -159,7 +159,7 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style jsx>{`
+        <style>{`
           @keyframes confetti-fall-continuous {
             0% {
               transform: translateY(-20px) rotate(0deg);
@@ -208,7 +208,6 @@ export default function QuizApp() {
                       className="border border-gray-200 rounded"
                       width={550}
                       height={300}
-                      layout="responsive"
                       priority
                     />
                   </div>
