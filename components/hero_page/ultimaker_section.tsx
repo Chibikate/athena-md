@@ -40,7 +40,7 @@ const UltimakerSection = () => {
                   duration-300
                 " 
               />
-              <span className="text-sm font-medium">Main Courses</span>
+              <span className="text-medium font-medium">Courses</span>
             </Link>
 
             {/* Page Title */}
