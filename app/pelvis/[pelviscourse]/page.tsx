@@ -4,7 +4,7 @@ import Navigator2 from "@/components/course_overview/navigator2";
 import HeroSection2 from "@/components/course_overview/hero_section2";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection2 from "@/components/course_overview/objective_section2";
-import { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import * as datas from "@/data/pelvis/pelvis_data";
 import Link from "next/link";
 import TeamSection2 from "@/components/course_overview/team_section2";

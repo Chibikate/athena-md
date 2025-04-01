@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
-import Image1 from "@/public/quiz3/Image1.png"; // Update this path to your DICOM quiz image
+import Image1 from "@/public/quiz3/Image1.png";
 
 const quizQuestions = [
   {
@@ -50,18 +50,6 @@ export default function QuizApp() {
     setUserAnswers(updatedAnswers);
   };
 
-  const goToNextQuestion = () => {
-    if (currentQuestion < quizQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    }
-  };
-
-  const goToPreviousQuestion = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    }
-  };
-
   const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
@@ -79,16 +67,8 @@ export default function QuizApp() {
     setShowConfetti(false);
   };
 
-  const isCurrentQuestionAnswered = () => {
-    return userAnswers[currentQuestion] !== "";
-  };
-
   const areAllQuestionsAnswered = () => {
     return userAnswers.every((answer) => answer !== "");
-  };
-
-  const calculateProgress = () => {
-    return ((currentQuestion + 1) / quizQuestions.length) * 100;
   };
 
   const score = calculateScore();

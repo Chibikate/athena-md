@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, Suspense, useCallback } from "react";
+import React, { useEffect, useState, Suspense, useCallback } from "react"; // Added useCallback
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";

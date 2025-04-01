@@ -8,7 +8,7 @@ import HowItWorks from "@/components/hero_page/howitworks_section";
 import Image from "next/image";
 
 const javanese = Noto_Sans_Javanese({ subsets: ["javanese"], weight: "400" });
-const abhaya = Abhaya_Libre({ subsets: ["latin"], weight: "400" });
+
 
 const Home = () => {
   return (
