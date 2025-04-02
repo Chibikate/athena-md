@@ -25,7 +25,7 @@ const HeroSection = () => {
         <div className="w-full max-w-md md:max-w-lg lg:max-w-xl text-center">
           
           {/* Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-3xl text-[#043873]">
+          <h1 className="sm:text-3xl md:text-4xl font-bold text-3xl text-[#043873]">
             Develop <span className="text-bold text-[#151A40]">Your Medical Skills</span>
           </h1>
 
@@ -47,10 +47,9 @@ const HeroSection = () => {
               />
               <FiSearch className="text-[#043873] text-xl cursor-pointer" />
             </div>/}
-
             {/* Button */}
             <Link href="/main_homepage">
-              <button className="mt-4 sm:mt-6 px-5 py-2 sm:py-3 bg-[#043873] text-white text-sm sm:text-base rounded-lg hover:bg-[#0f1330] transition">
+              <button className="mt-4 sm:mt-4 px-4 py-2 pt-4  bg-[#043873] text-white text-sm sm:text-base rounded-lg hover:bg-[#0f1330] transition">
                 View Courses
               </button>
             </Link>
