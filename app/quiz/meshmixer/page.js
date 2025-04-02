@@ -317,6 +317,7 @@ export default function QuizApp() {
                     Get Your Certificate
                   </button>
                 </Link>
+                
               </div>
             ) : (
               <div className="space-y-4">

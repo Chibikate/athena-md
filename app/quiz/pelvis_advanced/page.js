@@ -329,11 +329,18 @@ export default function QuizApp() {
                 <p className="text-green-600 font-bold text-lg md:text-xl mb-4">
                   Perfect! Congratulations on completing the quiz.
                 </p>
-                <Link href="/fillup/pelvis_addDicom" className="w-full sm:w-auto">
+                <Link href="/fillup/pelvis_advanced" className="w-full sm:w-auto">
                   <button className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800">
                     Get Your Certificate
                   </button>
+                </Link> 
+                <div>
+                <Link href="/pelvis/MeshMixer2%20-%20Pelvis%20Virtual-Surgery">
+                  <button className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
+                  Proceed to the Next Lesson
+                 </button>
                 </Link>
+                </div>
               </div>
             ) : (
               <div className="space-y-4">

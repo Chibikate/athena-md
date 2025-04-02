@@ -83,8 +83,8 @@
   left: 50%;
   width: 25px;
   height: 25px;
-  animation-delay: 15s;
-  animation-duration: 15s;
+  animation-delay: 5s;
+  animation-duration: 10s;
 }
 
 .circles li:nth-child(9) {
@@ -92,7 +92,7 @@
   width: 15px;
   height: 15px;
   animation-delay: 2s;
-  animation-duration: 35s;
+  animation-duration: 15s;
 }
 
 .circles li:nth-child(10) {

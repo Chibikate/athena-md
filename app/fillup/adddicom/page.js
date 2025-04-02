@@ -50,6 +50,7 @@ function FillUpPage() {
         >
           Get your Certificate
         </Link>
+        
       </div>
     </div>
   );

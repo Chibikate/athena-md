@@ -350,6 +350,13 @@ export default function QuizApp() {
                     Get Your Certificate
                   </button>
                 </Link>
+                <div>
+                <Link href="/ultimaker/3D%20Printing%20for%20a%20Mandible-3">
+                  <button className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
+                  Proceed to the Next Lesson
+                 </button>
+                </Link>
+                </div>
               </div>
             ) : (
               <div className="space-y-4">

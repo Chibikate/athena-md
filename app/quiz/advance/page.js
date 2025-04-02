@@ -298,6 +298,13 @@ export default function QuizApp() {
                     Get Your Certificate
                   </button>
                 </Link>
+                <div>
+                <Link href="/course/MeshMixer%20-%20Virtual-Surgery">
+                  <button className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
+                  Proceed to the Next Lesson
+                 </button>
+                </Link>
+                </div>
               </div>
             ) : (
               <div className="space-y-4">
