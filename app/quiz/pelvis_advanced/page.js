@@ -230,7 +230,7 @@ export default function QuizApp() {
       </div>
       
       {/* Quiz title */}
-      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Adding DICOM Quiz</h1>
+      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Advanced Segmentation Quiz</h1>
       
       {/* Quiz container */}
       <div className="bg-white rounded-lg shadow-md p-4 md:p-6 lg:p-8 w-full max-w-4xl mt-6">
