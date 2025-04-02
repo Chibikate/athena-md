@@ -7,9 +7,9 @@ function FillUpPage() {
   const [date, setDate] = useState("");
 
   return (
-    <div className="container mx-auto mt-10 text-center min-h-screen ">
+    <div className="container mx-auto mt-10 text-center min-h-screen">
       <h1 className="text-2xl font-semibold mb-4">Certificate Information</h1>
-      <div className="max-w-md mx-auto p-5 border rounded-md shadow-md ">
+      <div className="max-w-md mx-auto p-5 border rounded-md shadow-md">
         <div className="mb-4">
           <label
             htmlFor="fullName"
@@ -20,7 +20,7 @@ function FillUpPage() {
           <input
             type="text"
             id="fullName"
-            className="border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md shadow-sm"
+            className="mt-1 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md shadow-sm p-2"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             placeholder="Full Name"
@@ -36,13 +36,13 @@ function FillUpPage() {
           <input
             type="date"
             id="date"
-            className="border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md shadow-sm"
+            className="mt-1 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md shadow-sm p-2"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
         <Link
-          className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600"
+          className="inline-block bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors"
           href={{
             pathname: "/certificate/printing2",
             query: { name: fullName, date: date },
