@@ -10,24 +10,24 @@ const quizQuestions = [
     question:
       "1. Which mouse button does the user use to move the 3D object around on the 3D panel (blue)?",
     options: [
-      "A. Holding the left mouse button while dragging",
-      "B. Holding down the middle mouse button and dragging",
+      "A. Holding down the middle mouse button and dragging",
+      "B. Holding the left mouse button while dragging",
       "C. Quickly tapping the left mouse button twice",
     ],
     image: Picture18,
     correctAnswer:
-      "A. Holding the left mouse button while dragging",
+      "B. Holding the left mouse button while dragging",
   },
   {
     question:
       "2. What mouse button allows the users to pan the 3D images displayed on the 3D panel?",
     options: [
-      "A. Holding the left mouse button while dragging",
-      "B. Holding down the middle mouse button and dragging",
+      "A. Holding down the middle mouse button and dragging",
+      "B. Holding the left mouse button while dragging",
       "C. Quickly tapping the left mouse button twice",
     ],
     image: Picture18,
-    correctAnswer: "B. Holding down the middle mouse button and dragging",
+    correctAnswer: "A. Holding down the middle mouse button and dragging",
   },
 ];
 
