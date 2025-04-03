@@ -17,7 +17,7 @@ export const slicerTutorial9 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "3D Modeling Pelvis - Basic Segmentation (C-4)",
     description:
       (
       <div><span className="font-bold">Open 3D Slicer</span> and <span className="font-bold">Add DICOM data</span> through the add DICOM data button.</div>
