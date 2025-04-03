@@ -24,11 +24,11 @@ export const MeshTutorial2 = [
                 Download file to use for this activity:{" "}
               </span>
               <Link
-                href="https://drive.google.com/drive/folders/1KmdNecDiN-EMV3Mk39njesU-j51jRi3_?usp=drive_link"
+                href="https://drive.google.com/drive/folders/1vu7eIYR-DXGZm0KrN8XzSK1sDx_4eQVI?usp=drive_link "
                 target="_blank"
               >
                 <span className=" underline">
-                https://drive.google.com/drive/folders/1KmdNecDiN-EMV3Mk39njesU-j51jRi3_?usp=drive_link
+                https://drive.google.com/drive/folders/1vu7eIYR-DXGZm0KrN8XzSK1sDx_4eQVI?usp=drive_link 
                 </span>
               </Link>
             </li>
@@ -51,7 +51,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>
         Access the folder you saved your file in, left click on the file and
@@ -62,7 +62,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>
         After successfully loading the file, you should have the{" "}
@@ -73,7 +73,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>
         To see the currently loaded objects, access the{" "}
@@ -85,7 +85,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>
         The <span className="font-bold">object browser</span> will show the available{" "}
@@ -97,7 +97,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>
         To separate the Right Ilium, left click on the{" "}
@@ -105,7 +105,7 @@ export const MeshTutorial2 = [
         <span className="font-bold">brush tool</span> and allow the user to{" "}
         <span className="font-bold">“paint”</span> or select any area of the 3D
         object. The <span className="font-bold">brush size</span> can be
-        <span className="font-bold">increased or decreased</span> by holding down the left mouse button and
+        <span className="font-bold"> increased or decreased</span> by holding down the left mouse button and
         dragging the slider.
       </div>
     ),
@@ -113,7 +113,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>To <span className="font-bold">select or “paint”</span> the area, press the <span className="font-bold">left mouse button</span> once. To continuously paint, <span className="font-bold">hold the left mouse button and drag the brush</span> over the desired area.</div>
@@ -122,7 +122,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>To select the entire Right Ilium, paint any area of the pelvis using the brush tool and through the modify menu, select <span className="font-bold">“expand to connected”</span>. Alternatively, this can be done by pressing the hotkey <span className="font-bold">“E”</span> or simply <span className="font-bold">double clicking</span> on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the Right Ilium has already been separated in 3D slicer, it is not <span className="font-bold">“connected”</span> to the rest of the pelvis.</div>
@@ -131,7 +131,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>To make the Right Ilium as a separate object, access the separate option through the <span className="font-bold">edit menu</span>. This can also be done by typing the hotkey <span className="font-bold">“Y”</span></div>
@@ -140,7 +140,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Once the Right Ilium has been separated, it will appear as a separate object in the <span className="font-bold">object browser</span>. The <span className="font-bold">highlighted object</span> in the object browser is the object that is currently <span className="font-bold">“active”</span>. It will show up as the white object in the screen and all changes will be made on that object. The <span className="font-bold">Objects can be renamed</span> by <span className="font-bold">double clicking</span> on the object name. Do the same for the other Parts.</div>
@@ -149,7 +149,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Once the Right Ilium has been separated, it will appear as a separate object in the object browser. The objects can be <span className="font-bold">hidden</span> by <span className="font-bold">left clicking on the “visibility”</span> icon on the right.</div>
@@ -158,7 +158,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div> <span className="font-bold">We can see that the posterior wall fracture fragment is on the</span> and <span className="font-bold">right side</span>. We can fix this “fracture” in place using the <span className="font-bold">"Transform"</span> function. Position the pelvis posteriorly.</div>
@@ -167,7 +167,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Click select, and double click the fragment. Click Transform. The fragment can be rotated and manipulated to fix it in the fractured area.</div>
@@ -176,7 +176,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>You can rotate the Whole model as needed by holding  <span className="font-bold">“Right Click and dragging the mouse ”</span> in the direction you want.</div>
@@ -185,7 +185,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>You can freely position or drag the fragment by  <span className="font-bold">Left Clicking and holding the Red or Blue Triangle </span> and dragging it to the position you want.</div>
@@ -194,43 +194,43 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
-        <div>Rotate the fragment as needed until near the configuration to “fix” it to the right acetabulum .</div>
+        <div>Rotate the fragment as needed until near the configuration to <span className="font-bold"> “fix” </span> it to the right acetabulum .</div>
       ),
     image: D1.picture92,
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
-        <div>Fit it to the Defect. To reduce and “fix” the fracture fragment. Rotate the whole model to check good fracture reduction</div>
+        <div>Fit it to the Defect. To reduce and <span className="font-bold"> “fix” </span> the fracture fragment. Rotate the whole model to check good fracture reduction</div>
       ),
     image: D1.picture93,
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
-        <div>Fit it to the Defect. To reduce and “fix” the fracture fragment. Rotate the whole model to check good fracture reduction</div>
+        <div>Fit it to the Defect. To reduce and <span className="font-bold"> “fix” </span> the fracture fragment. Rotate the whole model to check good fracture reduction</div>
       ),
     image: D1.picture94,
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
-        <div>Fit it to the Defect. To reduce and “fix” the fracture fragment. Rotate the whole model to check good fracture reduction</div>
+        <div>Fit it to the Defect. To reduce and <span className="font-bold"> “fix” </span> the fracture fragment. Rotate the whole model to check good fracture reduction</div>
       ),
     image: D1.picture95,
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>You can compare your reduction with an intact Ilium <span className="font-bold">Mirroring</span>  the Left Ilium to the Right Ilium. Select the <span className="font-bold">Left Ilium </span> in the  <span className="font-bold">Object Browser</span>. Select Edit and<span className="font-bold">“Mirror”</span>.</div>
@@ -239,7 +239,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>This Creates a Mirror of the Left Ilium. For now, hide the  <span className="font-bold">"Right Ilium"</span> Select the mirror and separate it as another object by pressing <span className="font-bold"> "Y" </span> in the keyboard. This will create another object in Object Browser. We will rename it as <span className="font-bold">“LeftIlium Mirror”. </span></div>
@@ -248,15 +248,15 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
-      <div>This Creates a Copy of the Left Ilium and deselects the original. We will rename it as “LeftIlium Mirror</div>
+      <div>This Creates a Copy of the Left Ilium and deselects the original. We will rename it as <span className="font-bold"> “Left Illium Mirror” </span></div>
     ),
     image: D1.picture98,
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Hide the original <span className="font-bold">“Left Ilium”</span> and select the <span className="font-bold">“LeftIlium Mirror”</span></div>
@@ -265,7 +265,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Since the pelvis is still unreduced, we can manipulate the mirrored object to fix it, by Clicking <span className="font-bold">Transform</span></div>
@@ -274,7 +274,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Same with the fragment reduction earlier, we will manipulate the Mirror to reduce the pelvis. Check in all Views to carefully assess the reduction.</div>
@@ -283,7 +283,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Now show the <span className="font-bold">"Right Ilium"</span> and <span className="font-bold">"Fragment"</span> objects in the browser. </div>
@@ -292,7 +292,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>This shows good overlap of the  <span className="font-bold">Left Ilium Mirror</span> the RightIlium and Fragment Objects.</div>
@@ -301,7 +301,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>Once satisfied, make the object into a solid by clicking on the <span className="font-bold">“edit”</span> icon and clicking on <span className="font-bold">“make solid”</span>. This will <span className="font-bold">“fill” the object and remove any internal geometry</span> making it ready for 3D printing. Do this for every object you are planning to print. For this case, we are only printing the fragment and the Right Ilium</div>
@@ -310,7 +310,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>We want our print to be as Accurate as possible, so click Accurate and adjust the Solid Accuracy Slider to Max. Do this for every object you want to print.</div>
@@ -319,7 +319,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>click on  <span className="font-bold">“accept”.</span></div>
     ),
@@ -327,7 +327,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description:
       (
         <div>To save the object, click on <span className="font-bold">“file”</span> then <span className="font-bold">“export”</span> and save the Right Ilium into your desired folder. Congratulations! You have successfully fixed the fractured side as well as Compare it to a Mirrored normal side. This object can be used as a guide for pre-bending your Stainless Steel Recon plates. Although not a standalone process in Pelvic Surgery, this process shows the basics in fixation and manipulation of the Fractured Fragments in a 3D environment.</div>
@@ -336,7 +336,7 @@ export const MeshTutorial2 = [
     alt: "illustration",
   },
   {
-    title: "",
+    title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>
         <p>

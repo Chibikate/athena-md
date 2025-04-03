@@ -60,10 +60,10 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Navigation Tools",
     description: (
       <div>
-        <p>1. Open file – Opens a 3D file.</p>
-        <p>2. Printer selection panel – Displays the selected printer.</p>
-        <p>3. Configuration panel – Contains the material and print core setup.</p>
-        <p>4. Stages – The Prepare, Preview and Monitor stage. Each stage is arranged to efficiently go through each 3D printing step.
+        <p>1. <span className="font-bold"> Open file </span> – opens a 3D file.</p>
+        <p>2. <span className="font-bold"> Printer selection panel </span> – displays the selected printer.</p>
+        <p>3. <span className="font-bold"> Configuration panel </span> – contains the material and print core setup.</p>
+        <p>4. <span className="font-bold"> Stages </span> – The Prepare, Preview and Monitor stage. Each stage is arranged to efficiently go through each 3D printing step.
 
         </p>
       </div>
@@ -75,9 +75,9 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Navigation Tools",
     description: (
       <div>
-        <p>5. Print settings panel – Contains all the slice strategy parameters.</p>
-        <p>6. Marketplace – Contains plugins and material packages.</p>
-        <p>7. Ultimaker account – Allows access to cloud functionality, Marketplace plugins and print profiles, backups and more.
+        <p>5. <span className="font-bold"> Print settings panel </span> – Contains all the slice strategy parameters.</p>
+        <p>6. <span className="font-bold"> Marketplace </span> – Contains plugins and material packages.</p>
+        <p>7. <span className="font-bold"> Ultimaker account </span> – Allows access to cloud functionality, Marketplace plugins and print profiles, backups and more.
         </p>
       </div>
     ),
@@ -88,9 +88,9 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Navigation Tools",
     description: (
       <div>
-        <p>8. Action panel – Contains an action button dependent on the current stage.</p>
-        <p>9. Print over network – Allows you to print over network, save gcode to removable disk or save to file.</p>
-        <p>10. Preview – Proceeds to the next stage, the preview stage
+        <p>8. <span className="font-bold"> Action panel </span> – Contains an action button dependent on the current stage.</p>
+        <p>9. <span className="font-bold"> Print over network </span> – Allows you to print over network, save gcode to removable disk or save to file.</p>
+        <p>10. <span className="font-bold"> Preview  </span>– Proceeds to the next stage, the preview stage
         </p>
       </div>
     ),
@@ -101,10 +101,9 @@ export const printingTutorial2 = [
     title: "Ultimaker Cura: Navigation Tools",
     description: (
       <div>
-        <p>
-        11. Camera position tool – Easily positions the camera to default viewing angles.</p>
-        <p>12. Model information – Contains the model name and dimensions of all printable models on the build plate.</p>
-        <p>13. Model Settings – Contains all settings you can do on your model to fit into the build platform of the tour printer. This will only highlight once the model is selected
+        <p>11. <span className="font-bold"> Camera position tool  </span>  – Easily positions the camera to default viewing angles.</p>
+        <p>12. <span className="font-bold"> Model information  </span>  – Contains the model name and dimensions of all printable models on the build plate.</p>
+        <p>13. <span className="font-bold"> Model Settings </span>  – Contains all settings you can do on your model to fit into the build platform of the tour printer. This will only highlight once the model is selected
         </p>
       </div>
     ),
@@ -117,7 +116,7 @@ export const printingTutorial2 = [
       <div>
         <p>
         <li><span className="font-bold text-lg">Open 3D Files</span></li>
-        The easiest way to open 3D models is by the ‘Open file’ button. The button is in the top left corner and is the first button in the stage menu. 
+        The easiest way to open 3D models is by the <span className="font-bold"> ‘Open file’ </span> button. The button is in the top left corner and is the first button in the stage menu. 
         Select the model you want to prepare for printing and open it. The model will now be loaded and shown on the 3D viewer.</p>
       </div>
     ),
@@ -176,7 +175,7 @@ export const printingTutorial2 = [
     description: (
       <div>
         <p>
-        What we need to do is to select the “Add printer icon”</p>
+        What we need to do is to select the <span className="font-bold"> “Add printer icon” </span></p>
       </div>
     ),
     image: Printing13,
@@ -187,7 +186,7 @@ export const printingTutorial2 = [
     description: (
       <div>
         <p>
-        Select “Ultimaker printer” </p>
+        Select <span className="font-bold"> “Ultimaker printer” </span> </p>
       </div>
     ),
     image: Printing14,
@@ -198,7 +197,7 @@ export const printingTutorial2 = [
     description: (
       <div>
         <p>
-        Select “Add local Printer”  </p>
+        Select <span className="font-bold"> “Add local Printer”  </span></p>
       </div>
     ),
     image: Printing15,
@@ -245,7 +244,7 @@ export const printingTutorial2 = [
         <p>
         <span className="font-bold text-lg">Adding a non-networked printer is one way to print offline.You just need to do the following:</span></p>
         <p>1. Select the printer to be used</p>
-        <p>2.The click the “Add” icon to appear on the User interface. </p></div>
+        <p>2.The click the <span className="font-bold"> “Add”  </span> icon to appear on the User interface. </p></div>
     ),
     image: Printing19,
     alt: "",
