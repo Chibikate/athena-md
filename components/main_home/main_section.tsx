@@ -25,7 +25,7 @@ const MainCardSection = () => {
           <div className="flex justify-center">
             <MainCard
               title="Mandibular Reconstruction"
-              description="Learn to reconstruct the mandible using 3D printing technology"
+              description="Learn to reconstruct the mandible using Virtual Surgical Planning"
               image={Mandibular}
               alt="Mandibular Reconstruction"
               time="1hr"
@@ -38,7 +38,7 @@ const MainCardSection = () => {
           <div className="flex justify-center">
             <MainCard
               title="Pelvis Reconstruction"
-              description="Learn to reconstruct the pelvis using 3D printing technology"
+              description="Learn to reconstruct the pelvis using Virtual Surgical Planning"
               image={Pelvis}
               time="1hr"
               lesson="6 Lessons"

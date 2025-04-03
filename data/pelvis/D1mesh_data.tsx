@@ -76,8 +76,8 @@ export const MeshTutorial2 = [
     title: "MeshMixer - Virtual-Surgery",
     description: (
       <div>
-        To see the currently loaded objects, access the{" "}
-        <span className="font-bold">Objects Browse</span>r through the drop down
+        To see the currently loaded objects, access the {" "}
+        <span className="font-bold">Objects Browser</span> through the drop down
         menu under view.
       </div>
     ),
@@ -102,7 +102,7 @@ export const MeshTutorial2 = [
       <div>
         To separate the Right Ilium, left click on the{" "}
         <span className="font-bold">Select</span> icon which will activate the
-        <span className="font-bold">brush tool</span> and allow the user to{" "}
+        <span className="font-bold"> brush tool </span> and allow the user to{" "}
         <span className="font-bold">“paint”</span> or select any area of the 3D
         object. The <span className="font-bold">brush size</span> can be
         <span className="font-bold"> increased or decreased</span> by holding down the left mouse button and
