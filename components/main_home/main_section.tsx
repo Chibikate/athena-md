@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import MainCard from "@/components/main_home/main_card";
 import Mandibular from "@/public/main_course/mandibular.png";
 import Pelvis from "@/public/main_course/Pelvis.png";
