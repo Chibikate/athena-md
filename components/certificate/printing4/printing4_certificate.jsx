@@ -4,7 +4,7 @@ import Image from "next/image";
 import Image1 from "@/public/Image1.svg";
 import { EB_Garamond, MonteCarlo } from "next/font/google";
 import PropTypes from "prop-types"; // Import PropTypes
-
+  
 
 const interGaramond = EB_Garamond({ subsets: ["latin"] });
 const interMonteCarlo = MonteCarlo({ subsets: ["latin"], weight: "400" });
