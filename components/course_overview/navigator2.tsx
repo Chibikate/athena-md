@@ -40,14 +40,6 @@ const Navigator2 = () => {
           p-6 lg:p-0 shadow-lg lg:shadow-none z-40
         `}
       >
-        <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
-          <Link
-            className="block lg:inline-block w-full lg:w-auto text-left lg:text-center py-2 px-5 text-[#30365B] hover:text-blue-900 hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 rounded-lg text-md font-bold transition"
-            href="/pelviscourses"
-            onClick={() => setIsOpen(false)}
-          >
-            Lessons
-          </Link>
           <Link
             className="block lg:inline-block w-full lg:w-auto text-left lg:text-center py-2 px-5 text-[#30365B] hover:text-blue-900 hover:ring-2 hover:ring-offset-2 hover:ring-offset-blue-300 rounded-lg text-md font-bold transition"
             href="/"
@@ -56,7 +48,6 @@ const Navigator2 = () => {
             Home
           </Link>
         </div>
-      </div>
 
       {/* Overlay (closes menu on click) */}
       {isOpen && (

@@ -7,11 +7,11 @@ import Pelvis from "@/public/main_course/Pelvis.png";
 import Printing from "@/public/main_course/printing.png";
 
 const MainCardSection = () => {
-  const [activeCategory, setActiveCategory] = useState('virtualSurgical');
+  const [activeCategory, setActiveCategory] = useState('VSP');
   
   const categories = [
-    { id: 'virtualSurgical', label: 'Virtual Surgical Planning' },
-    { id: '3dPrinting', label: '3D Printing' }
+    { id: 'VSP', label: 'Virtual Surgical Planning' },
+    { id: '3DP', label: '3D Printing' }
   ];
   
   // Course data with category
@@ -23,7 +23,7 @@ const MainCardSection = () => {
       alt: "Mandibular Reconstruction",
       time: "1 Hour",
       lesson: "6 Lessons",
-      category: "virtualSurgical",
+      category: "VSP",
       image: Mandibular,
       to: "/courses"
     },
@@ -34,7 +34,7 @@ const MainCardSection = () => {
       alt: "Pelvis Reconstruction",
       time: "1 Hour",
       lesson: "6 Lessons",
-      category: "virtualSurgical",
+      category: "VSP",
       image: Pelvis,
       to: "/pelviscourses"
     },
@@ -45,7 +45,7 @@ const MainCardSection = () => {
       alt: "3D Printing",
       time: "1 Hour",
       lesson: "4 Lessons",
-      category: "3dPrinting",
+      category: "3DP",
       image: Printing,
       to: "/ultimakercourses"
     }
