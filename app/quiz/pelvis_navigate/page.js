@@ -205,8 +205,10 @@ export default function QuizApp() {
       {renderConfetti()}
 
       {/* Header with logo and navigation */}
-      <div className="w-full max-w-screen-l mx-auto shadow-md">
-        <Navigator />
+      <div className="w-full shadow-md fixed top-0 left-0 z-10">
+        <div className="max-w-screen-xl mx-auto">
+          <Navigator />
+        </div>
       </div>
       
       {/* Quiz title */}

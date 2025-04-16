@@ -40,6 +40,10 @@ const data: ContentProps[] = [
   },
 ];
 
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 5;
+const ZOOM_SPEED = 0.1;
+
 const Home = ({ params }: Params) => {
   const pelviscourse = params["pelviscourse"].replaceAll("%20", " ");
   const searchParams = useSearchParams();
@@ -51,6 +55,7 @@ const Home = ({ params }: Params) => {
   const [dragging, setDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
+  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     switch (queryPage) {
@@ -72,6 +77,8 @@ const Home = ({ params }: Params) => {
       case "MeshMixer2 - Pelvis Virtual-Surgery":
         setContent(MeshTutorial2);
         break;
+      default:
+        setContent([]);
     }
   }, [queryPage]);
 
@@ -93,6 +100,13 @@ const Home = ({ params }: Params) => {
       setZoomLevel(1);
       setPosition({ x: 0, y: 0 });
       
+      // Preload image to get dimensions
+      const img = new window.Image();
+      img.src = zoomedImage;
+      img.onload = () => {
+        setImageSize({ width: img.width, height: img.height });
+      };
+      
       // Hide scrollbars when zoomed
       document.body.style.overflow = 'hidden';
     } else {
@@ -106,15 +120,38 @@ const Home = ({ params }: Params) => {
     };
   }, [zoomedImage]);
 
-  // Handle zooming
+  // Handle zooming with wheel
   const handleZoom = useCallback((e: WheelEvent) => {
     if (zoomedImage) {
       e.preventDefault();
-      const delta = e.deltaY * -0.01;
-      const newZoom = Math.max(1, Math.min(5, zoomLevel + delta)); // Limit zoom between 1x and 5x
-      setZoomLevel(newZoom);
+      
+      // Calculate position relative to the image
+      const container = e.currentTarget as HTMLElement;
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Calculate zoom direction and new level
+      const delta = e.deltaY < 0 ? ZOOM_SPEED : -ZOOM_SPEED;
+      const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, zoomLevel + delta));
+      
+      // Only proceed if zoom level actually changed
+      if (newZoom !== zoomLevel) {
+        // Calculate how much the position needs to be adjusted to keep 
+        // the point under the cursor fixed during zoom
+        const zoomRatio = newZoom / zoomLevel;
+        
+        // Adjust position to keep the point under cursor fixed
+        const newPosition = {
+          x: x - (x - position.x) * zoomRatio,
+          y: y - (y - position.y) * zoomRatio
+        };
+        
+        setZoomLevel(newZoom);
+        setPosition(newPosition);
+      }
     }
-  }, [zoomedImage, zoomLevel]);
+  }, [zoomedImage, zoomLevel, position]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -123,9 +160,9 @@ const Home = ({ params }: Params) => {
         if (event.key === "Escape") {
           setZoomedImage(null);
         } else if (event.key === "+" || event.key === "=") {
-          setZoomLevel(prev => Math.min(5, prev + 0.2));
+          setZoomLevel(prev => Math.min(MAX_ZOOM, prev + ZOOM_SPEED));
         } else if (event.key === "-") {
-          setZoomLevel(prev => Math.max(1, prev - 0.2));
+          setZoomLevel(prev => Math.max(MIN_ZOOM, prev - ZOOM_SPEED));
         }
       } else {
         if (event.key === "ArrowRight") {
@@ -137,19 +174,31 @@ const Home = ({ params }: Params) => {
     };
     
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("wheel", handleZoom, { passive: false });
     
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("wheel", handleZoom);
     };
-  }, [goToNextQuestion, goToPreviousQuestion, handleZoom, zoomedImage]);
+  }, [goToNextQuestion, goToPreviousQuestion, zoomedImage]);
+
+  // Set up wheel event listener with proper cleanup
+  useEffect(() => {
+    const wheelHandler = (e: WheelEvent) => handleZoom(e);
+    
+    if (zoomedImage) {
+      window.addEventListener("wheel", wheelHandler, { passive: false });
+    }
+    
+    return () => {
+      window.removeEventListener("wheel", wheelHandler);
+    };
+  }, [zoomedImage, handleZoom]);
 
   // Mouse events for dragging
   const handleMouseDown = (e: React.MouseEvent) => {
     if (zoomLevel > 1) {
       setDragging(true);
       setStartPosition({ x: e.clientX - position.x, y: e.clientY - position.y });
+      e.preventDefault(); // Prevent other events like image selection
     }
   };
 
@@ -166,6 +215,65 @@ const Home = ({ params }: Params) => {
     setDragging(false);
   };
 
+  // Touch events for mobile devices
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (zoomLevel > 1 && e.touches.length === 1) {
+      setDragging(true);
+      setStartPosition({ 
+        x: e.touches[0].clientX - position.x, 
+        y: e.touches[0].clientY - position.y 
+      });
+      e.preventDefault();
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (dragging && zoomLevel > 1 && e.touches.length === 1) {
+      setPosition({
+        x: e.touches[0].clientX - startPosition.x,
+        y: e.touches[0].clientY - startPosition.y
+      });
+      e.preventDefault();
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setDragging(false);
+  };
+
+  // Pinch to zoom
+  const [initialDistance, setInitialDistance] = useState<number | null>(null);
+  const [initialZoom, setInitialZoom] = useState(1);
+
+  const getDistance = (touches: React.TouchList) => {
+    return Math.hypot(
+      touches[0].clientX - touches[1].clientX,
+      touches[0].clientY - touches[1].clientY
+    );
+  };
+
+  const handlePinchStart = (e: React.TouchEvent) => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      setInitialDistance(getDistance(e.touches));
+      setInitialZoom(zoomLevel);
+    }
+  };
+
+  const handlePinchMove = (e: React.TouchEvent) => {
+    if (e.touches.length === 2 && initialDistance !== null) {
+      e.preventDefault();
+      const currentDistance = getDistance(e.touches);
+      const scale = currentDistance / initialDistance;
+      const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, initialZoom * scale));
+      setZoomLevel(newZoom);
+    }
+  };
+
+  const handlePinchEnd = () => {
+    setInitialDistance(null);
+  };
+
   // Handle closing the zoomed view
   const handleCloseZoom = (e: React.MouseEvent) => {
     // Only close if clicking the background, not the image
@@ -173,6 +281,20 @@ const Home = ({ params }: Params) => {
       setZoomedImage(null);
     }
   };
+
+  // Button zoom functions
+  const zoomIn = useCallback(() => {
+    setZoomLevel(prev => Math.min(MAX_ZOOM, prev + ZOOM_SPEED * 5));
+  }, []);
+
+  const zoomOut = useCallback(() => {
+    setZoomLevel(prev => Math.max(MIN_ZOOM, prev - ZOOM_SPEED * 5));
+  }, []);
+
+  const resetZoom = useCallback(() => {
+    setZoomLevel(1);
+    setPosition({ x: 0, y: 0 });
+  }, []);
 
   // Function to render the desktop previous button or back link
   const renderDesktopPreviousButton = () => {
@@ -237,47 +359,64 @@ const Home = ({ params }: Params) => {
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
         {zoomedImage && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 cursor-move"
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
             onClick={handleCloseZoom}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchEnd}
           >
             <div className="absolute top-4 right-4 z-10 flex gap-2">
               <button 
-                className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white"
-                onClick={() => setZoomLevel(prev => Math.max(1, prev - 0.5))}
+                className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white text-xl font-bold w-10 h-10 flex items-center justify-center"
+                onClick={zoomOut}
+                aria-label="Zoom Out"
               >
                 -
               </button>
               <button 
-                className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white"
-                onClick={() => setZoomLevel(prev => Math.min(5, prev + 0.5))}
+                className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white text-xl font-bold w-10 h-10 flex items-center justify-center"
+                onClick={zoomIn}
+                aria-label="Zoom In"
               >
                 +
               </button>
               <button 
-                className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white ml-2"
+                className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white ml-2 text-xl font-bold w-10 h-10 flex items-center justify-center"
+                onClick={resetZoom}
+                aria-label="Reset Zoom"
+              >
+                ↺
+              </button>
+              <button 
+                className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white ml-2 text-xl font-bold w-10 h-10 flex items-center justify-center"
                 onClick={() => setZoomedImage(null)}
+                aria-label="Close"
               >
                 ✕
               </button>
             </div>
-            <div className="text-white text-sm absolute bottom-4 left-4">
-              Zoom: {Math.round(zoomLevel * 100)}% (Scroll to zoom, drag to pan)
+            <div className="text-white text-sm absolute bottom-4 left-4 bg-black bg-opacity-50 p-2 rounded">
+              Zoom: {Math.round(zoomLevel * 100)}% 
+              <span className="hidden sm:inline"> (Scroll to zoom, drag to pan)</span>
+              <span className="inline sm:hidden"> (Pinch to zoom, drag to pan)</span>
             </div>
             <div 
-              className="overflow-hidden select-none"
+              className={`overflow-hidden select-none ${dragging ? 'cursor-grabbing' : 'cursor-grab'}`}
               style={{
-                transform: `scale(${zoomLevel})`,
-                transition: dragging ? 'none' : 'transform 0.1s ease-out',
+                maxWidth: '90vw',
+                maxHeight: '80vh',
               }}
             >
               <div
                 style={{
-                  transform: `translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
-                  transition: dragging ? 'none' : 'transform 0.1s ease-out',
+                  transform: `scale(${zoomLevel}) translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
+                  transformOrigin: 'center',
+                  transition: dragging ? 'none' : 'transform 0.05s ease-out',
                 }}
               >
                 <Image 
@@ -287,14 +426,14 @@ const Home = ({ params }: Params) => {
                   width={1200}
                   height={800}
                   unoptimized={true}
+                  priority={true}
                 />
               </div>
             </div>
           </div>
         )}
 
-        
-<div className={zoomedImage ? "hidden" : ""}>
+        <div className={zoomedImage ? "hidden" : ""}>
           <Navigator2 />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
@@ -330,6 +469,5 @@ const Home = ({ params }: Params) => {
     </Suspense>
   );
 };
-
 
 export default Home;
