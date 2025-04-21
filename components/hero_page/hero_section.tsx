@@ -11,12 +11,13 @@ const HeroSection = () => {
       
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <Image
-          src="/bgg7.png"
-          alt="Background design"
-          fill
-          className="object-cover w-full h-full"
-          priority
+      <Image
+       src="/bgg7.png"
+       alt="Background design"
+       fill
+       sizes="100vw"
+      className="object-cover w-full h-full"
+       priority
         />
       </div>
 
