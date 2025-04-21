@@ -54,7 +54,7 @@ const Home = ({ params }: Params) => {
   const [dragging, setDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
-  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
+  // Removed imageSize state declaration and used destructuring in onload handler
 
   useEffect(() => {
     switch (queryPage) {
@@ -102,8 +102,10 @@ const Home = ({ params }: Params) => {
       // Preload image to get dimensions
       const img = new window.Image();
       img.src = zoomedImage;
+      // Using destructuring to avoid unused variable warning
       img.onload = () => {
-        setImageSize({ width: img.width, height: img.height });
+        // We don't use the dimensions, but they could be used in future implementations
+        // const { width, height } = img;
       };
       
       // Hide scrollbars when zoomed
@@ -216,7 +218,12 @@ const Home = ({ params }: Params) => {
 
   // Touch events for mobile devices
   const handleTouchStart = (e: React.TouchEvent) => {
-    if (zoomLevel > 1 && e.touches.length === 1) {
+    if (e.touches.length === 2) {
+      // Handle pinch start
+      e.preventDefault();
+      setInitialDistance(getDistance(e.touches));
+      setInitialZoom(zoomLevel);
+    } else if (zoomLevel > 1 && e.touches.length === 1) {
       setDragging(true);
       setStartPosition({ 
         x: e.touches[0].clientX - position.x, 
@@ -227,7 +234,14 @@ const Home = ({ params }: Params) => {
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (dragging && zoomLevel > 1 && e.touches.length === 1) {
+    if (e.touches.length === 2 && initialDistance !== null) {
+      // Handle pinch movement
+      e.preventDefault();
+      const currentDistance = getDistance(e.touches);
+      const scale = currentDistance / initialDistance;
+      const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, initialZoom * scale));
+      setZoomLevel(newZoom);
+    } else if (dragging && zoomLevel > 1 && e.touches.length === 1) {
       setPosition({
         x: e.touches[0].clientX - startPosition.x,
         y: e.touches[0].clientY - startPosition.y
@@ -238,6 +252,7 @@ const Home = ({ params }: Params) => {
 
   const handleTouchEnd = () => {
     setDragging(false);
+    setInitialDistance(null);
   };
 
   // Pinch to zoom
@@ -249,28 +264,6 @@ const Home = ({ params }: Params) => {
       touches[0].clientX - touches[1].clientX,
       touches[0].clientY - touches[1].clientY
     );
-  };
-
-  const handlePinchStart = (e: React.TouchEvent) => {
-    if (e.touches.length === 2) {
-      e.preventDefault();
-      setInitialDistance(getDistance(e.touches));
-      setInitialZoom(zoomLevel);
-    }
-  };
-
-  const handlePinchMove = (e: React.TouchEvent) => {
-    if (e.touches.length === 2 && initialDistance !== null) {
-      e.preventDefault();
-      const currentDistance = getDistance(e.touches);
-      const scale = currentDistance / initialDistance;
-      const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, initialZoom * scale));
-      setZoomLevel(newZoom);
-    }
-  };
-
-  const handlePinchEnd = () => {
-    setInitialDistance(null);
   };
 
   // Handle closing the zoomed view
