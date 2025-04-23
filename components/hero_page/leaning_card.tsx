@@ -17,12 +17,13 @@ const LearningCard = ({ title, description, image, alt, bg, swap }: Props) => {
         {/* Image First if swap is enabled */}
         {swap && (
           <div className="flex justify-center">
-            <Image 
+            <Image
               className="max-w-[70%] sm:max-w-[300px] object-contain"
               src={image}
               alt={alt}
-              width={300}
-              height={300}
+              width={300} // Explicitly define width
+              height={300} // Explicitly define height
+              style={{ width: "auto", height: "auto" }} // Maintain aspect ratio
             />
           </div>
         )}
@@ -40,12 +41,13 @@ const LearningCard = ({ title, description, image, alt, bg, swap }: Props) => {
         {/* Image Last if swap is disabled */}
         {!swap && (
           <div className="flex justify-center">
-            <Image 
+            <Image
               className="max-w-[70%] sm:max-w-[300px] object-contain"
               src={image}
               alt={alt}
-              width={300}
-              height={300}
+              width={300} // Explicitly define width
+              height={300} // Explicitly define height
+              style={{ width: "auto", height: "auto" }} // Maintain aspect ratio
             />
           </div>
         )}

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "ESNext",
+      "lib": ["ESNext", "WebWorker"],  // Include browser and web worker types
+      "outDir": "public",  // Compiled JS will be output here
+      "strict": true,
+      "esModuleInterop": true,
+      "types": []  // Disable default node types to prevent conflicts
+    },
+    "include": ["app/service-worker.ts"]  // Correct path to your service worker file
+  }
+  

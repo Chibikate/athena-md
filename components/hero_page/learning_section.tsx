@@ -9,16 +9,6 @@ import Realistic from "@/public/Realistic2.svg";
 const LearningSection = () => {
   return (
     <div>
-      {/* First Learning Card - Only PNG */}
-      {/* <div className="relative  flex justify-center">
-        <Image
-          src={bgg8}
-          alt="Background image"
-          objectFit="cover"
-          width={1500}
-        />
-      </div> */}
-
       <LearningCard
         title="Interactive"
         bg={true}

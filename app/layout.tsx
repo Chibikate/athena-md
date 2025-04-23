@@ -1,7 +1,9 @@
+// This file is a part of the AthenaMD project.
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import ServiceWorkerRegister from "@/components/ServiceWorkerRegister"; // 👈 Import here
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* inter kay font style and min-h-screen kay ang whole screen na makita sa user */}
-      <body className={`${inter.className} min-h-screen`}>{children}</body> 
+      <body className={`${inter.className} min-h-screen`}>
+        <ServiceWorkerRegister /> {/* 👈 Add the component here */}
+        {children}
+      </body>
     </html>
   );
 }

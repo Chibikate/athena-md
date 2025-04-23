@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/components/hero_page/footer";
 import UltimakerCard from "@/components/3dslicer_page/ultimaker_tutorial";
-import Navigator3 from "@/components/course_overview/navigator3";
+import Navigator from "@/components/course_overview/navigator";
 import {
   printingTutorial1,
   printingTutorial2,
@@ -287,7 +287,7 @@ const Home = ({ params }: Params) => {
 
         
 <div className={zoomedImage ? "hidden" : ""}>
-          <Navigator3 />
+          <Navigator />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
         
