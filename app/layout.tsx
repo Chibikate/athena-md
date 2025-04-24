@@ -1,15 +1,12 @@
-// This file is a part of the AthenaMD project.
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import React from "react";
-import ServiceWorkerRegister from "@/components/ServiceWorkerRegister"; // 👈 Import Service Worker
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AthenaMD - Learning Platform", // Updated title for clarity
-  description: "Explore AthenaMD's learning platform for surgical planning and 3D printing.", // Updated description
+  title: "AthenaMD",
+  description: "To develop mandiweb reconstruction",
 };
 
 export default function RootLayout({
@@ -18,14 +15,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"> {/* Set the language attribute */}
+    <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" /> {/* Add a favicon */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {/* Responsive meta tag */}
+        {/* Essential for responsive design */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className={`${inter.className} min-h-screen`}>
-        <ServiceWorkerRegister /> {/* Register the service worker */}
-        {children} {/* Render the page content */}
+      <body className={`${inter.className} min-h-screen bg-white text-gray-900`}>
+        {/* Add a max-width wrapper for large screens, padding for mobile */}
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </body>
     </html>
   );
