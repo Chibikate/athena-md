@@ -17,16 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Essential for responsive design */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
-      <body className={`${inter.className} min-h-screen bg-white text-gray-900`}>
-        {/* Add a max-width wrapper for large screens, padding for mobile */}
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          {children}
-        </div>
-      </body>
+      {/* inter kay font style and min-h-screen kay ang whole screen na makita sa user */}
+      <body className={`${inter.className} min-h-screen`}>{children}</body> 
     </html>
   );
 }
