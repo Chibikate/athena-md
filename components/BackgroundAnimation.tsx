@@ -1,5 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 
+type ShapeType = 'rectangle' | 'triangle' | 'line';
+
+interface Particle {
+  x: number;
+  y: number;
+  size: number;
+  speedX: number;
+  speedY: number;
+  rotation: number;
+  rotationSpeed: number;
+  shape: ShapeType;
+  color: string;
+}
+
 const BackgroundAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -59,75 +73,66 @@ const BackgroundAnimation = () => {
       'rgba(72, 149, 239, ',
     ];
 
-    const createParticle = () => {
+    const createParticle = (): Particle => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       const baseSize = Math.min(width, height) / 50;
       const speedFactor = width < 768 ? 0.3 : 0.4;
 
-      const x = Math.random() * width;
-      const y = Math.random() * height;
-      const size = Math.random() * baseSize + baseSize;
-      const speedX = (Math.random() * 2 - 1) * speedFactor;
-      const speedY = (Math.random() * 2 - 1) * speedFactor;
-      const rotation = Math.random() * Math.PI * 2;
-      const rotationSpeed = (Math.random() - 0.5) * 0.01;
-      const shape = shapes[Math.floor(Math.random() * shapes.length)];
-      const color = `${colors[Math.floor(Math.random() * colors.length)]}${Math.random() * 0.3 + 0.2})`;
-
       return {
-        x,
-        y,
-        size,
-        speedX,
-        speedY,
-        rotation,
-        rotationSpeed,
-        shape,
-        color,
-        update() {
-          this.x += this.speedX;
-          this.y += this.speedY;
-          this.rotation += this.rotationSpeed;
-
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-
-          if (this.x > width || this.x < 0) this.speedX = -this.speedX;
-          if (this.y > height || this.y < 0) this.speedY = -this.speedY;
-        },
-        draw() {
-          if (!ctx) return;
-          ctx.save();
-          ctx.translate(this.x, this.y);
-          ctx.rotate(this.rotation);
-          ctx.fillStyle = this.color;
-          ctx.strokeStyle = this.color;
-
-          switch (this.shape) {
-            case 'rectangle':
-              ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
-              break;
-            case 'triangle':
-              ctx.beginPath();
-              ctx.moveTo(0, -this.size / 2);
-              ctx.lineTo(this.size / 2, this.size / 2);
-              ctx.lineTo(-this.size / 2, this.size / 2);
-              ctx.closePath();
-              ctx.fill();
-              break;
-            case 'line':
-              ctx.beginPath();
-              ctx.moveTo(-this.size, 0);
-              ctx.lineTo(this.size, 0);
-              ctx.lineWidth = this.size / 4;
-              ctx.stroke();
-              break;
-          }
-
-          ctx.restore();
-        }
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size: Math.random() * baseSize + baseSize,
+        speedX: (Math.random() * 2 - 1) * speedFactor,
+        speedY: (Math.random() * 2 - 1) * speedFactor,
+        rotation: Math.random() * Math.PI * 2,
+        rotationSpeed: (Math.random() - 0.5) * 0.01,
+        shape: shapes[Math.floor(Math.random() * shapes.length)],
+        color: `${colors[Math.floor(Math.random() * colors.length)]}${Math.random() * 0.3 + 0.2})`,
       };
+    };
+
+    const updateParticle = (particle: Particle) => {
+      particle.x += particle.speedX;
+      particle.y += particle.speedY;
+      particle.rotation += particle.rotationSpeed;
+
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      if (particle.x > width || particle.x < 0) particle.speedX = -particle.speedX;
+      if (particle.y > height || particle.y < 0) particle.speedY = -particle.speedY;
+    };
+
+    const drawParticle = (ctx: CanvasRenderingContext2D, particle: Particle) => {
+      ctx.save();
+      ctx.translate(particle.x, particle.y);
+      ctx.rotate(particle.rotation);
+      ctx.fillStyle = particle.color;
+      ctx.strokeStyle = particle.color;
+
+      switch (particle.shape) {
+        case 'rectangle':
+          ctx.fillRect(-particle.size / 2, -particle.size / 4, particle.size, particle.size / 2);
+          break;
+        case 'triangle':
+          ctx.beginPath();
+          ctx.moveTo(0, -particle.size / 2);
+          ctx.lineTo(particle.size / 2, particle.size / 2);
+          ctx.lineTo(-particle.size / 2, particle.size / 2);
+          ctx.closePath();
+          ctx.fill();
+          break;
+        case 'line':
+          ctx.beginPath();
+          ctx.moveTo(-particle.size, 0);
+          ctx.lineTo(particle.size, 0);
+          ctx.lineWidth = particle.size / 4;
+          ctx.stroke();
+          break;
+      }
+
+      ctx.restore();
     };
 
     const particlesArray = Array.from({ length: getParticleCount() }, createParticle);
@@ -152,8 +157,8 @@ const BackgroundAnimation = () => {
           }
         }
 
-        particle.update();
-        particle.draw();
+        updateParticle(particle);
+        drawParticle(ctx, particle);
       }
 
       const connectionDistance = Math.min(220, window.innerWidth / 4);
@@ -197,7 +202,6 @@ const BackgroundAnimation = () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       cancelAnimationFrame(animationFrameId);
 
-      // Clear canvas for safety
       if (canvasRef.current) {
         const ctx = canvasRef.current.getContext('2d');
         if (ctx) {
