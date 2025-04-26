@@ -105,8 +105,7 @@ export const MeshTutorial = [
         <span className="font-bold">brush tool</span> and allow the user to{" "}
         <span className="font-bold">“paint”</span> or select any area of the 3D
         object. The <span className="font-bold"> brush size </span> can be
-        <span className="font-bold"> increased or decreased </span> by holding down the left mouse button and
-        dragging the slider.
+        <span className="font-bold"> increased or decreased </span> by holding down the left mouse button and dragging the slider.
       </div>
     ),
     image: Module6.Mesh6,

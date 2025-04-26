@@ -4,14 +4,13 @@ import Navigator from "@/components/course_overview/navigator";
 import HeroSection from "@/components/course_overview/hero_section";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection from "@/components/course_overview/objective_section";
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState, Suspense } from "react";
 import * as datas from "@/data/mandibular/course_data";
 import Link from "next/link";
-import React, { Suspense } from "react";
 import TeamSection from "@/components/course_overview/team_section";
 
 interface Params {
-  params: {
+  params: { 
     course: string;
   };
 }
