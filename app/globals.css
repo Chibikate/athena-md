@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 .area {
-  background: #ffffff;
-  background: -webkit-linear-gradient(to left, #8f94fb, 151A40);
+  background: #ffffff; /* solid fallback */
+  background: linear-gradient(to left, #8f94fb, #151A40); /* standard syntax first */
+  background: -webkit-linear-gradient(to left, #8f94fb, #151A40); /* Safari fallback */
   width: 100%;
-
 }
 
 .circles {
+  position: relative; /* Add this for absolutely positioned <li> inside */
   top: 0;
   left: 0;
   width: 100%;
@@ -19,13 +20,13 @@
 
 .circles li {
   position: absolute;
-  display:flow-root;
+  display: block; /* cleaner than flow-root here */
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(9, 84, 170, 0.519);
-  animation: animate 10s linear infinite;
+  background: rgba(9, 84, 170, 0.52);
   bottom: -150px;
+  animation: animate 10s linear infinite;
 }
 
 .circles li:nth-child(1) {
@@ -104,11 +105,9 @@
 }
 
 .zoomed {
-  transform: scale(1.5); /* Adjust the zoom level as needed */
+  transform: scale(1.5);
   transition: transform 0.3s ease-in-out;
 }
-
-
 
 @keyframes animate {
   0% {
@@ -116,7 +115,6 @@
     opacity: 1;
     border-radius: 0;
   }
-
   100% {
     transform: translateY(-1000px) rotate(720deg);
     opacity: 0;
