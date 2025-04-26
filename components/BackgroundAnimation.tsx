@@ -23,7 +23,7 @@ const BackgroundAnimation = () => {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
 
-      ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform before scaling
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(pixelRatio, pixelRatio);
     };
 
@@ -41,105 +41,89 @@ const BackgroundAnimation = () => {
       return 40;
     };
 
-    const particlesArray: Particle[] = [];
-    const numberOfParticles = getParticleCount();
+    // Particle Factory
+    const createParticle = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const baseSize = Math.min(width, height) / 50;
+      const speedFactor = width < 768 ? 0.3 : 0.4;
+      const shapes = ['rectangle', 'triangle', 'line'] as const;
+      const colors = [
+        'rgba(0, 71, 171, ',
+        'rgba(13, 110, 253, ',
+        'rgba(25, 135, 209, ',
+        'rgba(0, 123, 255, ',
+        'rgba(72, 149, 239, ',
+      ];
 
-    class Particle {
-      x: number;
-      y: number;
-      size: number;
-      speedX: number;
-      speedY: number;
-      color: string;
-      shape: 'rectangle' | 'triangle' | 'line';
-      rotation: number;
-      rotationSpeed: number;
+      const x = Math.random() * width;
+      const y = Math.random() * height;
+      const size = Math.random() * baseSize + baseSize;
+      const speedX = (Math.random() * 2 - 1) * speedFactor;
+      const speedY = (Math.random() * 2 - 1) * speedFactor;
+      const rotation = Math.random() * Math.PI * 2;
+      const rotationSpeed = (Math.random() - 0.5) * 0.01;
+      const shape = shapes[Math.floor(Math.random() * shapes.length)];
+      const color = `${colors[Math.floor(Math.random() * colors.length)]}${Math.random() * 0.3 + 0.2})`;
 
-      constructor() {
-        this.x = Math.random() * window.innerWidth;
-        this.y = Math.random() * window.innerHeight;
-        
-        const baseSize = Math.min(window.innerWidth, window.innerHeight) / 50;
-        this.size = Math.random() * baseSize + baseSize;
+      return {
+        x,
+        y,
+        size,
+        speedX,
+        speedY,
+        rotation,
+        rotationSpeed,
+        shape,
+        color,
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.rotation += this.rotationSpeed;
 
-        const speedFactor = window.innerWidth < 768 ? 0.3 : 0.4;
-        this.speedX = (Math.random() * 2 - 1) * speedFactor;
-        this.speedY = (Math.random() * 2 - 1) * speedFactor;
+          if (this.x > width || this.x < 0) this.speedX = -this.speedX;
+          if (this.y > height || this.y < 0) this.speedY = -this.speedY;
+        },
+        draw() {
+          if (!ctx) return;
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotation);
+          ctx.fillStyle = this.color;
+          ctx.strokeStyle = this.color;
 
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.01;
+          switch (this.shape) {
+            case 'rectangle':
+              ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
+              break;
+            case 'triangle':
+              ctx.beginPath();
+              ctx.moveTo(0, -this.size / 2);
+              ctx.lineTo(this.size / 2, this.size / 2);
+              ctx.lineTo(-this.size / 2, this.size / 2);
+              ctx.closePath();
+              ctx.fill();
+              break;
+            case 'line':
+              ctx.beginPath();
+              ctx.moveTo(-this.size, 0);
+              ctx.lineTo(this.size, 0);
+              ctx.lineWidth = this.size / 4;
+              ctx.stroke();
+              break;
+          }
 
-        const colors = [
-          'rgba(0, 71, 171, ',
-          'rgba(13, 110, 253, ',
-          'rgba(25, 135, 209, ',
-          'rgba(0, 123, 255, ',
-          'rgba(72, 149, 239, ',
-        ];
-        const shapes = ['rectangle', 'triangle', 'line'] as const;
-
-        this.shape = shapes[Math.floor(Math.random() * shapes.length)];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        this.color = `${randomColor}${Math.random() * 0.3 + 0.2})`;
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.rotation += this.rotationSpeed;
-
-        if (this.x > window.innerWidth || this.x < 0) {
-          this.speedX = -this.speedX;
+          ctx.restore();
         }
-        if (this.y > window.innerHeight || this.y < 0) {
-          this.speedY = -this.speedY;
-        }
-      }
-
-      draw() {
-        if (!ctx) return;
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
-        ctx.fillStyle = this.color;
-        ctx.strokeStyle = this.color;
-
-        switch (this.shape) {
-          case 'rectangle':
-            ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
-            break;
-          case 'triangle':
-            ctx.beginPath();
-            ctx.moveTo(0, -this.size / 2);
-            ctx.lineTo(this.size / 2, this.size / 2);
-            ctx.lineTo(-this.size / 2, this.size / 2);
-            ctx.closePath();
-            ctx.fill();
-            break;
-          case 'line':
-            ctx.beginPath();
-            ctx.moveTo(-this.size, 0);
-            ctx.lineTo(this.size, 0);
-            ctx.lineWidth = this.size / 4;
-            ctx.stroke();
-            break;
-        }
-
-        ctx.restore();
-      }
-    }
-
-    const init = () => {
-      particlesArray.length = 0;
-      for (let i = 0; i < numberOfParticles; i++) {
-        particlesArray.push(new Particle());
-      }
+      };
     };
+
+    const particlesArray = Array.from({ length: getParticleCount() }, createParticle);
 
     const animate = () => {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-      for (let particle of particlesArray) {
+      for (const particle of particlesArray) {
         particle.update();
         particle.draw();
       }
@@ -176,7 +160,6 @@ const BackgroundAnimation = () => {
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    init();
     animate();
 
     return () => {
