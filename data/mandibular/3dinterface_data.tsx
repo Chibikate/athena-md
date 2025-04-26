@@ -78,15 +78,8 @@ export const slicerTutorial1 = [
       <div>
         <p>
           In medical imaging,
-          <span className="font-bold"> Computed Tomography (CT) </span> is considered the gold standard for evaluating bone pathologies, lesions, defects, and other skeletal abnormalities due to its ability to
-          produce detailed images of the inside of the body. CT scans are
-          particularly effective in providing precise assessments of
-          bone-related conditions. On the other hand,{" "}
-          <span className="font-bold"> Magnetic Resonance Imaging (MRI) </span>{" "}
-          scans, while not ideal for visualizing bones, are valuable for
-          generating detailed images of soft tissues and can contribute to
-          creating a <span className="font-bold">three-dimensional (3D) </span>{" "}
-          model of the human anatomy.
+          <span className="font-bold"> Computed Tomography (CT) </span> is considered the gold standard for evaluating bone pathologies, lesions, defects, and other skeletal abnormalities due to its ability to produce detailed images of the inside of the body. CT scans are particularly effective in providing precise assessments of bone-related conditions. On the other hand,{" "}
+          <span className="font-bold"> Magnetic Resonance Imaging (MRI) </span>{" "} scans, while not ideal for visualizing bones, are valuable for generating detailed images of soft tissues and can contribute to creating a <span className="font-bold">three-dimensional (3D) </span>{" "} model of the human anatomy.
         </p>
       </div>
     ),
@@ -150,8 +143,8 @@ export const slicerTutorial1 = [
     description: (
       <div>
         This can be further customized by{" "}
-        <span className="font-bold">right clicking</span> on the toolbar and
-        <span className="font-bold"> checking/unchecking</span> the preferred
+        <span className="font-bold">right clicking </span> on the toolbar and
+        <span className="font-bold">checking/unchecking </span> the preferred
         choices.
       </div>
     ),
@@ -162,7 +155,7 @@ export const slicerTutorial1 = [
     title: "",
     description: (
       <div>
-        The <span className="font-bold">module interface</span> provides access
+        The <span className="font-bold">module interface </span> provides access
         to multiple options depending on the module loaded.
       </div>
     ),

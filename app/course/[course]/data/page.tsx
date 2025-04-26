@@ -54,7 +54,9 @@ const Home = ({ params }: Params) => {
   const [dragging, setDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
-  // Removed imageSize state declaration and used destructuring in onload handler
+  // Initialize pinch-to-zoom states
+  const [initialDistance, setInitialDistance] = useState<number | null>(null);
+  const [initialZoom, setInitialZoom] = useState(1);
 
   useEffect(() => {
     switch (queryPage) {
@@ -154,32 +156,30 @@ const Home = ({ params }: Params) => {
     }
   }, [zoomedImage, zoomLevel, position]);
 
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (zoomedImage) {
-        if (event.key === "Escape") {
-          setZoomedImage(null);
-        } else if (event.key === "+" || event.key === "=") {
-          setZoomLevel(prev => Math.min(MAX_ZOOM, prev + ZOOM_SPEED));
-        } else if (event.key === "-") {
-          setZoomLevel(prev => Math.max(MIN_ZOOM, prev - ZOOM_SPEED));
-        }
-      } else {
-        if (event.key === "ArrowRight") {
-          goToNextQuestion();
-        } else if (event.key === "ArrowLeft") {
-          goToPreviousQuestion();
-        }
+// Handle keyboard navigation
+useEffect(() => {
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (zoomedImage) {
+      if (event.key === "Escape") {
+        setZoomedImage(null);
+      } else if (event.key === "+" || event.key === "=") {
+        setZoomLevel(prev => Math.min(MAX_ZOOM, prev + ZOOM_SPEED));
+      } else if (event.key === "-") {
+        setZoomLevel(prev => Math.max(MIN_ZOOM, prev - ZOOM_SPEED));
       }
-    };
-    
-    window.addEventListener("keydown", handleKeyDown);
-    
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [goToNextQuestion, goToPreviousQuestion, zoomedImage]);
+    } else if (event.key === "ArrowRight") {
+      goToNextQuestion();
+    } else if (event.key === "ArrowLeft") {
+      goToPreviousQuestion();
+    }
+  };
+  
+  window.addEventListener("keydown", handleKeyDown);
+  
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, [goToNextQuestion, goToPreviousQuestion, zoomedImage]);
 
   // Set up wheel event listener with proper cleanup
   useEffect(() => {
@@ -193,6 +193,14 @@ const Home = ({ params }: Params) => {
       window.removeEventListener("wheel", wheelHandler);
     };
   }, [zoomedImage, handleZoom]);
+
+  // Helper function to calculate distance between two touch points
+  const getDistance = (touches: React.TouchList) => {
+    return Math.hypot(
+      touches[0].clientX - touches[1].clientX,
+      touches[0].clientY - touches[1].clientY
+    );
+  };
 
   // Mouse events for dragging
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -253,17 +261,6 @@ const Home = ({ params }: Params) => {
   const handleTouchEnd = () => {
     setDragging(false);
     setInitialDistance(null);
-  };
-
-  // Pinch to zoom
-  const [initialDistance, setInitialDistance] = useState<number | null>(null);
-  const [initialZoom, setInitialZoom] = useState(1);
-
-  const getDistance = (touches: React.TouchList) => {
-    return Math.hypot(
-      touches[0].clientX - touches[1].clientX,
-      touches[0].clientY - touches[1].clientY
-    );
   };
 
   // Handle closing the zoomed view
