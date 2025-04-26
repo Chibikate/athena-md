@@ -12,6 +12,8 @@ const BackgroundAnimation = () => {
     let animationFrameId: number;
     let resizeTimeout: number | null = null;
 
+    const mouse = { x: null as number | null, y: null as number | null };
+
     const resizeCanvas = () => {
       const pixelRatio = window.devicePixelRatio || 1;
       const width = window.innerWidth;
@@ -41,22 +43,28 @@ const BackgroundAnimation = () => {
       return 40;
     };
 
-    // Particle Factory
+    const handleMouseMove = (event: MouseEvent) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    const shapes = ['rectangle', 'triangle', 'line'] as const;
+    const colors = [
+      'rgba(0, 71, 171, ',
+      'rgba(13, 110, 253, ',
+      'rgba(25, 135, 209, ',
+      'rgba(0, 123, 255, ',
+      'rgba(72, 149, 239, ',
+    ];
+
     const createParticle = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       const baseSize = Math.min(width, height) / 50;
       const speedFactor = width < 768 ? 0.3 : 0.4;
-      const shapes = ['rectangle', 'triangle', 'line'] as const;
-      const colors = [
-        'rgba(0, 71, 171, ',
-        'rgba(13, 110, 253, ',
-        'rgba(25, 135, 209, ',
-        'rgba(0, 123, 255, ',
-        'rgba(72, 149, 239, ',
-      ];
 
-      // Math.random() is safe here because it's used for visual animations only
       const x = Math.random() * width;
       const y = Math.random() * height;
       const size = Math.random() * baseSize + baseSize;
@@ -81,6 +89,9 @@ const BackgroundAnimation = () => {
           this.x += this.speedX;
           this.y += this.speedY;
           this.rotation += this.rotationSpeed;
+
+          const width = window.innerWidth;
+          const height = window.innerHeight;
 
           if (this.x > width || this.x < 0) this.speedX = -this.speedX;
           if (this.y > height || this.y < 0) this.speedY = -this.speedY;
@@ -125,6 +136,22 @@ const BackgroundAnimation = () => {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
       for (const particle of particlesArray) {
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - particle.x;
+          const dy = mouse.y - particle.y;
+          const distance = Math.hypot(dx, dy);
+
+          if (distance < 120) {
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            const maxForce = 0.5;
+            const force = (120 - distance) / 120 * maxForce;
+
+            particle.x += forceDirectionX * force;
+            particle.y += forceDirectionY * force;
+          }
+        }
+
         particle.update();
         particle.draw();
       }
@@ -166,8 +193,17 @@ const BackgroundAnimation = () => {
     return () => {
       if (resizeTimeout) clearTimeout(resizeTimeout);
       window.removeEventListener('resize', throttledResize);
+      window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       cancelAnimationFrame(animationFrameId);
+
+      // Clear canvas for safety
+      if (canvasRef.current) {
+        const ctx = canvasRef.current.getContext('2d');
+        if (ctx) {
+          ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        }
+      }
     };
   }, []);
 
