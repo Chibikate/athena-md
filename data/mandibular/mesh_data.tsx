@@ -104,9 +104,7 @@ export const MeshTutorial = [
         <span className="font-bold">Select</span> icon which will activate the
         <span className="font-bold">brush tool</span> and allow the user to{" "}
         <span className="font-bold">“paint”</span> or select any area of the 3D
-        object. The <span className="font-bold"> brush size </span> can be
-        <span className="font-bold"> increased or decreased </span> by holding down the left mouse button and dragging the slider.
-      </div>
+        object. The <span className="font-bold"> brush size </span> can be <span className="font-bold"> increased or decreased </span> by holding down the left mouse button and dragging the slider.</div>
     ),
     image: Module6.Mesh6,
     alt: "illustration",
@@ -121,7 +119,7 @@ export const MeshTutorial = [
     title: "MeshMixer - Virtual-Surgery",
     description:
       (
-        <div>To <span className="font-bold">select or “paint”</span> the area, press the <span className="font-bold">left mouse button</span> once. To continuously paint, <span className="font-bold">hold the left mouse button and drag the brush</span> over the desired area.</div>
+        <div>To <span className="font-bold">select or “paint”</span> the area, press the <span className="font-bold">left mouse button </span> once. To continuously paint, <span className="font-bold">hold the left mouse button and drag the brush</span> over the desired area.</div>
       ),
     image: Module6.Mesh8,
     alt: "illustration",
