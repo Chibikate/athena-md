@@ -56,6 +56,7 @@ const BackgroundAnimation = () => {
         'rgba(72, 149, 239, ',
       ];
 
+      // Math.random() is safe here because it's used for visual animations only
       const x = Math.random() * width;
       const y = Math.random() * height;
       const size = Math.random() * baseSize + baseSize;
