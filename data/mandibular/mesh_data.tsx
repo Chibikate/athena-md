@@ -3,355 +3,342 @@ import Link from "next/link";
 
 export const MeshTutorial = [
   {
-    title:
-      "3D file manipulation and separating the mandible in Meshmixer (Autodesk, San Rafael, California)",
+    title: "3D File Manipulation and Separating the Mandible in Meshmixer",
     description: (
-      <div>
-        <div className="flex flex-col items-center justify-center">
-          <ul className="list-disc list-inside space-y-2">
-            <li>
-              <span className="font-semibold">
-                Download Meshmixer (version 3.5):{" "}
-              </span>
-              <Link href="https://meshmixer.com/download.html" target="_blank">
-                <span className="underline">
-                  https://meshmixer.com/download.html
-                </span>
-              </Link>
-            </li>
-            <li>
-              <span className="font-semibold ">
-                Download file to use for this activity:{" "}
-              </span>
-              <Link
-                href="https://drive.google.com/drive/folders/1uHn8Ozf8MmxCrG45Wsuy-kLPiMcoC1gV?usp=sharing"
-                target="_blank"
-              >
-                <span className=" underline">
-                https://drive.google.com/drive/folders/1uHn8Ozf8MmxCrG45Wsuy-kLPiMcoC1gV?fbclid=IwAR2sDCWMPkmXUNW6XvM95z63wzESKFvaoWQlBN-CrB2zn40OiuFilkHdRsA
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <div className="flex flex-col items-center justify-center">
+        <ul className="list-disc list-inside space-y-2">
+          <li>
+            <span className="font-semibold">Download Meshmixer (version 3.5): </span>
+            <Link href="https://meshmixer.com/download.html" target="_blank" className="underline">
+              https://meshmixer.com/download.html
+            </Link>
+          </li>
+          <li>
+            <span className="font-semibold">Download file for this activity: </span>
+            <Link
+              href="https://drive.google.com/drive/folders/1uHn8Ozf8MmxCrG45Wsuy-kLPiMcoC1gV?usp=sharing"
+              target="_blank"
+              className="underline"
+            >
+              https://drive.google.com/drive/folders/1uHn8Ozf8MmxCrG45Wsuy-kLPiMcoC1gV
+            </Link>
+          </li>
+        </ul>
       </div>
     ),
     image: null,
     alt: "",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Virtual Surgery",
     description: (
       <div>
-        Left click on the <span className="font-bold">import</span> icon on the
-        homescreen or the toolbar.
+        Left click on the <span className="font-bold">Import</span> icon on the homescreen or toolbar.
       </div>
     ),
     image: Module6.Mesh1,
-    alt: "illustration",
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Virtual Surgery",
     description: (
       <div>
-        Access the folder you saved your file in, left click on the file and
-        left click on <span className="font-bold">open.</span>
+        Access the folder you saved your file in, left click on the file, then click <span className="font-bold">Open</span>.
       </div>
     ),
     image: Module6.Mesh2,
-    alt: "illustration",
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Virtual Surgery",
     description: (
       <div>
-        After successfully loading the file, you should have the{" "}
-        <span className="font-bold">3D object</span> in your screen.
+        After successfully loading the file, you should see the <span className="font-bold">3D object</span> on your screen.
       </div>
     ),
     image: Module6.Mesh3,
-    alt: "illustration",
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Virtual Surgery",
     description: (
       <div>
-        To see the currently loaded objects, access the{" "}
-        <span className="font-bold">Objects Browse</span>r through the drop down
-        menu under view.
+        Access the <span className="font-bold">Object Browser</span> from the dropdown menu under <span className="font-bold">View</span>.
       </div>
     ),
     image: Module6.Mesh4,
-    alt: "illustration",
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Virtual Surgery",
     description: (
       <div>
-        The <span className="font-bold">object browser</span> will show the available{" "}
-        <span className="font-bold">3D object</span> currently open in the
-        program. Currently, only 1 object is available.
+        The <span className="font-bold">Object Browser</span> shows the available <span className="font-bold">3D objects</span>. Currently, only one object is loaded.
       </div>
     ),
     image: Module6.Mesh5,
-    alt: "illustration",
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Separating the Mandible",
     description: (
       <div>
-        To separate the mandible, left click on the{" "}
-        <span className="font-bold">Select</span> icon which will activate the
-        <span className="font-bold">brush tool</span> and allow the user to
-        <span className="font-bold">“paint”</span> or select any area of the 3D
-        object. The <span className="font-bold"> brush size </span> can be <span className="font-bold"> increased or decreased </span> by holding down the left mouse button and dragging the slider.</div>
+        Left click on the <span className="font-bold">Select</span> icon to activate the <span className="font-bold">Brush Tool</span>. This allows you to “paint” or select any area of the 3D object. Adjust the brush size by holding down the left mouse button and dragging the slider.
+      </div>
     ),
     image: Module6.Mesh6,
-    alt: "illustration",
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
-    description: <div>The area highlighted in <span className="font-bold">dark grey</span> is the area of the brush.</div>,
-    image: Module6.Mesh7,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>To <span className="font-bold">select or “paint”</span> the area, press the <span className="font-bold">left mouse button </span> once. To continuously paint, <span className="font-bold">hold the left mouse button and drag the brush</span> over the desired area.</div>
-      ),
-    image: Module6.Mesh8,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>To select the entire mandible, paint any area of the mandible using the brush tool and through the modify menu, select <span className="font-bold">“expand to connected”</span>. Alternatively, this can be done by pressing the hotkey <span className="font-bold">“E”</span> or simply <span className="font-bold">double clicking</span> on the left mouse button. The expand to connected function works by expanding the selected area to all the connected areas in an object. Since the mandible has already been separated in 3D slicer, it is not <span className="font-bold">“connected”</span> to the rest of the skull.</div>
-      ),
-    image: Module6.Mesh9,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>To make the mandible as a separate object, access the separate option through the <span className="font-bold">edit menu</span>. This can also be done by typing the hotkey <span className="font-bold">“Y”</span></div>
-      ),
-    image: Module6.Mesh10,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>Once the mandible has been separated, it will appear as a separate object in the <span className="font-bold">object browser</span>. The <span className="font-bold">highlighted object</span> in the object browser is the object that is currently <span className="font-bold">“active”</span>. It will show up as the white object in the screen and all changes will be made on that object. The <span className="font-bold">Objects can be renamed</span> by <span className="font-bold">double clicking</span> on the object name.</div>
-      ),
-    image: Module6.Mesh11,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>Once the mandible has been separated, it will appear as a separate object in the object browser. The Objects can be <span className="font-bold">renamed</span> by <span className="font-bold">double clicking</span> on the object name for this tutorial rename the object to <span className="font-bold">“skull”</span>. The objects can be <span className="font-bold">hidden</span> by <span className="font-bold">left clicking on the “visibility”</span> icon on the right.</div>
-      ),
-    image: Module6.Mesh12,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div> <span className="font-bold">Hide the rest of the skull</span> and <span className="font-bold">leave only the mandible</span>. We can see that there is a <span className="font-bold">tumor</span> on the <span className="font-bold">right side</span> of the mandible. We can remove this tumor using the <span className="font-bold">plane cut</span> function. Position the mandible by clicking on the <span className="font-bold">“top”</span> area of the view cube.</div>
-      ),
-    image: Module6.Mesh13,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>We can remove the tumor side of the mandible using the <span className="font-bold">“plane cut”</span> function.</div>
-      ),
-    image: Module6.Mesh14,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>The <span className="font-bold">“plane cut”</span> function is active when a grid is visible over the screen.</div>
-      ),
-    image: Module6.Mesh15,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>To position the plane in the desired area, <span className="font-bold">hold down the left mouse</span> button and <span className="font-bold">drag downwards</span> through the middle of the mandible. The <span className="font-bold">red line</span> will show the area where the plane will be placed.</div>
-      ),
-    image: Module6.Mesh16,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>After dragging the red line through the middle, release the left mouse button and the plane will by placed. Note the transparent area is the area that will be cut. To <span className="font-bold">switch</span> this to the other side, <span className="font-bold">left click on the blue arrow.</span></div>
-      ),
-    image: Module6.Mesh17,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>You can choose to <span className="font-bold">remove one half or keep both halves</span> through the dropdown menu. For this tutorial, select <span className="font-bold">keep both.</span></div>
-      ),
-    image: Module6.Mesh18,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>You can choose to move the plane by clicking on the <span className="font-bold">directional buttons and dragging</span> towards the desired area. <span className="font-bold">Rotating the plane</span> can also be done by clicking and dragging on the curved lines.</div>
-      ),
-    image: Module6.Mesh19,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>For defects/tumors on one side of the mandible, position the plane slightly away from the middle towards the tumor side to allow for sufficient overlapping of the model during the next few steps. Once the position is sufficient, click on <span className="font-bold">accept.</span></div>
-      ),
-    image: Module6.Mesh20,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div> <span className="font-bold">Select the normal half of the mandible</span> by double clicking using the <span className="font-bold">select tool</span> and separating using the <span className="font-bold">separate function</span> in the edit drop down menu, or simply use the hotkey <span className="font-bold">“Y”</span>.</div>
-      ),
-    image: Module6.Mesh21,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>Once Successfully separated, a third object will be available in the object browser. <span className="font-bold">Rename</span> the part to <span className="font-bold">mandiblenormal</span>. Rename the other part to <span className="font-bold">mandibletumor.</span></div>
-      ),
-    image: Module6.Mesh22,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Brush Tool",
     description: (
-      <div>Hide the mandibletumor object by clicking on the <span className="font-bold">“eye”</span> icon.</div>
+      <div>
+        The area highlighted in <span className="font-bold">dark grey</span> represents the brush area.
+      </div>
+    ),
+    image: Module6.Mesh7,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Painting the Mandible",
+    description: (
+      <div>
+        To select an area, click once with the left mouse button. To continuously paint, hold and drag the left mouse button.
+      </div>
+    ),
+    image: Module6.Mesh8,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Expand Selection",
+    description: (
+      <div>
+        Paint a portion of the mandible, then use <span className="font-bold">Expand to Connected</span> under the modify menu or press <span className="font-bold">E</span>. Alternatively, double-click the left mouse button.
+      </div>
+    ),
+    image: Module6.Mesh9,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Separate the Mandible",
+    description: (
+      <div>
+        To separate, go to the <span className="font-bold">Edit Menu</span> and select <span className="font-bold">Separate</span> or press <span className="font-bold">Y</span>.
+      </div>
+    ),
+    image: Module6.Mesh10,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Managing Objects",
+    description: (
+      <div>
+        The mandible will appear as a new object in the <span className="font-bold">Object Browser</span>. You can rename it by double-clicking its name.
+      </div>
+    ),
+    image: Module6.Mesh11,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Renaming Objects",
+    description: (
+      <div>
+        Rename the skull object to <span className="font-bold">"skull"</span> and manage visibility using the eye icon.
+      </div>
+    ),
+    image: Module6.Mesh12,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Identifying Tumor",
+    description: (
+      <div>
+        Hide the skull and leave only the mandible visible. Notice the <span className="font-bold">tumor</span> on the <span className="font-bold">right side</span> of the mandible. Use the <span className="font-bold">Plane Cut</span> function to remove it.
+      </div>
+    ),
+    image: Module6.Mesh13,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Plane Cut",
+    description: (
+      <div>
+        Use the <span className="font-bold">Plane Cut</span> function to remove the tumor side of the mandible.
+      </div>
+    ),
+    image: Module6.Mesh14,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Positioning Plane Cut",
+    description: (
+      <div>
+        When active, a grid appears. Drag to position the <span className="font-bold">red line</span> where the cut will be made.
+      </div>
+    ),
+    image: Module6.Mesh15,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Adjusting the Plane",
+    description: (
+      <div>
+        Hold the left mouse button and drag downwards to adjust the plane. Click the blue arrow to flip sides.
+      </div>
+    ),
+    image: Module6.Mesh16,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Cut Settings",
+    description: (
+      <div>
+        In the dropdown menu, choose <span className="font-bold">Keep Both</span> to preserve both halves.
+      </div>
+    ),
+    image: Module6.Mesh17,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Fine-tuning the Cut",
+    description: (
+      <div>
+        Move or rotate the plane using the directional arrows and curved lines.
+      </div>
+    ),
+    image: Module6.Mesh18,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Preparing for Reconstruction",
+    description: (
+      <div>
+        Position the plane slightly toward the tumor side for better overlap. Click <span className="font-bold">Accept</span> when done.
+      </div>
+    ),
+    image: Module6.Mesh19,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Separating Normal Mandible",
+    description: (
+      <div>
+        Select the normal side using the brush tool and separate it using the <span className="font-bold">Separate</span> function or press <span className="font-bold">Y</span>.
+      </div>
+    ),
+    image: Module6.Mesh20,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Renaming Separated Parts",
+    description: (
+      <div>
+        Rename the parts: <span className="font-bold">mandiblenormal</span> and <span className="font-bold">mandibletumor</span>.
+      </div>
+    ),
+    image: Module6.Mesh21,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Hiding Tumor Object",
+    description: (
+      <div>
+        Hide the <span className="font-bold">mandibletumor</span> object by clicking the <span className="font-bold">eye</span> icon.
+      </div>
+    ),
+    image: Module6.Mesh22,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Mirroring the Normal Mandible",
+    description: (
+      <div>
+        Use the <span className="font-bold">Mirror</span> function under <span className="font-bold">Edit</span> to reconstruct the missing half.
+      </div>
     ),
     image: Module6.Mesh23,
-    alt: "illustration",
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>To <span className="font-bold">“reconstruct”</span> the missing half, select the mirror function under the <span className="font-bold">“edit”</span> icon.</div>
-      ),
-    image: Module6.Mesh24,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>You can <span className="font-bold">mirror</span> the normal side of the mandible. It is important to not just reconstruct the missing side but also to make sure that it is in its <span className="font-bold">proper position.</span></div>
-      ),
-    image: Module6.Mesh25,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>To do this, <span className="font-bold">“show” the “skull”</span> object by clicking on the <span className="font-bold">“eye”</span> icon. Position the view to bottom via the view cube.</div>
-      ),
-    image: Module6.Mesh26,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>Take note of the position of the <span className="font-bold">condyles</span>. <span className="font-bold">Drag the blue</span> directional arrow until the left condyle is sitting in a similar position as the normal mandible.</div>
-      ),
-    image: Module6.Mesh27,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>You can further <span className="font-bold">manipulate</span> the objects to fine-tune your reconstruction. <span className="font-bold">Once satisfied</span> with the position of the mirrored mandible, click <span className="font-bold">“accept”</span>.</div>
-      ),
-    image: Module6.Mesh28,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>The position can be further confirmed by making the tumor side of the mandible visible and comparing the position of the condyle. This can only be done if the condyle in the tumor side is in its normal position. Very large tumors may displace the condyle away from its regular position and may serve as a good reference.</div>
-      ),
-    image: Module6.Mesh29,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>Once satisfied, make the object into a solid by clicking on the <span className="font-bold">“edit”</span> icon and clicking on <span className="font-bold">“make solid”</span>. This will <span className="font-bold">“fill” the object and remove any internal geometry</span> making it ready for 3D printing.</div>
-      ),
-    image: Module6.Mesh30,
-    alt: "illustration",
-  },
-  {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Positioning the Mirror",
     description: (
-      <div>Use the default settings and click on  <span className="font-bold">“accept”.</span></div>
+      <div>
+        Mirror the normal side and adjust to ensure it fits properly.
+      </div>
     ),
-    image: Module6.Mesh31,
-    alt: "illustration",
+    image: Module6.Mesh24,
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
-    description:
-      (
-        <div>To save the object, click on <span className="font-bold">“file”</span> then <span className="font-bold">“export”</span> and save the mandible into your desired folder. Congratulations! You have successfully removed the tumor side as well as reconstructed the mandible. This object can be used as a guide for pre-bending titanium implants. Although not a standalone process in mandibular reconstruction, this process shows the basics in extraction and manipulation of the mandible in a 3D environment.</div>
-      ),
-    image: Module6.Mesh32,
-    alt: "illustration",
+    title: "MeshMixer - Aligning the Reconstruction",
+    description: (
+      <div>
+        Show the <span className="font-bold">skull</span> object for alignment. Adjust using the View Cube.
+      </div>
+    ),
+    image: Module6.Mesh25,
+    alt: "Illustration",
   },
   {
-    title: "MeshMixer - Virtual-Surgery",
+    title: "MeshMixer - Adjusting Condyles",
+    description: (
+      <div>
+        Adjust the <span className="font-bold">condyles</span> using the blue directional arrow for proper positioning.
+      </div>
+    ),
+    image: Module6.Mesh26,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Finalizing Reconstruction",
+    description: (
+      <div>
+        Fine-tune and click <span className="font-bold">Accept</span> when satisfied.
+      </div>
+    ),
+    image: Module6.Mesh27,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Confirming Position",
+    description: (
+      <div>
+        Compare with the tumor side if the condyle is in a normal position.
+      </div>
+    ),
+    image: Module6.Mesh28,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Making Solid",
+    description: (
+      <div>
+        Click <span className="font-bold">Edit</span> and <span className="font-bold">Make Solid</span> to prepare for 3D printing.
+      </div>
+    ),
+    image: Module6.Mesh29,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Final Export",
+    description: (
+      <div>
+        Use default settings and click <span className="font-bold">Accept</span>. Export the final model via <span className="font-bold">File → Export</span>.
+      </div>
+    ),
+    image: Module6.Mesh30,
+    alt: "Illustration",
+  },
+  {
+    title: "MeshMixer - Course Completion",
     description: (
       <div>
         <p>
-          Congratulations, you've to finish the lesson. For you to get the
-          certificate, take the{" "}
-          <Link
-            href="/quiz/meshmixer"
-            className="font-bold underline"
-          >
-            Quiz
-          </Link>{" "}
-          first.
+          Congratulations! To get your certificate, please take the{" "}
+          <Link href="/quiz/meshmixer" className="font-bold underline">
+            quiz
+          </Link>
+          .
         </p>
       </div>
     ),
