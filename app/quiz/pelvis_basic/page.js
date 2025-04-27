@@ -5,23 +5,6 @@ import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
 import Picture40 from "@/public/basic3D/quizc4/Picture40.png";
 
-// Define the CSS for confetti animation
-const confettiAnimation = `
-  @keyframes confetti-fall-continuous {
-    0% {
-      transform: translateY(-20px) rotate(0deg);
-      opacity: 1;
-    }
-    80% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
-    }
-  }
-`;
-
 const quizQuestions = [
   {
     question:
