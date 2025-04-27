@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Link from "next/link";
-import NavigatingCertificate from "../../../components/certificate/advanced/navigating_certificate";
+import NavigatingCertificate from "../../../components/certificate/navigating/navigating_certificate";
 
 function CertificatePage() {
   const searchParams = useSearchParams();
