@@ -133,9 +133,10 @@ export default function QuizApp() {
     return userAnswers.every((answer) => answer !== "");
   };
 
+
   const score = calculateScore();
   const wrong = checkWrong();
-  
+
   // Continuous CSS Confetti Animation
   const renderConfetti = () => {
     if (!showConfetti) return null;
@@ -170,24 +171,71 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style>{`
-          @keyframes confetti-fall-continuous {
-            0% {
-              transform: translateY(-20px) rotate(0deg);
-              opacity: 1;
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes confetti-fall-continuous {
+              0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+              }
+              80% {
+                opacity: 1;
+              }
+              100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+              }
             }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}</style>
+          `
+        }} />
         {confettiPieces}
       </div>
     );
+  };
+
+  // Helper function to render images (single or multiple)
+  const renderQuestionImages = () => {
+    const currentImage = quizQuestions[currentQuestion].image;
+    
+    // Check if image is an array
+    if (Array.isArray(currentImage)) {
+      return (
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+          {currentImage.map((img, index) => (
+            <div key={index} className="relative w-full max-w-md md:max-w-lg">
+              <Image
+                src={img}
+                alt={`Question illustration ${index + 1}`}
+                className="border border-gray-200 rounded"
+                width={550}
+                height={300}
+                layout="responsive"
+                priority
+              />
+            </div>
+          ))}
+        </div>
+      );
+    } else if (currentImage) {
+      // Single image case
+      return (
+        <div className="flex justify-center mb-6">
+          <div className="relative w-full max-w-md md:max-w-lg">
+            <Image
+              src={currentImage}
+              alt="Question illustration"
+              className="border border-gray-200 rounded"
+              width={550}
+              height={300}
+              layout="responsive"
+              priority
+            />
+          </div>
+        </div>
+      );
+    }
+    
+    return null;
   };
 
   return (
@@ -203,7 +251,7 @@ export default function QuizApp() {
       </div>
       
       {/* Quiz title */}
-      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Meshmixer Quiz</h1>
+      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">MeshMixer Quiz</h1>
       
       {/* Quiz container */}
       <div className="bg-white rounded-lg shadow-md p-4 md:p-6 lg:p-8 w-full max-w-4xl mt-6">
@@ -212,53 +260,42 @@ export default function QuizApp() {
             <div className="mb-4 md:mb-8">
               <p className="text-base md:text-lg font-medium mb-4 md:mb-6">{quizQuestions[currentQuestion].question}</p>
               
-              {quizQuestions[currentQuestion].image && (
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-full max-w-md md:max-w-lg">
-                    <Image 
-                      src={quizQuestions[currentQuestion].image} 
-                      alt="Question illustration" 
-                      className="border border-gray-200 rounded"
-                      width={550}
-                      height={300}
-                      priority
-                    />
-                  </div>
-                </div> 
-              )}
+              {/* Render images using the helper function */}
+              {renderQuestionImages()}
               
               <div className="space-y-2 md:space-y-3">
-                {quizQuestions[currentQuestion].options.map(
-                  (option, optionIndex) => {
-                    const isSelected = userAnswers[currentQuestion] === option.trim();
-                    return (
-                      <div 
-                        key={optionIndex} 
-                        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
-                          isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
-                        }`}
-                        onClick={() => {
-                          const event = { target: { value: option } };
-                          handleAnswerChange(event, currentQuestion);
-                        }}
-                      >
-                        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
-                          <input
-                            type="radio"
-                            name={`question-${currentQuestion}`}
-                            value={option}
-                            onChange={(e) => handleAnswerChange(e, currentQuestion)}
-                            checked={isSelected}
-                            className="mt-1 mr-2 md:mr-3 flex-shrink-0"
-                          />
-                          <span className="flex-1">{option}</span>
-                        </label>
-                      </div>
-                    );
-                  }
-                )}
-              </div>
-              
+  {quizQuestions[currentQuestion].options.map((option, optionIndex) => {
+    const isSelected = userAnswers[currentQuestion] === option.trim();
+    return (
+      <div
+        key={optionIndex}
+        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
+          isSelected ? "bg-green-100 border-green-500" : "hover:bg-gray-50"
+        }`}
+        onClick={() => handleAnswerChange({ target: { value: option } }, currentQuestion)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            handleAnswerChange({ target: { value: option } }, currentQuestion);
+          }
+        }}
+      >
+        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
+          <input
+            type="radio"
+            name={`question-${currentQuestion}`}
+            value={option}
+            onChange={(e) => handleAnswerChange(e, currentQuestion)}
+            checked={isSelected}
+            className="mt-1 mr-2 md:mr-3 flex-shrink-0"
+          />
+          <span className="flex-1">{option}</span>
+        </label>
+      </div>
+    );
+  })}
+</div>
               <div className="flex justify-between mt-6 md:mt-8">
                 {currentQuestion > 0 ? (
                   <button

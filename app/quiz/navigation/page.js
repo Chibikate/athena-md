@@ -227,7 +227,7 @@ export default function QuizApp() {
           <Navigator />
         </div>
       </div>
-      
+     
       {/* Quiz title */}
       <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Navigating DICOM Quiz</h1>
       
