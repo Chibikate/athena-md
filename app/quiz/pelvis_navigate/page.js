@@ -10,24 +10,24 @@ const quizQuestions = [
     question:
       "1. Which mouse button does the user use to move the 3D object around on the 3D panel (blue)?",
     options: [
-      "A. Holding down the middle mouse button and dragging",
-      "B. Holding the left mouse button while dragging",
+      "A. Holding the left mouse button while dragging",
+      "B. Holding down the middle mouse button and dragging",
       "C. Quickly tapping the left mouse button twice",
     ],
     image: Picture18,
     correctAnswer:
-      "B. Holding the left mouse button while dragging",
+      "A. Holding the left mouse button while dragging",
   },
   {
     question:
-      "2. Which mouse button does the user use to move the 3D object around on the 3D panel (blue)?",
+      "2. What mouse button allows the users to pan the 3D images displayed on the 3D panel?",
     options: [
-      "A. Holding the left mouse button while dragging left to right, vice versa",
-      "B. Rolling down the middle mouse button",
-      "C. Holding down the right mouse button and dragging up and down, vice versa",
+      "A. Holding the left mouse button while dragging",
+      "B. Holding down the middle mouse button and dragging",
+      "C. Quickly tapping the left mouse button twice",
     ],
     image: Picture18,
-    correctAnswer: "A. Holding the left mouse button while dragging left to right, vice versa",
+    correctAnswer: "B. Holding down the middle mouse button and dragging",
   },
 ];
 
@@ -72,6 +72,7 @@ export default function QuizApp() {
     }
   };
 
+
   const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
@@ -96,7 +97,6 @@ export default function QuizApp() {
   const areAllQuestionsAnswered = () => {
     return userAnswers.every((answer) => answer !== "");
   };
-
 
   const score = calculateScore();
   const wrong = checkWrong();
@@ -135,23 +135,21 @@ export default function QuizApp() {
     
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            @keyframes confetti-fall-continuous {
-              0% {
-                transform: translateY(-20px) rotate(0deg);
-                opacity: 1;
-              }
-              80% {
-                opacity: 1;
-              }
-              100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-              }
+        <style>{`
+          @keyframes confetti-fall-continuous {
+            0% {
+              transform: translateY(-20px) rotate(0deg);
+              opacity: 1;
             }
-          `
-        }} />
+            80% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(100vh) rotate(360deg);
+              opacity: 0;
+            }
+          }
+        `}</style>
         {confettiPieces}
       </div>
     );
@@ -208,14 +206,12 @@ export default function QuizApp() {
       {renderConfetti()}
 
       {/* Header with logo and navigation */}
-      <div className="w-full shadow-md fixed top-0 left-0 z-10">
-        <div className="max-w-screen-xl mx-auto">
-          <Navigator />
-        </div>
+      <div className="w-full max-w-screen-l mx-auto shadow-md">
+        <Navigator />
       </div>
       
       {/* Quiz title */}
-      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">MeshMixer Quiz</h1>
+      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Navigating DICOM Quiz</h1>
       
       {/* Quiz container */}
       <div className="bg-white rounded-lg shadow-md p-4 md:p-6 lg:p-8 w-full max-w-4xl mt-6">
@@ -228,38 +224,37 @@ export default function QuizApp() {
               {renderQuestionImages()}
               
               <div className="space-y-2 md:space-y-3">
-  {quizQuestions[currentQuestion].options.map((option, optionIndex) => {
-    const isSelected = userAnswers[currentQuestion] === option.trim();
-    return (
-      <div
-        key={optionIndex}
-        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
-          isSelected ? "bg-green-100 border-green-500" : "hover:bg-gray-50"
-        }`}
-        onClick={() => handleAnswerChange({ target: { value: option } }, currentQuestion)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            handleAnswerChange({ target: { value: option } }, currentQuestion);
-          }
-        }}
-      >
-        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
-          <input
-            type="radio"
-            name={`question-${currentQuestion}`}
-            value={option}
-            onChange={(e) => handleAnswerChange(e, currentQuestion)}
-            checked={isSelected}
-            className="mt-1 mr-2 md:mr-3 flex-shrink-0"
-          />
-          <span className="flex-1">{option}</span>
-        </label>
-      </div>
-    );
-  })}
-</div>
+                {quizQuestions[currentQuestion].options.map(
+                  (option, optionIndex) => {
+                    const isSelected = userAnswers[currentQuestion] === option.trim();
+                    return (
+                      <div 
+                        key={optionIndex} 
+                        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
+                          isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
+                        }`}
+                        onClick={() => {
+                          const event = { target: { value: option } };
+                          handleAnswerChange(event, currentQuestion);
+                        }}
+                      >
+                        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
+                          <input
+                            type="radio"
+                            name={`question-${currentQuestion}`}
+                            value={option}
+                            onChange={(e) => handleAnswerChange(e, currentQuestion)}
+                            checked={isSelected}
+                            className="mt-1 mr-2 md:mr-3 flex-shrink-0"
+                          />
+                          <span className="flex-1">{option}</span>
+                        </label>
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+              
               <div className="flex justify-between mt-6 md:mt-8">
                 {currentQuestion > 0 ? (
                   <button
@@ -320,7 +315,6 @@ export default function QuizApp() {
                     Get Your Certificate
                   </button>
                 </Link>
-                
               </div>
             ) : (
               <div className="space-y-4">

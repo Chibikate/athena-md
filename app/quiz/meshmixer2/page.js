@@ -101,6 +101,7 @@ export default function QuizApp() {
     }
   };
 
+
   const checkWrong = useCallback(() => {
     let wrong = [];
     userAnswers.forEach((answer, index) => {
@@ -237,10 +238,8 @@ export default function QuizApp() {
       {renderConfetti()}
 
       {/* Header with logo and navigation */}
-      <div className="w-full shadow-md fixed top-0 left-0 z-10">
-        <div className="max-w-screen-xl mx-auto">
-          <Navigator />
-        </div>
+      <div className="w-full max-w-screen-l mx-auto shadow-md">
+        <Navigator />
       </div>
       
       {/* Quiz title */}
@@ -257,38 +256,37 @@ export default function QuizApp() {
               {renderQuestionImages()}
               
               <div className="space-y-2 md:space-y-3">
-  {quizQuestions[currentQuestion].options.map((option, optionIndex) => {
-    const isSelected = userAnswers[currentQuestion] === option.trim();
-    return (
-      <div
-        key={optionIndex}
-        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
-          isSelected ? "bg-green-100 border-green-500" : "hover:bg-gray-50"
-        }`}
-        onClick={() => handleAnswerChange({ target: { value: option } }, currentQuestion)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            handleAnswerChange({ target: { value: option } }, currentQuestion);
-          }
-        }}
-      >
-        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
-          <input
-            type="radio"
-            name={`question-${currentQuestion}`}
-            value={option}
-            onChange={(e) => handleAnswerChange(e, currentQuestion)}
-            checked={isSelected}
-            className="mt-1 mr-2 md:mr-3 flex-shrink-0"
-          />
-          <span className="flex-1">{option}</span>
-        </label>
-      </div>
-    );
-  })}
-</div>
+                {quizQuestions[currentQuestion].options.map(
+                  (option, optionIndex) => {
+                    const isSelected = userAnswers[currentQuestion] === option.trim();
+                    return (
+                      <div 
+                        key={optionIndex} 
+                        className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
+                          isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
+                        }`}
+                        onClick={() => {
+                          const event = { target: { value: option } };
+                          handleAnswerChange(event, currentQuestion);
+                        }}
+                      >
+                        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
+                          <input
+                            type="radio"
+                            name={`question-${currentQuestion}`}
+                            value={option}
+                            onChange={(e) => handleAnswerChange(e, currentQuestion)}
+                            checked={isSelected}
+                            className="mt-1 mr-2 md:mr-3 flex-shrink-0"
+                          />
+                          <span className="flex-1">{option}</span>
+                        </label>
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+              
               <div className="flex justify-between mt-6 md:mt-8">
                 {currentQuestion > 0 ? (
                   <button
@@ -349,7 +347,6 @@ export default function QuizApp() {
                     Get Your Certificate
                   </button>
                 </Link>
-                
               </div>
             ) : (
               <div className="space-y-4">
