@@ -202,11 +202,11 @@ const BackgroundAnimation = () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       cancelAnimationFrame(animationFrameId);
 
-      if (canvasRef.current) {
-        const ctx = canvasRef.current.getContext('2d');
-        if (ctx) {
-          ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-        }
+      // Store a reference to the canvas that was used in this effect
+      const canvasElement = canvas;
+      const context = canvasElement.getContext('2d');
+      if (context) {
+        context.clearRect(0, 0, canvasElement.width, canvasElement.height);
       }
     };
   }, []);

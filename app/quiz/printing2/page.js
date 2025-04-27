@@ -240,7 +240,7 @@ export default function QuizApp() {
     return null;
   };
 
-  const handleOptionKeyPress = (e, option, optionIndex) => {
+  const handleOptionKeyPress = (e, option) => {
     // Enter or Space key
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -273,16 +273,16 @@ export default function QuizApp() {
               
               <div className="space-y-2 md:space-y-3">
                 {quizQuestions[currentQuestion].options.map(
-                  (option, optionIndex) => {
+                  (option, index) => {
                     const isSelected = userAnswers[currentQuestion] === option.trim();
                     return (
                       <div 
-                        key={optionIndex} 
+                        key={index} 
                         className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
                           isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
                         }`}
                         onClick={() => handleAnswerSelect(option, currentQuestion)}
-                        onKeyDown={(e) => handleOptionKeyPress(e, option, optionIndex)}
+                        onKeyDown={(e) => handleOptionKeyPress(e, option)}
                         tabIndex="0"
                         role="radio"
                         aria-checked={isSelected}
