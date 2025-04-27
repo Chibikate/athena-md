@@ -48,6 +48,14 @@ export default function QuizApp() {
     setUserAnswers(updatedAnswers);
   };
 
+  const handleKeyDown = (event, option) => {
+    // Handle Enter or Space key presses
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleAnswerChange(option);
+    }
+  };
+
   const goToNextQuestion = () => setCurrentQuestion((prev) => prev + 1);
   const goToPreviousQuestion = () => setCurrentQuestion((prev) => prev - 1);
   const retakeQuiz = () => {
@@ -68,15 +76,19 @@ export default function QuizApp() {
             <p className="text-lg font-medium mb-4">{quizQuestions[currentQuestion].question}</p>
             <div className="space-y-3">
               {quizQuestions[currentQuestion].options.map((option, idx) => (
-                <div
+                <button
                   key={idx}
-                  className={`border p-3 rounded-md cursor-pointer transition-all ${
+                  className={`w-full text-left border p-3 rounded-md cursor-pointer transition-all ${
                     userAnswers[currentQuestion] === option ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
                   }`}
                   onClick={() => handleAnswerChange(option)}
+                  onKeyDown={(e) => handleKeyDown(e, option)}
+                  tabIndex="0"
+                  role="radio"
+                  aria-checked={userAnswers[currentQuestion] === option}
                 >
                   {option}
-                </div>
+                </button>
               ))}
             </div>
             <div className="flex justify-between mt-6">

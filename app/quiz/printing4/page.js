@@ -98,6 +98,19 @@ export default function QuizApp() {
     setUserAnswers(updatedAnswers);
   };
 
+  const handleAnswerSelect = (option, questionIndex) => {
+    const event = { target: { value: option } };
+    handleAnswerChange(event, questionIndex);
+  };
+
+  const handleOptionKeyPress = (e, option, questionIndex) => {
+    // Enter or Space key
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleAnswerSelect(option, questionIndex);
+    }
+  };
+
   const goToNextQuestion = () => {
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -270,10 +283,12 @@ export default function QuizApp() {
                         className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
                           isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
                         }`}
-                        onClick={() => {
-                          const event = { target: { value: option } };
-                          handleAnswerChange(event, currentQuestion);
-                        }}
+                        onClick={() => handleAnswerSelect(option, currentQuestion)}
+                        onKeyDown={(e) => handleOptionKeyPress(e, option, currentQuestion)}
+                        tabIndex="0"
+                        role="radio"
+                        aria-checked={isSelected}
+                        aria-label={option}
                       >
                         <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
                           <input

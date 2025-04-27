@@ -89,6 +89,15 @@ export default function QuizApp() {
     setUserAnswers(updatedAnswers);
   };
 
+  const handleOptionKeyDown = (event, optionValue, questionIndex) => {
+    // Handle keyboard interactions
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      const fakeEvent = { target: { value: optionValue } };
+      handleAnswerChange(fakeEvent, questionIndex);
+    }
+  };
+
   const goToNextQuestion = () => {
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -203,7 +212,6 @@ export default function QuizApp() {
                 className="border border-gray-200 rounded"
                 width={550}
                 height={300}
-                layout="responsive"
                 priority
               />
             </div>
@@ -221,7 +229,6 @@ export default function QuizApp() {
               className="border border-gray-200 rounded"
               width={550}
               height={300}
-              layout="responsive"
               priority
             />
           </div>
@@ -259,19 +266,25 @@ export default function QuizApp() {
                 {quizQuestions[currentQuestion].options.map(
                   (option, optionIndex) => {
                     const isSelected = userAnswers[currentQuestion] === option.trim();
+                    const optionId = `question-${currentQuestion}-option-${optionIndex}`;
+                    
                     return (
                       <div 
                         key={optionIndex} 
                         className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
                           isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
                         }`}
-                        onClick={() => {
-                          const event = { target: { value: option } };
-                          handleAnswerChange(event, currentQuestion);
-                        }}
+                        role="radio"
+                        aria-checked={isSelected}
+                        tabIndex={0}
+                        onKeyDown={(e) => handleOptionKeyDown(e, option, currentQuestion)}
                       >
-                        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
+                        <label 
+                          htmlFor={optionId}
+                          className="flex items-start cursor-pointer w-full text-sm md:text-base"
+                        >
                           <input
+                            id={optionId}
                             type="radio"
                             name={`question-${currentQuestion}`}
                             value={option}
@@ -292,6 +305,7 @@ export default function QuizApp() {
                   <button
                     onClick={goToPreviousQuestion}
                     className="px-4 md:px-6 py-2 border border-gray-300 rounded text-sm md:text-base text-gray-700 hover:bg-gray-50"
+                    aria-label="Go to previous question"
                   >
                     Previous
                   </button>
@@ -306,6 +320,7 @@ export default function QuizApp() {
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                     disabled={!isCurrentQuestionAnswered()}
+                    aria-label="Go to next question"
                   >
                     Next
                   </button>
@@ -318,6 +333,7 @@ export default function QuizApp() {
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                     disabled={!areAllQuestionsAnswered()}
+                    aria-label="Submit quiz answers"
                   >
                     Submit
                   </button>
@@ -343,7 +359,10 @@ export default function QuizApp() {
                   Perfect! Congratulations on completing the quiz.
                 </p>
                 <Link href="/fillup/meshmixer2">
-                  <button className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800">
+                  <button 
+                    className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800"
+                    aria-label="Get your certificate"
+                  >
                     Get Your Certificate
                   </button>
                 </Link>
@@ -355,13 +374,17 @@ export default function QuizApp() {
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
                   <Link href="/pelvis/MeshMixer2%20-%20Pelvis%20Virtual-Surgery/data?content=MeshMixer2%20-%20Pelvis%20Virtual-Surgery" className="w-full sm:w-auto">
-                    <button className="w-full px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50">
+                    <button 
+                      className="w-full px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50"
+                      aria-label="Retake the lesson"
+                    >
                       Retake the Lesson
                     </button>
                   </Link>
                   <button
                     onClick={retakeQuiz}
                     className="w-full sm:w-auto bg-blue-900 text-white px-4 md:px-6 py-2 rounded text-sm md:text-base hover:bg-blue-800"
+                    aria-label="Retake quiz"
                   >
                     Retake Quiz
                   </button>

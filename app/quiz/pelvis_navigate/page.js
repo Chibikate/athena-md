@@ -98,6 +98,16 @@ export default function QuizApp() {
     return userAnswers.every((answer) => answer !== "");
   };
 
+  // Handle keyboard events for option selection
+  const handleOptionKeyDown = (e, option, currentQuestion) => {
+    // Handle Enter or Space key to select the option
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const event = { target: { value: option } };
+      handleAnswerChange(event, currentQuestion);
+    }
+  };
+
   const score = calculateScore();
   const wrong = checkWrong();
 
@@ -237,6 +247,11 @@ export default function QuizApp() {
                           const event = { target: { value: option } };
                           handleAnswerChange(event, currentQuestion);
                         }}
+                        onKeyDown={(e) => handleOptionKeyDown(e, option, currentQuestion)}
+                        tabIndex="0"
+                        role="radio"
+                        aria-checked={isSelected}
+                        aria-label={option}
                       >
                         <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
                           <input

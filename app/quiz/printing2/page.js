@@ -96,6 +96,11 @@ export default function QuizApp() {
     setUserAnswers(updatedAnswers);
   };
 
+  const handleAnswerSelect = (option, questionIndex) => {
+    const event = { target: { value: option } };
+    handleAnswerChange(event, questionIndex);
+  };
+
   const goToNextQuestion = () => {
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -235,6 +240,14 @@ export default function QuizApp() {
     return null;
   };
 
+  const handleOptionKeyPress = (e, option, optionIndex) => {
+    // Enter or Space key
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleAnswerSelect(option, currentQuestion);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-6 md:px-6">
       {/* CSS Confetti */}
@@ -268,10 +281,12 @@ export default function QuizApp() {
                         className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
                           isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
                         }`}
-                        onClick={() => {
-                          const event = { target: { value: option } };
-                          handleAnswerChange(event, currentQuestion);
-                        }}
+                        onClick={() => handleAnswerSelect(option, currentQuestion)}
+                        onKeyDown={(e) => handleOptionKeyPress(e, option, optionIndex)}
+                        tabIndex="0"
+                        role="radio"
+                        aria-checked={isSelected}
+                        aria-label={option}
                       >
                         <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
                           <input

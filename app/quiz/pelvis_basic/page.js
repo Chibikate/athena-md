@@ -225,6 +225,16 @@ export default function QuizApp() {
     return null;
   };
 
+  // Handle keyboard events for option selection
+  const handleOptionKeyDown = (e, option, currentQuestion) => {
+    // Handle Enter or Space key to select the option
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const event = { target: { value: option } };
+      handleAnswerChange(event, currentQuestion);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-6 md:px-6">
       {/* CSS Confetti */}
@@ -262,6 +272,11 @@ export default function QuizApp() {
                           const event = { target: { value: option } };
                           handleAnswerChange(event, currentQuestion);
                         }}
+                        onKeyDown={(e) => handleOptionKeyDown(e, option, currentQuestion)}
+                        tabIndex="0"
+                        role="radio"
+                        aria-checked={isSelected}
+                        aria-label={option}
                       >
                         <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
                           <input

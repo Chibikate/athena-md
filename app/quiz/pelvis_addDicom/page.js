@@ -242,7 +242,8 @@ export default function QuizApp() {
               {/* Render images using the helper function */}
               {renderQuestionImages()}
               
-              <div className="space-y-2 md:space-y-3">
+              <div className="space-y-2 md:space-y-3" role="radiogroup" aria-labelledby={`question-${currentQuestion}-label`}>
+                <div id={`question-${currentQuestion}-label`} className="sr-only">{quizQuestions[currentQuestion].question}</div>
                 {quizQuestions[currentQuestion].options.map(
                   (option, optionIndex) => {
                     const isSelected = userAnswers[currentQuestion] === option.trim();
@@ -256,6 +257,16 @@ export default function QuizApp() {
                           const event = { target: { value: option } };
                           handleAnswerChange(event, currentQuestion);
                         }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const event = { target: { value: option } };
+                            handleAnswerChange(event, currentQuestion);
+                          }
+                        }}
+                        tabIndex="0"
+                        role="radio"
+                        aria-checked={isSelected}
                       >
                         <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
                           <input
