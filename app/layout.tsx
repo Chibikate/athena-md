@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./globals.css";
 import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AthenaMD",
-  description: "To develop mandiweb reconstruction",
+  title: "AthenaMD - Surgical Planning & Learning Platform",
+  description: "AthenaMD provides tools and education for mandibular reconstruction and surgical planning",
 };
 
 export default function RootLayout({
@@ -16,8 +17,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* inter kay font style and min-h-screen kay ang whole screen na makita sa user */}
-      <body className={`${inter.className} min-h-screen`}>{children}</body> 
+      <body className={`${inter.className} min-h-screen`}>
+        <header className="sr-only">
+          <h1>AthenaMD</h1>
+        </header>
+        <main>
+          {children}
+        </main>
+        <footer className="sr-only">
+          <p>© {new Date().getFullYear()} AthenaMD. All rights reserved.</p>
+        </footer>
+      </body> 
     </html>
   );
 }
