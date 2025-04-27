@@ -1,6 +1,6 @@
 "use client";
 // CertificatePage.js
-import React, { useRef, Suspense} from "react";
+import React, { useRef} from "react";
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -34,8 +34,7 @@ function CertificatePage() {
   const certRef = useRef();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="container mx-auto mt-10 text-center min-h-screen">
+          <div className="container mx-auto mt-10 text-center min-h-screen">
         <div className="p-4">
           <NavigatingCertificate fullName={name} date={date} ref={certRef} />
 
@@ -61,7 +60,6 @@ function CertificatePage() {
           </div>
         </Link>
       </div>
-    </Suspense>
   );
 }
 
