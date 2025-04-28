@@ -4,13 +4,14 @@ import Navigator from "@/components/course_overview/navigator";
 import HeroSection from "@/components/course_overview/hero_section";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection from "@/components/course_overview/objective_section";
-import React,{ useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import * as datas from "@/data/mandibular/course_data";
 import Link from "next/link";
+import React, { Suspense } from "react";
 import TeamSection from "@/components/course_overview/team_section";
 
 interface Params {
-  params: { 
+  params: {
     course: string;
   };
 }
@@ -64,14 +65,13 @@ const Home = ({ params }: Params) => {
     <Suspense fallback={<div>Loading...</div>}>
       <section>
         <Navigator />
-
         <HeroSection hero={data.hero.hero} />
         <ObjectiveSection objective={data.objectives.objective} />
 
-        <div className="flex flex-col items-center p-3 ">
+        <div className="flex flex-col items-center p-10">
           <div className="flex flex-row">
-            <Link href={`${params["course"]}/${data.to}?content=${content}`}>
-              <p className="p-2 rounded-md  text-white hover:font-bold font-bold cursor bg-[#043873] hover-border hover:ring-offset-[#b7d5eb]   hover:ring-2 hover:ring-offset-2">
+          <Link href={`${params.course}/${data.to}?content=${content}`}>
+              <p className="p-2 rounded-md text-white hover:font-bold font-bold cursor bg-[#043873] hover:border hover:ring-offset-[#b7d5eb] hover:ring-2 hover:ring-offset-2">
                 Start Learning
               </p>
             </Link>
@@ -85,7 +85,8 @@ const Home = ({ params }: Params) => {
             </div>
           </Link>
         </div>
-        <TeamSection/>
+
+        <TeamSection />
         <Footer />
       </section>
     </Suspense>
