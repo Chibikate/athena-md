@@ -3,9 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigator from "@/components/hero_page/navigator";
-import Picture1 from "@/public/basic3D/quiz6/Picture1.png";
-import Picture2 from "@/public/basic3D/quiz6/Picture2.png";
-import Picture3 from "@/public/basic3D/quiz6/Picture3.png";
+import Picture40 from "@/public/basic3D/quiz6/Picture40.png";
 import { useQuiz } from "@/utils/quizUtils";
 
 const quizQuestions = [
@@ -19,35 +17,10 @@ const quizQuestions = [
       "C. Paint",
       "D. Islands",
     ],
-    image: Picture1,
+    image: Picture40,
     correctAnswer: "B. Threshold"
   },
-  {
-    question:
-    "2. Which of the following is a key benefit of using the 'Fill between slices' tool in pelvic segmentation?", 
-  
-    options: [
-      "A. It automatically separates different bones",
-      "B. It reduces the need to segment every slice manually",
-      "C. It provides automatic coloring of segments",
-      "D. It automatically corrects threshold errors",
-    ],
-    image: Picture2,
-    correctAnswer: "B. It reduces the need to segment every slice manually"
-  },
-  {
-    question:
-    "3. What is the main purpose of segmentation in pelvic CT scans?", 
-  
-    options: [
-      "A. To change the color of the CT scan",
-      "B. To separate and identify different anatomical structures",
-      "C. To compress the image file size",
-      "D. To remove all soft tissues from the image",
-    ],
-    image: Picture3,
-    correctAnswer: "B. To separate and identify different anatomical structures"
-  },
+
 ];
 
 export default function QuizApp() {
