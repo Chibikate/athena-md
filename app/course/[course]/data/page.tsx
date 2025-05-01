@@ -171,60 +171,61 @@ const Home = ({ params }: Params) => {
 
   // Function to render the desktop previous button or back link
   const renderDesktopPreviousButton = () => {
-    if (index > 0) {
-      return (
-        <button
-          onClick={goToPreviousQuestion}
-          className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
-          aria-label="Previous Question"
-        >
-          <ChevronDoubleLeftIcon className="w-8 h-8" />
-        </button>
-      );
-    } else if (index === 0) {
+    // Always show the button, change functionality based on index
+    return (
+      <button
+        onClick={index > 0 ? goToPreviousQuestion : () => window.location.href = `/course/${course}`}
+        className={`w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]`}
+        aria-label={index > 0 ? "Previous Question" : "Back to Course"}
+      >
+        <ChevronDoubleLeftIcon className="w-8 h-8" />
+      </button>
+    );
+  };
+
+  // Function to render the mobile previous button (always shown)
+  const renderMobilePreviousButton = () => {
+    // If on first page, link back to course overview
+    if (index === 0) {
       return (
         <Link
           href={`/course/${course}`}
-          className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
+          className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
           aria-label="Back to Course"
         >
           <ChevronDoubleLeftIcon className="w-8 h-8" />
         </Link>
       );
     }
-    return null;
+    
+    // If not on first page, show previous button
+    return (
+      <button
+        onClick={goToPreviousQuestion}
+        className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+        aria-label="Previous Question"
+      >
+        <ChevronDoubleLeftIcon className="w-8 h-8" />
+      </button>
+    );
   };
 
-  // Function to render the mobile previous button (only shown when not on first page)
-  const renderMobilePreviousButton = () => {
-    if (index > 0) {
-      return (
-        <button
-          onClick={goToPreviousQuestion}
-          className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
-          aria-label="Previous Question"
-        >
-          <ChevronDoubleLeftIcon className="w-8 h-8" />
-        </button>
-      );
-    }
-    return null;
-  };
-
-  // Function to render the next button (only shown when not on last page)
+  // Function to render the next button (always shown, disabled on last page)
   const renderNextButton = () => {
-    if (index < content.length - 1) {
-      return (
-        <button
-          onClick={goToNextQuestion}
-          className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
-          aria-label="Next Question"
-        >
-          <ChevronDoubleRightIcon className="w-8 h-8" />
-        </button>
-      );
-    }
-    return null;
+    const isLastPage = index >= content.length - 1;
+    
+    return (
+      <button
+        onClick={!isLastPage ? goToNextQuestion : undefined}
+        className={`w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg ${
+          isLastPage ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        disabled={isLastPage}
+        aria-label={isLastPage ? "Last Question" : "Next Question"}
+      >
+        <ChevronDoubleRightIcon className={`w-8 h-8 ${isLastPage ? "opacity-50" : ""}`} />
+      </button>
+    );
   };
 
   return (
@@ -246,19 +247,22 @@ const Home = ({ params }: Params) => {
             </div>
             
             <div className="relative max-w-4xl w-full h-full flex items-center justify-center">
-              {/* Left arrow */}
-              {lightboxIndex > 0 && (
-                <button 
-                  className="absolute left-2 md:left-8 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-2 text-white"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToPreviousImage();
-                  }}
-                  aria-label="Previous Image"
-                >
-                  <ArrowLeftIcon className="w-6 h-6" />
-                </button>
-              )}
+              {/* Left arrow - Always shown, disabled on first image */}
+              <button 
+                className={`absolute left-2 sm:left-4 md:left-8 bg-black ${
+                  lightboxIndex > 0 ? "bg-opacity-50 hover:bg-opacity-70" : "bg-opacity-30 cursor-not-allowed"
+                } rounded-full p-2 text-white z-10`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (lightboxIndex > 0) goToPreviousImage();
+                }}
+                aria-label="Previous Image"
+                disabled={lightboxIndex === 0}
+              >
+                <ArrowLeftIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
+                  lightboxIndex === 0 ? "opacity-50" : "opacity-100"
+                }`} />
+              </button>
               
               {/* Image */}
               <div className="max-w-4xl max-h-[80vh] px-4">
@@ -279,19 +283,22 @@ const Home = ({ params }: Params) => {
                 </div>
               </div>
               
-              {/* Right arrow */}
-              {lightboxIndex < imagesForLightbox.length - 1 && (
-                <button 
-                  className="absolute right-2 md:right-8 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-2 text-white"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToNextImage();
-                  }}
-                  aria-label="Next Image"
-                >
-                  <ArrowRightIcon className="w-6 h-6" />
-                </button>
-              )}
+              {/* Right arrow - Always shown, disabled on last image */}
+              <button 
+                className={`absolute right-2 sm:right-4 md:right-8 bg-black ${
+                  lightboxIndex < imagesForLightbox.length - 1 ? "bg-opacity-50 hover:bg-opacity-70" : "bg-opacity-30 cursor-not-allowed"
+                } rounded-full p-2 text-white z-10`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (lightboxIndex < imagesForLightbox.length - 1) goToNextImage();
+                }}
+                aria-label="Next Image"
+                disabled={lightboxIndex >= imagesForLightbox.length - 1}
+              >
+                <ArrowRightIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
+                  lightboxIndex >= imagesForLightbox.length - 1 ? "opacity-50" : "opacity-100"
+                }`} />
+              </button>
             </div>
             
             {/* Image counter */}

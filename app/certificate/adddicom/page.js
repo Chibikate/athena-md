@@ -1,6 +1,6 @@
 "use client";
 // CertificatePage.js
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -9,8 +9,17 @@ import AddDicommCertificate from "../../../components/certificate/adddicom/add_d
 
 function CertificatePage() {
   const searchParams = useSearchParams();
-  const name = searchParams.get("name");
-  const date = searchParams.get("date");
+  const [isMounted, setIsMounted] = useState(false); // Track if the component is mounted
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+  const certRef = useRef();
+
+  useEffect(() => {
+    // Ensure this runs only on the client
+    setIsMounted(true);
+    setName(searchParams.get("name") || ""); // Default to empty string if null
+    setDate(searchParams.get("date") || ""); // Default to empty string if null
+  }, [searchParams]);
 
   const downloadCertificate = () => {
     const certificateElement = certRef.current;
@@ -31,35 +40,39 @@ function CertificatePage() {
     });
   };
 
-  const certRef = useRef();
+  if (!isMounted) {
+    // Prevent rendering on the server
+    return null;
+  }
 
   return (
-    <div className="container mx-auto mt-10 text-center min-h-screen">
-      <div className="p-4 ">
+    <div className="container mx-auto mt-10 text-center min-h-screen px-4 sm:px-6 lg:px-8">
+      <div className="p-4">
         <AddDicommCertificate fullName={name} date={date} ref={certRef} />
 
         <button
           onClick={downloadCertificate}
-          className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block"
+          className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block w-full sm:w-auto"
         >
           Download Certificate
         </button>
       </div>
-      <div>
+
+      <div className="mt-6">
         <Link href="/course/3D%20slicer%20-%20Navigating%20DICOM%20display">
-          <button className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block">
-          Proceed to the Next Lesson
+          <button className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block w-full sm:w-auto">
+            Proceed to the Next Lesson
           </button>
         </Link>
       </div>
 
-      <Link href="/">
-        <div className="pt-4 ">
-          <p className="underline p-2 cursor-pointer text-primary">
-            Click here to go back in the home page
-          </p>
-        </div>
-      </Link>
+      <div className="mt-6">
+        <Link href="/">
+          <button className="bg-[#043873] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-indigo-600 mt-4 inline-block w-full sm:w-auto">
+            Back to Home
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
