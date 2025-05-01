@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import PropTypes from 'prop-types';
 
 /**
  * Reusable certificate page layout component to eliminate code duplication
@@ -64,6 +65,16 @@ const CertificateLayout = ({
       </div>
     </div>
   );
+};
+
+// Add PropTypes validation
+CertificateLayout.propTypes = {
+  certificateComponent: PropTypes.node.isRequired,
+  downloadCertificate: PropTypes.func.isRequired,
+  nextLessonLink: PropTypes.string.isRequired,
+  nextLessonText: PropTypes.string,
+  showSubmissionBin: PropTypes.bool,
+  submissionLink: PropTypes.string
 };
 
 export default CertificateLayout;

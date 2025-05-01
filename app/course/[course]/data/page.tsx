@@ -41,7 +41,7 @@ const Home = ({ params }: Params) => {
   // Use the shared navigation hook
   const {
     index,
-    setIndex,
+    // Remove unused setIndex from destructuring to fix the error
     content,
     setContent,
     lightboxOpen,
@@ -88,7 +88,7 @@ const Home = ({ params }: Params) => {
     return (
       <button
         onClick={index > 0 ? goToPreviousQuestion : () => window.location.href = `/course/${course}`}
-        className={`w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]`}
+        className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
         aria-label={index > 0 ? "Previous Question" : "Back to Course"}
       >
         <ChevronDoubleLeftIcon className="w-8 h-8" />

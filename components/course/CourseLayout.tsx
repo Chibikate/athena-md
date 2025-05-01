@@ -18,13 +18,13 @@ interface CourseLayoutProps {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
   content: ContentProps[];
   coursePath: string;
-  renderCard: (props: {
+  renderCard: (cardProps: {
     title: string;
     description: React.ReactNode;
     image?: StaticImageData | null;
     alt: string;
     onClick: () => void;
-  }) => JSX.Element;
+  }) => React.ReactElement;
 }
 
 const CourseLayout = ({

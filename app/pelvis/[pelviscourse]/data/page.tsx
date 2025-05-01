@@ -41,7 +41,7 @@ const Home = ({ params }: Params) => {
   // Use the shared navigation hook
   const {
     index,
-    setIndex,
+    // Remove unused setIndex
     content,
     setContent,
     lightboxOpen,
