@@ -4,10 +4,9 @@ import Navigator from "@/components/course_overview/navigator";
 import HeroSection from "@/components/course_overview/hero_section";
 import Footer from "@/components/hero_page/footer";
 import ObjectiveSection from "@/components/course_overview/objective_section";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import * as datas from "@/data/mandibular/course_data";
 import Link from "next/link";
-import React, { Suspense } from "react";
 import TeamSection from "@/components/course_overview/team_section";
 
 interface Params {
@@ -75,7 +74,7 @@ const Home = ({ params }: Params) => {
                 Start Learning
               </p>
             </Link>
-          </div>
+          </div>  
           <Link href="/courses">
             <div className="flex items-center space-x-2 text-[#043873] hover:text-[#0a60b6] mt-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
