@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigator from "@/components/hero_page/navigator";
-import Picture40 from "@/public/basic3D/quiz6/Picture40.png";
+import Picture40 from "@/public/basic3D/quizc4/Picture40.png";
 import { useQuiz } from "@/utils/quizUtils";
 
 const quizQuestions = [
