@@ -3,9 +3,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigator from "@/components/hero_page/navigator";
-import Image1 from "@/public/quiz6/Image1.png";
-import Image2 from "@/public/quiz6/Image2.png";
-import Image3 from "@/public/quiz6/Image3.png";
+import Image1 from "@/public/quiz4/Image1.png";
+import Image2 from "@/public/quiz4/Image2.png";
+import Image3 from "@/public/quiz4/Image3.png";
 import { useQuiz } from "@/utils/quizUtils";
 
 const quizQuestions = [
