@@ -3,9 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigator from "@/components/hero_page/navigator";
-import Picture1 from "@/public/basic3D/quiz7/Picture1.png";
-import Picture2 from "@/public/basic3D/quiz7/Picture2.png";
-import Picture3 from "@/public/basic3D/quiz7/Picture3.png";
+import Picture64 from "@/public/basic3D/quizc5/Picture64.png";
 import { useQuiz } from "@/utils/quizUtils";
 
 const quizQuestions = [
@@ -19,34 +17,8 @@ const quizQuestions = [
       "C. Fill between slices",
       "D. Threshold",
     ],
-    image: Picture1,
+    image: Picture64,
     correctAnswer: "B. Paint"
-  },
-  {
-    question:
-    "2. Which technique allows you to create a 3D model from segmentations?", 
-  
-    options: [
-      "A. Show 3D",
-      "B. Create New Model",
-      "C. Export",
-      "D. Model Maker",
-    ],
-    image: Picture2,
-    correctAnswer: "D. Model Maker"
-  },
-  {
-    question:
-    "3. What is the typical file format used for 3D models that will be used in surgical planning?", 
-  
-    options: [
-      "A. DICOM",
-      "B. PNG",
-      "C. STL",
-      "D. JPEG",
-    ],
-    image: Picture3,
-    correctAnswer: "C. STL"
   },
 ];
 
