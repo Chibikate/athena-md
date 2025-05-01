@@ -221,13 +221,7 @@ export default function QuizApp() {
                         const fakeEvent = { target: { value: option } };
                         handleAnswerChange(fakeEvent, currentQuestion);
                       }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                          e.preventDefault();
-                          const fakeEvent = { target: { value: option } };
-                          handleAnswerChange(fakeEvent, currentQuestion);
-                        }
-                      }}
+                      onKeyDown={(e) => handleOptionKeyDown(e, option, currentQuestion)}
                       tabIndex={0}
                     >
                       <label 

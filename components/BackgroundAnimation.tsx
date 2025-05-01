@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 
 type ShapeType = 'rectangle' | 'triangle' | 'line';
 
@@ -109,7 +109,8 @@ const BackgroundAnimation = () => {
     ctx.restore();
   };
 
-  const animate = (ctx: CanvasRenderingContext2D, particlesArray: Particle[]) => {
+  // Moved animate function outside of useEffect to avoid re-creating it on each render
+  const animate = useCallback((ctx: CanvasRenderingContext2D, particlesArray: Particle[]) => {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     particlesArray.forEach((particle) => {
@@ -118,7 +119,7 @@ const BackgroundAnimation = () => {
     });
 
     requestAnimationFrame(() => animate(ctx, particlesArray));
-  };
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -138,7 +139,7 @@ const BackgroundAnimation = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [animate]); // Ensure animate is part of the dependency array
 
   return (
     <canvas

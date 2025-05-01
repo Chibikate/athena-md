@@ -80,7 +80,7 @@ export const slicerTutorial1 = [
           the gold standard for evaluating bone pathologies, lesions, defects,
           and other skeletal abnormalities due to its ability to produce detailed images
           of the inside of the body. CT scans are particularly effective in providing
-          precise assessments of bone-related conditions. On the other hand,{" "}
+          precise assessments of bone-related conditions. On the other hand,&nbsp;
           <span className="font-bold"> Magnetic Resonance Imaging (MRI) </span>{" "}
           scans, while not ideal for visualizing bones, are valuable for generating
           detailed images of soft tissues and can contribute to creating a{" "}
@@ -242,3 +242,4 @@ export const slicerTutorial1 = [
     alt: "",
   },
 ];
+

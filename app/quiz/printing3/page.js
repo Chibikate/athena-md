@@ -65,6 +65,22 @@ export default function QuizApp() {
     setShowConfetti(false);
   };
 
+  // Get the score
+  const score = calculateScore();
+
+  // Get the wrong answers
+  const checkWrong = useCallback(() => {
+    let wrong = [];
+    userAnswers.forEach((answer, index) => {
+      if (answer.trim() !== quizQuestions[index].correctAnswer.trim()) {
+        wrong.push(index + 1);
+      }
+    });
+    return wrong;
+  }, [userAnswers]);
+
+  const wrong = checkWrong();
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-6">
       {showConfetti && <div className="fixed inset-0 bg-transparent animate-confetti"></div>}
@@ -82,17 +98,12 @@ export default function QuizApp() {
                 return (
                   <div 
                     key={idx}
-                    className={`w-full text-left border p-3 rounded-md cursor-pointer transition-all ${
-                      isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
-                    }`}
+                    className={`w-full text-left border p-3 rounded-md cursor-pointer transition-all ${isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'}`}
                     onClick={() => handleAnswerChange(option)}
                     onKeyDown={(e) => handleKeyDown(e, option)}
                     tabIndex="0"
                   >
-                    <label 
-                      htmlFor={optionId}
-                      className="flex items-start cursor-pointer w-full"
-                    >
+                    <label htmlFor={optionId} className="flex items-start cursor-pointer w-full">
                       <input
                         id={optionId}
                         type="radio"
@@ -115,9 +126,7 @@ export default function QuizApp() {
               {currentQuestion < quizQuestions.length - 1 ? (
                 <button
                   onClick={goToNextQuestion}
-                  className={`px-4 py-2 rounded ${
-                    userAnswers[currentQuestion] ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  }`}
+                  className={`px-4 py-2 rounded ${userAnswers[currentQuestion] ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
                   disabled={!userAnswers[currentQuestion]}
                 >
                   Next
@@ -132,18 +141,16 @@ export default function QuizApp() {
               )}
             </div>
           </>
-        ) :  (
+        ) : (
           <div className="text-center py-4">
             <p className="text-lg md:text-xl mb-3 md:mb-4">
               Your Score: {score} out of {quizQuestions.length}
             </p>
-            
             {wrong.length > 0 && (
               <p className="text-red-600 mb-4 md:mb-6 text-sm md:text-base">
                 You got a wrong answer on question{wrong.length > 1 ? 's' : ''} #{wrong.join(', #')}
               </p>
             )}
-            
             {score === quizQuestions.length ? (
               <div>
                 <p className="text-green-600 font-bold text-lg md:text-xl mb-4">

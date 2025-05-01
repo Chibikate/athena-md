@@ -9,6 +9,7 @@ export const slicerTutorial6 = [
               <div className="flex flex-col items-center justify-center">
                 <ul className=" space-y-2">
                   <li>
+                    <p>
                     <span className="font-semibold pb-4">
                       Download 3D slicer (Stable version 5.6.1):{" "}
                     </span>
@@ -20,6 +21,7 @@ export const slicerTutorial6 = [
                       https://download.slicer.org/
                     </Link>
                     <p className="ml-6">Available in Windows, macOS and Linux </p>
+                    </p>
                   </li>
                   <li>
                     <span className="font-semibold">Download files: </span>
