@@ -159,12 +159,20 @@ export default function QuizApp() {
     const confettiPieces = [];
     const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#800080'];
     
+    // Use crypto.getRandomValues for more secure random number generation
+    const getSecureRandom = () => {
+      // Create a secure random value between 0 and 1
+      const array = new Uint32Array(1);
+      window.crypto.getRandomValues(array);
+      return array[0] / (0xffffffff + 1);
+    };
+    
     for (let i = 0; i < 100; i++) {
-      const left = `${Math.random() * 100}%`;
-      const animationDelay = `${Math.random() * 5}s`;
-      const animationDuration = `${Math.random() * 2 + 2}s`; // Between 2-4 seconds
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const size = `${Math.random() * 0.5 + 0.5}rem`; // Random size between 0.5rem and 1rem
+      const left = `${getSecureRandom() * 100}%`;
+      const animationDelay = `${getSecureRandom() * 5}s`;
+      const animationDuration = `${getSecureRandom() * 2 + 2}s`; // Between 2-4 seconds
+      const color = colors[Math.floor(getSecureRandom() * colors.length)];
+      const size = `${getSecureRandom() * 0.5 + 0.5}rem`; // Random size between 0.5rem and 1rem
       
       confettiPieces.push(
         <div

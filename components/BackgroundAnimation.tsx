@@ -17,6 +17,14 @@ interface Particle {
 const BackgroundAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+  // Secure random number generator function
+  const getSecureRandom = (min = 0, max = 1): number => {
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    const randomValue = array[0] / (0xffffffff + 1);
+    return min + randomValue * (max - min);
+  };
+
   const resizeCanvas = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D | null) => {
     if (!ctx) return;
     const pixelRatio = window.devicePixelRatio || 1;
@@ -53,16 +61,17 @@ const BackgroundAnimation = () => {
       'rgba(72, 149, 239, ',
     ];
 
+    // Use secure random number generator
     return {
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: Math.random() * baseSize + baseSize,
-      speedX: (Math.random() * 2 - 1) * speedFactor,
-      speedY: (Math.random() * 2 - 1) * speedFactor,
-      rotation: Math.random() * Math.PI * 2,
-      rotationSpeed: (Math.random() - 0.5) * 0.01,
-      shape: shapes[Math.floor(Math.random() * shapes.length)],
-      color: `${colors[Math.floor(Math.random() * colors.length)]}${Math.random() * 0.3 + 0.2})`,
+      x: getSecureRandom(0, width),
+      y: getSecureRandom(0, height),
+      size: getSecureRandom(baseSize, baseSize * 2),
+      speedX: getSecureRandom(-speedFactor, speedFactor),
+      speedY: getSecureRandom(-speedFactor, speedFactor),
+      rotation: getSecureRandom(0, Math.PI * 2),
+      rotationSpeed: getSecureRandom(-0.01, 0.01),
+      shape: shapes[Math.floor(getSecureRandom(0, shapes.length))],
+      color: `${colors[Math.floor(getSecureRandom(0, colors.length))]}${getSecureRandom(0.2, 0.5)})`,
     };
   };
 
