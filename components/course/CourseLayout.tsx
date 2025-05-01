@@ -13,20 +13,16 @@ interface ContentProps {
   alt: string;
 }
 
-interface CardProps {
-  title: string;
-  description: React.ReactNode;
-  image?: StaticImageData | null;
-  alt: string;
-  onClick: () => void;
-}
-
 interface CourseLayoutProps {
   index: number;
   setIndex: React.Dispatch<React.SetStateAction<number>>;
   content: ContentProps[];
   coursePath: string;
-  renderCard: (cardProps: CardProps) => React.ReactElement;
+  renderCard: (title: string, 
+               description: React.ReactNode, 
+               image?: StaticImageData | null, 
+               alt?: string, 
+               onClick?: () => void) => React.ReactElement;
 }
 
 const CourseLayout = ({
@@ -278,17 +274,13 @@ const CourseLayout = ({
         {renderDesktopPreviousButton()}
         
         {index < content.length && (
-          renderCard({
-            title: content[index].title,
-            description: <div className="text-justify">{content[index].description}</div>,
-            image: content[index].image,
-            alt: content[index].alt,
-            onClick: () => {
-              if (content[index].image?.src) {
-                openLightbox(index);
-              }
-            }
-          })
+          renderCard(
+            content[index].title,
+            <div className="text-justify">{content[index].description}</div>,
+            content[index].image,
+            content[index].alt,
+            content[index].image?.src ? () => openLightbox(index) : undefined
+          )
         )}
         <div className="flex flex-row md:flex-col">
           {renderMobilePreviousButton()}
