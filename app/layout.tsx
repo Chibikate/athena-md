@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AthenaMD - Surgical Planning & Learning Platform",
-  description: "AthenaMD provides tools and education for mandibular reconstruction and surgical planning",
+  description: "AthenaMD provides tools and education for reconstruction and surgical planning",
 };
 
 export default function RootLayout({

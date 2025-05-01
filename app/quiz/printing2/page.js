@@ -275,6 +275,7 @@ export default function QuizApp() {
                 {quizQuestions[currentQuestion].options.map(
                   (option, index) => {
                     const isSelected = userAnswers[currentQuestion] === option.trim();
+                    const optionId = `question-${currentQuestion}-option-${index}`;
                     return (
                       <div 
                         key={index} 
@@ -284,12 +285,13 @@ export default function QuizApp() {
                         onClick={() => handleAnswerSelect(option, currentQuestion)}
                         onKeyDown={(e) => handleOptionKeyPress(e, option)}
                         tabIndex="0"
-                        role="radio"
-                        aria-checked={isSelected}
-                        aria-label={option}
                       >
-                        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
+                        <label 
+                          htmlFor={optionId} 
+                          className="flex items-start cursor-pointer w-full text-sm md:text-base"
+                        >
                           <input
+                            id={optionId}
                             type="radio"
                             name={`question-${currentQuestion}`}
                             value={option}
@@ -360,10 +362,12 @@ export default function QuizApp() {
                 <p className="text-green-600 font-bold text-lg md:text-xl mb-4">
                   Perfect! Congratulations on completing the quiz.
                 </p>
-                <Link href="/fillup/printing2">
-                  <button className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800">
-                    Get Your Certificate
-                  </button>
+                <Link 
+                  href="/fillup/printing2"
+                  className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800 inline-block"
+                  aria-label="Get your certificate"
+                >
+                  Get Your Certificate
                 </Link>
               </div>
             ) : (
@@ -372,10 +376,12 @@ export default function QuizApp() {
                   Sorry, you didn&apos;t pass. You can retake the quiz to improve your score.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                  <Link href="/ultimaker/3D%20Printing%20for%20a%20Mandible-2/data?content=3D%20printing%20%20Part%202" className="w-full sm:w-auto">
-                    <button className="w-full px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50">
-                      Retake the Lesson
-                    </button>
+                  <Link 
+                    href="/ultimaker/3D%20Printing%20for%20a%20Mandible-2/data?content=3D%20printing%20%20Part%202" 
+                    className="w-full sm:w-auto px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50 inline-block text-center"
+                    aria-label="Retake the lesson"
+                  >
+                    Retake the Lesson
                   </Link>
                   <button
                     onClick={retakeQuiz}

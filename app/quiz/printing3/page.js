@@ -75,21 +75,38 @@ export default function QuizApp() {
           <>
             <p className="text-lg font-medium mb-4">{quizQuestions[currentQuestion].question}</p>
             <div className="space-y-3">
-              {quizQuestions[currentQuestion].options.map((option, idx) => (
-                <button
-                  key={idx}
-                  className={`w-full text-left border p-3 rounded-md cursor-pointer transition-all ${
-                    userAnswers[currentQuestion] === option ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
-                  }`}
-                  onClick={() => handleAnswerChange(option)}
-                  onKeyDown={(e) => handleKeyDown(e, option)}
-                  tabIndex="0"
-                  role="radio"
-                  aria-checked={userAnswers[currentQuestion] === option}
-                >
-                  {option}
-                </button>
-              ))}
+              {quizQuestions[currentQuestion].options.map((option, idx) => {
+                const optionId = `question-${currentQuestion}-option-${idx}`;
+                const isSelected = userAnswers[currentQuestion] === option;
+                
+                return (
+                  <div 
+                    key={idx}
+                    className={`w-full text-left border p-3 rounded-md cursor-pointer transition-all ${
+                      isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
+                    }`}
+                    onClick={() => handleAnswerChange(option)}
+                    onKeyDown={(e) => handleKeyDown(e, option)}
+                    tabIndex="0"
+                  >
+                    <label 
+                      htmlFor={optionId}
+                      className="flex items-start cursor-pointer w-full"
+                    >
+                      <input
+                        id={optionId}
+                        type="radio"
+                        name={`question-${currentQuestion}`}
+                        value={option}
+                        checked={isSelected}
+                        onChange={() => handleAnswerChange(option)}
+                        className="mt-1 mr-2 flex-shrink-0"
+                      />
+                      <span className="flex-1">{option}</span>
+                    </label>
+                  </div>
+                );
+              })}
             </div>
             <div className="flex justify-between mt-6">
               {currentQuestion > 0 && (
@@ -115,21 +132,48 @@ export default function QuizApp() {
               )}
             </div>
           </>
-        ) : (
-          <div className="text-center">
-            <p className="text-lg mb-3">Your Score: {calculateScore()} / {quizQuestions.length}</p>
-            {calculateScore() === quizQuestions.length ? (
-              <>
-                <p className="text-green-600 font-bold">Perfect! Congratulations!</p>
+        ) :  (
+          <div className="text-center py-4">
+            <p className="text-lg md:text-xl mb-3 md:mb-4">
+              Your Score: {score} out of {quizQuestions.length}
+            </p>
+            
+            {wrong.length > 0 && (
+              <p className="text-red-600 mb-4 md:mb-6 text-sm md:text-base">
+                You got a wrong answer on question{wrong.length > 1 ? 's' : ''} #{wrong.join(', #')}
+              </p>
+            )}
+            
+            {score === quizQuestions.length ? (
+              <div>
+                <p className="text-green-600 font-bold text-lg md:text-xl mb-4">
+                  Perfect! Congratulations on completing the quiz.
+                </p>
                 <Link href="/fillup/printing3">
-                  <button className="bg-blue-600 text-white px-5 py-2 rounded mt-4">Get Your Certificate</button>
+                  <button className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800">
+                    Get Your Certificate
+                  </button>
                 </Link>
-              </>
+              </div>
             ) : (
-              <>
-                <p className="text-red-600">Try again to improve your score.</p>
-                <button onClick={retakeQuiz} className="bg-blue-600 text-white px-5 py-2 rounded mt-4">Retake Quiz</button>
-              </>
+              <div className="space-y-4">
+                <p className="text-red-600 font-medium text-sm md:text-base">
+                  Sorry, you didn&apos;t pass. You can retake the quiz to improve your score.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                  <Link href="/ultimaker/3D%20Printing%20for%20a%20Mandible-3/data?content=3D%20printing%20%20Part%203" className="w-full sm:w-auto">
+                    <button className="w-full px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50">
+                      Retake the Lesson
+                    </button>
+                  </Link>
+                  <button
+                    onClick={retakeQuiz}
+                    className="w-full sm:w-auto bg-blue-900 text-white px-4 md:px-6 py-2 rounded text-sm md:text-base hover:bg-blue-800"
+                  >
+                    Retake Quiz
+                  </button>
+                </div>
+              </div>
             )}
           </div>
         )}

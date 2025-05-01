@@ -35,14 +35,14 @@ const HeroSection = () => {
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg text-[#043873] mt-2 sm:mt-4">
-            Explore free courses to learn surgical planning and 3D printing techniques
+            Explore free courses to learn VSP and 3D printing techniques
           </p>
 
           {/* Button - Adding proper accessibility attributes */}
           <div className="mt-6 sm:mt-8">
             <Link 
               href="/main_homepage" 
-              className="inline-block px-4 py-2 bg-[#043873] text-white text-sm sm:text-base rounded-lg hover:bg-[#0f1330] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#043873]"
+              className="inline-block px-4 py-2 bg-[#043873] text-center text-white text-sm sm:text-base rounded-lg hover:bg-[#0f1330] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#043873]"
               aria-label="Browse all available courses"
             >
               View Courses

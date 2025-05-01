@@ -27,56 +27,75 @@ const Home = ({ params }: Params) => {
   const [data, setData] = useState<datas.CourseDataProps2>(defaultData);
 
   useEffect(() => {
-    if (pelviscourse === "3D slicer Pelvis - Interface") {
+    // Using nullish coalescing operator (??) instead of logical OR (||)
+    const courseName = pelviscourse ?? "";
+    
+    if (courseName === "3D slicer Pelvis - Interface") {
       setContent("3D slicer Pelvis C1");
       setData(datas.pelvisInterface);
-    } else if (pelviscourse === "3D slicer Pelvis - AddDICOM") {
+    } else if (courseName === "3D slicer Pelvis - AddDICOM") {
       setContent("3D slicer Pelvis C2");
       setData(datas.pelvisAddDICOM);
-    } else if (pelviscourse === "3D slicer Pelvis - Navigating DICOM") {
+    } else if (courseName === "3D slicer Pelvis - Navigating DICOM") {
       setContent("3D slicer Pelvis C3");
       setData(datas.pelvisdicomDisplay);
-    } else if (pelviscourse === "3D slicer Pelvis - Basic-Segmentation") {
+    } else if (courseName === "3D slicer Pelvis - Basic-Segmentation") {
       setContent("3D slicer Pelvis C4");
       setData(datas.pelvisbasicSegmentation);
-    } else if (pelviscourse === "3D slicer Pelvis - Advanced Segmentation-1") {
+    } else if (courseName === "3D slicer Pelvis - Advanced Segmentation-1") {
       setContent("3D slicer Pelvis C5");
       setData(datas.pelvisadvancedSegmentation1);
-    } else if (pelviscourse === "MeshMixer2 - Pelvis Virtual-Surgery") {
+    } else if (courseName === "MeshMixer2 - Pelvis Virtual-Surgery") {
       setContent("MeshMixer2 - Pelvis Virtual-Surgery");
       setData(datas.MeshMixer2);
     }
-  }, 
-  [pelviscourse]);
+  }, [pelviscourse]);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <section>
+    <Suspense fallback={
+      <div className="flex justify-center items-center min-h-screen" role="status">
+        <span className="sr-only">Loading...</span>
+        <div className="animate-spin h-10 w-10 border-4 border-blue-600 rounded-full border-t-transparent"></div>
+      </div>
+    }>
+      <main className="min-h-screen">
         <Navigator2 />
         <HeroSection2 hero={data.hero.hero} />
         <ObjectiveSection2 objective={data.objectives.objective} />
 
-        <div className="flex flex-col items-center p-10">
+        <section className="flex flex-col items-center p-10" aria-labelledby="course-actions">
+          <h2 id="course-actions" className="sr-only">Course Actions</h2>
           <div className="flex flex-row">
-          <Link href={`${params.pelviscourse}/${data.to}?content=${content}`}>
-              <p className="p-2 rounded-md text-white hover:font-bold font-bold cursor bg-[#043873] hover:border hover:ring-offset-[#b7d5eb] hover:ring-2 hover:ring-offset-2">
-                Start Learning
-              </p>
+            <Link 
+              href={`${params.pelviscourse}/${data.to ?? ""}?content=${content ?? ""}`}
+              className="p-2 rounded-md text-white font-bold bg-[#043873] hover:border hover:ring-offset-[#b7d5eb] hover:ring-2 hover:ring-offset-2 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              aria-label={`Start learning ${pelviscourse}`}
+            >
+              Start Learning
             </Link>
           </div>
-          <Link href="/pelviscourses">
-            <div className="flex items-center space-x-2 text-[#043873] hover:text-[#0a60b6] mt-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              <span>Back to Lessons</span>
-            </div>
+          <Link 
+            href="/pelviscourses" 
+            className="flex items-center space-x-2 text-[#043873] hover:text-[#0a60b6] mt-4 focus:outline-none focus:underline"
+            aria-label="Return to pelvis course list"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span>Back to Lessons</span>
           </Link>
-        </div>
+        </section>
 
         <TeamSection2 />
         <Footer />
-      </section>
+      </main>
     </Suspense>
   );
 };
