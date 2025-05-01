@@ -1,10 +1,12 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navigator from "@/components/hero_page/navigator";
 import Image1 from "@/public/quiz5/Image1.png";
 import Image2 from "@/public/quiz5/Image2.png";
+import { useQuiz } from "@/utils/quizUtils";
+
 const quizQuestions = [
   {
     question:
@@ -46,131 +48,21 @@ const quizQuestions = [
 ];
 
 export default function QuizApp() {
-  const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(""));
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showResults, setShowResults] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  const calculateScore = useCallback(() => {
-    let score = 0;
-    userAnswers.forEach((answer, index) => {
-      if (answer.trim() === quizQuestions[index].correctAnswer.trim()) {
-        score++;
-      }
-    });
-    return score;
-  }, [userAnswers]);
-
-  useEffect(() => {
-    if (showResults && calculateScore() === quizQuestions.length) {
-      setShowConfetti(true);
-      // No timeout to clear the confetti - it will run continuously
-    }
-  }, [showResults, calculateScore]);
-
-  const handleAnswerChange = (event, questionIndex) => {
-    const updatedAnswers = [...userAnswers];
-    updatedAnswers[questionIndex] = event.target.value.trim();
-    setUserAnswers(updatedAnswers);
-  };
-
-  const goToNextQuestion = () => {
-    if (currentQuestion < quizQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    }
-  };
-
-  const goToPreviousQuestion = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    }
-  };
-
-
-  const checkWrong = useCallback(() => {
-    let wrong = [];
-    userAnswers.forEach((answer, index) => {
-      if (answer.trim() !== quizQuestions[index].correctAnswer.trim()) {
-        wrong.push(index + 1);
-      }
-    });
-    return wrong;
-  }, [userAnswers]);
-
-  const retakeQuiz = () => {
-    setUserAnswers(Array(quizQuestions.length).fill(""));
-    setCurrentQuestion(0);
-    setShowResults(false);
-    setShowConfetti(false);
-  };
-
-  const isCurrentQuestionAnswered = () => {
-    return userAnswers[currentQuestion] !== "";
-  };
-
-  const areAllQuestionsAnswered = () => {
-    return userAnswers.every((answer) => answer !== "");
-  };
-
-  const score = calculateScore();
-  const wrong = checkWrong();
-
-  // Define the confetti animation styles
-  const confettiKeyframes = `
-    @keyframes confetti-fall-continuous {
-      0% {
-        transform: translateY(-20px) rotate(0deg);
-        opacity: 1;
-      }
-      80% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  `;
-
-  // Continuous CSS Confetti Animation
-  const renderConfetti = () => {
-    if (!showConfetti) return null;
-    
-    const confettiPieces = [];
-    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#800080'];
-    
-    for (let i = 0; i < 100; i++) {
-      const left = `${Math.random() * 100}%`;
-      const animationDelay = `${Math.random() * 5}s`;
-      const animationDuration = `${Math.random() * 2 + 2}s`; // Between 2-4 seconds
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const size = `${Math.random() * 0.5 + 0.5}rem`; // Random size between 0.5rem and 1rem
-      
-      confettiPieces.push(
-        <div
-          key={i}
-          className="absolute rounded-full"
-          style={{
-            left,
-            top: '-20px',
-            width: size,
-            height: size,
-            backgroundColor: color,
-            animation: 'confetti-fall-continuous infinite linear',
-            animationDelay,
-            animationDuration
-          }}
-        />
-      );
-    }
-    
-    return (
-      <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style dangerouslySetInnerHTML={{ __html: confettiKeyframes }} />
-        {confettiPieces}
-      </div>
-    );
-  };
+  const {
+    userAnswers,
+    currentQuestion,
+    showResults,
+    score,
+    wrong,
+    handleAnswerChange,
+    goToNextQuestion,
+    goToPreviousQuestion,
+    setShowResults,
+    retakeQuiz,
+    isCurrentQuestionAnswered,
+    areAllQuestionsAnswered,
+    renderConfetti
+  } = useQuiz(quizQuestions);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-6 md:px-6">

@@ -1,243 +1,71 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import Link from "next/link";
-import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
-import Picture82 from "@/public/basic3D/quizd1/Picture82.png";
-import Picture97 from "@/public/basic3D/quizd1/Picture97.png";
+import Navigator from "@/components/hero_page/navigator";
+import Image1 from "@/public/quiz8/Image1.png";
+import Image2 from "@/public/quiz8/Image2.png";
+import Image3 from "@/public/quiz8/Image3.png";
+import { useQuiz } from "@/utils/quizUtils";
+
 const quizQuestions = [
   {
-    question: `1. This function shows the available 3D objects currently open or loaded in the program`,
-
+    question:
+    "1. Which of the following best describes the purpose of the MeshMixer solid inspector?", 
+  
     options: [
-        "A. Object Browser",
-        "B. Mirror",
-        "C.Transform",
-        "D. Brush Function",
-        
+      "A. To check the quality of textures",
+      "B. To identify potential 3D printing issues",
+      "C. To measure the exact dimensions of the mesh",
+      "D. To compare different mesh versions",
     ],
-    image: "",
-    correctAnswer: "A. Object Browser",
+    image: Image1,
+    correctAnswer: "B. To identify potential 3D printing issues"
   },
   {
-    question: "2.What function is applied to convert the object into a solid form suitable for 3D printing?",
-
+    question:
+    "2. In MeshMixer, what is the main purpose of the 'Analysis' tool when preparing a pelvis model for 3D printing?", 
+  
     options: [
-        "A. Make solid",
-        "B. Mirror",
-        "C. Apply",
-        "D. Transform",
-    
+      "A. To identify potential printing issues like thin walls and overhangs",
+      "B. To calculate the total printing cost",
+      "C. To compare different filament materials",
+      "D. To simulate how the model will respond to physical stress",
     ],
-    image: "",
-    correctAnswer: "A. Make solid",
+    image: Image2,
+    correctAnswer: "A. To identify potential printing issues like thin walls and overhangs"
   },
   {
-    question: "3. The function allows users to create and compare the reduced or manipulated segment to see the changes made. ",
-
+    question:
+    "3. After using the plane cut tool to work on a pelvis model, which of these is the most appropriate next step?", 
+  
     options: [
-        "A. Mirror",
-        "B. Transform",
-        "C. Plane Cut",
-        "D. Align",
-        
+      "A. Export immediately without further modifications",
+      "B. Use sculpting tools to refine the cut edges",
+      "C. Make the model solid (close holes created by the cut)",
+      "D. Apply textures to the cut surface",
     ],
-    image: Picture97,
-    correctAnswer: "A. Mirror",
-  },
-  {
-    question: "4. What is the primary purpose of the brush tool function?",
-
-    options: [
-        "A. Precision and control on objects",
-        "B. Navigate between objects",
-        "C. Convert model into solid form",
-        "D. Mirrors the objects",
-        
-    ],
-    image: Picture82,
-    correctAnswer: "A. Precision and control on objects",
+    image: Image3,
+    correctAnswer: "C. Make the model solid (close holes created by the cut)"
   },
 ];
 
 export default function QuizApp() {
-  const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(""));
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showResults, setShowResults] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  const calculateScore = useCallback(() => {
-    let score = 0;
-    userAnswers.forEach((answer, index) => {
-      if (answer.trim() === quizQuestions[index].correctAnswer.trim()) {
-        score++;
-      }
-    });
-    return score;
-  }, [userAnswers]);
-
-  useEffect(() => {
-    if (showResults && calculateScore() === quizQuestions.length) {
-      setShowConfetti(true);
-      // No timeout to clear the confetti - it will run continuously
-    }
-  }, [showResults, calculateScore]);
-
-  const handleAnswerChange = (event, questionIndex) => {
-    const updatedAnswers = [...userAnswers];
-    updatedAnswers[questionIndex] = event.target.value.trim();
-    setUserAnswers(updatedAnswers);
-  };
-
-  const handleOptionKeyDown = (event, optionValue, questionIndex) => {
-    // Handle keyboard interactions
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      const fakeEvent = { target: { value: optionValue } };
-      handleAnswerChange(fakeEvent, questionIndex);
-    }
-  };
-
-  const goToNextQuestion = () => {
-    if (currentQuestion < quizQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    }
-  };
-
-  const goToPreviousQuestion = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    }
-  };
-
-
-  const checkWrong = useCallback(() => {
-    let wrong = [];
-    userAnswers.forEach((answer, index) => {
-      if (answer.trim() !== quizQuestions[index].correctAnswer.trim()) {
-        wrong.push(index + 1);
-      }
-    });
-    return wrong;
-  }, [userAnswers]);
-
-  const retakeQuiz = () => {
-    setUserAnswers(Array(quizQuestions.length).fill(""));
-    setCurrentQuestion(0);
-    setShowResults(false);
-    setShowConfetti(false);
-  };
-
-  const isCurrentQuestionAnswered = () => {
-    return userAnswers[currentQuestion] !== "";
-  };
-
-  const areAllQuestionsAnswered = () => {
-    return userAnswers.every((answer) => answer !== "");
-  };
-
-
-  const score = calculateScore();
-  const wrong = checkWrong();
-
-  // Continuous CSS Confetti Animation
-  const renderConfetti = () => {
-    if (!showConfetti) return null;
-    
-    const confettiPieces = [];
-    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#800080'];
-    
-    for (let i = 0; i < 100; i++) {
-      const left = `${Math.random() * 100}%`;
-      const animationDelay = `${Math.random() * 5}s`;
-      const animationDuration = `${Math.random() * 2 + 2}s`; // Between 2-4 seconds
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const size = `${Math.random() * 0.5 + 0.5}rem`; // Random size between 0.5rem and 1rem
-      
-      confettiPieces.push(
-        <div
-          key={i}
-          className="absolute rounded-full"
-          style={{
-            left,
-            top: '-20px',
-            width: size,
-            height: size,
-            backgroundColor: color,
-            animation: 'confetti-fall-continuous infinite linear',
-            animationDelay,
-            animationDuration
-          }}
-        />
-      );
-    }
-    
-    return (
-      <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            @keyframes confetti-fall-continuous {
-              0% {
-                transform: translateY(-20px) rotate(0deg);
-                opacity: 1;
-              }
-              80% {
-                opacity: 1;
-              }
-              100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-              }
-            }
-          `
-        }} />
-        {confettiPieces}
-      </div>
-    );
-  };
-
-  // Helper function to render images (single or multiple)
-  const renderQuestionImages = () => {
-    const currentImage = quizQuestions[currentQuestion].image;
-    
-    // Check if image is an array
-    if (Array.isArray(currentImage)) {
-      return (
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-          {currentImage.map((img, index) => (
-            <div key={index} className="relative w-full max-w-md md:max-w-lg">
-              <Image
-                src={img}
-                alt={`Question illustration ${index + 1}`}
-                className="border border-gray-200 rounded"
-                width={550}
-                height={300}
-                priority
-              />
-            </div>
-          ))}
-        </div>
-      );
-    } else if (currentImage) {
-      // Single image case
-      return (
-        <div className="flex justify-center mb-6">
-          <div className="relative w-full max-w-md md:max-w-lg">
-            <Image
-              src={currentImage}
-              alt="Question illustration"
-              className="border border-gray-200 rounded"
-              width={550}
-              height={300}
-              priority
-            />
-          </div>
-        </div>
-      );
-    }
-    
-    return null;
-  };
+  const {
+    userAnswers,
+    currentQuestion,
+    showResults,
+    score,
+    wrong,
+    handleAnswerChange,
+    goToNextQuestion,
+    goToPreviousQuestion,
+    setShowResults,
+    retakeQuiz,
+    isCurrentQuestionAnswered,
+    areAllQuestionsAnswered,
+    renderConfetti
+  } = useQuiz(quizQuestions);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-6 md:px-6">
@@ -250,7 +78,7 @@ export default function QuizApp() {
       </div>
       
       {/* Quiz title */}
-      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">MeshMixer Quiz</h1>
+      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Pelvis MeshMixer Virtual Surgery Quiz</h1>
       
       {/* Quiz container */}
       <div className="bg-white rounded-lg shadow-md p-4 md:p-6 lg:p-8 w-full max-w-4xl mt-6">
@@ -259,30 +87,38 @@ export default function QuizApp() {
             <div className="mb-4 md:mb-8">
               <p className="text-base md:text-lg font-medium mb-4 md:mb-6">{quizQuestions[currentQuestion].question}</p>
               
-              {/* Render images using the helper function */}
-              {renderQuestionImages()}
+              {quizQuestions[currentQuestion].image && (
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-full max-w-md md:max-w-lg">
+                    <Image 
+                      src={quizQuestions[currentQuestion].image} 
+                      alt="Question illustration" 
+                      className="border border-gray-200 rounded"
+                      width={550}
+                      height={300}
+                      priority
+                    />
+                  </div>
+                </div> 
+              )}
               
               <div className="space-y-2 md:space-y-3">
                 {quizQuestions[currentQuestion].options.map(
                   (option, optionIndex) => {
                     const isSelected = userAnswers[currentQuestion] === option.trim();
-                    const optionId = `question-${currentQuestion}-option-${optionIndex}`;
-                    
                     return (
                       <div 
                         key={optionIndex} 
                         className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
                           isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
                         }`}
-                        tabIndex={0}
-                        onKeyDown={(e) => handleOptionKeyDown(e, option, currentQuestion)}
+                        onClick={() => {
+                          const event = { target: { value: option } };
+                          handleAnswerChange(event, currentQuestion);
+                        }}
                       >
-                        <label 
-                          htmlFor={optionId}
-                          className="flex items-start cursor-pointer w-full text-sm md:text-base"
-                        >
+                        <label className="flex items-start cursor-pointer w-full text-sm md:text-base">
                           <input
-                            id={optionId}
                             type="radio"
                             name={`question-${currentQuestion}`}
                             value={option}
@@ -303,7 +139,6 @@ export default function QuizApp() {
                   <button
                     onClick={goToPreviousQuestion}
                     className="px-4 md:px-6 py-2 border border-gray-300 rounded text-sm md:text-base text-gray-700 hover:bg-gray-50"
-                    aria-label="Go to previous question"
                   >
                     Previous
                   </button>
@@ -318,7 +153,6 @@ export default function QuizApp() {
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                     disabled={!isCurrentQuestionAnswered()}
-                    aria-label="Go to next question"
                   >
                     Next
                   </button>
@@ -331,7 +165,6 @@ export default function QuizApp() {
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                     disabled={!areAllQuestionsAnswered()}
-                    aria-label="Submit quiz answers"
                   >
                     Submit
                   </button>
@@ -356,12 +189,10 @@ export default function QuizApp() {
                 <p className="text-green-600 font-bold text-lg md:text-xl mb-4">
                   Perfect! Congratulations on completing the quiz.
                 </p>
-                <Link 
-                  href="/fillup/meshmixer2"
-                  className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800 inline-block"
-                  aria-label="Get your certificate"
-                >
-                  Get Your Certificate
+                <Link href="/fillup/meshmixer2">
+                  <button className="bg-blue-900 text-white px-5 md:px-6 py-2 md:py-3 rounded text-sm md:text-base hover:bg-blue-800">
+                    Get Your Certificate
+                  </button>
                 </Link>
               </div>
             ) : (
@@ -370,17 +201,14 @@ export default function QuizApp() {
                   Sorry, you didn&apos;t pass. You can retake the quiz to improve your score.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                  <Link 
-                    href="/pelvis/MeshMixer2%20-%20Pelvis%20Virtual-Surgery/data?content=MeshMixer2%20-%20Pelvis%20Virtual-Surgery" 
-                    className="w-full sm:w-auto px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50 inline-block text-center"
-                    aria-label="Retake the lesson"
-                  >
-                    Retake the Lesson
+                  <Link href="/pelvis/MeshMixer2%20-%20Pelvis%20Virtual-Surgery" className="w-full sm:w-auto">
+                    <button className="w-full px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50">
+                      Retake the Lesson
+                    </button>
                   </Link>
                   <button
                     onClick={retakeQuiz}
                     className="w-full sm:w-auto bg-blue-900 text-white px-4 md:px-6 py-2 rounded text-sm md:text-base hover:bg-blue-800"
-                    aria-label="Retake quiz"
                   >
                     Retake Quiz
                   </button>

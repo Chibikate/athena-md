@@ -1,209 +1,90 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import Link from "next/link";
 import Navigator from "@/components/hero_page/navigator";
 import Image from "next/image";
+import { useQuiz } from "@/utils/quizUtils";
 
 const quizQuestions = [
   {
     question:
-    "1. What feature allows the generation of support structures under the model to prevent the plastic from falling down?", 
+    "1. What is the primary purpose of the support structure in 3D printing?", 
   
     options: [
-        "A. Infill density",
-        "B. Support setting",
-        "C. Shell thickness",
-        "D. Adhesion setting",
+      "A. To reduce printing time",
+      "B. To support overhangs during printing",
+      "C. To decorate the final model",
     ],
     image: "",
-    correctAnswer: "B. Support setting"
+    correctAnswer: "B. To support overhangs during printing"
   },
   {
     question:
-    "2.This tool allows you to choose the optimal build plate adhesion type for a model by displaying several types (skirt, brim, and raft).", 
+    "2. Why might a user want to position a model at an angle during printing?", 
   
     options: [
-        "A. Shell thickness",
-        "B. Profile setting",
-        "C. Adhesion setting",
-        "D. Support setting",
+        "A. To reduce support material",
+        "B. To make the print faster",
+        "C. To use less filament overall",
+        
     ],
     image: "",
-    correctAnswer: "C. Adhesion setting"
+    correctAnswer: "A. To reduce support material"
   },
   {
     question:
-    "3. This feature enables Ultimaker Cura settings (such as infill density and shell thickness) to be customized for each print profile.", 
+    "3. What is the minimum recommended wall thickness for most 3D prints?", 
     options: [
-        "A. Profile setting",
-        "B. Support setting",
-        "C. Adhesion setting",
-        "D. Shell thickness",
+        "A. 0.1 mm",
+        "B. 0.8 mm",
+        "C. 2.0 mm",
+        
     ],
     image: "",
-    correctAnswer: "A. Profile setting"
+    correctAnswer: "B. 0.8 mm"
   },
   {
     question:
-    "4. What allows users to adjust the layer height achieving a balance between the speed and print quality of the model?", 
+    "4. Which infill pattern offers the best balance between strength and material usage?", 
     options: [
-        "A. Generate support",
-        "B. Strength (Infill)",
-        "C. Build plate adhesion",
-        "D. Resolution",
+        "A. Grid",
+        "B. Triangular",
+        "C. Gyroid",
+        
     ],
     image: "",
-    correctAnswer: "D. Resolution"
+    correctAnswer: "C. Gyroid"
   },
   {
     question:
-    "5. Where can users locate Ultimaker Cura's printing process settings?", 
+    "5. For medical models like mandibles, what is a common infill percentage range?", 
     options: [
-        "A. Resolution",
-        "B. Print settings",
-        "C. Adhesion settings",
-        "D. Profile settings",
+        "A. 5-15%",
+        "B. 20-30%",
+        "C. 50-100%",
+        
     ],
     image: "",
-    correctAnswer: "B. Print settings"
+    correctAnswer: "B. 20-30%"
   },
 ];
 
 export default function QuizApp() {
-  const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(""));
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showResults, setShowResults] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  const calculateScore = useCallback(() => {
-    let score = 0;
-    userAnswers.forEach((answer, index) => {
-      if (answer.trim() === quizQuestions[index].correctAnswer.trim()) {
-        score++;
-      }
-    });
-    return score;
-  }, [userAnswers]);
-
-  useEffect(() => {
-    if (showResults && calculateScore() === quizQuestions.length) {
-      setShowConfetti(true);
-      // No timeout to clear the confetti - it will run continuously
-    }
-  }, [showResults, calculateScore]);
-
-  const handleAnswerChange = (event, questionIndex) => {
-    const updatedAnswers = [...userAnswers];
-    updatedAnswers[questionIndex] = event.target.value.trim();
-    setUserAnswers(updatedAnswers);
-  };
-
-  const handleAnswerSelect = (option, questionIndex) => {
-    const event = { target: { value: option } };
-    handleAnswerChange(event, questionIndex);
-  };
-
-  const handleOptionKeyPress = (e, option, questionIndex) => {
-    // Enter or Space key
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      handleAnswerSelect(option, questionIndex);
-    }
-  };
-
-  const goToNextQuestion = () => {
-    if (currentQuestion < quizQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    }
-  };
-
-  const goToPreviousQuestion = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    }
-  };
-
-  const checkWrong = useCallback(() => {
-    let wrong = [];
-    userAnswers.forEach((answer, index) => {
-      if (answer.trim() !== quizQuestions[index].correctAnswer.trim()) {
-        wrong.push(index + 1);
-      }
-    });
-    return wrong;
-  }, [userAnswers]);
-
-  const retakeQuiz = () => {
-    setUserAnswers(Array(quizQuestions.length).fill(""));
-    setCurrentQuestion(0);
-    setShowResults(false);
-    setShowConfetti(false);
-  };
-
-  const isCurrentQuestionAnswered = () => {
-    return userAnswers[currentQuestion] !== "";
-  };
-
-  const areAllQuestionsAnswered = () => {
-    return userAnswers.every((answer) => answer !== "");
-  };
-
-  const score = calculateScore();
-  const wrong = checkWrong();
-  
-  // Continuous CSS Confetti Animation
-  const renderConfetti = () => {
-    if (!showConfetti) return null;
-    
-    const confettiPieces = [];
-    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#800080'];
-    
-    for (let i = 0; i < 100; i++) {
-      const left = `${Math.random() * 100}%`;
-      const animationDelay = `${Math.random() * 5}s`;
-      const animationDuration = `${Math.random() * 2 + 2}s`; // Between 2-4 seconds
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const size = `${Math.random() * 0.5 + 0.5}rem`; // Random size between 0.5rem and 1rem
-      
-      confettiPieces.push(
-        <div
-          key={i}
-          className="absolute rounded-full"
-          style={{
-            left,
-            top: '-20px',
-            width: size,
-            height: size,
-            backgroundColor: color,
-            animation: 'confetti-fall-continuous infinite linear',
-            animationDelay,
-            animationDuration
-          }}
-        />
-      );
-    }
-    
-    return (
-      <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style>{`
-          @keyframes confetti-fall-continuous {
-            0% {
-              transform: translateY(-20px) rotate(0deg);
-              opacity: 1;
-            }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}</style>
-        {confettiPieces}
-      </div>
-    );
-  };
+  const {
+    userAnswers,
+    currentQuestion,
+    showResults,
+    score,
+    wrong,
+    handleAnswerChange,
+    goToNextQuestion,
+    goToPreviousQuestion,
+    setShowResults,
+    retakeQuiz,
+    isCurrentQuestionAnswered,
+    areAllQuestionsAnswered,
+    renderConfetti
+  } = useQuiz(quizQuestions);
 
   // Helper function to render images (single or multiple)
   const renderQuestionImages = () => {
@@ -221,7 +102,6 @@ export default function QuizApp() {
                 className="border border-gray-200 rounded"
                 width={550}
                 height={300}
-                layout="responsive"
                 priority
               />
             </div>
@@ -239,7 +119,6 @@ export default function QuizApp() {
               className="border border-gray-200 rounded"
               width={550}
               height={300}
-              layout="responsive"
               priority
             />
           </div>
@@ -261,7 +140,7 @@ export default function QuizApp() {
       </div>
       
       {/* Quiz title */}
-      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">Optimizing 3D Printer Slicing Quiz</h1>
+      <h1 className="text-xl md:text-2xl font-bold text-center my-4 md:mb-6">3D Printing Advanced Settings Quiz</h1>
       
       {/* Quiz container */}
       <div className="bg-white rounded-lg shadow-md p-4 md:p-6 lg:p-8 w-full max-w-4xl mt-6">
@@ -273,24 +152,34 @@ export default function QuizApp() {
               {/* Render images using the helper function */}
               {renderQuestionImages()}
               
-              <div className="space-y-2 md:space-y-3">
+              <div className="space-y-2 md:space-y-3" role="radiogroup" aria-labelledby={`question-${currentQuestion}-label`}>
+                <div id={`question-${currentQuestion}-label`} className="sr-only">{quizQuestions[currentQuestion].question}</div>
                 {quizQuestions[currentQuestion].options.map(
-                  (option, optionIndex) => {
+                  (option, index) => {
                     const isSelected = userAnswers[currentQuestion] === option.trim();
-                    const optionId = `question-${currentQuestion}-option-${optionIndex}`;
+                    const optionId = `question-${currentQuestion}-option-${index}`;
                     
                     return (
                       <div 
-                        key={optionIndex} 
+                        key={index} 
                         className={`border rounded-md p-2 md:p-3 cursor-pointer transition-colors ${
                           isSelected ? 'bg-green-100 border-green-500' : 'hover:bg-gray-50'
                         }`}
-                        onClick={() => handleAnswerSelect(option, currentQuestion)}
-                        onKeyDown={(e) => handleOptionKeyPress(e, option, currentQuestion)}
+                        onClick={() => {
+                          const event = { target: { value: option } };
+                          handleAnswerChange(event, currentQuestion);
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const event = { target: { value: option } };
+                            handleAnswerChange(event, currentQuestion);
+                          }
+                        }}
                         tabIndex="0"
                       >
                         <label 
-                          htmlFor={optionId}
+                          htmlFor={optionId} 
                           className="flex items-start cursor-pointer w-full text-sm md:text-base"
                         >
                           <input
@@ -380,7 +269,7 @@ export default function QuizApp() {
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
                   <Link 
-                    href="/ultimaker/3D%20Printing%20for%20a%20Mandible-4/data?content=3D%20printing%20%20Part%204" 
+                    href="/ultimaker/3D%20Printing%20for%20a%20Mandible-4/data?content=3D%20printing%20part%204"
                     className="w-full sm:w-auto px-4 md:px-6 py-2 border border-blue-900 text-blue-900 rounded text-sm md:text-base hover:bg-blue-50 inline-block text-center"
                     aria-label="Retake the lesson"
                   >

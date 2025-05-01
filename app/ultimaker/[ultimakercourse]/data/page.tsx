@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, Suspense, useCallback } from "react";
+import React, { Suspense, useEffect } from "react";
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon, XMarkIcon, ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,8 +13,8 @@ import {
   printingTutorial4,
 } from "@/data/ultimaker";
 import { useSearchParams } from "next/navigation";
-import { StaticImageData } from "next/image";
 import ProgressBar from "@/components/3dslicer_page/progress_bar";
+import { useCourseNavigation, ContentProps } from "@/utils/coursePageUtils";
 
 interface Params {
   params: {
@@ -22,14 +22,7 @@ interface Params {
   };
 }
 
-interface ContentProps {
-  title: string;
-  description: React.JSX.Element | string;
-  image?: StaticImageData | null | undefined;
-  alt: string;
-}
-
-const data: ContentProps[] = [
+const initialData: ContentProps[] = [
   {
     title: "",
     description: "",
@@ -42,11 +35,26 @@ const Home = ({ params }: Params) => {
   const ultimakercourse = params["ultimakercourse"].replaceAll("%20", " ");
   const searchParams = useSearchParams();
   const queryPage = searchParams.get("content");
-  const [index, setIndex] = useState(0);
-  const [content, setContent] = useState<ContentProps[]>(data);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  // Use the shared navigation hook
+  const {
+    index,
+    setIndex,
+    content,
+    setContent,
+    lightboxOpen,
+    setLightboxOpen,
+    lightboxIndex,
+    imagesForLightbox,
+    goToNextQuestion,
+    goToPreviousQuestion,
+    goToNextImage,
+    goToPreviousImage,
+    handleCloseLightbox,
+    openLightbox,
+  } = useCourseNavigation(initialData);
+
+  // Load content based on query parameter
   useEffect(() => {
     switch (queryPage) {
       case "3D printing  Part 1":
@@ -64,103 +72,7 @@ const Home = ({ params }: Params) => {
       default:
         setContent([]);
     }
-  }, [queryPage]);
-
-  const goToNextQuestion = useCallback(() => {
-    if (index < content.length - 1) {
-      setIndex(index + 1);
-    }
-  }, [index, content.length]);
-
-  const goToPreviousQuestion = useCallback(() => {
-    if (index > 0) {
-      setIndex(index - 1);
-    }
-  }, [index]);
-
-  // Lightbox navigation
-  const goToNextImage = useCallback(() => {
-    const imagesWithSrc = content.filter(item => item.image?.src);
-    if (lightboxIndex < imagesWithSrc.length - 1) {
-      setLightboxIndex(lightboxIndex + 1);
-    }
-  }, [lightboxIndex, content]);
-
-  const goToPreviousImage = useCallback(() => {
-    if (lightboxIndex > 0) {
-      setLightboxIndex(lightboxIndex - 1);
-    }
-  }, [lightboxIndex]);
-
-  // When opening lightbox
-  useEffect(() => {
-    if (lightboxOpen) {
-      // Hide scrollbars when lightbox is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Restore scrollbars when lightbox is closed
-      document.body.style.overflow = '';
-    }
-    
-    // Cleanup function to ensure scrollbars are restored
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [lightboxOpen]);
-
-  // Handle keyboard events
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (lightboxOpen) {
-        if (event.key === "Escape") {
-          setLightboxOpen(false);
-        } else if (event.key === "ArrowRight") {
-          goToNextImage();
-        } else if (event.key === "ArrowLeft") {
-          goToPreviousImage();
-        }
-      } else {
-        if (event.key === "ArrowRight") {
-          goToNextQuestion();
-        } else if (event.key === "ArrowLeft") {
-          goToPreviousQuestion();
-        }
-      }
-    };
-    
-    window.addEventListener("keydown", handleKeyDown);
-    
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [goToNextQuestion, goToPreviousQuestion, lightboxOpen, goToNextImage, goToPreviousImage]);
-
-  // Handle closing the lightbox
-  const handleCloseLightbox = (e: React.MouseEvent) => {
-    // Only close if clicking the background, not the image
-    if (e.target === e.currentTarget) {
-      setLightboxOpen(false);
-    }
-  };
-
-  // Open lightbox with current content index
-  const openLightbox = (contentIndex: number) => {
-    // Find all content items with images
-    const imagesWithSrc = content.filter(item => item.image?.src);
-    
-    // Find index in filtered array that matches the content index
-    const imageIndex = imagesWithSrc.findIndex(
-      item => item.image?.src === content[contentIndex].image?.src
-    );
-    
-    if (imageIndex !== -1) {
-      setLightboxIndex(imageIndex);
-      setLightboxOpen(true);
-    }
-  };
-
-  // Filter content items with images for the lightbox
-  const imagesForLightbox = content.filter(item => item.image?.src);
+  }, [queryPage, setContent]);
 
   // Function to render the desktop previous button or back link
   const renderDesktopPreviousButton = () => {
@@ -190,7 +102,7 @@ const Home = ({ params }: Params) => {
         </Link>
       );
     }
-    
+
     // If not on first page, show previous button
     return (
       <button
@@ -206,7 +118,7 @@ const Home = ({ params }: Params) => {
   // Function to render the next button (always shown, disabled on last page)
   const renderNextButton = () => {
     const isLastPage = index >= content.length - 1;
-    
+
     return (
       <button
         onClick={!isLastPage ? goToNextQuestion : undefined}
@@ -230,7 +142,7 @@ const Home = ({ params }: Params) => {
             onClick={handleCloseLightbox}
           >
             <div className="absolute top-4 right-4 z-10">
-              <button 
+              <button
                 className="bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 text-white text-xl font-bold w-10 h-10 flex items-center justify-center"
                 onClick={() => setLightboxOpen(false)}
                 aria-label="Close"
@@ -238,10 +150,10 @@ const Home = ({ params }: Params) => {
                 <XMarkIcon className="w-6 h-6" />
               </button>
             </div>
-            
+
             <div className="relative max-w-4xl w-full h-full flex items-center justify-center">
               {/* Left arrow - Always shown, disabled on first image */}
-              <button 
+              <button
                 className={`absolute left-2 sm:left-4 md:left-8 bg-black ${
                   lightboxIndex > 0 ? "bg-opacity-50 hover:bg-opacity-70" : "bg-opacity-30 cursor-not-allowed"
                 } rounded-full p-2 text-white z-10`}
@@ -256,10 +168,10 @@ const Home = ({ params }: Params) => {
                   lightboxIndex === 0 ? "opacity-50" : "opacity-100"
                 }`} />
               </button>
-              
+
               {/* Image */}
               <div className="max-w-4xl max-h-[80vh] px-4">
-                <Image 
+                <Image
                   src={imagesForLightbox[lightboxIndex].image?.src || ""}
                   alt={imagesForLightbox[lightboxIndex].alt}
                   className="rounded-lg max-h-[80vh] w-auto object-contain"
@@ -269,15 +181,15 @@ const Home = ({ params }: Params) => {
                   priority={true}
                   onClick={(e) => e.stopPropagation()}
                 />
-                
+
                 {/* Caption */}
                 <div className="text-center text-white mt-4 px-4">
                   {imagesForLightbox[lightboxIndex].title}
                 </div>
               </div>
-              
+
               {/* Right arrow - Always shown, disabled on last image */}
-              <button 
+              <button
                 className={`absolute right-2 sm:right-4 md:right-8 bg-black ${
                   lightboxIndex < imagesForLightbox.length - 1 ? "bg-opacity-50 hover:bg-opacity-70" : "bg-opacity-30 cursor-not-allowed"
                 } rounded-full p-2 text-white z-10`}
@@ -293,7 +205,7 @@ const Home = ({ params }: Params) => {
                 }`} />
               </button>
             </div>
-            
+
             {/* Image counter */}
             <div className="absolute bottom-4 text-white text-center w-full">
               {lightboxIndex + 1} / {imagesForLightbox.length}
@@ -305,10 +217,10 @@ const Home = ({ params }: Params) => {
           <Navigator />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
-        
+
         <div className={`flex flex-col md:flex-row items-center justify-center ${lightboxOpen ? "hidden" : ""}`}>
           {renderDesktopPreviousButton()}
-          
+
           {index < content.length && (
             <UltimakerCard
               title={content[index].title}
@@ -329,7 +241,7 @@ const Home = ({ params }: Params) => {
             {renderNextButton()}
           </div>
         </div>
-        
+
         <div className={lightboxOpen ? "hidden" : ""}>
           <div className="h-[1px] w-full bg-[#FDCC6D]" />
           <Footer />
