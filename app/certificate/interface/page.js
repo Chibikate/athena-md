@@ -159,12 +159,23 @@ export default function QuizApp() {
     const confettiPieces = [];
     const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#800080'];
     
-    // Use crypto.getRandomValues for more secure random number generation
+    // Create a safe random generator that works in both browser and server environments
     const getSecureRandom = () => {
-      // Create a secure random value between 0 and 1
-      const array = new Uint32Array(1);
-      window.crypto.getRandomValues(array);
-      return array[0] / (0xffffffff + 1);
+      // Check if running in a browser and if crypto API is available
+      if (typeof window !== 'undefined' && window.crypto) {
+        try {
+          const array = new Uint32Array(1);
+          window.crypto.getRandomValues(array);
+          return array[0] / (0xffffffff + 1);
+        } catch (e) {
+          // Fallback to Math.random if crypto fails
+          console.warn('Crypto API failed, falling back to Math.random');
+          return Math.random();
+        }
+      } else {
+        // Fallback for server-side rendering or older browsers
+        return Math.random();
+      }
     };
     
     for (let i = 0; i < 100; i++) {
