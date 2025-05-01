@@ -188,23 +188,6 @@ const CourseLayout = ({
     );
   };
 
-  // Updated renderCardContent function to properly use the props
-  const renderCardContent = (
-    title: string,
-    description: React.ReactNode,
-    image?: StaticImageData | null,
-    alt?: string,
-    onClick?: () => void
-  ) => {
-    return (
-      <div className="card" onClick={onClick}>
-        <h2>{title}</h2>
-        <div>{description}</div>
-        {image && <Image src={image} alt={alt || ''} />}
-      </div>
-    );
-  };
-
   return (
     <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
       {lightboxOpen && imagesForLightbox.length > 0 && (
@@ -293,7 +276,7 @@ const CourseLayout = ({
         {renderDesktopPreviousButton()}
         
         {index < content.length && (
-          renderCardContent(
+          renderCard(
             content[index].title,
             <div className="text-justify">{content[index].description}</div>,
             content[index].image,
