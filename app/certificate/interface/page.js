@@ -155,36 +155,32 @@ export default function QuizApp() {
 
   const renderConfetti = () => {
     if (!showConfetti) return null;
-    
+  
     const confettiPieces = [];
     const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#800080'];
-    
-    // Create a safe random generator that works in both browser and server environments
+  
     const getSecureRandom = () => {
-      // Check if running in a browser and if crypto API is available
-      if (typeof window !== 'undefined' && window.crypto) {
+      if (typeof window !== 'undefined' && window.crypto?.getRandomValues) {
         try {
           const array = new Uint32Array(1);
           window.crypto.getRandomValues(array);
           return array[0] / (0xffffffff + 1);
-        } catch (e) {
-          // Fallback to Math.random if crypto fails
-          console.warn('Crypto API failed, falling back to Math.random');
+        } catch (err) {
+          console.warn('crypto.getRandomValues failed, falling back to Math.random');
           return Math.random();
         }
       } else {
-        // Fallback for server-side rendering or older browsers
         return Math.random();
       }
     };
-    
+  
     for (let i = 0; i < 100; i++) {
       const left = `${getSecureRandom() * 100}%`;
       const animationDelay = `${getSecureRandom() * 5}s`;
-      const animationDuration = `${getSecureRandom() * 2 + 2}s`; // Between 2-4 seconds
+      const animationDuration = `${getSecureRandom() * 2 + 2}s`;
       const color = colors[Math.floor(getSecureRandom() * colors.length)];
-      const size = `${getSecureRandom() * 0.5 + 0.5}rem`; // Random size between 0.5rem and 1rem
-      
+      const size = `${getSecureRandom() * 0.5 + 0.5}rem`;
+  
       confettiPieces.push(
         <div
           key={i}
@@ -202,10 +198,17 @@ export default function QuizApp() {
         />
       );
     }
-    
+  
     return (
       <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        <style dangerouslySetInnerHTML={{ __html: confettiKeyframes }} />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          @keyframes confetti-fall-continuous {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+          }
+        `}} />
         {confettiPieces}
       </div>
     );
