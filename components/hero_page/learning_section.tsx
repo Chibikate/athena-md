@@ -2,7 +2,7 @@ import React from "react";
 import LearningCard from "@/components/hero_page/leaning_card";
 import Interactive from "@/public/interactive.svg";
 import SelfDirect from "@/public/Self-direct.svg";
-import Realistic from "@/public/Realistic2.svg";
+import Realistic from "@/public/Realistic1.svg";
 
 // Data sulod sa Leaning Card
 
