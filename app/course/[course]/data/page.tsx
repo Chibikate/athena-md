@@ -32,7 +32,7 @@ interface ContentProps {
   alt: string;
 }
 
-const data: ContentProps[] = [
+const initialData: ContentProps[] = [
   {
     title: "",
     description: "",
@@ -45,19 +45,17 @@ const Home = ({ params }: Params) => {
   const course = params["course"].replaceAll("%20", " ");
   const searchParams = useSearchParams();
   const queryPage = searchParams.get("content");
-  const [index, setIndex] = useState(0);
-  const [content, setContent] = useState<ContentProps[]>(data);
+  const lightboxRef = useRef<HTMLDivElement>(null);
   
-  // Lightbox state
+  // Zoom functionality states
+  const [index, setIndex] = useState(0);
+  const [content, setContent] = useState<ContentProps[]>(initialData);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
-  
-  // Reference for the lightbox container
-  const lightboxRef = useRef<HTMLDivElement>(null);
   
   // Filter content items with images for the lightbox
   const imagesForLightbox = content.filter(item => item.image?.src);
@@ -82,10 +80,12 @@ const Home = ({ params }: Params) => {
       case "MeshMixer - Virtual-Surgery":
         setContent(MeshTutorial);
         break;
+      default:
+        setContent([]);
     }
   }, [queryPage]);
 
-  // Navigation functions
+  // Memoize navigation functions with useCallback
   const goToNextQuestion = useCallback(() => {
     if (index < content.length - 1) {
       setIndex(index + 1);
@@ -98,27 +98,122 @@ const Home = ({ params }: Params) => {
     }
   }, [index]);
 
-  // Lightbox navigation
+  // Reset zoom and position
+  const resetZoom = useCallback(() => {
+    setZoomLevel(1);
+    setPosition({ x: 0, y: 0 });
+  }, []);
+
+  // Lightbox navigation functions with zoom reset
   const goToNextImage = useCallback(() => {
     if (lightboxIndex < imagesForLightbox.length - 1) {
       setLightboxIndex(lightboxIndex + 1);
       resetZoom();
     }
-  }, [lightboxIndex, imagesForLightbox.length]);
+  }, [lightboxIndex, imagesForLightbox.length, resetZoom]);
 
   const goToPreviousImage = useCallback(() => {
     if (lightboxIndex > 0) {
       setLightboxIndex(lightboxIndex - 1);
       resetZoom();
     }
-  }, [lightboxIndex]);
+  }, [lightboxIndex, resetZoom]);
 
-  // Handle keyboard events for navigation and lightbox
+  // Open lightbox with proper index
+  const openLightbox = useCallback((contentIndex: number) => {
+    // Find all content items with images
+    const imagesWithSrc = content.filter(item => item.image?.src);
+    
+    // Find index in filtered array that matches the content index
+    const imageIndex = imagesWithSrc.findIndex(
+      item => item.image?.src === content[contentIndex].image?.src
+    );
+    
+    if (imageIndex !== -1) {
+      setLightboxIndex(imageIndex);
+      setLightboxOpen(true);
+    }
+  }, [content]);
+
+  // Handle closing the lightbox
+  const handleCloseLightbox = useCallback((e: React.MouseEvent) => {
+    // Only close if clicking the background, not the image
+    if (e.target === e.currentTarget) {
+      setLightboxOpen(false);
+      resetZoom();
+    }
+  }, [resetZoom]);
+
+  // Zoom controls
+  const handleZoomIn = useCallback(() => {
+    setZoomLevel(prev => Math.min(prev + 0.25, 5));
+  }, []);
+
+  const handleZoomOut = useCallback(() => {
+    setZoomLevel(prev => {
+      const newZoom = Math.max(prev - 0.25, 0.5);
+      if (newZoom <= 1) {
+        setPosition({ x: 0, y: 0 });
+      }
+      return newZoom;
+    });
+  }, []);
+
+  // Image panning functions
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (zoomLevel > 1) {
+      setIsDragging(true);
+      setStartPosition({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y
+      });
+    }
+  }, [zoomLevel, position]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (isDragging && zoomLevel > 1) {
+      setPosition({
+        x: e.clientX - startPosition.x,
+        y: e.clientY - startPosition.y
+      });
+    }
+  }, [isDragging, zoomLevel, startPosition]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  // Handle wheel for zoom
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    if (e.ctrlKey || e.metaKey) {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        handleZoomIn();
+      } else {
+        handleZoomOut();
+      }
+    }
+  }, [handleZoomIn, handleZoomOut]);
+
+  // Add mouse up event to window
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+    };
+    
+    window.addEventListener('mouseup', handleGlobalMouseUp);
+    return () => {
+      window.removeEventListener('mouseup', handleGlobalMouseUp);
+    };
+  }, []);
+
+  // Enhanced keyboard navigation for both content and lightbox
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (lightboxOpen) {
         if (event.key === "Escape") {
           setLightboxOpen(false);
+          resetZoom();
         } else if (event.key === "ArrowRight") {
           goToNextImage();
         } else if (event.key === "ArrowLeft") {
@@ -127,6 +222,8 @@ const Home = ({ params }: Params) => {
           handleZoomIn();
         } else if (event.key === "-") {
           handleZoomOut();
+        } else if (event.key === "0") {
+          resetZoom();
         }
       } else {
         if (event.key === "ArrowRight") {
@@ -141,7 +238,16 @@ const Home = ({ params }: Params) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [index, lightboxOpen, goToNextQuestion, goToPreviousQuestion, goToNextImage, goToPreviousImage]);
+  }, [
+    lightboxOpen,
+    goToNextImage,
+    goToPreviousImage,
+    goToNextQuestion,
+    goToPreviousQuestion,
+    handleZoomIn,
+    handleZoomOut,
+    resetZoom
+  ]);
 
   // Handle body scroll when lightbox is open
   useEffect(() => {
@@ -156,99 +262,64 @@ const Home = ({ params }: Params) => {
     };
   }, [lightboxOpen]);
 
-  // Open lightbox with current content index
-  const openLightbox = (contentIndex: number) => {
-    // Find all content items with images
-    const imagesWithSrc = content.filter(item => item.image?.src);
-    
-    // Find index in filtered array that matches the content index
-    const imageIndex = imagesWithSrc.findIndex(
-      item => item.image?.src === content[contentIndex].image?.src
+  // Function to render the desktop previous button or back link
+  const renderDesktopPreviousButton = () => {
+    // Always show the button, change functionality based on index
+    return (
+      <button
+        onClick={index > 0 ? goToPreviousQuestion : () => window.location.href = `/course/${course}`}
+        className={`w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]`}
+        aria-label={index > 0 ? "Previous Question" : "Back to Course"}
+      >
+        <ChevronDoubleLeftIcon className="w-8 h-8" />
+      </button>
     );
-    
-    if (imageIndex !== -1) {
-      setLightboxIndex(imageIndex);
-      setLightboxOpen(true);
+  };
+
+  // Function to render the mobile previous button (always shown)
+  const renderMobilePreviousButton = () => {
+    // If on first page, link back to course overview
+    if (index === 0) {
+      return (
+        <Link
+          href={`/course/${course}`}
+          className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+          aria-label="Back to Course"
+        >
+          <ChevronDoubleLeftIcon className="w-8 h-8" />
+        </Link>
+      );
     }
+
+    // If not on first page, show previous button
+    return (
+      <button
+        onClick={goToPreviousQuestion}
+        className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
+        aria-label="Previous Question"
+      >
+        <ChevronDoubleLeftIcon className="w-8 h-8" />
+      </button>
+    );
   };
 
-  // Reset zoom and position
-  const resetZoom = () => {
-    setZoomLevel(1);
-    setPosition({ x: 0, y: 0 });
-  };
+  // Function to render the next button (always shown, disabled on last page)
+  const renderNextButton = () => {
+    const isLastPage = index >= content.length - 1;
 
-  // Handle closing the lightbox
-  const handleCloseLightbox = (e: React.MouseEvent) => {
-    // Only close if clicking the background, not the image
-    if (e.target === e.currentTarget) {
-      setLightboxOpen(false);
-      resetZoom();
-    }
+    return (
+      <button
+        onClick={!isLastPage ? goToNextQuestion : undefined}
+        className={`w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg ${
+          isLastPage ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        disabled={isLastPage}
+        aria-label={isLastPage ? "Last Question" : "Next Question"}
+      >
+        <ChevronDoubleRightIcon className={`w-8 h-8 ${isLastPage ? "opacity-50" : ""}`} />
+      </button>
+    );
   };
-
-  // Zoom controls
-  const handleZoomIn = () => {
-    setZoomLevel(prev => Math.min(prev + 0.25, 5));
-  };
-
-  const handleZoomOut = () => {
-    setZoomLevel(prev => {
-      const newZoom = Math.max(prev - 0.25, 0.5);
-      if (newZoom <= 1) {
-        setPosition({ x: 0, y: 0 });
-      }
-      return newZoom;
-    });
-  };
-
-  // Image panning functions
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (zoomLevel > 1) {
-      setIsDragging(true);
-      setStartPosition({
-        x: e.clientX - position.x,
-        y: e.clientY - position.y
-      });
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && zoomLevel > 1) {
-      setPosition({
-        x: e.clientX - startPosition.x,
-        y: e.clientY - startPosition.y
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  // Handle wheel for zoom
-  const handleWheel = (e: React.WheelEvent) => {
-    if (e.ctrlKey || e.metaKey) {
-      e.preventDefault();
-      if (e.deltaY < 0) {
-        handleZoomIn();
-      } else {
-        handleZoomOut();
-      }
-    }
-  };
-
-  // Add mouse up event to window to handle cases when mouse is released outside the image
-  useEffect(() => {
-    const handleGlobalMouseUp = () => {
-      setIsDragging(false);
-    };
-    
-    window.addEventListener('mouseup', handleGlobalMouseUp);
-    return () => {
-      window.removeEventListener('mouseup', handleGlobalMouseUp);
-    };
-  }, []);
 
   return (
     <Suspense fallback={
@@ -260,7 +331,7 @@ const Home = ({ params }: Params) => {
       </div>
     }>
       <section className="min-h-screen bg-[#FEFCFA] flex flex-col justify-between overflow-x-hidden">
-        {/* Lightbox */}
+        {/* Enhanced Lightbox with Zoom Controls */}
         {lightboxOpen && imagesForLightbox.length > 0 && (
           <div
             ref={lightboxRef}
@@ -272,14 +343,18 @@ const Home = ({ params }: Params) => {
             <div className="flex items-center justify-between p-3 border-b border-gray-700">
               <div className="flex items-center text-white">
                 <button 
-                  onClick={() => setLightboxOpen(false)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLightboxOpen(false);
+                    resetZoom();
+                  }}
                   className="p-2 rounded-full hover:bg-gray-700 text-white flex items-center justify-center"
                   aria-label="Close"
                 >
                   <XMarkIcon className="h-5 w-5" />
                 </button>
-                <span className="ml-3 text-sm sm:text-base font-medium">
-                  {imagesForLightbox[lightboxIndex].title}
+                <span className="ml-3 text-sm sm:text-base font-medium truncate max-w-md">
+                  {imagesForLightbox[lightboxIndex]?.title}
                 </span>
               </div>
               
@@ -297,67 +372,64 @@ const Home = ({ params }: Params) => {
               onMouseUp={handleMouseUp}
               onClick={e => e.stopPropagation()}
             >
-              {/* Container with navigation and image */}
-              <div className="relative flex items-center justify-center w-full">
-                {/* Left arrow - moved further from the image */}
-                <button 
-                  className={`absolute left-2 sm:left-4 md:left-6 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
-                    lightboxIndex > 0 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
-                  } rounded-full p-2 sm:p-3 text-white z-20`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (lightboxIndex > 0) goToPreviousImage();
-                  }}
-                  aria-label="Previous Image"
-                  disabled={lightboxIndex === 0}
-                >
-                  <ArrowLeftIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
-                    lightboxIndex === 0 ? "opacity-50" : "opacity-100"
-                  }`} />
-                </button>
-                
-                {/* Image container with REDUCED horizontal padding to avoid arrows overlap */}
-                <div className="relative max-w-[80%] max-h-[80vh]">
-                  {imagesForLightbox[lightboxIndex].image?.src && (
-                    <Image 
-                      src={imagesForLightbox[lightboxIndex].image?.src || ""}
-                      alt={imagesForLightbox[lightboxIndex].alt}
-                      className="max-h-[80vh] w-auto object-contain transition-transform duration-200"
-                      style={{ 
-                        transform: `scale(${zoomLevel}) translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
-                        transformOrigin: 'center center',
-                      }}
-                      width={1200}
-                      height={800}
-                      unoptimized={true}
-                      priority={true}
-                      draggable="false"
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                  )}
-                </div>
-                
-                {/* Right arrow - moved further from the image */}
-                <button 
-                  className={`absolute right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
-                    lightboxIndex < imagesForLightbox.length - 1 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
-                  } rounded-full p-2 sm:p-3 text-white z-20`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (lightboxIndex < imagesForLightbox.length - 1) goToNextImage();
-                  }}
-                  aria-label="Next Image"
-                  disabled={lightboxIndex >= imagesForLightbox.length - 1}
-                >
-                  <ArrowRightIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
-                    lightboxIndex >= imagesForLightbox.length - 1 ? "opacity-50" : "opacity-100"
-                  }`} />
-                </button>
+              {/* Left arrow - positioned correctly to not overlap image */}
+              <button 
+                className={`absolute left-4 sm:left-6 md:left-10 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
+                  lightboxIndex > 0 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
+                } rounded-full p-2 sm:p-3 text-white z-20`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (lightboxIndex > 0) goToPreviousImage();
+                }}
+                aria-label="Previous Image"
+                disabled={lightboxIndex === 0}
+              >
+                <ArrowLeftIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
+                  lightboxIndex === 0 ? "opacity-50" : "opacity-100"
+                }`} />
+              </button>
+              
+              {/* Image container with padding to avoid overlap with controls */}
+              <div className="relative max-w-[80%] max-h-[80vh]">
+                {imagesForLightbox[lightboxIndex]?.image?.src && (
+                  <Image 
+                    src={imagesForLightbox[lightboxIndex].image?.src || ""}
+                    alt={imagesForLightbox[lightboxIndex].alt || "Image"}
+                    className="max-h-[80vh] w-auto object-contain transition-transform duration-200"
+                    style={{ 
+                      transform: `scale(${zoomLevel}) translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
+                      transformOrigin: 'center center',
+                    }}
+                    width={1200}
+                    height={800}
+                    unoptimized={true}
+                    priority={true}
+                    draggable="false"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                )}
               </div>
+              
+              {/* Right arrow - positioned correctly to not overlap image */}
+              <button 
+                className={`absolute right-4 sm:right-6 md:right-10 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
+                  lightboxIndex < imagesForLightbox.length - 1 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
+                } rounded-full p-2 sm:p-3 text-white z-20`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (lightboxIndex < imagesForLightbox.length - 1) goToNextImage();
+                }}
+                aria-label="Next Image"
+                disabled={lightboxIndex >= imagesForLightbox.length - 1}
+              >
+                <ArrowRightIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
+                  lightboxIndex >= imagesForLightbox.length - 1 ? "opacity-50" : "opacity-100"
+                }`} />
+              </button>
             </div>
             
             {/* Bottom controls with zoom */}
-            <div className="p-3 bg-black flex items-center justify-center">
+            <div className="p-3 bg-black/80 flex items-center justify-center">
               <div className="bg-gray-800 rounded-full flex items-center px-3 py-1">
                 <button 
                   onClick={(e) => {
@@ -400,30 +472,14 @@ const Home = ({ params }: Params) => {
           </div>
         )}
 
-        {/* Main content */}
-        <div>
+        <div className={lightboxOpen ? "hidden" : ""}>
           <Navigator />
           <ProgressBar currentIndex={index} totalSteps={content.length} />
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center">
-          {index > 0 && (
-            <button
-              onClick={goToPreviousQuestion}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 hidden md:flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
-              aria-label="Previous Question"
-            >
-              <ChevronDoubleLeftIcon className="w-8 h-8" />
-            </button>
-          )}
-          {index == 0 && (
-            <Link
-              href={`/course/${course}`}
-              className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] hidden md:flex items-center justify-center mx-10 p-4 text-white font-bold rounded-full shadow-lg"
-              aria-label="Back to Course"
-            >
-              <ChevronDoubleLeftIcon className="w-8 h-8" />
-            </Link>
-          )}
+
+        <div className={`flex flex-col md:flex-row items-center justify-center ${lightboxOpen ? "hidden" : ""}`}>
+          {renderDesktopPreviousButton()}
+
           {index < content.length && (
             <TutorialCard
               title={content[index].title}
@@ -440,27 +496,12 @@ const Home = ({ params }: Params) => {
             />
           )}
           <div className="flex flex-row md:flex-col">
-            {index > 0 && (
-              <button
-                onClick={goToPreviousQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 md:hidden flex items-center justify-center mx-10 text-white font-bold p-4 rounded-full shadow-lg bg-[#160c35]"
-                aria-label="Previous Question"
-              >
-                <ChevronDoubleLeftIcon className="w-8 h-8" />
-              </button>
-            )}
-            {index < content.length - 1 && (
-              <button
-                onClick={goToNextQuestion}
-                className="w-16 h-16 hover-border hover:border-white-400 hover:border-2 bg-[#160c35] flex items-center justify-center mx-10 text-white p-4 font-bold rounded-full shadow-lg"
-                aria-label="Next Question"
-              >
-                <ChevronDoubleRightIcon className="w-8 h-8" />
-              </button>
-            )}
+            {renderMobilePreviousButton()}
+            {renderNextButton()}
           </div>
         </div>
-        <div>
+
+        <div className={lightboxOpen ? "hidden" : ""}>
           <div className="h-[1px] w-full bg-[#FDCC6D]" />
           <Footer />
         </div>
