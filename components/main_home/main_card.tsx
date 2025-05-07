@@ -47,10 +47,10 @@ const MainCard: React.FC<MainCardProps> = ({ title, description, time, lesson, i
           </div>
         </div>
         
-        <div className="mt-auto flex items-center">
+        <div className="mt-auto flex justify-center items-center">
           <Link 
             href={to} 
-            className="block w-full text-center bg-[#165388] pt-[14px] text-white py-1 rounded-md hover:bg-[#1a64a3] transition-colors duration-300"
+            className="block w-full max-w-[200px] text-center bg-[#165388] text-white py-2 rounded-md hover:bg-[#1a64a3] transition-colors duration-300"
           >
             View Course
           </Link>

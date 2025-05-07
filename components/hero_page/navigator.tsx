@@ -44,16 +44,16 @@ const Navigator = ({ isCourse = false }: Props) => {
           p-6 lg:p-0 shadow-lg lg:shadow-none z-40
         `}
       >
-        <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8 w-full">
           <Link
-            className="block pt-2 lg:inline-block w-full lg:w-auto text-center lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-400 rounded-lg text-sm font-semibold transition"
+            className="block lg:inline-block w-full lg:w-auto text-left lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-400 rounded-lg text-sm font-semibold transition"
             href="/aboutus"
             onClick={() => setIsOpen(false)}
           >
             ABOUT
           </Link>
           <Link
-            className="block pt-2 lg:inline-block w-full lg:w-auto text-center lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-400 rounded-lg text-sm font-semibold transition"
+            className="block lg:inline-block w-full lg:w-auto text-left lg:text-center hover:bg-white hover:bg-opacity-80 py-2 px-5 text-[#30365B] hover:text-blue hover:ring-1 hover:ring-offset-1 hover:ring-blue-400 rounded-lg text-sm font-semibold transition"
             href="/contact_form"
             onClick={() => setIsOpen(false)}
           >
@@ -61,7 +61,7 @@ const Navigator = ({ isCourse = false }: Props) => {
           </Link>
           {isCourse ? (
             <Link
-              className="block lg:inline-block w-full lg:w-auto text-left lg:text-center bg-[#043873] pt-[14px] text-white py-2 px-5 rounded-lg text-sm font-semibold hover:bg-opacity-80 hover:ring-1 hover:ring-offset-2 hover:ring-blue-400 transition"
+              className="block lg:inline-block w-full lg:w-auto text-left lg:text-center bg-[#043873] text-white py-2 px-5 rounded-lg text-sm font-semibold hover:bg-opacity-80 hover:ring-1 hover:ring-offset-2 hover:ring-blue-400 transition"
               href="/main_homepage"
               onClick={() => setIsOpen(false)}
             >
