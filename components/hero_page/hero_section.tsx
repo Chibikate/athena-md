@@ -52,31 +52,6 @@ const HeroSection = () => {
             Explore free courses to learn VSP and 3D printing techniques
           </p>
 
-          {/* Search Bar */}
-          <div className="mt-6 sm:mt-8">
-            <form onSubmit={handleSearch} className="flex items-center max-w-md mx-auto">
-                <div className="relative w-full shadow-md rounded-lg overflow-hidden">
-                <input
-                  type="text"
-                  className="w-full px-4 py-2.5 pl-10 pr-20 text-sm rounded-lg border border-[#043873]/20 focus:outline-none focus:ring-2 focus:ring-[#043873]/40 focus:border-transparent transition-all"
-                  placeholder="Search for courses..."
-                  aria-label="Search for courses"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <MagnifyingGlassIcon className="w-4 h-4 text-[#043873]" aria-hidden="true" />
-                </div>
-                <button 
-                  type="submit"
-                  className="absolute inset-y-0.5 right-0.5 flex items-center px-3 py-1 bg-gradient-to-r from-[#043873] to-[#0f1330] text-white text-sm rounded hover:from-[#0f1330] hover:to-[#043873] transition-all duration-300 font-medium shadow-sm"
-                  aria-label="Submit search"
-                >
-                  Search
-                </button>
-              </div>
-            </form>
-          </div>
 
           {/* Button - Adding proper accessibility attributes */}
           <div className="mt-4 sm:mt-6">
