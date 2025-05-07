@@ -297,7 +297,7 @@ const Home = ({ params }: Params) => {
               onMouseUp={handleMouseUp}
               onClick={e => e.stopPropagation()}
             >
-              {/* Left arrow - MOVED INSIDE the content area with better positioning */}
+              {/* Left arrow - positioned to avoid overlap */}
               <button 
                 className={`absolute left-4 sm:left-6 md:left-10 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
                   lightboxIndex > 0 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
@@ -314,7 +314,7 @@ const Home = ({ params }: Params) => {
                 }`} />
               </button>
               
-              {/* Image container - add padding to avoid overlap */}
+              {/* Image container with horizontal padding to create space for arrows */}
               <div className="relative max-w-[90%] max-h-[80vh] px-16">
                 {imagesForLightbox[lightboxIndex].image?.src && (
                   <Image 
@@ -335,7 +335,7 @@ const Home = ({ params }: Params) => {
                 )}
               </div>
               
-              {/* Right arrow - MOVED INSIDE content area with better positioning */}
+              {/* Right arrow - positioned to avoid overlap */}
               <button 
                 className={`absolute right-4 sm:right-6 md:right-10 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
                   lightboxIndex < imagesForLightbox.length - 1 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
