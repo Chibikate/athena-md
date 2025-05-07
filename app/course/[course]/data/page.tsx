@@ -297,60 +297,63 @@ const Home = ({ params }: Params) => {
               onMouseUp={handleMouseUp}
               onClick={e => e.stopPropagation()}
             >
-              {/* Left arrow - positioned to avoid overlap */}
-              <button 
-                className={`absolute left-4 sm:left-6 md:left-10 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
-                  lightboxIndex > 0 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
-                } rounded-full p-2 sm:p-3 text-white z-20`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (lightboxIndex > 0) goToPreviousImage();
-                }}
-                aria-label="Previous Image"
-                disabled={lightboxIndex === 0}
-              >
-                <ArrowLeftIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
-                  lightboxIndex === 0 ? "opacity-50" : "opacity-100"
-                }`} />
-              </button>
-              
-              {/* Image container with horizontal padding to create space for arrows */}
-              <div className="relative max-w-[90%] max-h-[80vh] px-16">
-                {imagesForLightbox[lightboxIndex].image?.src && (
-                  <Image 
-                    src={imagesForLightbox[lightboxIndex].image?.src || ""}
-                    alt={imagesForLightbox[lightboxIndex].alt}
-                    className="max-h-[80vh] w-auto object-contain transition-transform duration-200"
-                    style={{ 
-                      transform: `scale(${zoomLevel}) translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
-                      transformOrigin: 'center center',
-                    }}
-                    width={1200}
-                    height={800}
-                    unoptimized={true}
-                    priority={true}
-                    draggable="false"
-                    onClick={(e) => e.stopPropagation()}
-                  />
-                )}
+              {/* Container with navigation and image */}
+              <div className="relative flex items-center justify-center w-full">
+                {/* Left arrow - moved further from the image */}
+                <button 
+                  className={`absolute left-2 sm:left-4 md:left-6 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
+                    lightboxIndex > 0 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
+                  } rounded-full p-2 sm:p-3 text-white z-20`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (lightboxIndex > 0) goToPreviousImage();
+                  }}
+                  aria-label="Previous Image"
+                  disabled={lightboxIndex === 0}
+                >
+                  <ArrowLeftIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
+                    lightboxIndex === 0 ? "opacity-50" : "opacity-100"
+                  }`} />
+                </button>
+                
+                {/* Image container with REDUCED horizontal padding to avoid arrows overlap */}
+                <div className="relative max-w-[80%] max-h-[80vh]">
+                  {imagesForLightbox[lightboxIndex].image?.src && (
+                    <Image 
+                      src={imagesForLightbox[lightboxIndex].image?.src || ""}
+                      alt={imagesForLightbox[lightboxIndex].alt}
+                      className="max-h-[80vh] w-auto object-contain transition-transform duration-200"
+                      style={{ 
+                        transform: `scale(${zoomLevel}) translate(${position.x / zoomLevel}px, ${position.y / zoomLevel}px)`,
+                        transformOrigin: 'center center',
+                      }}
+                      width={1200}
+                      height={800}
+                      unoptimized={true}
+                      priority={true}
+                      draggable="false"
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  )}
+                </div>
+                
+                {/* Right arrow - moved further from the image */}
+                <button 
+                  className={`absolute right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
+                    lightboxIndex < imagesForLightbox.length - 1 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
+                  } rounded-full p-2 sm:p-3 text-white z-20`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (lightboxIndex < imagesForLightbox.length - 1) goToNextImage();
+                  }}
+                  aria-label="Next Image"
+                  disabled={lightboxIndex >= imagesForLightbox.length - 1}
+                >
+                  <ArrowRightIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
+                    lightboxIndex >= imagesForLightbox.length - 1 ? "opacity-50" : "opacity-100"
+                  }`} />
+                </button>
               </div>
-              
-              {/* Right arrow - positioned to avoid overlap */}
-              <button 
-                className={`absolute right-4 sm:right-6 md:right-10 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 ${
-                  lightboxIndex < imagesForLightbox.length - 1 ? "opacity-70 hover:opacity-100" : "opacity-30 cursor-not-allowed"
-                } rounded-full p-2 sm:p-3 text-white z-20`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (lightboxIndex < imagesForLightbox.length - 1) goToNextImage();
-                }}
-                aria-label="Next Image"
-                disabled={lightboxIndex >= imagesForLightbox.length - 1}
-              >
-                <ArrowRightIcon className={`w-5 h-5 sm:w-6 sm:h-6 ${
-                  lightboxIndex >= imagesForLightbox.length - 1 ? "opacity-50" : "opacity-100"
-                }`} />
-              </button>
             </div>
             
             {/* Bottom controls with zoom */}
