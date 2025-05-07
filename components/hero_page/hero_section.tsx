@@ -4,7 +4,6 @@ import { Noto_Sans_Javanese } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const javanese = Noto_Sans_Javanese({ subsets: ["javanese"], weight: "400" });
 
@@ -12,13 +11,6 @@ const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
-  // Handle search submission
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-    }
-  };
 
   return (
     <section className={`relative min-h-screen max-w-full overflow-hidden ${javanese.className}`} aria-labelledby="hero-title">
