@@ -1,17 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Noto_Sans_Javanese } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const javanese = Noto_Sans_Javanese({ subsets: ["javanese"], weight: "400" });
 
 const HeroSection = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
-
-
   return (
     <section className={`relative min-h-screen max-w-full overflow-hidden ${javanese.className}`} aria-labelledby="hero-title">
       
@@ -43,8 +38,6 @@ const HeroSection = () => {
           <p className="text-sm sm:text-base md:text-lg text-[#043873] mt-2 sm:mt-4">
             Explore free courses to learn VSP and 3D printing techniques
           </p>
-
-
           {/* Button - Adding proper accessibility attributes */}
           <div className="mt-4 sm:mt-6">
             <Link 
