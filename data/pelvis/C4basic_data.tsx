@@ -238,19 +238,28 @@ export const slicerTutorial9 = [
     alt: "illustration",
   },
   {
-    title: "3D Modeling Pelvis - Basic Segmentation (C-4)",
+    title: "Congratulations!",
     description: (
-      <div>
+      <div className="flex flex-col space-y-4">
         <p>
-          Congratulations, you've able finish the lesson about Basic
-          Segmentation. For you to get the certificate, take the{" "}
-          <Link
-            href="/quiz/pelvis_basic"
-            className="font-bold underline"
+          Excellent work! You've successfully learned the basic segmentation process for creating 3D models of the pelvis. You now know how to:
+        </p>
+        <p>
+          These skills form the foundation of creating accurate anatomical models for surgical planning and educational purposes.
+        </p>
+        <div className="flex justify-center mt-6">
+          <Link 
+            href="/quiz/pelvis_basic" 
+            className="inline-flex items-center px-6 py-3 bg-[#043873] text-white font-medium rounded-lg hover:bg-[#0a4d8d] transition-colors duration-300 shadow-md hover:shadow-lg"
           >
-            Quiz
-          </Link>{" "}
-          first.
+            <span>Take the Quiz</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">
+          Complete the quiz to earn your certificate and advance to the next module
         </p>
       </div>
     ),

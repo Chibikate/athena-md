@@ -62,15 +62,28 @@ export const printingTutorial1 = [
     alt: "",
   },
   {
-    title: "",
+    title: "Congratulations!",
     description: (
-      <div>
+      <div className="flex flex-col space-y-4">
         <p>
-        Congratulations on downloading the Ultimaker Cura software. On the next module, 
-        we will discuss the features of the software.{" "}         
-          <Link href="/ultimaker/3D%20Printing%20for%20a%20Mandible-2" className="font-bold underline">
-            Next Module
-          </Link>{" "}
+          Great job downloading and installing the Ultimaker Cura software! You've completed the first step toward 3D printing your mandible models.
+        </p>
+        <p>
+          In the next module, we will explore the features of the software and show you how to prepare your models for printing.
+        </p>
+        <div className="flex justify-center mt-4">
+          <Link 
+            href="/ultimaker/3D%20Printing%20for%20a%20Mandible-2" 
+            className="inline-flex items-center px-6 py-3 bg-[#043873] text-white font-medium rounded-lg hover:bg-[#0a4d8d] transition-colors duration-300 shadow-md hover:shadow-lg"
+          >
+            <span>Continue to Next Module</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </Link>
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">
+          Module 2: Exploring Ultimaker Cura Features
         </p>
       </div>
     ),

@@ -153,20 +153,35 @@ If your model has an overhang which is not supported by anything below, there’
     alt: "",
   },
   {
-    title: "",
+    title: "Congratulations!",
     description: (
-      <div>
+      <div className="flex flex-col space-y-4">
         <p>
-        Congratulations, you already set the best settings for your model. For you to get the certificate, take the{" "}
-            <Link href="/quiz/printing4"
-              className="font-bold underline"
-            >
-              Quiz
-            </Link>{" "}
+          Well done on completing Module 4 of Ultimaker Cura! You've now mastered the Print Settings, which are crucial for successful 3D printing.
+        </p>
+        <p>
+          In this module, you learned about:
+        </p>
+        <p>
+          These skills will help you achieve high-quality, successful prints of your mandible models.
+        </p>
+        <div className="flex justify-center mt-6">
+          <Link 
+            href="/quiz/printing4" 
+            className="inline-flex items-center px-6 py-3 bg-[#043873] text-white font-medium rounded-lg hover:bg-[#0a4d8d] transition-colors duration-300 shadow-md hover:shadow-lg"
+          >
+            <span>Take the Quiz</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+        <p className="text-sm text-gray-600 text-center mt-2">
+          Complete the quiz to earn your certificate and complete your 3D printing training
         </p>
       </div>
     ),
-    image: null,
-    alt: "",
+    image: Printing46,
+    alt: "Ultimaker Cura Print Settings Summary",
   },
 ];
