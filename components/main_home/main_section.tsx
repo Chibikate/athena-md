@@ -5,7 +5,6 @@ import MainCard from "@/components/main_home/main_card";
 import Mandibular from "@/public/main_course/mandibular.png";
 import Pelvis from "@/public/main_course/Pelvis.png";
 import Printing from "@/public/main_course/printing.png";
-import Link from "next/link";
 
 const MainCardSection = () => {
   const [activeCategory, setActiveCategory] = useState('VSP');
