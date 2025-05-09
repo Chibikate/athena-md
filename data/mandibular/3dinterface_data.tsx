@@ -225,23 +225,6 @@ export const slicerTutorial1 = [
     alt: "illustration",
   },
   {
-    title: "",
-    description: (
-      <div>
-        <p>
-          Congratulations, you have completed the lesson! To receive your
-          certificate, please take the{" "}
-          <Link href="/quiz/interface" className="font-bold underline">
-            Quiz
-          </Link>{" "}
-          first.
-        </p>
-      </div>
-    ),
-    image: null,
-    alt: "",
-  },
-  {
     title: "Congratulations!",
     description: (
       <div className="flex flex-col space-y-4">
