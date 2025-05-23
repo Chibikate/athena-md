@@ -1,9 +1,9 @@
 import React from "react";
-import kate from "@/public/kate.jpg";
-import lemuel from "@/public/Lemuel.jpg";
-import belle from "@/public/belle.jpg";
-import dianne from "@/public/dianne.jpg";
-import kaye from "@/public/kaye.jpg";
+import kate from "@/public/kate.png";
+import lemuel from "@/public/Lemuel.png";
+import zyrene from "@/public/zyrene.png";
+import dianne from "@/public/dianne.png";
+import kaye from "@/public/kaye.png";
 import AboutCard from "@/components/aboutus/about_card";
 
 const AboutSection = () => {
@@ -49,7 +49,7 @@ const AboutSection = () => {
 
           <div className="sm:col-span-1 lg:col-start-2 lg:col-end-3 flex justify-center">
             <AboutCard
-              image={belle}
+              image={zyrene}
               alt="Zyrene Alturas's photo"
               name="Zyrene Alturas"
               role="Web Developer"
