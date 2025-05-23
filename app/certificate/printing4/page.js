@@ -259,7 +259,7 @@ function CertificatePage() {
               Congratulations on Completing the Full Program!
             </h2>
             <p className="text-gray-600 mb-6">
-              You've now mastered all aspects of 3D printing for medical
+              You&apos;ve now mastered all aspects of 3D printing for medical
               applications. This certificate represents your dedication and
               expertise in this specialized field.
             </p>
